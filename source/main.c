@@ -24,7 +24,7 @@ u32 se_index(u32 tx, u32 ty, u32 pitch)
 
 void init_map()
 {
-	int ii, jj;
+	int ii, jj, c;
 
 	// initialize a background
 	REG_BG0CNT= BG_CBB(CBB_0) | BG_SBB(SBB_0) | BG_REG_64x64;
@@ -39,8 +39,15 @@ void init_map()
 	//   0x0000, 0x1000, 0x2000, 0x3000.
 	SCR_ENTRY *pse= bg0_map;
 	for(ii=0; ii<4; ii++)
+	{
 		for(jj=0; jj<32*32; jj++)
-			*pse++= SE_PALBANK(0) | jj%32;
+		{
+			c = 0;
+			if (ii>1) c = 8;
+			else if (jj >= 32*31) c = 9;
+			*pse++= SE_PALBANK(0) | c;
+		}
+	}
 }
 
 int main()
