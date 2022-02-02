@@ -310,6 +310,7 @@ INLINE COLOR RGB15(u32 red, u32 green, u32 blue)
 {	return red | (green<<5) | (blue<<10);	}
 
 
+#define MEM_PALETTE   ((u16*)(0x05000200))
 
 
 #endif // TOOLBOX_H

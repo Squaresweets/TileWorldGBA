@@ -1,6 +1,7 @@
 #include "toolbox.h"
 #include "input.h"
 #include "TileMap.h"
+#include "playersprite.h"
 
 #include <string.h>
 
@@ -13,6 +14,13 @@
 
 BG_POINT bg0_pt= { 0, 0 };
 SCR_ENTRY *bg0_map= se_mem[SBB_0];
+
+typedef struct ObjectAttributes {
+    u16 attr0;
+    u16 attr1;
+    u16 attr2;
+    u16 pad;
+} __attribute__((packed, aligned(4))) ObjectAttributes;
 
 
 u32 se_index(u32 tx, u32 ty, u32 pitch)
@@ -45,6 +53,15 @@ void init_map()
 			c = 0;
 			if (ii>1) c = 8;
 			else if (jj >= 32*31) c = 9;
+			//ATM i am just hard coding in the house, obviously this will not stay, but it gives me somewhere to test physics
+			if(ii == 0)
+			{
+				//The roof of the house
+				if(jj == 802 || (jj > 832 && jj < 836) || (jj > 863 && jj < 869)) c = 2;
+				//The house
+				if((jj > 896 && jj < 900) || (jj > 928 && jj < 932) || (jj > 960 && jj < 964)) c = 7;
+			}
+
 			*pse++= SE_PALBANK(0) | c;
 		}
 	}
@@ -53,11 +70,11 @@ void init_map()
 int main()
 {
 	init_map();
-	REG_DISPCNT= DCNT_MODE0 | DCNT_BG0 | DCNT_OBJ;
 
-	u32 tx, ty, se_curr, se_prev= CROSS_TY*32+CROSS_TX;
-	
-	bg0_map[se_prev]++;	// initial position of cross
+	memcpy(MEM_PALETTE, playerspritePal, playerspritePalLen);
+    memcpy(&tile_mem[4][1], playerspriteTiles, playerspriteTilesLen);
+
+	REG_DISPCNT= DCNT_MODE0 | DCNT_BG0 | DCNT_OBJ;
 	while(1)
 	{
 		vid_vsync();
@@ -65,20 +82,6 @@ int main()
 		key_poll();
 		bg0_pt.x += key_tri_horz();
 		bg0_pt.y += key_tri_vert();
-
-		// Testing bg_se_id()
-		// If all goes well the cross should be around the center of
-		// the screen at all times.
-		tx= ((bg0_pt.x>>3)+CROSS_TX) & 0x3F;
-		ty= ((bg0_pt.y>>3)+CROSS_TY) & 0x3F;
-		
-		se_curr= se_index(tx, ty, 64);
-		if(se_curr != se_prev)
-		{
-			bg0_map[se_prev]--;
-			bg0_map[se_curr]++;
-			se_prev= se_curr;
-		}
 
 		REG_BG_OFS[0]= bg0_pt;	// write new position
 	}
