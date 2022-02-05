@@ -14,7 +14,29 @@
 #ifndef TOOLBOX_H
 #define TOOLBOX_H
 
+#include "types.h"
+#include "memmap.h"		// (tonc_memmap.h)
+#include "memdef.h"		// (tonc_memdef.h)
+
 // === (tonc_types.h) ============================================
+
+#define BIT(n)					( 1<<(n) )
+#define BIT_SHIFT(a, n)			( (a)<<(n) )
+#define BIT_SET(word, flag)		( word |=  (flag) )
+#define BIT_CLEAR(word, flag)	( word &= ~(flag) )
+#define BIT_FLIP(word, flag)	( word ^=  (flag) )
+#define BIT_EQ(word, flag)		( ((word)&(flag)) == (flag) )
+
+// some EVIL bit-field operations, >:)
+// _x needs shifting
+#define BFN_PREP(x, name)		( ((x)<<name##_SHIFT) & name##_MASK )
+#define BFN_GET(y, name)			( ((y) & name##_MASK)>>name##_SHIFT )
+#define BFN_SET(y, x, name)		(y = ((y)&~name##_MASK) | BFN_PREP(x,name) )
+
+// x already shifted
+#define BFN_PREP2(x, name)		( (x) & name##_MASK )
+#define BFN_GET2(y, name)		( (y) & name##_MASK )
+#define BFN_SET2(y, x, name)		(y = ((y)&~name##_MASK) | BFN_PREP2(x,name) )
 
 // alignment
 #define ALIGN(_n)	__attribute__((aligned(_n)))
@@ -47,16 +69,16 @@ typedef volatile s64 vs64;
 
 typedef u16 COLOR;
 typedef u16 SCR_ENTRY, SE;
-typedef struct { u32 data[8];  } TILE, TILE4;
-typedef struct { u32 data[16]; } TILE8;
+//typedef struct { u32 data[8];  } TILE, TILE4;
+//typedef struct { u32 data[16]; } TILE8;
 
 typedef struct BG_POINT { s16 x, y; } ALIGN4 BG_POINT;
 
 typedef COLOR PALBANK[16];
 
 typedef SCR_ENTRY	SCREENBLOCK[1024];
-typedef TILE		CHARBLOCK[512];
-typedef TILE8		CHARBLOCK8[256];
+//typedef TILE		CHARBLOCK[512];
+//typedef TILE8		CHARBLOCK8[256];
 
 // --- misc ---
 
@@ -311,6 +333,43 @@ INLINE COLOR RGB15(u32 red, u32 green, u32 blue)
 
 
 #define MEM_PALETTE   ((u16*)(0x05000200))
+
+void oam_init(OBJ_ATTR *obj, u32 count);
+void oam_copy(OBJ_ATTR *dst, const OBJ_ATTR *src, u32 count);
+
+INLINE OBJ_ATTR *obj_set_attr(OBJ_ATTR *obj, u16 a0, u16 a1, u16 a2);
+INLINE void obj_set_pos(OBJ_ATTR *obj, int x, int y);
+INLINE void obj_hide(OBJ_ATTR *oatr);
+INLINE void obj_unhide(OBJ_ATTR *obj, u16 mode);
+void obj_copy(OBJ_ATTR *dst, const OBJ_ATTR *src, u32 count);
+
+
+//! Set the attributes of an object.
+INLINE OBJ_ATTR *obj_set_attr(OBJ_ATTR *obj, u16 a0, u16 a1, u16 a2)
+{
+	obj->attr0= a0; obj->attr1= a1; obj->attr2= a2;
+	return obj;
+}
+
+//! Set the position of \a obj
+INLINE void obj_set_pos(OBJ_ATTR *obj, int x, int y)
+{
+	BFN_SET(obj->attr0, y, ATTR0_Y);
+	BFN_SET(obj->attr1, x, ATTR1_X);
+}
+
+//! Hide an object.
+INLINE void obj_hide(OBJ_ATTR *obj)
+{	BFN_SET2(obj->attr0, ATTR0_HIDE, ATTR0_MODE);		}
+
+//! Unhide an object.
+/*! \param obj	Object to unhide.
+*	\param mode	Object mode to unhide to. Necessary because this affects
+*	  the affine-ness of the object.
+*/
+INLINE void obj_unhide(OBJ_ATTR *obj, u16 mode)
+{	BFN_SET2(obj->attr0, mode, ATTR0_MODE);			}
+
 
 
 #endif // TOOLBOX_H

@@ -3,18 +3,18 @@
 
 //======================================================================
 //
-//	TileMap, 32x24@4, 
+//	TileMap, 32x32@4, 
 //	+ palette 16 entries, not compressed
-//	+ 12 tiles not compressed
-//	Total size: 32 + 384 = 416
+//	+ 16 tiles not compressed
+//	Total size: 32 + 512 = 544
 //
-//	Time-stamp: 2022-02-01, 16:53:53
+//	Time-stamp: 2022-02-04, 22:21:10
 //	Exported by Cearn's GBA Image Transmogrifier, v0.8.6
 //	( http://www.coranac.com/projects/#grit )
 //
 //======================================================================
 
-const unsigned int TileMapTiles[96] __attribute__((aligned(4)))=
+const unsigned int TileMapTiles[128] __attribute__((aligned(4)))=
 {
 	0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,0x00000000,
 	0x11111111,0x11111111,0x11111111,0x11111111,0x11111111,0x11111111,0x11111111,0x11111111,
@@ -29,11 +29,20 @@ const unsigned int TileMapTiles[96] __attribute__((aligned(4)))=
 	0x99999999,0x99999999,0x99999999,0x99999999,0x99999999,0x99999999,0x99999999,0x99999999,
 	0xAAAAAAAA,0xAAAAAAAA,0xAAAAAAAA,0xAAAAAAAA,0xAAAAAAAA,0xAAAAAAAA,0xAAAAAAAA,0xAAAAAAAA,
 	0x0BCCCCB0,0x0C0000C0,0x0BCCCCB0,0x0C0000C0,0x0BCCCCB0,0x0C0000C0,0x0BCCCCB0,0x0C0000C0,
+	0xDDDDDDDD,0xDDDDDDDD,0xDDDDDDDD,0xDDDDDDDD,0xDDDDDDDD,0xDDDDDDDD,0xDDDDDDDD,0xDDDDDDDD,
+	0xEEEEEEEE,0xEEEEEEEE,0xEEEEEEEE,0xEEEEEEEE,0xEEEEEEEE,0xEEEEEEEE,0xEEEEEEEE,0xEEEEEEEE,
+	0xEEEEEEEE,0xEEEEEEEE,0xEEEEEEEE,0xEEEEEEEE,0xEEEEEEEE,0xEEEEEEEE,0xEEEEEEEE,0xEEEEEEEE,
+	0xEEEEEEEE,0xEEEEEEEE,0xEEEEEEEE,0xEEEEEEEE,0xEEEEEEEE,0xEEEEEEEE,0xEEEEEEEE,0xEEEEEEEE,
 };
 
 const unsigned int TileMapPal[8] __attribute__((aligned(4)))=
 {
-	0x0A957B2F,0x48A6281C,0x08422BF0,0x4A527DE6,0x2A8508EB,0x01B17C1F,0x00000236,0x00000000,
+	0x0A957B2F,0x48A6281C,0x08422BF0,0x4A527DE6,0x2A8508EB,0x01B17C1F,0x7FFF0236,0x00000000,
+};
+
+const unsigned int playerspritePal[1] __attribute__((aligned(4)))=
+{
+	0x00007FFF,
 };
 
 //}}BLOCK(TileMap)

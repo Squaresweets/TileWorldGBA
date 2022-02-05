@@ -1,7 +1,9 @@
 #include "toolbox.h"
 #include "input.h"
 #include "TileMap.h"
-#include "playersprite.h"
+#include "types.h"
+#include "memmap.h"		// (tonc_memmap.h)
+#include "memdef.h"		// (tonc_memdef.h)
 
 #include <string.h>
 
@@ -9,18 +11,17 @@
 #define CBB_0  0
 #define SBB_0 28
 
+#define SCREEN_W      240
+#define SCREEN_H      160
+
 #define CROSS_TX 15
 #define CROSS_TY 10
 
 BG_POINT bg0_pt= { 0, 0 };
 SCR_ENTRY *bg0_map= se_mem[SBB_0];
 
-typedef struct ObjectAttributes {
-    u16 attr0;
-    u16 attr1;
-    u16 attr2;
-    u16 pad;
-} __attribute__((packed, aligned(4))) ObjectAttributes;
+OBJ_ATTR obj_buffer[128];
+OBJ_AFFINE *obj_aff_buffer= (OBJ_AFFINE*)obj_buffer;
 
 
 u32 se_index(u32 tx, u32 ty, u32 pitch)
@@ -41,7 +42,10 @@ void init_map()
 
 	// create the tiles: basic tile and a cross
     memcpy(&tile_mem[CBB_0][0], TileMapTiles, TileMapTilesLen);
+    memcpy(&tile_mem[4][0], TileMapTiles, TileMapTilesLen);
     memcpy(pal_bg_mem, TileMapPal, TileMapPalLen);
+    memcpy(pal_obj_mem, TileMapPal, TileMapPalLen);
+    //memcpy(pal_obj_mem, playerspritePal, 1);
 
 	// Create a map: four contingent blocks of 
 	//   0x0000, 0x1000, 0x2000, 0x3000.
@@ -71,10 +75,22 @@ int main()
 {
 	init_map();
 
-	memcpy(MEM_PALETTE, playerspritePal, playerspritePalLen);
-    memcpy(&tile_mem[4][1], playerspriteTiles, playerspriteTilesLen);
-
 	REG_DISPCNT= DCNT_MODE0 | DCNT_BG0 | DCNT_OBJ;
+    oam_init(obj_buffer, 128);
+
+	int x = (SCREEN_W/2)-4, y= (SCREEN_H/2)-4;
+    u32 tid= 12, pb= 0;      // (3) tile id, pal-bank
+    OBJ_ATTR *player= &obj_buffer[0];
+
+    obj_set_attr(player, 
+        ATTR0_SQUARE,              // Square, regular sprite
+        ATTR1_SIZE_8,              // 8x8p, 
+        ATTR2_PALBANK(pb) | tid);   // palbank 0, tile 0
+	
+    // (4) position sprite (redundant here; the _real_ position
+    // is set further down
+    obj_set_pos(player, x, y);
+
 	while(1)
 	{
 		vid_vsync();
@@ -84,6 +100,8 @@ int main()
 		bg0_pt.y += key_tri_vert();
 
 		REG_BG_OFS[0]= bg0_pt;	// write new position
+
+        oam_copy(oam_mem, obj_buffer, 1);   // (6) Update OAM (only one now)
 	}
 	return 0;
 }
