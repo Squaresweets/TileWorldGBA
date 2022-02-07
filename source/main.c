@@ -2,8 +2,8 @@
 #include "input.h"
 #include "TileMap.h"
 #include "types.h"
-#include "memmap.h"		// (tonc_memmap.h)
-#include "memdef.h"		// (tonc_memdef.h)
+#include "memmap.h"
+#include "memdef.h"
 
 #include <string.h>
 
@@ -32,11 +32,6 @@ u32 se_index(u32 tx, u32 ty, u32 pitch)
 	u32 sbb= ((tx>>5)+(ty>>5)*(pitch>>5));
 
 	return sbb*1024 + ((tx&31)+(ty&31)*32);
-}
-
-float lerp(float a, float b, float f)
-{
-    return a + f * (b - a);
 }
 
 void init_map()
@@ -88,7 +83,7 @@ int main()
 	REG_DISPCNT= DCNT_MODE0 | DCNT_BG0 | DCNT_OBJ;
     oam_init(obj_buffer, 128);
 
-	float playerx = 0, playery = 0;
+	float playerx = 0, playery = 0, camerax = 0, cameray = 0;
     u32 tid= 12, pb= 0;      // (3) tile id, pal-bank
     OBJ_ATTR *player= &obj_buffer[0];
 
@@ -106,11 +101,11 @@ int main()
 		playerx += key_tri_horz();
 		playery += key_tri_vert();
 		
-		//bg0_pt.x = (lerp(playerx, bg0_pt.x + SCREEN_O_W, 0.01f)) - SCREEN_O_W;
-		//bg0_pt.y = (lerp(playery, bg0_pt.y + SCREEN_O_H, 0.01f)) - SCREEN_O_H;
-		bg0_pt.x = playerx - SCREEN_O_W;
-		bg0_pt.y = playery - SCREEN_O_H;
+		camerax += (playerx - camerax) * 0.05f;
+		cameray += (playery - cameray) * 0.05f;
 
+		bg0_pt.x = camerax - SCREEN_O_W;
+		bg0_pt.y = cameray - SCREEN_O_H;
 		//Place player at correct position on the screen
     	obj_set_pos(player, playerx - bg0_pt.x, playery - bg0_pt.y);
         oam_copy(oam_mem, obj_buffer, 1);   // (6) Update OAM (only one now)
