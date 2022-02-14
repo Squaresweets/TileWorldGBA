@@ -27,12 +27,6 @@ OBJ_ATTR obj_buffer[128];
 OBJ_AFFINE *obj_aff_buffer= (OBJ_AFFINE*)obj_buffer;
 
 
-u32 se_index(u32 tx, u32 ty, u32 pitch)
-{	
-	u32 sbb= ((tx>>5)+(ty>>5)*(pitch>>5));
-
-	return sbb*1024 + ((tx&31)+(ty&31)*32);
-}
 
 void init_map()
 {
@@ -71,7 +65,7 @@ void init_map()
 				if((jj > 896 && jj < 900) || (jj > 928 && jj < 932) || (jj > 960 && jj < 964)) c = 7;
 			}
 
-			*pse++= SE_PALBANK(0) | c;
+			*pse++ = SE_PALBANK(0) | c;
 		}
 	}
 }
@@ -100,6 +94,8 @@ int main()
 		//bg0_pt.y += key_tri_vert();
 		playerx += key_tri_horz();
 		playery += key_tri_vert();
+
+
 		
 		camerax += (playerx - camerax) * 0.05f;
 		cameray += (playery - cameray) * 0.05f;
