@@ -5,7 +5,11 @@
 #include "memmap.h"
 #include "memdef.h"
 
+#include "Colly.h"
+
+#include <stdbool.h>
 #include <string.h>
+#include <math.h>
 
 
 #define CBB_0  0
@@ -77,7 +81,7 @@ int main()
 	REG_DISPCNT= DCNT_MODE0 | DCNT_BG0 | DCNT_OBJ;
     oam_init(obj_buffer, 128);
 
-	float playerx = 0, playery = 0, camerax = 0, cameray = 0;
+	float playerx = 0, playery = 240, camerax = 0, cameray = 240;
     u32 tid= 12, pb= 0;      // (3) tile id, pal-bank
     OBJ_ATTR *player= &obj_buffer[0];
 
@@ -90,16 +94,17 @@ int main()
 		vid_vsync();
 
 		key_poll();
-		//bg0_pt.x += key_tri_horz();
-		//bg0_pt.y += key_tri_vert();
-		playerx += key_tri_horz();
-		playery += key_tri_vert();
 
+		vector bounds = {playerx/8.0, playery/8.0, 1, 1};
 
-		
+		vector goal = {(playerx + key_tri_horz())/8.0, (playery + key_tri_vert())/8.0, 1, 1};
+
+		vector result = Check(bounds, goal);
+		playerx = result.x * 8.0;
+		playery = result.y * 8.0;
+
 		camerax += (playerx - camerax) * 0.05f;
 		cameray += (playery - cameray) * 0.05f;
-
 		bg0_pt.x = camerax - SCREEN_O_W;
 		bg0_pt.y = cameray - SCREEN_O_H;
 		//Place player at correct position on the screen
