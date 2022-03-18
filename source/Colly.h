@@ -2,10 +2,11 @@
 #define COLLY_H
 
 typedef struct Vector {
-    float x;
-    float y;
-    float w;
-    float h;
+    //All fixed point (<< 3)
+    int x;
+    int y;
+    int w;
+    int h;
 } vector;
 
 vector Check(vector bounds, vector goal);

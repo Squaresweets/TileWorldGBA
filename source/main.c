@@ -18,11 +18,15 @@
 #define SCREEN_W      240
 #define SCREEN_H      160
 //Screen offset from player
-#define SCREEN_O_W    116.0
-#define SCREEN_O_H    76.0
+#define SCREEN_O_W    116
+#define SCREEN_O_H    76
 
 #define CROSS_TX 15
 #define CROSS_TY 10
+
+//Fixed point stuff https://stackoverflow.com/questions/10067510/fixed-point-arithmetic-in-c-programming
+#define SHIFT_AMOUNT 16
+#define SHIFT_MASK ((1 << SHIFT_AMOUNT) - 1)
 
 BG_POINT bg0_pt= { 0, 0 };
 SCR_ENTRY *bg0_map= se_mem[SBB_0];
@@ -81,7 +85,10 @@ int main()
 	REG_DISPCNT= DCNT_MODE0 | DCNT_BG0 | DCNT_OBJ;
     oam_init(obj_buffer, 128);
 
-	float playerx = 0, playery = 240, camerax = 0, cameray = 240;
+	//Fixed point, with a shift value of 16
+	int playerx = 0, playery = 30 << SHIFT_AMOUNT;
+	int camerax = 0, cameray = 30 << SHIFT_AMOUNT;
+
     u32 tid= 12, pb= 0;      // (3) tile id, pal-bank
     OBJ_ATTR *player= &obj_buffer[0];
 
@@ -95,20 +102,29 @@ int main()
 
 		key_poll();
 
-		vector bounds = {playerx/8.0, playery/8.0, 1, 1};
+		//vector bounds = {playerx, playery, 1, 1};
 
-		vector goal = {(playerx + key_tri_horz())/8.0, (playery + key_tri_vert())/8.0, 1, 1};
+		//vector goal = {(playerx + key_tri_horz()), (playery + key_tri_vert()), 1, 1};
 
-		vector result = Check(bounds, goal);
-		playerx = result.x * 8.0;
-		playery = result.y * 8.0;
+		//vector result = Check(bounds, goal);
+		//playerx = result.x; playery = result.y;
+
+
+		//Dividing by 8 just to get down to right speed
+		playerx += (key_tri_horz() << SHIFT_AMOUNT)/8; playery += (key_tri_vert() << SHIFT_AMOUNT)/8;
 
 		camerax += (playerx - camerax) * 0.05f;
 		cameray += (playery - cameray) * 0.05f;
-		bg0_pt.x = camerax - SCREEN_O_W;
-		bg0_pt.y = cameray - SCREEN_O_H;
+
+
+		//Rendering player to screen
+		//The -3 stuff is confusing, but basically just divides everything by the fixed point stuff to get the actual amount
+		//And then times it by 8 (<<3) to get it how the gameboy likes it
+		bg0_pt.x = (camerax>>(SHIFT_AMOUNT-3)) - SCREEN_O_W;
+		bg0_pt.y = (cameray>>(SHIFT_AMOUNT-3)) - SCREEN_O_H;
 		//Place player at correct position on the screen
-    	obj_set_pos(player, playerx - bg0_pt.x, playery - bg0_pt.y);
+    	obj_set_pos(player, (playerx - (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3),
+							(playery - (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3));
         oam_copy(oam_mem, obj_buffer, 1);   // (6) Update OAM (only one now)
 
 		REG_BG_OFS[0]= bg0_pt;	// write new position

@@ -82,15 +82,12 @@ void increment(vector *checkRegion, vector *goal, vector *intersect, vector *bou
 vector Check(vector bounds, vector goal)
 {
     vector intersect;
-    //Ok here is the pointer trickery that I will probably use:
-    //I check all the stuff for x, and then I add one to both of the pointers
-    //Next time they are checked for "x" it will give y and same for width and height
 
     vector checkRegion;
-    checkRegion.x = max(0, (int)(min(goal.x, bounds.x) - bounds.w));
-    checkRegion.y = max(0, (int)(min(goal.y, bounds.y) - bounds.h));
-    checkRegion.w = min(mapsize-1, (int)(max(goal.x, bounds.x + bounds.w)) + bounds.w);
-    checkRegion.h = min(mapsize-1, (int)(max(goal.y, bounds.y + bounds.h)) + bounds.h);
+    checkRegion.x = max(0, (min(goal.x, bounds.x) - bounds.w));
+    checkRegion.y = max(0, (min(goal.y, bounds.y) - bounds.h));
+    checkRegion.w = min(mapsize-1, (max(goal.x, bounds.x + bounds.w)) + bounds.w);
+    checkRegion.h = min(mapsize-1, (max(goal.y, bounds.y + bounds.h)) + bounds.h);
     
     increment(&checkRegion, &goal, &intersect, &bounds, true);
     increment(&checkRegion, &goal, &intersect, &bounds, false);
