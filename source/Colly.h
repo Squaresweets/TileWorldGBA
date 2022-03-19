@@ -2,7 +2,7 @@
 #define COLLY_H
 
 typedef struct Vector {
-    //All fixed point (<< 3)
+    //All fixed point (<< 16)
     int x;
     int y;
     int w;

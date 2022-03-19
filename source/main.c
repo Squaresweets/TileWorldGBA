@@ -26,6 +26,7 @@
 
 //Fixed point stuff https://stackoverflow.com/questions/10067510/fixed-point-arithmetic-in-c-programming
 #define SHIFT_AMOUNT 16
+#define ONE_SHIFTED (1 << SHIFT_AMOUNT)
 #define SHIFT_MASK ((1 << SHIFT_AMOUNT) - 1)
 
 BG_POINT bg0_pt= { 0, 0 };
@@ -102,20 +103,17 @@ int main()
 
 		key_poll();
 
-		//vector bounds = {playerx, playery, 1, 1};
-
-		//vector goal = {(playerx + key_tri_horz()), (playery + key_tri_vert()), 1, 1};
-
-		//vector result = Check(bounds, goal);
-		//playerx = result.x; playery = result.y;
-
+		vector bounds = {playerx, playery, ONE_SHIFTED, ONE_SHIFTED};
 
 		//Dividing by 8 just to get down to right speed
-		playerx += (key_tri_horz() << SHIFT_AMOUNT)/8; playery += (key_tri_vert() << SHIFT_AMOUNT)/8;
+		vector goal = {(playerx + (key_tri_horz() << SHIFT_AMOUNT)/8),
+					   (playery + (key_tri_vert() << SHIFT_AMOUNT)/8), ONE_SHIFTED, ONE_SHIFTED};
+
+		vector result = Check(bounds, goal);
+		playerx = result.x; playery = result.y;
 
 		camerax += (playerx - camerax) * 0.05f;
 		cameray += (playery - cameray) * 0.05f;
-
 
 		//Rendering player to screen
 		//The -3 stuff is confusing, but basically just divides everything by the fixed point stuff to get the actual amount

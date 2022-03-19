@@ -17,6 +17,11 @@
 
 #define mapsize 64
 
+//Fixed point stuff https://stackoverflow.com/questions/10067510/fixed-point-arithmetic-in-c-programming
+#define SHIFT_AMOUNT 16
+#define ONE_SHIFTED (1 << SHIFT_AMOUNT)
+#define SHIFT_MASK ((1 << SHIFT_AMOUNT) - 1)
+
 
 u32 se_index(u32 tx, u32 ty, u32 pitch)
 {	
@@ -30,8 +35,8 @@ bool Intersects(vector *rect, vector *other, vector *intersection)
     float interleft = max(rect->x, other->x);
     float intertop = max(rect->y, other->y);
     //incoming vectors always have a size of 1 (either the player or the grid)
-    float interright = min(rect->x + 1, other->x + 1);
-    float interbottom = min(rect->y + 1, other->y + 1);
+    float interright = min(rect->x + ONE_SHIFTED, other->x + ONE_SHIFTED);
+    float interbottom = min(rect->y + ONE_SHIFTED, other->y + ONE_SHIFTED);
 
     if (interleft < interright && intertop < interbottom)
     {
@@ -45,21 +50,21 @@ bool Intersects(vector *rect, vector *other, vector *intersection)
 void increment(vector *checkRegion, vector *goal, vector *intersect, vector *bounds, bool X)
 {
     if(X)
-        bounds->x +=  (goal->x - bounds->x);
+        bounds->x += (goal->x - bounds->x);
     else
-        bounds->y +=  (goal->y - bounds->y);
+        bounds->y += (goal->y - bounds->y);
 
-    for(int y = (int)checkRegion->y; y <= (int)checkRegion->h; y++)
+    for(int y = checkRegion->y; y <= checkRegion->h; y += ONE_SHIFTED)
     {
-        for(int x = (int)checkRegion->x; x <= (int)checkRegion->w; x++)
+        for(int x = checkRegion->x; x <= checkRegion->w; x += ONE_SHIFTED)
         {
-            int id = se_mem[28][se_index(x,y,mapsize)];
+            int id = se_mem[28][se_index(x >> SHIFT_AMOUNT,y >> SHIFT_AMOUNT,mapsize)];
 
             //If it is air carry on
             if(id == 0) continue;
 
             vector cell;
-            cell.x = x; cell.y = y; cell.w = 1; cell.h = 1;
+            cell.x = x; cell.y = y; cell.w = ONE_SHIFTED; cell.h = ONE_SHIFTED;
             if(Intersects(&cell, bounds, intersect))
             {
                 if((X && intersect->w < intersect->h) || (!X && intersect->w > intersect->h))
@@ -86,13 +91,13 @@ vector Check(vector bounds, vector goal)
     vector checkRegion;
     checkRegion.x = max(0, (min(goal.x, bounds.x) - bounds.w));
     checkRegion.y = max(0, (min(goal.y, bounds.y) - bounds.h));
-    checkRegion.w = min(mapsize-1, (max(goal.x, bounds.x + bounds.w)) + bounds.w);
-    checkRegion.h = min(mapsize-1, (max(goal.y, bounds.y + bounds.h)) + bounds.h);
+    checkRegion.w = min((mapsize-1)<<SHIFT_AMOUNT, (max(goal.x, bounds.x + bounds.w)) + bounds.w);
+    checkRegion.h = min((mapsize-1)<<SHIFT_AMOUNT, (max(goal.y, bounds.y + bounds.h)) + bounds.h);
     
     increment(&checkRegion, &goal, &intersect, &bounds, true);
     increment(&checkRegion, &goal, &intersect, &bounds, false);
 
     vector r;
-    r.x = bounds.x; r.y = bounds.y; r.w = 1; r.h = 1;
+    r.x = bounds.x; r.y = bounds.y; r.w = ONE_SHIFTED; r.h = ONE_SHIFTED;
     return r;
 }
