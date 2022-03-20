@@ -48,7 +48,8 @@ bool Intersects(vector *rect, vector *other, vector *intersection)
     return false;
 }
 
-void increment(vector *checkRegion, vector *goal, vector *intersect, vector *bounds, bool X)
+//Cor thats a lot of arguments
+void increment(vector *checkRegion, vector *goal, vector *intersect, vector *bounds, bool X, checkreturn *r)
 {
     if(X)
         bounds->x += (goal->x - bounds->x);
@@ -64,6 +65,7 @@ void increment(vector *checkRegion, vector *goal, vector *intersect, vector *bou
             //If it is air carry on
             if(id == 0) continue;
 
+            r->collided = true;
             vector cell;
             cell.x = x; cell.y = y; cell.w = ONE_SHIFTED; cell.h = ONE_SHIFTED;
             if(Intersects(&cell, bounds, intersect))
@@ -85,9 +87,12 @@ void increment(vector *checkRegion, vector *goal, vector *intersect, vector *bou
 }
 
 //We are going to assume steps is always 1
-vector Check(vector bounds, vector goal)
+checkreturn Check(vector start, vector goal)
 {
+    vector bounds = start;
     vector intersect;
+    checkreturn r;
+    r.collided = false;
 
     vector checkRegion;
     checkRegion.x = max(0, (min(goal.x, bounds.x) - bounds.w) & INT_MASK);
@@ -95,10 +100,11 @@ vector Check(vector bounds, vector goal)
     checkRegion.w = min((mapsize-1)<<SHIFT_AMOUNT, (max(goal.x, bounds.x + bounds.w) & INT_MASK) + bounds.w);
     checkRegion.h = min((mapsize-1)<<SHIFT_AMOUNT, (max(goal.y, bounds.y + bounds.h) & INT_MASK) + bounds.h);
     
-    increment(&checkRegion, &goal, &intersect, &bounds, true);
-    increment(&checkRegion, &goal, &intersect, &bounds, false);
+    increment(&checkRegion, &goal, &intersect, &bounds, true, &r);
+    increment(&checkRegion, &goal, &intersect, &bounds, false, &r);
 
-    vector r;
-    r.x = bounds.x; r.y = bounds.y; r.w = ONE_SHIFTED; r.h = ONE_SHIFTED;
+    vector rv;
+    rv.x = bounds.x; rv.y = bounds.y; rv.w = ONE_SHIFTED; rv.h = ONE_SHIFTED;
+    r.v = rv;
     return r;
 }

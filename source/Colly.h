@@ -1,5 +1,7 @@
 #ifndef COLLY_H   /* Include guard */
-#define COLLY_H
+#define COLLY_Hv
+
+#include <stdbool.h>
 
 typedef struct Vector {
     //All fixed point (<< 16)
@@ -8,7 +10,11 @@ typedef struct Vector {
     int w;
     int h;
 } vector;
+typedef struct CheckReturn {
+    vector v;
+    bool collided;
+} checkreturn;
 
-vector Check(vector bounds, vector goal);
+checkreturn Check(vector bounds, vector goal);
 
 #endif

@@ -36,6 +36,11 @@ OBJ_ATTR obj_buffer[128];
 OBJ_AFFINE *obj_aff_buffer= (OBJ_AFFINE*)obj_buffer;
 
 
+//Fixed point, with a shift value of 16
+int playerx = 10 << SHIFT_AMOUNT, playery = 30 << SHIFT_AMOUNT;
+int camerax = 0, cameray = 30 << SHIFT_AMOUNT;
+int xv = 0, yv = 0;
+OBJ_ATTR *player= &obj_buffer[0];
 
 void init_map()
 {
@@ -79,6 +84,54 @@ void init_map()
 	}
 }
 
+void movement()
+{
+	vector bounds = {playerx, playery, ONE_SHIFTED, ONE_SHIFTED};
+	
+	vector t = {playerx, playery + 6, ONE_SHIFTED, ONE_SHIFTED};
+	bool grounded = Check(bounds, t).collided;
+
+	xv += key_tri_horz() * (ONE_SHIFTED / 32);
+
+	if(key_tri_fire() > 0 && grounded)
+		yv += ((25<<SHIFT_AMOUNT) / 32);
+	else
+		yv -= 88166 / 32; //(8166 = 1.3453 << 16)
+	
+	//Apply friction
+	yv *= 0.951;
+	xv *= 0.915;
+
+	vector g = {playerx + xv, playery - yv, ONE_SHIFTED, ONE_SHIFTED};
+	vector v = Check(bounds, g).v;
+	playerx = v.x; playery = v.y;
+
+
+	//Stuff for next frame
+	g.y = 0;
+	xv *= !Check(bounds, g).collided;
+	g.y = playery - yv; g.x = 0;
+	yv *= !Check(bounds, g).collided;
+
+
+	camerax += (playerx - camerax) * 0.05f;
+	cameray += (playery - cameray) * 0.05f;
+}
+void renderPlayer()
+{
+	//Rendering player to screen
+	//The -3 stuff is confusing, but basically just divides everything by the fixed point stuff to get the actual amount
+	//And then times it by 8 (<<3) to get it how the gameboy likes it
+	bg0_pt.x = (camerax>>(SHIFT_AMOUNT-3)) - SCREEN_O_W;
+	bg0_pt.y = (cameray>>(SHIFT_AMOUNT-3)) - SCREEN_O_H;
+	//Place player at correct position on the screen
+    obj_set_pos(player, (playerx - (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3),
+						(playery - (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3));
+    oam_copy(oam_mem, obj_buffer, 1);   // (6) Update OAM (only one now)
+
+	REG_BG_OFS[0]= bg0_pt;	// write new position
+}
+
 int main()
 {
 	init_map();
@@ -86,12 +139,7 @@ int main()
 	REG_DISPCNT= DCNT_MODE0 | DCNT_BG0 | DCNT_OBJ;
     oam_init(obj_buffer, 128);
 
-	//Fixed point, with a shift value of 16
-	int playerx = 0, playery = 30 << SHIFT_AMOUNT;
-	int camerax = 0, cameray = 30 << SHIFT_AMOUNT;
-
     u32 tid= 12, pb= 0;      // (3) tile id, pal-bank
-    OBJ_ATTR *player= &obj_buffer[0];
 
     obj_set_attr(player, 
         ATTR0_SQUARE,              // Square, regular sprite
@@ -100,32 +148,10 @@ int main()
 	while(1)
 	{
 		vid_vsync();
-
 		key_poll();
 
-		vector bounds = {playerx, playery, ONE_SHIFTED, ONE_SHIFTED};
-
-		//Dividing by 8 just to get down to right speed
-		vector goal = {(playerx + (key_tri_horz() << SHIFT_AMOUNT)/8),
-					   (playery + (key_tri_vert() << SHIFT_AMOUNT)/8), ONE_SHIFTED, ONE_SHIFTED};
-
-		vector result = Check(bounds, goal);
-		playerx = result.x; playery = result.y;
-
-		camerax += (playerx - camerax) * 0.05f;
-		cameray += (playery - cameray) * 0.05f;
-
-		//Rendering player to screen
-		//The -3 stuff is confusing, but basically just divides everything by the fixed point stuff to get the actual amount
-		//And then times it by 8 (<<3) to get it how the gameboy likes it
-		bg0_pt.x = (camerax>>(SHIFT_AMOUNT-3)) - SCREEN_O_W;
-		bg0_pt.y = (cameray>>(SHIFT_AMOUNT-3)) - SCREEN_O_H;
-		//Place player at correct position on the screen
-    	obj_set_pos(player, (playerx - (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3),
-							(playery - (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3));
-        oam_copy(oam_mem, obj_buffer, 1);   // (6) Update OAM (only one now)
-
-		REG_BG_OFS[0]= bg0_pt;	// write new position
+		movement();
+		renderPlayer();
 	}
 	return 0;
 }
