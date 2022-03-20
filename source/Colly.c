@@ -20,7 +20,8 @@
 //Fixed point stuff https://stackoverflow.com/questions/10067510/fixed-point-arithmetic-in-c-programming
 #define SHIFT_AMOUNT 16
 #define ONE_SHIFTED (1 << SHIFT_AMOUNT)
-#define SHIFT_MASK ((1 << SHIFT_AMOUNT) - 1)
+#define DECIMAL_MASK ((1 << SHIFT_AMOUNT) - 1)
+#define INT_MASK ~((1 << SHIFT_AMOUNT) - 1)
 
 
 u32 se_index(u32 tx, u32 ty, u32 pitch)
@@ -54,9 +55,9 @@ void increment(vector *checkRegion, vector *goal, vector *intersect, vector *bou
     else
         bounds->y += (goal->y - bounds->y);
 
-    for(int y = checkRegion->y; y <= checkRegion->h; y += ONE_SHIFTED)
+    for(int y = (checkRegion->y & INT_MASK); y <= (checkRegion->h & INT_MASK); y += ONE_SHIFTED)
     {
-        for(int x = checkRegion->x; x <= checkRegion->w; x += ONE_SHIFTED)
+        for(int x = (checkRegion->x & INT_MASK); x <= (checkRegion->w & INT_MASK); x += ONE_SHIFTED)
         {
             int id = se_mem[28][se_index(x >> SHIFT_AMOUNT,y >> SHIFT_AMOUNT,mapsize)];
 
@@ -89,10 +90,10 @@ vector Check(vector bounds, vector goal)
     vector intersect;
 
     vector checkRegion;
-    checkRegion.x = max(0, (min(goal.x, bounds.x) - bounds.w));
-    checkRegion.y = max(0, (min(goal.y, bounds.y) - bounds.h));
-    checkRegion.w = min((mapsize-1)<<SHIFT_AMOUNT, (max(goal.x, bounds.x + bounds.w)) + bounds.w);
-    checkRegion.h = min((mapsize-1)<<SHIFT_AMOUNT, (max(goal.y, bounds.y + bounds.h)) + bounds.h);
+    checkRegion.x = max(0, (min(goal.x, bounds.x) - bounds.w) & INT_MASK);
+    checkRegion.y = max(0, (min(goal.y, bounds.y) - bounds.h) & INT_MASK);
+    checkRegion.w = min((mapsize-1)<<SHIFT_AMOUNT, (max(goal.x, bounds.x + bounds.w) & INT_MASK) + bounds.w);
+    checkRegion.h = min((mapsize-1)<<SHIFT_AMOUNT, (max(goal.y, bounds.y + bounds.h) & INT_MASK) + bounds.h);
     
     increment(&checkRegion, &goal, &intersect, &bounds, true);
     increment(&checkRegion, &goal, &intersect, &bounds, false);
