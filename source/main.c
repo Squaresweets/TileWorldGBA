@@ -37,8 +37,8 @@ OBJ_AFFINE *obj_aff_buffer= (OBJ_AFFINE*)obj_buffer;
 
 
 //Fixed point, with a shift value of 16
-int playerx = 10 << SHIFT_AMOUNT, playery = 30 << SHIFT_AMOUNT;
-int camerax = 0, cameray = 30 << SHIFT_AMOUNT;
+int playerx = 0 << SHIFT_AMOUNT, playery = 20 << SHIFT_AMOUNT;
+int camerax = 0 << SHIFT_AMOUNT, cameray = 20 << SHIFT_AMOUNT;
 int xv = 0, yv = 0;
 OBJ_ATTR *player= &obj_buffer[0];
 
@@ -71,7 +71,7 @@ void init_map()
 			if (ii>1) c = 8;
 			else if (jj >= 32*31) c = 9;
 			//ATM i am just hard coding in the house, obviously this will not stay, but it gives me somewhere to test physics
-			if(ii == 0)
+			if(ii == 0 || ii == 1)
 			{
 				//The roof of the house
 				if(jj == 802 || (jj > 832 && jj < 836) || (jj > 863 && jj < 869)) c = 2;
@@ -95,30 +95,36 @@ void movement()
 
 	if(key_tri_fire() > 0 && grounded)
 		yv += ((25<<SHIFT_AMOUNT) / 32);
-	else
+	if (!grounded)
 		yv -= 88166 / 32; //(8166 = 1.3453 << 16)
 	
 	//Apply friction
 	yv *= 0.951;
 	xv *= 0.915;
 
+	if(xv > (ONE_SHIFTED/2)) xv = (ONE_SHIFTED/2);
+	if(xv < -(ONE_SHIFTED/2)) xv = -(ONE_SHIFTED/2);
+
 	vector g = {playerx + xv, playery - yv, ONE_SHIFTED, ONE_SHIFTED};
 	vector v = Check(bounds, g).v;
 	playerx = v.x; playery = v.y;
 
-
 	//Stuff for next frame
-	g.y = 0;
-	xv *= !Check(bounds, g).collided;
-	g.y = playery - yv; g.x = 0;
-	yv *= !Check(bounds, g).collided;
+	//g.y = 0;
+	//xv *= !Check(bounds, g).collided;
+	//g.y = playery - yv; g.x = 0;
+	//yv *= !Check(bounds, g).collided;
 
-
-	camerax += (playerx - camerax) * 0.05f;
-	cameray += (playery - cameray) * 0.05f;
+	vector g2 = {bounds.x + xv, 0, ONE_SHIFTED, ONE_SHIFTED};
+	if(Check(bounds, g2).collided) xv = 0;
+	g2.x = 0; g2.y = playery-yv;
+	if(Check(bounds, g2).collided) yv = 0;
 }
 void renderPlayer()
 {
+	camerax += (playerx - camerax) * 0.25f;
+	cameray += (playery - cameray) * 0.25f;
+
 	//Rendering player to screen
 	//The -3 stuff is confusing, but basically just divides everything by the fixed point stuff to get the actual amount
 	//And then times it by 8 (<<3) to get it how the gameboy likes it

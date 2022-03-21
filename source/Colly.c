@@ -63,13 +63,13 @@ void increment(vector *checkRegion, vector *goal, vector *intersect, vector *bou
             int id = se_mem[28][se_index(x >> SHIFT_AMOUNT,y >> SHIFT_AMOUNT,mapsize)];
 
             //If it is air carry on
-            if(id == 0) continue;
+            if(id == 0 || id == 7) continue;
 
-            r->collided = true;
             vector cell;
             cell.x = x; cell.y = y; cell.w = ONE_SHIFTED; cell.h = ONE_SHIFTED;
             if(Intersects(&cell, bounds, intersect))
             {
+                r->collided = true;
                 if((X && intersect->w < intersect->h) || (!X && intersect->w > intersect->h))
                 {
                     if(X && bounds->x < cell.x) intersect->w *= -1;
@@ -87,9 +87,10 @@ void increment(vector *checkRegion, vector *goal, vector *intersect, vector *bou
 }
 
 //We are going to assume steps is always 1
-checkreturn Check(vector start, vector goal)
+checkreturn Check(vector start, vector end)
 {
     vector bounds = start;
+    vector goal = end;
     vector intersect;
     checkreturn r;
     r.collided = false;
@@ -103,8 +104,8 @@ checkreturn Check(vector start, vector goal)
     increment(&checkRegion, &goal, &intersect, &bounds, true, &r);
     increment(&checkRegion, &goal, &intersect, &bounds, false, &r);
 
-    vector rv;
-    rv.x = bounds.x; rv.y = bounds.y; rv.w = ONE_SHIFTED; rv.h = ONE_SHIFTED;
-    r.v = rv;
+    //vector rv = {bounds.x, bounds.y, ONE_SHIFTED, ONE_SHIFTED};
+    //rv.x = bounds.x; rv.y = bounds.y; rv.w = ONE_SHIFTED; rv.h = ONE_SHIFTED;
+    r.v = bounds;
     return r;
 }
