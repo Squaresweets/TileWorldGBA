@@ -99,8 +99,8 @@ void movement()
 		yv -= 88166 / 32; //(8166 = 1.3453 << 16)
 	
 	//Apply friction
-	yv *= 0.951;
-	xv *= 0.915;
+	yv *= 951; yv /= 1000;
+	xv *= 915; xv /= 1000;
 
 	if(xv > (ONE_SHIFTED/2)) xv = (ONE_SHIFTED/2);
 	if(xv < -(ONE_SHIFTED/2)) xv = -(ONE_SHIFTED/2);
@@ -122,8 +122,8 @@ void movement()
 }
 void renderPlayer()
 {
-	camerax += (playerx - camerax) * 0.25f;
-	cameray += (playery - cameray) * 0.25f;
+	camerax += (playerx - camerax) / 4;
+	cameray += (playery - cameray) / 4;
 
 	//Rendering player to screen
 	//The -3 stuff is confusing, but basically just divides everything by the fixed point stuff to get the actual amount
