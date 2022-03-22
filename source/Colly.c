@@ -12,6 +12,9 @@
 #define DECIMAL_MASK ((1 << SHIFT_AMOUNT) - 1)
 #define INT_MASK ~((1 << SHIFT_AMOUNT) - 1)
 
+int mod(int x,int N){
+    return (x % N + N) %N;
+}
 
 u32 se_index(u32 tx, u32 ty, u32 pitch)
 {	
@@ -49,15 +52,16 @@ void increment(vector *checkRegion, vector *goal, vector *intersect, vector *bou
     {
         for(int x = (checkRegion->x & INT_MASK); x <= (checkRegion->w & INT_MASK); x += ONE_SHIFTED)
         {
-            int id = se_mem[28][se_index(x >> SHIFT_AMOUNT,y >> SHIFT_AMOUNT,mapsize)];
+            int id = se_mem[28][se_index(mod(x >> SHIFT_AMOUNT, 64), mod(y >> SHIFT_AMOUNT, 64),mapsize)];
 
             //If it is air carry on
-            if(id == 0 || id == 7) continue;
+            if(id == 0) continue;
 
             vector cell;
             cell.x = x; cell.y = y; cell.w = ONE_SHIFTED; cell.h = ONE_SHIFTED;
             if(Intersects(&cell, bounds, intersect))
             {
+                if(id == 11) { r->ladder = true; continue;}
                 r->collided = true;
                 if((X && intersect->w < intersect->h) || (!X && intersect->w > intersect->h))
                 {
@@ -80,15 +84,14 @@ checkreturn Check(vector start, vector end)
 {
     vector bounds = start;
     vector goal = end;
-    vector intersect;
-    checkreturn r;
-    r.collided = false;
+    vector intersect = {0,0,0,0};
+    checkreturn r = {intersect, false, false};
 
     vector checkRegion;
-    checkRegion.x = max(0, (min(goal.x, bounds.x) - bounds.w) & INT_MASK);
-    checkRegion.y = max(0, (min(goal.y, bounds.y) - bounds.h) & INT_MASK);
-    checkRegion.w = min((mapsize-1)<<SHIFT_AMOUNT, (max(goal.x, bounds.x + bounds.w) & INT_MASK) + bounds.w);
-    checkRegion.h = min((mapsize-1)<<SHIFT_AMOUNT, (max(goal.y, bounds.y + bounds.h) & INT_MASK) + bounds.h);
+    checkRegion.x = (min(goal.x, bounds.x) - bounds.w) & INT_MASK;
+    checkRegion.y = (min(goal.y, bounds.y) - bounds.h) & INT_MASK;
+    checkRegion.w = (max(goal.x, bounds.x + bounds.w) & INT_MASK) + bounds.w;
+    checkRegion.h = (max(goal.y, bounds.y + bounds.h) & INT_MASK) + bounds.h;
     
     increment(&checkRegion, &goal, &intersect, &bounds, true, &r);
     increment(&checkRegion, &goal, &intersect, &bounds, false, &r);

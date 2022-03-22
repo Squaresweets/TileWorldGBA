@@ -71,13 +71,14 @@ void init_map()
 			if (ii>1) c = 8;
 			else if (jj >= 32*31) c = 9;
 			//ATM i am just hard coding in the house, obviously this will not stay, but it gives me somewhere to test physics
-			if(ii == 0 || ii == 1)
+			if(ii == 0)
 			{
 				//The roof of the house
 				if(jj == 802 || (jj > 832 && jj < 836) || (jj > 863 && jj < 869)) c = 2;
 				//The house
 				if((jj > 896 && jj < 900) || (jj > 928 && jj < 932) || (jj > 960 && jj < 964)) c = 7;
 			}
+			if(ii == 1) c = 11;
 
 			*pse++ = SE_PALBANK(0) | c;
 		}
@@ -88,36 +89,34 @@ void movement()
 {
 	vector bounds = {playerx, playery, ONE_SHIFTED, ONE_SHIFTED};
 	
-	vector t = {playerx, playery + 6, ONE_SHIFTED, ONE_SHIFTED};
-	bool grounded = Check(bounds, t).collided;
+	vector g = {playerx, playery + 6, ONE_SHIFTED, ONE_SHIFTED};
+	bool grounded = Check(bounds, g).collided;
+	bool ladder = Check(bounds, bounds).ladder;
 
 	xv += key_tri_horz() * (ONE_SHIFTED / 32);
+	//Only move up and down if we are on a ladder
+	yv += -key_tri_vert() * (ONE_SHIFTED / 32) * ladder;
 
-	if(key_tri_fire() > 0 && grounded)
+	if(key_tri_fire() > 0 && grounded && !ladder)
 		yv += ((25<<SHIFT_AMOUNT) / 32);
-	if (!grounded)
+	if (!grounded && !ladder)
 		yv -= 88166 / 32; //(8166 = 1.3453 << 16)
 	
 	//Apply friction
-	yv *= 951; yv /= 1000;
-	xv *= 915; xv /= 1000;
+	yv *= (ladder ? 851 : 951); yv /= 1000;
+	xv *= (ladder ? 851 : 951); xv /= 1000;
 
 	xv = max(min(xv, (ONE_SHIFTED/2)), -(ONE_SHIFTED/2));
 
-	vector g = {playerx + xv, playery - yv, ONE_SHIFTED, ONE_SHIFTED};
+	g.x = bounds.x + xv; g.y = bounds.y - yv;
 	vector v = Check(bounds, g).v;
 	playerx = v.x; playery = v.y;
 
 	//Stuff for next frame
-	//g.y = 0;
-	//xv *= !Check(bounds, g).collided;
-	//g.y = playery - yv; g.x = 0;
-	//yv *= !Check(bounds, g).collided;
-
-	vector g2 = {bounds.x + xv, bounds.y, ONE_SHIFTED, ONE_SHIFTED};
-	if(Check(bounds, g2).collided) xv = 0;
-	g2.x = bounds.x; g2.y = playery-yv;
-	if(Check(bounds, g2).collided) yv = 0;
+	g.y = bounds.y;
+	xv *= !Check(bounds, g).collided;
+	g.y = playery - yv; g.x = bounds.x;
+	yv *= !Check(bounds, g).collided;
 }
 void renderPlayer()
 {
@@ -156,6 +155,11 @@ int main()
 		key_poll();
 
 		movement();
+		
+		//Loops round if you go to the left or to the right
+		//camerax += ((playerx<0)-(playerx>(64<<SHIFT_AMOUNT))) * 64<<SHIFT_AMOUNT;
+		//playerx += ((playerx<0)-(playerx>(64<<SHIFT_AMOUNT))) * 64<<SHIFT_AMOUNT;
+
 		renderPlayer();
 	}
 	return 0;

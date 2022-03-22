@@ -13,6 +13,7 @@ typedef struct Vector {
 typedef struct CheckReturn {
     vector v;
     bool collided;
+    bool ladder;
 } checkreturn;
 
 checkreturn Check(vector bounds, vector goal);
