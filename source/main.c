@@ -102,8 +102,7 @@ void movement()
 	yv *= 951; yv /= 1000;
 	xv *= 915; xv /= 1000;
 
-	if(xv > (ONE_SHIFTED/2)) xv = (ONE_SHIFTED/2);
-	if(xv < -(ONE_SHIFTED/2)) xv = -(ONE_SHIFTED/2);
+	xv = max(min(xv, (ONE_SHIFTED/2)), -(ONE_SHIFTED/2));
 
 	vector g = {playerx + xv, playery - yv, ONE_SHIFTED, ONE_SHIFTED};
 	vector v = Check(bounds, g).v;
@@ -115,9 +114,9 @@ void movement()
 	//g.y = playery - yv; g.x = 0;
 	//yv *= !Check(bounds, g).collided;
 
-	vector g2 = {bounds.x + xv, 0, ONE_SHIFTED, ONE_SHIFTED};
+	vector g2 = {bounds.x + xv, bounds.y, ONE_SHIFTED, ONE_SHIFTED};
 	if(Check(bounds, g2).collided) xv = 0;
-	g2.x = 0; g2.y = playery-yv;
+	g2.x = bounds.x; g2.y = playery-yv;
 	if(Check(bounds, g2).collided) yv = 0;
 }
 void renderPlayer()
