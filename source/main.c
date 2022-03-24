@@ -6,6 +6,7 @@
 #include "memdef.h"
 
 #include "Colly.h"
+#include "sio.h"
 
 #include <stdbool.h>
 #include <string.h>
@@ -138,7 +139,9 @@ void renderPlayer()
 
 int main()
 {
+	//Initialise stuff
 	init_map();
+	sioInit();
 
 	REG_DISPCNT= DCNT_MODE0 | DCNT_BG0 | DCNT_OBJ;
     oam_init(obj_buffer, 128);
@@ -155,11 +158,9 @@ int main()
 		key_poll();
 
 		movement();
-		
-		//Loops round if you go to the left or to the right
-		//camerax += ((playerx<0)-(playerx>(64<<SHIFT_AMOUNT))) * 64<<SHIFT_AMOUNT;
-		//playerx += ((playerx<0)-(playerx>(64<<SHIFT_AMOUNT))) * 64<<SHIFT_AMOUNT;
 
+		sioReadWrite(0x65);
+		
 		renderPlayer();
 	}
 	return 0;

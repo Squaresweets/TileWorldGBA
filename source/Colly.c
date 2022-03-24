@@ -1,7 +1,3 @@
-#include "toolbox.h"
-#include "types.h"
-#include <stdbool.h>
-
 #include "Colly.h"
 
 #define mapsize 64

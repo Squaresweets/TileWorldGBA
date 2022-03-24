@@ -1,7 +1,11 @@
 #ifndef COLLY_H   /* Include guard */
-#define COLLY_Hv
+#define COLLY_H
 
 #include <stdbool.h>
+#include "toolbox.h"
+#include "types.h"
+
+
 
 typedef struct Vector {
     //All fixed point (<< 16)

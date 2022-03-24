@@ -93,5 +93,23 @@
 #define REG_KEYINPUT		*(vu16*)(REG_BASE+0x0130)	// Key status
 #define REG_KEYCNT			*(vu16*)(REG_BASE+0x0132)
 
+//! \name Serial communication
+//{
+#define REG_SIOCNT			*(vu16*)(REG_BASE+0x0128)	//!< Serial IO control (Normal/MP/UART)
+
+#define REG_SIODATA			((vu32*)(REG_BASE+0x0120))
+#define REG_SIODATA32		*(vu32*)(REG_BASE+0x0120)	//!< Normal/UART 32bit data
+#define REG_SIODATA8		*(vu16*)(REG_BASE+0x012A)	//!< Normal/UART 8bit data
+
+#define REG_SIOMULTI		((vu16*)(REG_BASE+0x0120))	//!< Multiplayer data array
+#define REG_SIOMULTI0		*(vu16*)(REG_BASE+0x0120)	//!< MP master data
+#define REG_SIOMULTI1		*(vu16*)(REG_BASE+0x0122)	//!< MP Slave 1 data
+#define REG_SIOMULTI2		*(vu16*)(REG_BASE+0x0124)	//!< MP Slave 2 data 
+#define REG_SIOMULTI3		*(vu16*)(REG_BASE+0x0126)	//!< MP Slave 3 data
+
+#define REG_SIOMLT_RECV		*(vu16*)(REG_BASE+0x0120)	//!< MP data receiver
+#define REG_SIOMLT_SEND		*(vu16*)(REG_BASE+0x012A)	//!< MP data sender
+
+#define REG_RCNT			*(vu16*)(REG_BASE+0x0134)	//!< SIO Mode Select/General Purpose Data
 
 #endif // __MEMMAP__
