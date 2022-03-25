@@ -1,8 +1,6 @@
 #ifndef SIO_H   /* Include guard */
 #define SIO_H
-#include "memmap.h"
-#include "types.h"
-#include "toolbox.h"
+#include <tonc.h>
 
 #define SIO_SI BIT(2)
 #define SIO_SO BIT(3)

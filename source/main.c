@@ -1,16 +1,10 @@
-#include "toolbox.h"
-#include "input.h"
-#include "TileMap.h"
-#include "types.h"
-#include "memmap.h"
-#include "memdef.h"
-
 #include "Colly.h"
 #include "sio.h"
+#include "TileMap.h"
 
-#include <stdbool.h>
 #include <string.h>
 #include <math.h>
+#include <tonc.h>
 
 
 #define CBB_0  0
@@ -158,8 +152,6 @@ int main()
 		key_poll();
 
 		movement();
-
-		sioReadWrite(0x65);
 		
 		renderPlayer();
 	}
