@@ -82,15 +82,19 @@ def main():
 
     assert epOut is not None
 
-
     # Control transfer to enable webserial on device
     dev.ctrl_transfer(bmRequestType = 1, bRequest = 0x22, wIndex = 2, wValue = 0x01)
 
 
 
     while True:
-        epOut.write(bytearray(b'\x88'))
-        time.sleep(0)
+        len = 4
+        send(((len+4) | 0xBEEF0000).to_bytes(4, byteorder="big"), epOut)
+        time.sleep(1)
+        send((0x65 << 24).to_bytes(4, byteorder="big"), epOut)
+        time.sleep(1)
+        send(0xDEADBEEF.to_bytes(4, byteorder="big"), epOut)
+        time.sleep(1)
         clearbuffer(epIn);
 
 

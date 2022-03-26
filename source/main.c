@@ -1,3 +1,4 @@
+#include "main.h"
 #include "Colly.h"
 #include "sio.h"
 #include "TileMap.h"
@@ -113,6 +114,7 @@ void movement()
 	g.y = playery - yv; g.x = bounds.x;
 	yv *= !Check(bounds, g).collided;
 }
+
 void renderPlayer()
 {
 	camerax += (playerx - camerax) / 4;
@@ -131,11 +133,19 @@ void renderPlayer()
 	REG_BG_OFS[0]= bg0_pt;	// write new position
 }
 
+//Temp for now, just to test stuff
+void resetPlayerPos()
+{
+	playerx = 0; playery = 0;
+}
+
 int main()
 {
 	//Initialise stuff
 	init_map();
 	sioInit();
+    irq_init(NULL);
+    irq_enable(II_VBLANK);
 
 	REG_DISPCNT= DCNT_MODE0 | DCNT_BG0 | DCNT_OBJ;
     oam_init(obj_buffer, 128);

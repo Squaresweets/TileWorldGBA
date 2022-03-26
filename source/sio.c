@@ -1,8 +1,16 @@
 #include "sio.h"
+#include <tonc.h>
+#include "main.h"
 
 //Much of this comes from here:
 //https://github.com/maciel310/gba-mmo/blob/main/source/serial.c
 //https://problemkaputt.de/gbatek.htm#sionormalmode
+
+#define SIO_SI BIT(2)
+#define SIO_SO BIT(3)
+#define SIO_START BIT(7)
+#define SIO_CLOCK_INTERNAL BIT(0)
+#define SIO_TRANSFER_32 BIT(12)
 
 //We are never the master, so no need to set any clock stuff
 void sioInit()
@@ -34,18 +42,19 @@ u32 handle_serial()
 u32 messagelen = 0;
 u32 expectedlen = 0;
 u8 buffer[512];
-u32 handle_serial()
+void handle_serial()
 {
+    resetPlayerPos();
     //Fetch our data
     u32 data = REG_SIODATA32;
     //We don't want to send anything back
-    REG_SIODATA32 = 0;
+    REG_SIODATA32 = 75;
 
     REG_SIOCNT |= SION_ENABLE;
 
     //Check if this is a packet preceding some data, telling us the length to expect
     //Keyword is "BEEF", the second half tells us the length
-    if(expectedlen == 0 && (data & 0xFFFF000) == 0xBEEF0000)
+    if(expectedlen == 0 && (data & 0xFFFF0000) == 0xBEEF0000)
     {
         expectedlen = data & 0xFFFF;
         messagelen = 0;
@@ -54,7 +63,7 @@ u32 handle_serial()
 
     //Gets all the data and puts it in the buffer
     for(int i = 24; i >= 0; i -= 8)
-        buffer[message_length++] = ((data >> i) & 0xFF);
+        buffer[messagelen++] = ((data >> i) & 0xFF);
 
     if (messagelen >= expectedlen)
     {
@@ -63,16 +72,22 @@ u32 handle_serial()
         if (data != 0xDEADBEEF)
         {
             //Probably incorrect data, ignore it
-            expepectedlen = 0;
+            expectedlen = 0;
             messagelen = 0;
             return;
         }
         //TODO: Decode data and work out what it is
+        //This is just a test for now
+        if(buffer[0] == 0x65)
+            resetPlayerPos();
+        
+        expectedlen = 0;
+        messagelen = 0;
     }
     else if (data == 0xDEADBEEF)
     {
         //Probably incorrect data, ignore it
-        expepectedlen = 0;
+        expectedlen = 0;
         messagelen = 0;
         return;
     }
