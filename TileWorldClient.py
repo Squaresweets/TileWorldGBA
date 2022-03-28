@@ -85,17 +85,17 @@ def main():
     # Control transfer to enable webserial on device
     dev.ctrl_transfer(bmRequestType = 1, bRequest = 0x22, wIndex = 2, wValue = 0x01)
 
-
-
     while True:
         len = 4
         send(((len+4) | 0xBEEF0000).to_bytes(4, byteorder="big"), epOut)
+        clearbuffer(epIn);
         time.sleep(1)
         send((0x65 << 24).to_bytes(4, byteorder="big"), epOut)
+        clearbuffer(epIn);
         time.sleep(1)
         send(0xDEADBEEF.to_bytes(4, byteorder="big"), epOut)
-        time.sleep(1)
         clearbuffer(epIn);
+        time.sleep(1)
 
 
 def on_message(ws, message):

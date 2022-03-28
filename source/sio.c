@@ -15,8 +15,8 @@
 //We are never the master, so no need to set any clock stuff
 void sioInit()
 {
-    REG_SIODATA32 = 0;
     REG_RCNT = 0;
+    REG_SIODATA32 = 0;
     REG_SIOCNT = SION_CLK_EXT | SION_ENABLE | SIO_MODE_32BIT | SIO_IRQ;
     irq_add(II_SERIAL, handle_serial);
 }
@@ -38,6 +38,7 @@ u32 handle_serial()
     // - Process received data.
     return REG_SIODATA32;
 }*/
+
 
 u32 messagelen = 0;
 u32 expectedlen = 0;

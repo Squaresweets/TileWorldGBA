@@ -144,6 +144,7 @@ int main()
 	//Initialise stuff
 	init_map();
 	sioInit();
+	
     irq_init(NULL);
     irq_enable(II_VBLANK);
 
