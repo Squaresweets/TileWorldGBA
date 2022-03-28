@@ -45,7 +45,6 @@ u32 expectedlen = 0;
 u8 buffer[512];
 void handle_serial()
 {
-    resetPlayerPos();
     //Fetch our data
     u32 data = REG_SIODATA32;
     //We don't want to send anything back
@@ -63,8 +62,10 @@ void handle_serial()
     }
 
     //Gets all the data and puts it in the buffer
-    for(int i = 24; i >= 0; i -= 8)
-        buffer[messagelen++] = ((data >> i) & 0xFF);
+    buffer[messagelen++] = ((data >> 24) & 0xff);
+    buffer[messagelen++] = ((data >> 16) & 0xff);
+    buffer[messagelen++] = ((data >> 8) & 0xff);
+    buffer[messagelen++] = (data & 0xff);
 
     if (messagelen >= expectedlen)
     {

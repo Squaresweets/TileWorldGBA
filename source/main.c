@@ -143,10 +143,11 @@ int main()
 {
 	//Initialise stuff
 	init_map();
-	sioInit();
-	
+
     irq_init(NULL);
     irq_enable(II_VBLANK);
+	
+	sioInit();
 
 	REG_DISPCNT= DCNT_MODE0 | DCNT_BG0 | DCNT_OBJ;
     oam_init(obj_buffer, 128);

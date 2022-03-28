@@ -7,6 +7,7 @@ import os
 import websocket
 import _thread
 import rel
+import multiboot.py
 
 def signal_handler(sig, frame):
     print('You pressed Ctrl+C!')
@@ -95,7 +96,7 @@ def main():
         time.sleep(1)
         send(0xDEADBEEF.to_bytes(4, byteorder="big"), epOut)
         clearbuffer(epIn);
-        time.sleep(1)
+        time.sleep(10)
 
 
 def on_message(ws, message):
