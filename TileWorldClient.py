@@ -7,31 +7,35 @@ import os
 import websocket
 import _thread
 import rel
-import multiboot.py
+import multiboot
 
 def signal_handler(sig, frame):
     print('You pressed Ctrl+C!')
 
 def send(data, epOut):
     print("SENDING: ", end="")
-    for b in data:
+    for b in data.to_bytes(4, byteorder="big"):
         print("0x%02x " % b, end="")
-    epOut.write(data)
+    epOut.write(data.to_bytes(4, byteorder="big"))
     print("")
 
 
 def read(epIn):
     recv = int.from_bytes(epIn.read(epIn.wMaxPacketSize, 100), byteorder='big')
-    print("0x%02x " % recv)
     return recv
 
 
-def clearbuffer(epIn):
+def readall(epIn):
+    output = 0
     while True:
         try:
-            read(epIn)
+            output = output + read(epIn)
+            output = output << 8
         except:
             break
+    output = output >> 8
+    print("0x%02x " % output)
+    return output
 
 def main():
     signal.signal(signal.SIGINT, signal_handler)
@@ -70,9 +74,7 @@ def main():
         lambda e: \
             usb.util.endpoint_direction(e.bEndpointAddress) == \
             usb.util.ENDPOINT_IN)
-
     assert epIn is not None
-
     epOut = usb.util.find_descriptor(
         intf,
         # match the first OUT endpoint
@@ -80,51 +82,12 @@ def main():
         lambda e: \
             usb.util.endpoint_direction(e.bEndpointAddress) == \
             usb.util.ENDPOINT_OUT)
-
     assert epOut is not None
 
     # Control transfer to enable webserial on device
     dev.ctrl_transfer(bmRequestType = 1, bRequest = 0x22, wIndex = 2, wValue = 0x01)
-
-    while True:
-        len = 4
-        send(((len+4) | 0xBEEF0000).to_bytes(4, byteorder="big"), epOut)
-        clearbuffer(epIn);
-        time.sleep(1)
-        send((0x65 << 24).to_bytes(4, byteorder="big"), epOut)
-        clearbuffer(epIn);
-        time.sleep(1)
-        send(0xDEADBEEF.to_bytes(4, byteorder="big"), epOut)
-        clearbuffer(epIn);
-        time.sleep(10)
-
-
-def on_message(ws, message):
-    #print(bytearray(message).hex())
-    print(", ".join(hex(b) for b in message))
-
-
-def on_error(ws, error):
-    print(error)
-
-
-def on_close(ws, close_status_code, close_msg):
-    print("### closed ###")
-
-
-def on_open(ws):
-    print("Opened connection")
+    multiboot.multiboot(epIn, epOut)
 
 
 if __name__ == "__main__":
-    #rel.safe_read()
-    #websocket.enableTrace(True)
-    #ws = websocket.WebSocketApp("wss://tileworld.org:7364",
-                              #on_open=on_open,
-                              #on_message=on_message,
-                              #on_error=on_error,
-                              #on_close=on_close)
-    #ws.run_forever(dispatcher=rel)
-    #rel.signal(2, rel.abort)  # Keyboard Interrupt
-    #rel.dispatch()
     main()
