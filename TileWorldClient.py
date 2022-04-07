@@ -12,11 +12,13 @@ import multiboot
 def signal_handler(sig, frame):
     print('You pressed Ctrl+C!')
 
-def send(data, epOut):
+def send(data, epOut, debug = True):
+    epOut.write(data.to_bytes(4, byteorder="big"))
+    if not debug:
+        return
     print("SENDING: ", end="")
     for b in data.to_bytes(4, byteorder="big"):
         print("0x%02x " % b, end="")
-    epOut.write(data.to_bytes(4, byteorder="big"))
     print("")
 
 
@@ -25,7 +27,7 @@ def read(epIn):
     return recv
 
 
-def readall(epIn):
+def readall(epIn, debug = True):
     output = 0
     while True:
         try:
@@ -34,7 +36,8 @@ def readall(epIn):
         except:
             break
     output = output >> 8
-    print("0x%02x " % output)
+    if debug:
+        print("0x%02x " % output)
     return output
 
 def main():
@@ -86,7 +89,8 @@ def main():
 
     # Control transfer to enable webserial on device
     dev.ctrl_transfer(bmRequestType = 1, bRequest = 0x22, wIndex = 2, wValue = 0x01)
-    multiboot.multiboot(epIn, epOut)
+    while True:
+        multiboot.multiboot(epIn, epOut)
 
 
 if __name__ == "__main__":
