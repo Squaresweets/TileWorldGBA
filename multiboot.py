@@ -27,7 +27,7 @@ def multiboot(epIn, epOut):
         TileWorldClient.send(out, epOut)
 
     TileWorldClient.send(0x6200, epOut)
-    TileWorldClient.send(0x6202, epOut)
+    TileWorldClient.send(0x6200, epOut)
     TileWorldClient.send(0x63D1, epOut)
     #Clear buffer
     TileWorldClient.readall(epIn)
@@ -75,9 +75,10 @@ def multiboot(epIn, epOut):
         seed = seed * 0x6F646573 + 1
         dat = seed ^ dat ^ (0xFE000000 - i) ^ 0x43202F2F
 
-        TileWorldClient.send(dat & 0xFFFFFFFF, epOut, True)
+        TileWorldClient.send(dat & 0xFFFFFFFF, epOut, False)
         chk = TileWorldClient.readall(epIn, False) >> 16
 
         if chk != (i & 0xFFFF):
             print("Transmission error at byte: " + str(i))
             exit()
+        time.sleep(0.1)
