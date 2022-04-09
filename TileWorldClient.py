@@ -23,7 +23,7 @@ def send(data, epOut, debug = True):
 
 
 def read(epIn):
-    recv = int.from_bytes(epIn.read(epIn.wMaxPacketSize, 100), byteorder='big')
+    recv = int.from_bytes(epIn.read(64, 100), byteorder='big')
     return recv
 
 
@@ -89,9 +89,7 @@ def main():
 
     # Control transfer to enable webserial on device
     dev.ctrl_transfer(bmRequestType = 1, bRequest = 0x22, wIndex = 2, wValue = 0x01)
-    while True:
-        multiboot.multiboot(epIn, epOut)
-
+    multiboot.multiboot(epIn, epOut)
 
 if __name__ == "__main__":
     main()

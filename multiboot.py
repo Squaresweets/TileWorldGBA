@@ -27,7 +27,7 @@ def multiboot(epIn, epOut):
         TileWorldClient.send(out, epOut)
 
     TileWorldClient.send(0x6200, epOut)
-    TileWorldClient.send(0x6200, epOut)
+    TileWorldClient.send(0x6202, epOut)
     TileWorldClient.send(0x63D1, epOut)
     #Clear buffer
     TileWorldClient.readall(epIn)
@@ -75,10 +75,32 @@ def multiboot(epIn, epOut):
         seed = seed * 0x6F646573 + 1
         dat = seed ^ dat ^ (0xFE000000 - i) ^ 0x43202F2F
 
-        TileWorldClient.send(dat & 0xFFFFFFFF, epOut, False)
-        chk = TileWorldClient.readall(epIn, False) >> 16
+        TileWorldClient.send(dat & 0xFFFFFFFF, epOut, True)
+        #chk = TileWorldClient.readall(epIn)
 
-        if chk != (i & 0xFFFF):
-            print("Transmission error at byte: " + str(i))
-            exit()
-        time.sleep(0.1)
+        #if chk != (i & 0xFFFF):
+            #print("Transmission error at byte: " + str(i))
+            #exit()
+    print("Data sent")
+    TileWorldClient.readall(epIn)
+
+    tmp = 0xFFFF0000 | (crcB << 8) | crcA
+
+    for b in range(32):
+        bit = (crcC ^ tmp) & 1
+        if bit == 0:
+            crcC = (crcC >> 1) ^ 0
+        else:
+            crcC = (crcC >> 1) ^ 0xc37b
+        tmp >>= 1
+
+    TileWorldClient.send(0x0065, epOut)
+    while True:
+        TileWorldClient.send(0x0065, epOut)
+        recv = TileWorldClient.readall(epIn)
+        if (recv >> 16) == 0x0075:
+            break
+
+    TileWorldClient.send(0x0066, epOut)
+    TileWorldClient.send(crcC & 0xFFFF, epOut)
+    print("DONE!")
