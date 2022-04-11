@@ -12,18 +12,29 @@ import multiboot
 def signal_handler(sig, frame):
     print('You pressed Ctrl+C!')
 
-def send(data, epOut, debug = True):
-    epOut.write(data.to_bytes(4, byteorder="big"))
+def send(data, epOut, debug = True, length = 4):
+    epOut.write(0x3, data.to_bytes(length, byteorder="big"))
     if not debug:
         return
     print("SENDING: ", end="")
-    for b in data.to_bytes(4, byteorder="big"):
+    for b in data.to_bytes(length, byteorder="big"):
+        print("0x%02x " % b, end="")
+    print("")
+
+def send64(data, epOut, debug = True):
+    epOut.write(0x3, data.to_bytes(64, byteorder="big"))
+    if not debug:
+        return
+    print("SENDING: ", end="")
+    for b in data.to_bytes(64, byteorder="big"):
         print("0x%02x " % b, end="")
     print("")
 
 
+
+
 def read(epIn):
-    recv = int.from_bytes(epIn.read(64, 100), byteorder='big')
+    recv = int.from_bytes(epIn.read(64, 10), byteorder='big')
     return recv
 
 
@@ -45,6 +56,7 @@ def main():
 
     dev = None
     devices = list(usb.core.find(find_all=True, idVendor=0xcafe, idProduct=0x4011))
+    print(len(devices))
     for d in devices:
         dev = d
 
@@ -89,7 +101,7 @@ def main():
 
     # Control transfer to enable webserial on device
     dev.ctrl_transfer(bmRequestType = 1, bRequest = 0x22, wIndex = 2, wValue = 0x01)
-    multiboot.multiboot(epIn, epOut)
+    multiboot.multiboot(epIn, dev, "TileWorldGBA_mb.gba")
 
 if __name__ == "__main__":
     main()

@@ -1,14 +1,15 @@
 import os
 import TileWorldClient
 import time
+import math
 
 #https://github.com/maciel310/gba-mmo-proxy/blob/main/multiboot.c
 
 
-def multiboot(epIn, epOut):
+def multiboot(epIn, epOut, path):
     content = 0
-    content = bytearray(open('TileWorldGBA_mb.gba', 'rb').read())
-    fsize = os.path.getsize('TileWorldGBA_mb.gba')
+    content = bytearray(open(path, 'rb').read())
+    fsize = os.path.getsize(path)
     if fsize > 0x40000:
         print("File size error, max 256KB")
         exit()
@@ -27,7 +28,7 @@ def multiboot(epIn, epOut):
         TileWorldClient.send(out, epOut)
 
     TileWorldClient.send(0x6200, epOut)
-    TileWorldClient.send(0x6202, epOut)
+    TileWorldClient.send(0x6200, epOut)
     TileWorldClient.send(0x63D1, epOut)
     #Clear buffer
     TileWorldClient.readall(epIn)
@@ -76,11 +77,7 @@ def multiboot(epIn, epOut):
         dat = seed ^ dat ^ (0xFE000000 - i) ^ 0x43202F2F
 
         TileWorldClient.send(dat & 0xFFFFFFFF, epOut, True)
-        #chk = TileWorldClient.readall(epIn)
 
-        #if chk != (i & 0xFFFF):
-            #print("Transmission error at byte: " + str(i))
-            #exit()
     print("Data sent")
     TileWorldClient.readall(epIn)
 
