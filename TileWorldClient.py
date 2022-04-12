@@ -5,9 +5,9 @@ import sys
 import time
 import os
 import websocket
-import _thread
 import rel
 import multiboot
+import threading
 
 def signal_handler(sig, frame):
     print('You pressed Ctrl+C!')
@@ -29,9 +29,6 @@ def send64(data, epOut, debug = True):
     for b in data.to_bytes(64, byteorder="big"):
         print("0x%02x " % b, end="")
     print("")
-
-
-
 
 def read(epIn):
     recv = int.from_bytes(epIn.read(64, 10), byteorder='big')
@@ -56,7 +53,6 @@ def main():
 
     dev = None
     devices = list(usb.core.find(find_all=True, idVendor=0xcafe, idProduct=0x4011))
-    print(len(devices))
     for d in devices:
         dev = d
 
@@ -101,7 +97,43 @@ def main():
 
     # Control transfer to enable webserial on device
     dev.ctrl_transfer(bmRequestType = 1, bRequest = 0x22, wIndex = 2, wValue = 0x01)
-    multiboot.multiboot(epIn, dev, "TileWorldGBA_mb.gba")
+    #multiboot.multiboot(epIn, dev, "TileWorldGBA_mb.gba")
+
+    """
+    Ok, now to design my own protocol to make sure all data has been sent safely
+    Someone has probably made something like this already, but It seems like fun
+    
+    We always send 32 bits at a time, since I want to be sending in bytes we can use the first byte
+    as a header
+    
+    00000000
+    This header will confirm recieving the previous message, and then the other 3 bytes will be the actual
+    payload
+    
+    Bit 1: The first bit should say that we are actually confirming a message, if no message is recieved there is no
+    point in confirming a message
+    Bit 2-4: Packet number
+    
+    Bit 4-8: checksum for the current message
+    
+    """
+    websocket.enableTrace(False)
+    ws = websocket.WebSocketApp("wss://tileworld.org:7364", on_message=on_message)
+    ws.run_forever(dispatcher=rel)
+
+    ws.send(b'\x03')
+    ws.send(b'\x01\x01\x00')
+    #ping(ws)
+
+    rel.signal(2, rel.abort)
+    rel.dispatch()
+
+def ping(ws):
+    ws.send(b'\x03')
+    threading.Timer(1, ping, [ws]).start()
+
+def on_message(ws, message):
+    print(message.hex())
 
 if __name__ == "__main__":
     main()
