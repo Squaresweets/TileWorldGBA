@@ -121,15 +121,14 @@ def main():
     ws = websocket.WebSocketApp("wss://tileworld.org:7364", on_message=on_message)
     ws.run_forever(dispatcher=rel)
 
-    ws.send(b'\x03')
-    ws.send(b'\x01\x01\x00')
-    #ping(ws)
+    ws.send(b'\x01\x01\x00', websocket.ABNF.OPCODE_BINARY)
+    ping(ws)
 
     rel.signal(2, rel.abort)
     rel.dispatch()
 
 def ping(ws):
-    ws.send(b'\x03')
+    ws.send(b'\x03', websocket.ABNF.OPCODE_BINARY)
     threading.Timer(1, ping, [ws]).start()
 
 def on_message(ws, message):
