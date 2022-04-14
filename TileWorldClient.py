@@ -8,12 +8,13 @@ import websocket
 import rel
 import multiboot
 import threading
+import random
 
 def signal_handler(sig, frame):
     print('You pressed Ctrl+C!')
 
 def send(data, epOut, debug = True, length = 4):
-    epOut.write(0x3, data.to_bytes(length, byteorder="big"))
+    epOut.write(data.to_bytes(length, byteorder="big"))
     if not debug:
         return
     print("SENDING: ", end="")
@@ -97,7 +98,7 @@ def main():
 
     # Control transfer to enable webserial on device
     dev.ctrl_transfer(bmRequestType = 1, bRequest = 0x22, wIndex = 2, wValue = 0x01)
-    #multiboot.multiboot(epIn, dev, "TileWorldGBA_mb.gba")
+    #multiboot.multiboot(epIn, epOut, "TileWorldGBA_mb.gba")
 
     """
     Ok, now to design my own protocol to make sure all data has been sent safely
@@ -112,11 +113,26 @@ def main():
     
     Bit 1: The first bit should say that we are actually confirming a message, if no message is recieved there is no
     point in confirming a message
-    Bit 2-4: Packet number
+    Bit 2: If 1 then this is the first packet in the message
+    Bit 3: If 1 then this is the final packet in the message
     
-    Bit 4-8: checksum for the current message
+    Bit 4-8 (5 bits): checksum for the current message (add up bytes and then take the lower 5 bits
     
     """
+    send(1, epOut)
+    readall(epIn)
+    p = 1
+    while True:
+        i = 0x23534
+        send(i, epOut, False)
+        j = readall(epIn)
+
+        #if p != j:
+        #    exit()
+        p = i
+
+
+    exit()
     websocket.enableTrace(False)
     ws = websocket.WebSocketApp("wss://tileworld.org:7364", on_message=on_message)
     ws.run_forever(dispatcher=rel)
