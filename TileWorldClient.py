@@ -10,6 +10,8 @@ import multiboot
 import threading
 import random
 
+outbuf = []
+
 def signal_handler(sig, frame):
     print('You pressed Ctrl+C!')
 
@@ -22,25 +24,29 @@ def send(data, epOut, debug = True, length = 4):
         print("0x%02x " % b, end="")
     print("")
 
-def send64(data, epOut, debug = True):
-    epOut.write(0x3, data.to_bytes(64, byteorder="big"))
-    if not debug:
-        return
-    print("SENDING: ", end="")
-    for b in data.to_bytes(64, byteorder="big"):
-        print("0x%02x " % b, end="")
-    print("")
-
 def read(epIn):
-    recv = int.from_bytes(epIn.read(64, 10), byteorder='big')
+    recv = int.from_bytes(epIn.read(4, 100), byteorder='big')
     return recv
+
+def read4(epIn):
+    output = 0
+    i = 0
+    while i < 4:
+        try:
+            output += int.from_bytes(epIn.read(1, 100), byteorder='big') << (3-i)*8
+            i += 1
+        except:
+            print("SJEIOAJDPASDOIASJDOASJDOIAJSD:J:ASID")
+            pass
+
+    return output
 
 
 def readall(epIn, debug = True):
     output = 0
     while True:
         try:
-            output = output + read(epIn)
+            output = output + int.from_bytes(epIn.read(64, 10), byteorder='big')
             output = output << 8
         except:
             break
@@ -98,44 +104,45 @@ def main():
 
     # Control transfer to enable webserial on device
     dev.ctrl_transfer(bmRequestType = 1, bRequest = 0x22, wIndex = 2, wValue = 0x01)
-    #multiboot.multiboot(epIn, epOut, "TileWorldGBA_mb.gba")
+    multiboot.multiboot(epIn, epOut, "TileWorldGBA_mb.gba")
+    time.sleep(5)
 
-    """
-    Ok, now to design my own protocol to make sure all data has been sent safely
-    Someone has probably made something like this already, but It seems like fun
-    
-    We always send 32 bits at a time, since I want to be sending in bytes we can use the first byte
-    as a header
-    
-    00000000
-    This header will confirm recieving the previous message, and then the other 3 bytes will be the actual
-    payload
-    
-    Bit 1: The first bit should say that we are actually confirming a message, if no message is recieved there is no
-    point in confirming a message
-    Bit 2: If 1 then this is the first packet in the message
-    Bit 3: If 1 then this is the final packet in the message
-    
-    Bit 4-8 (5 bits): checksum for the current message (add up bytes and then take the lower 5 bits
-    
-    """
-    send(1, epOut)
-    readall(epIn)
-    p = 1
-    while True:
-        i = 0x23534
-        send(i, epOut, False)
-        j = readall(epIn)
-
-        #if p != j:
-        #    exit()
-        p = i
-
-
-    exit()
     websocket.enableTrace(False)
     ws = websocket.WebSocketApp("wss://tileworld.org:7364", on_message=on_message)
     ws.run_forever(dispatcher=rel)
+
+    i = 0
+    expectedlen = 0
+    incomingbuf = []
+
+    # Main logic loop
+    while True:
+        send(0, epOut, False)
+        data = read4(epIn)
+        print(hex(data))
+        if expectedlen == 0:
+            expectedlen = data # in bytes
+            i = 0
+            continue
+
+        incomingbuf.append((data >> 24) & 0xFF)
+        incomingbuf.append((data >> 16) & 0xFF)
+        incomingbuf.append((data >> 8) & 0xFF)
+        incomingbuf.append(data & 0xFF)
+        i += 4
+
+
+        if i >= expectedlen:
+            ws.send(bytearray(incomingbuf), websocket.ABNF.OPCODE_BINARY)
+            incomingbuf = []
+            expectedlen = 0
+            i = 0
+
+
+
+
+
+
 
     ws.send(b'\x01\x01\x00', websocket.ABNF.OPCODE_BINARY)
     ping(ws)

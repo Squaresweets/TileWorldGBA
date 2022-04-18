@@ -37,7 +37,8 @@ def multiboot(epIn, epOut, path):
     token = TileWorldClient.readall(epIn)
     if (token >> 24) != 0x73:
         print("Failed handshake!")
-        exit()
+        multiboot(epIn, epOut, path)
+        return
     else:
         print("Handshake successful!")
 
