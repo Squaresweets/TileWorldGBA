@@ -111,13 +111,40 @@ def main():
     ws = websocket.WebSocketApp("wss://tileworld.org:7364", on_message=on_message)
     ws.run_forever(dispatcher=rel)
 
+    # For incoming data
     i = 0
     expectedlen = 0
     incomingbuf = []
 
+    # For outgoing data
+    j = 0
+    outlen = 0
+
     # Main logic loop
     while True:
-        send(0, epOut, False)
+        # ============= OUTPUT =============
+        if outlen == 0 and len(outbuf) > 0:
+            # new data to send
+            send(len(outbuf[0]), epOut)
+            outlen = len(outbuf[0])
+            j = 0
+        elif outlen > 0:
+            # sending data
+            out = outbuf[0][j] << 24
+            out += outbuf[0][j+1] << 16
+            out += outbuf[0][j+2] << 8
+            out += outbuf[0][j+3]
+            j += 4
+            send(out, epOut)
+            if j >= outlen:
+                outlen = 0
+                j = 0
+                del outbuf[0]
+        else:
+            # no data to send, just send a blank packet
+            send(0, epOut)
+
+        # ============= INPUT =============
         data = read4(epIn)
         print(hex(data))
         if expectedlen == 0:
@@ -131,18 +158,11 @@ def main():
         incomingbuf.append(data & 0xFF)
         i += 4
 
-
         if i >= expectedlen:
             ws.send(bytearray(incomingbuf), websocket.ABNF.OPCODE_BINARY)
             incomingbuf = []
             expectedlen = 0
             i = 0
-
-
-
-
-
-
 
     ws.send(b'\x01\x01\x00', websocket.ABNF.OPCODE_BINARY)
     ping(ws)
