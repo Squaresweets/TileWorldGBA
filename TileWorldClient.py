@@ -107,6 +107,7 @@ def main():
     multiboot.multiboot(epIn, epOut, "TileWorldGBA_mb.gba")
     time.sleep(5)
 
+
     websocket.enableTrace(False)
     ws = websocket.WebSocketApp("wss://tileworld.org:7364", on_message=on_message)
     ws.run_forever(dispatcher=rel)
@@ -164,18 +165,15 @@ def main():
             expectedlen = 0
             i = 0
 
-    ws.send(b'\x01\x01\x00', websocket.ABNF.OPCODE_BINARY)
-    ping(ws)
+    #ws.send(b'\x01\x01\x00', websocket.ABNF.OPCODE_BINARY)
+    #ping(ws)
 
     rel.signal(2, rel.abort)
     rel.dispatch()
 
-def ping(ws):
-    ws.send(b'\x03', websocket.ABNF.OPCODE_BINARY)
-    threading.Timer(1, ping, [ws]).start()
-
 def on_message(ws, message):
     print(message.hex())
+    outbuf.append(bytearray(message))
 
 if __name__ == "__main__":
     main()

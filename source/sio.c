@@ -1,6 +1,7 @@
 #include "sio.h"
 #include <tonc.h>
 #include "main.h"
+#include <string.h>
 
 //Much of this comes from here:
 //https://github.com/maciel310/gba-mmo/blob/main/source/serial.c
@@ -19,59 +20,54 @@ void sioInit()
     REG_SIODATA32 = 0;
     REG_SIOCNT = SION_CLK_EXT | SION_ENABLE | SIO_MODE_32BIT | SIO_IRQ;
     irq_add(II_SERIAL, handle_serial);
+
+    outbuf[0][0] = 0x1;
+    outbuf[0][1] = 0x1;
+    outbuf[0][2] = 0x0;
 }
 
-u32 messagelen = 0;
-u32 expectedlen = 0;
-u8 buffer[512];
+//Output stuff
+
+//buffer of 4, hopefully it doesn't back up more than that
+//each message is a max of 18 bytes (20 is used as it is divisible by 4)
+u8 outbuf[4][20];
+u8 numinbuf;
+u8 dataoffset;
+u8 datalen;
+
+//Length in bytes of each of the things the client could send
+u8 datalengthtable[10] = {0, 3, 0, 1, 0, 12, 18, 0, 16, 0}; //Message number 9 is used for message, but atm I am not planning on implementing this
+
 void handle_serial()
 {
     //Fetch our data
     u32 data = REG_SIODATA32;
-    //test output
-    REG_SIODATA32 = data;
+    REG_SIODATA32 = 0;
 
+    //=========================== OUTGOING DATA ===========================
+    //Time to work out what we need to send
+    if(numinbuf != 0 && datalen == 0)
+    {
+        datalen = datalengthtable[outbuf[0][3]];
+        REG_SIODATA32 = datalen;
+    }
+    else if (numinbuf != 0 && dataoffset < datalengthtable[outbuf[0][3]]) //Calculates how long the message should be by the message ID
+    {
+        REG_SIODATA32 = outbuf[0][dataoffset++];
+        REG_SIODATA32 |= outbuf[0][dataoffset++];
+        REG_SIODATA32 |= outbuf[0][dataoffset++];
+        REG_SIODATA32 |= outbuf[0][dataoffset++];
+    }
+    //Check if we have reached the end of the current thing to send
+    if (numinbuf != 0 && dataoffset >= datalengthtable[outbuf[0][3]])
+    {
+        numinbuf--;
+        dataoffset = 0;
+        datalen = 0;
+        //Shift array left
+        memmove(&outbuf, &outbuf[1], 60);
+    }
+    
     REG_SIOCNT |= SION_ENABLE;
-
-    //Check if this is a packet preceding some data, telling us the length to expect
-    //Keyword is "BEEF", the second half tells us the length
-    if(expectedlen == 0 && (data & 0xFFFF0000) == 0xBEEF0000)
-    {
-        expectedlen = data & 0xFFFF;
-        messagelen = 0;
-        return;
-    }
-
-    //Gets all the data and puts it in the buffer
-    buffer[messagelen++] = ((data >> 24) & 0xff);
-    buffer[messagelen++] = ((data >> 16) & 0xff);
-    buffer[messagelen++] = ((data >> 8) & 0xff);
-    buffer[messagelen++] = (data & 0xff);
-
-    if (messagelen >= expectedlen)
-    {
-        //We are on the final byte of the data
-        //Gotta check if we have the terminator byte ("DEADBEEF"), if not, ignore
-        if (data != 0xDEADBEEF)
-        {
-            //Probably incorrect data, ignore it
-            expectedlen = 0;
-            messagelen = 0;
-            return;
-        }
-        //TODO: Decode data and work out what it is
-        //This is just a test for now
-        if(buffer[0] == 0x65)
-            resetPlayerPos();
-        
-        expectedlen = 0;
-        messagelen = 0;
-    }
-    else if (data == 0xDEADBEEF)
-    {
-        //Probably incorrect data, ignore it
-        expectedlen = 0;
-        messagelen = 0;
-        return;
-    }
+    //=========================== INCOMING DATA ===========================
 }
