@@ -13,19 +13,6 @@
 #define SIO_CLOCK_INTERNAL BIT(0)
 #define SIO_TRANSFER_32 BIT(12)
 
-//We are never the master, so no need to set any clock stuff
-void sioInit()
-{
-    REG_RCNT = 0;
-    REG_SIODATA32 = 0;
-    REG_SIOCNT = SION_CLK_EXT | SION_ENABLE | SIO_MODE_32BIT | SIO_IRQ;
-    irq_add(II_SERIAL, handle_serial);
-
-    outbuf[0][0] = 0x1;
-    outbuf[0][1] = 0x1;
-    outbuf[0][2] = 0x0;
-}
-
 //Output stuff
 
 //buffer of 4, hopefully it doesn't back up more than that
@@ -35,31 +22,60 @@ u8 numinbuf;
 u8 dataoffset;
 u8 datalen;
 
+bool startsending = false;
+
 //Length in bytes of each of the things the client could send
 u8 datalengthtable[10] = {0, 3, 0, 1, 0, 12, 18, 0, 16, 0}; //Message number 9 is used for message, but atm I am not planning on implementing this
+
+//We are never the master, so no need to set any clock stuff
+void sioInit()
+{
+    REG_RCNT = 0;
+    REG_SIODATA32 = 0;
+    REG_SIOCNT = SION_CLK_EXT | SION_ENABLE | SIO_MODE_32BIT | SIO_IRQ;
+    irq_add(II_SERIAL, handle_serial);
+
+    connect();
+}
+
+void connect()
+{
+    outbuf[0][0] = 0x1;
+    outbuf[0][1] = 0x1;
+    outbuf[0][2] = 0x0;
+    numinbuf++;
+}
 
 void handle_serial()
 {
     //Fetch our data
     u32 data = REG_SIODATA32;
+    REG_SIOCNT |= SION_ENABLE;
     REG_SIODATA32 = 0;
+
+    if (!startsending)
+    {
+        if(data == 0xDEADBEEF)
+            startsending = true;
+        return;
+    }
 
     //=========================== OUTGOING DATA ===========================
     //Time to work out what we need to send
     if(numinbuf != 0 && datalen == 0)
     {
-        datalen = datalengthtable[outbuf[0][3]];
+        datalen = datalengthtable[outbuf[0][0]];
         REG_SIODATA32 = datalen;
     }
-    else if (numinbuf != 0 && dataoffset < datalengthtable[outbuf[0][3]]) //Calculates how long the message should be by the message ID
+    else if (numinbuf != 0 && dataoffset < datalengthtable[outbuf[0][0]]) //Calculates how long the message should be by the message ID
     {
-        REG_SIODATA32 = outbuf[0][dataoffset++];
-        REG_SIODATA32 |= outbuf[0][dataoffset++];
-        REG_SIODATA32 |= outbuf[0][dataoffset++];
+        REG_SIODATA32 = outbuf[0][dataoffset++] << 24;
+        REG_SIODATA32 |= outbuf[0][dataoffset++] << 16;
+        REG_SIODATA32 |= outbuf[0][dataoffset++] << 8;
         REG_SIODATA32 |= outbuf[0][dataoffset++];
     }
     //Check if we have reached the end of the current thing to send
-    if (numinbuf != 0 && dataoffset >= datalengthtable[outbuf[0][3]])
+    if (numinbuf != 0 && dataoffset >= datalengthtable[outbuf[0][0]])
     {
         numinbuf--;
         dataoffset = 0;
@@ -68,6 +84,6 @@ void handle_serial()
         memmove(&outbuf, &outbuf[1], 60);
     }
     
-    REG_SIOCNT |= SION_ENABLE;
     //=========================== INCOMING DATA ===========================
+    //TODO, will takes quite alot more effort, will focus on outgoing for now
 }

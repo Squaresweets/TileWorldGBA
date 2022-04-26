@@ -10,6 +10,10 @@ def multiboot(epIn, epOut, path):
     content = 0
     content = bytearray(open(path, 'rb').read())
     fsize = os.path.getsize(path)
+    # Padding to avoid errors
+    content = content.ljust(fsize + 64, b'\0')
+    print(content)
+
     if fsize > 0x40000:
         print("File size error, max 256KB")
         exit()

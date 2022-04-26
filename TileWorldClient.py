@@ -106,7 +106,7 @@ def main():
     dev.ctrl_transfer(bmRequestType = 1, bRequest = 0x22, wIndex = 2, wValue = 0x01)
     multiboot.multiboot(epIn, epOut, "TileWorldGBA_mb.gba")
     time.sleep(5)
-
+    readall(epIn)
 
     websocket.enableTrace(False)
     ws = websocket.WebSocketApp("wss://tileworld.org:7364", on_message=on_message)
@@ -120,13 +120,16 @@ def main():
     # For outgoing data
     j = 0
     outlen = 0
+    #Tell GBA it can start sending data
+    send(0xDEADBEEF, epOut, False)
+    read4(epIn)
 
     # Main logic loop
     while True:
-        # ============= OUTPUT =============
+        # ============= Tileworld->GBA =============
         if outlen == 0 and len(outbuf) > 0:
             # new data to send
-            send(len(outbuf[0]), epOut)
+            send(len(outbuf[0]), epOut, False)
             outlen = len(outbuf[0])
             j = 0
         elif outlen > 0:
@@ -136,20 +139,19 @@ def main():
             out += outbuf[0][j+2] << 8
             out += outbuf[0][j+3]
             j += 4
-            send(out, epOut)
+            send(out, epOut, False)
             if j >= outlen:
                 outlen = 0
                 j = 0
                 del outbuf[0]
         else:
             # no data to send, just send a blank packet
-            send(0, epOut)
+            send(0, epOut, False)
 
-        # ============= INPUT =============
+        # ============= GBA->Tileworld =============
         data = read4(epIn)
-        print(hex(data))
         if expectedlen == 0:
-            expectedlen = data # in bytes
+            expectedlen = data  # in bytes
             i = 0
             continue
 
@@ -160,13 +162,13 @@ def main():
         i += 4
 
         if i >= expectedlen:
+            incomingbuf = incomingbuf[:expectedlen]
+            print(bytearray(incomingbuf).hex())
             ws.send(bytearray(incomingbuf), websocket.ABNF.OPCODE_BINARY)
+
             incomingbuf = []
             expectedlen = 0
             i = 0
-
-    #ws.send(b'\x01\x01\x00', websocket.ABNF.OPCODE_BINARY)
-    #ping(ws)
 
     rel.signal(2, rel.abort)
     rel.dispatch()
