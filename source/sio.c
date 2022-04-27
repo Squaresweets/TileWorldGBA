@@ -40,9 +40,28 @@ void sioInit()
 
 void connect()
 {
-    outbuf[0][0] = 0x1;
-    outbuf[0][1] = 0x1;
-    outbuf[0][2] = 0x0;
+    outbuf[numinbuf][0] = 0x1;
+    outbuf[numinbuf][1] = 0x1;
+    outbuf[numinbuf][2] = 0x0;
+    numinbuf++;
+}
+void place(u32 x, u32 y, u8 ID)
+{
+    outbuf[numinbuf][0] = 0x5;
+    *(u32*)(&outbuf[numinbuf][1]) = x;
+    *(u32*)(&outbuf[numinbuf][5]) = y;
+    outbuf[numinbuf][9] = 0x1;
+    outbuf[numinbuf][10] = ID;
+    numinbuf++;
+}
+void move(u8 keys, u32 x, u32 y, u32 xv, u32 yv)
+{
+    outbuf[numinbuf][0] = 0x6;
+    outbuf[numinbuf][1] = keys;
+    *(u32*)(&outbuf[numinbuf][1]) = x;
+    *(u32*)(&outbuf[numinbuf][5]) = y;
+    outbuf[numinbuf][9] = 0x1;
+    outbuf[numinbuf][10] = ID;
     numinbuf++;
 }
 

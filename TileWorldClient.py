@@ -12,8 +12,10 @@ import random
 
 outbuf = []
 
+
 def signal_handler(sig, frame):
     print('You pressed Ctrl+C!')
+
 
 def send(data, epOut, debug = True, length = 4):
     epOut.write(data.to_bytes(length, byteorder="big"))
@@ -24,9 +26,11 @@ def send(data, epOut, debug = True, length = 4):
         print("0x%02x " % b, end="")
     print("")
 
+
 def read(epIn):
     recv = int.from_bytes(epIn.read(4, 100), byteorder='big')
     return recv
+
 
 def read4(epIn):
     output = 0
@@ -55,6 +59,7 @@ def readall(epIn, debug = True):
         print("0x%02x " % output)
     return output
 
+
 def main():
     signal.signal(signal.SIGINT, signal_handler)
 
@@ -66,8 +71,7 @@ def main():
     if dev is None:
         raise ValueError('Device not found')
 
-    reattach = False
-    if (os.name != "nt"):
+    if os.name != "nt":
         if dev.is_kernel_driver_active(0):
             try:
                 reattach = True
@@ -120,7 +124,8 @@ def main():
     # For outgoing data
     j = 0
     outlen = 0
-    #Tell GBA it can start sending data
+
+    # Tell GBA it can start sending data
     send(0xDEADBEEF, epOut, False)
     read4(epIn)
 
@@ -173,9 +178,11 @@ def main():
     rel.signal(2, rel.abort)
     rel.dispatch()
 
+
 def on_message(ws, message):
     print(message.hex())
     outbuf.append(bytearray(message))
+
 
 if __name__ == "__main__":
     main()
