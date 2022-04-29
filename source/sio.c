@@ -22,6 +22,11 @@ u8 numinbuf;
 u8 dataoffset;
 u8 datalen;
 
+//Input stuff
+u32 incomingbuf[6];
+u8 expectedlen;
+u8 incomingoffset;
+
 bool startsending = false;
 
 //Length in bytes of each of the things the client could send
@@ -58,10 +63,7 @@ void move(u8 keys, u32 x, u32 y, u32 xv, u32 yv)
 {
     outbuf[numinbuf][0] = 0x6;
     outbuf[numinbuf][1] = keys;
-    *(u32*)(&outbuf[numinbuf][1]) = x;
-    *(u32*)(&outbuf[numinbuf][5]) = y;
-    outbuf[numinbuf][9] = 0x1;
-    outbuf[numinbuf][10] = ID;
+    //TODO: I gotta do other stuff first, bare with
     numinbuf++;
 }
 
@@ -104,5 +106,23 @@ void handle_serial()
     }
     
     //=========================== INCOMING DATA ===========================
-    //TODO, will takes quite alot more effort, will focus on outgoing for now
+    /*Incoming is trickier as I am going to get ALOT of data through at once
+    Like 60kb worth, not going to be fun
+    It would be better not to store this in a buffer
+    but instead to put it in the exact place in memory where it is being stored
+
+    We are going to be getting 225 16x16 chunks
+    It would be better if it was stored in memory in 32x32 chunks like the GBA uses
+    but with the 240x240 map this isn't really possible
+
+    Another problem is that of the GBA tilemap only being 64x64
+    To get around this when you get to one side of the map the other side is
+    Filled in with the new data
+
+    This is the same on a bigger level for when new map data is added
+
+    Warning: May countain spaghetti code
+    */
+
+
 }
