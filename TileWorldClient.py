@@ -40,7 +40,6 @@ def read4(epIn):
             output += int.from_bytes(epIn.read(1, 100), byteorder='big') << (3-i)*8
             i += 1
         except:
-            print("SJEIOAJDPASDOIASJDOASJDOIAJSD:J:ASID")
             pass
 
     return output
@@ -110,11 +109,11 @@ def main():
     dev.ctrl_transfer(bmRequestType = 1, bRequest = 0x22, wIndex = 2, wValue = 0x01)
     multiboot.multiboot(epIn, epOut, "TileWorldGBA_mb.gba")
     time.sleep(5)
-    readall(epIn)
+    readall(epIn, False)
 
-    websocket.enableTrace(False)
     ws = websocket.WebSocketApp("wss://tileworld.org:7364", on_message=on_message)
-    ws.run_forever(dispatcher=rel)
+    #ws.run_forever()
+    print("OK")
 
     # For incoming data
     i = 0
@@ -134,17 +133,20 @@ def main():
         # ============= Tileworld->GBA =============
         if outlen == 0 and len(outbuf) > 0:
             # new data to send
-            send(len(outbuf[0]), epOut, False)
+            print("Sending len: ", end="")
+            send(len(outbuf[0]), epOut, True)
             outlen = len(outbuf[0])
+            #Padding to avoid errors
+            outbuf[0] = outbuf[0].ljust(outlen + 16, b'\0')
             j = 0
         elif outlen > 0:
             # sending data
-            out = outbuf[0][j] << 24
-            out += outbuf[0][j+1] << 16
-            out += outbuf[0][j+2] << 8
-            out += outbuf[0][j+3]
+            out = (outbuf[0])[j] << 24
+            out += (outbuf[0])[j+1] << 16
+            out += (outbuf[0])[j+2] << 8
+            out += (outbuf[0])[j+3]
             j += 4
-            send(out, epOut, False)
+            send(out, epOut, True)
             if j >= outlen:
                 outlen = 0
                 j = 0
@@ -168,21 +170,17 @@ def main():
 
         if i >= expectedlen:
             incomingbuf = incomingbuf[:expectedlen]
-            print(bytearray(incomingbuf).hex())
+            #print("Sending to TileWorld server: " + bytearray(incomingbuf).hex())
             ws.send(bytearray(incomingbuf), websocket.ABNF.OPCODE_BINARY)
 
             incomingbuf = []
             expectedlen = 0
             i = 0
 
-    rel.signal(2, rel.abort)
-    rel.dispatch()
-
 
 def on_message(ws, message):
-    print(message.hex())
+    print(message)
     outbuf.append(bytearray(message))
-
 
 if __name__ == "__main__":
     main()
