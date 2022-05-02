@@ -101,14 +101,19 @@ void move(u8 keys, u32 x, u32 y, u32 xv, u32 yv)
     And then convert it to the other pattern
     Now I could do logic for this, but a conversion table is easier
 */
-u16 mapIDconversiontable[16] = {0, 1, 4, 5, 2, 3, 6, 7, 8, 9, 12, 13, 10, 11, 14, 15};
+u16 mapIDconversiontable[16] = {0,  1,  4,  5, 
+                                2,  3,  6,  7, 
+
+                                8,  9,  12, 13, 
+                                10, 11, 14, 15};
 void setChunk(u8 ID, u8 x, u8 y)
 {	
     SCR_ENTRY *pse= bg_map;
     //First get our pointer to the start of the chunk we wanna edit
     ID = mapIDconversiontable[ID];
-    ID = (ID/2)*512 + (ID%2)*16;
+    ID = (ID/2)*512 + (ID%2)*16; //Map starters are dealed with in pairs, (0x16)(1x16)(0x16)etc. (Imagine they are interlaced)
 	*pse += ID;
+
     u8 ii = 0;
     int c = 0;
     for(u8 i=0;i<16;i++)
@@ -116,10 +121,13 @@ void setChunk(u8 ID, u8 x, u8 y)
         for(u8 j=0;j<16;j++)
         {
             c = map[x + (y*15) + (ii)/2];
+
+            //Extract correct nibble
             if(c % 2 == 0)
-                c = c>>4;
+                c = (c>>4) & 0xF;
             else
-                c &= 0xFF;
+                c &= 0xF;
+
             *pse++ = SE_PALBANK(0) | c;
             ii++;
         }

@@ -4,15 +4,15 @@ import signal
 import sys
 import time
 import os
-import websocket
-import rel
 import multiboot
-import threading
-import random
+
+import asyncio
+import websockets
 
 outbuf = []
+wsSendBuf = []
 
-
+#<editor-fold desc="Send and recieve functions">
 def signal_handler(sig, frame):
     print('You pressed Ctrl+C!')
 
@@ -57,9 +57,22 @@ def readall(epIn, debug = True):
     if debug:
         print("0x%02x " % output)
     return output
+#</editor-fold>
+
+
+async def ws():
+    global wsSendBuf
+    uri = "wss://tileworld.org:7364"
+    async with websockets.connect(uri) as websocket:
+        while True:
+            await websocket.recv
+
+            greeting = await websocket.recv()
+            print(f"<<< {greeting}")
 
 
 def main():
+    #<editor-fold desc="Setting up USB">
     signal.signal(signal.SIGINT, signal_handler)
 
     dev = None
@@ -107,13 +120,11 @@ def main():
 
     # Control transfer to enable webserial on device
     dev.ctrl_transfer(bmRequestType = 1, bRequest = 0x22, wIndex = 2, wValue = 0x01)
+    #</editor-fold>
+
     multiboot.multiboot(epIn, epOut, "TileWorldGBA_mb.gba")
     time.sleep(5)
     readall(epIn, False)
-
-    ws = websocket.WebSocketApp("wss://tileworld.org:7364", on_message=on_message)
-    #ws.run_forever()
-    print("OK")
 
     # For incoming data
     i = 0
@@ -170,17 +181,12 @@ def main():
 
         if i >= expectedlen:
             incomingbuf = incomingbuf[:expectedlen]
-            #print("Sending to TileWorld server: " + bytearray(incomingbuf).hex())
-            ws.send(bytearray(incomingbuf), websocket.ABNF.OPCODE_BINARY)
-
+            print("Sending to TileWorld server: " + bytearray(incomingbuf).hex())
+            wsSendBuf.append(bytearray(incomingbuf))
             incomingbuf = []
             expectedlen = 0
             i = 0
 
-
-def on_message(ws, message):
-    print(message)
-    outbuf.append(bytearray(message))
 
 if __name__ == "__main__":
     main()
