@@ -4,13 +4,14 @@ import signal
 import sys
 import time
 import os
+import websocket
+import rel
 import multiboot
-
-import asyncio
-import websockets
+import threading
+import random
 
 outbuf = []
-wsSendBuf = []
+
 
 #<editor-fold desc="Send and recieve functions">
 def signal_handler(sig, frame):
@@ -58,17 +59,6 @@ def readall(epIn, debug = True):
         print("0x%02x " % output)
     return output
 #</editor-fold>
-
-
-async def ws():
-    global wsSendBuf
-    uri = "wss://tileworld.org:7364"
-    async with websockets.connect(uri) as websocket:
-        while True:
-            await websocket.recv
-
-            greeting = await websocket.recv()
-            print(f"<<< {greeting}")
 
 
 def main():
@@ -126,6 +116,11 @@ def main():
     time.sleep(5)
     readall(epIn, False)
 
+    ws = websocket.WebSocket()
+    ws.connect("wss://tileworld.org:7364")
+    ws.settimeout(0.01)
+    print("OK")
+
     # For incoming data
     i = 0
     expectedlen = 0
@@ -142,6 +137,13 @@ def main():
     # Main logic loop
     while True:
         # ============= Tileworld->GBA =============
+        try:
+            recv = bytearray(ws.recv())
+            print("From Tileworld Server: " + recv.hex())
+            outbuf.append(recv)
+        except:
+            pass
+
         if outlen == 0 and len(outbuf) > 0:
             # new data to send
             print("Sending len: ", end="")
@@ -182,11 +184,11 @@ def main():
         if i >= expectedlen:
             incomingbuf = incomingbuf[:expectedlen]
             print("Sending to TileWorld server: " + bytearray(incomingbuf).hex())
-            wsSendBuf.append(bytearray(incomingbuf))
+            ws.send(bytearray(incomingbuf), websocket.ABNF.OPCODE_BINARY)
+
             incomingbuf = []
             expectedlen = 0
             i = 0
-
 
 if __name__ == "__main__":
     main()
