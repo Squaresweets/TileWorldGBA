@@ -106,32 +106,33 @@ u16 mapIDconversiontable[16] = {0,  1,  4,  5,
 
                                 8,  9,  12, 13, 
                                 10, 11, 14, 15};
-void setChunk(u8 ID, u8 x, u8 y)
+void setChunk(int ID, u8 x, u8 y)
 {	
     SCR_ENTRY *pse= bg_map;
     //First get our pointer to the start of the chunk we wanna edit
     ID = mapIDconversiontable[ID];
-    ID = (ID/2)*512 + (ID%2)*16; //Map starters are dealed with in pairs, (0x16)(1x16)(0x16)etc. (Imagine they are interlaced)
-	*pse += ID;
-
-    u8 ii = 0;
+    ID = (ID/2)*512 + (ID%2)*16; //Map starters are dealed with in pairs, (Ax16)(Bx16)(Ax16)etc. (Imagine they are interlaced)
+	pse += ID;
+    
+    int ii = 0;
     int c = 0;
     for(u8 i=0;i<16;i++)
     {
         for(u8 j=0;j<16;j++)
         {
+            /*
             c = map[x + (y*15) + (ii)/2];
 
             //Extract correct nibble
-            if(c % 2 == 0)
+            if(ii % 2 == 0)
                 c = (c>>4) & 0xF;
             else
                 c &= 0xF;
-
+            */
             *pse++ = SE_PALBANK(0) | c;
             ii++;
         }
-        *pse += 16;
+        pse += 16;
     }
 }
 void setupMap()
@@ -140,7 +141,9 @@ void setupMap()
     for(u8 y=0;y<4;y++)
     {
         for(u8 x=0;x<4;x++)
+        {
             setChunk(x+(4*y), x+5, y+5);
+        }
     }
 }
 
@@ -206,8 +209,7 @@ void handle_serial()
     if (!expectedlen)
     {
         expectedlen = data;
-        if(expectedlen == 57601) //We are recieving map data
-            mapdatamode = true;
+        mapdatamode = expectedlen > 57600;
         return;
     }
 
@@ -222,12 +224,13 @@ void handle_serial()
         //JK :D
         if(incomingoffset != 0) //So that we don't include the message ID in the map data
         {
-            map[incomingoffset] = ((data >> 24) & 0xFF) | previousnibble;
-            incomingoffset +=2;
+            map[incomingoffset] = ((data >> 24) & 0xF) | (previousnibble << 4);
+            incomingoffset +=1;
         }
-        map[incomingoffset] = (data >> 8) & 0xFFFF;
-        incomingoffset += 2;
-        previousnibble = (data) & 0xFF;
+        map[incomingoffset] = ((data >> 8) & 0xF) + (((data >> 16) & 0xF) << 4);
+        incomingoffset += 1;
+        previousnibble = (data) & 0xF;
+
     }
     else
     {
@@ -254,6 +257,5 @@ void sioInit()
     REG_SIODATA32 = 0;
     REG_SIOCNT = SION_CLK_EXT | SION_ENABLE | SIO_MODE_32BIT | SIO_IRQ;
     irq_add(II_SERIAL, handle_serial);
-
     connect();
 }
