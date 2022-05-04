@@ -7,8 +7,8 @@ import os
 import websocket
 import rel
 import multiboot
-import threading
-import random
+import asyncio
+from threading import Thread
 
 outbuf = []
 
@@ -118,8 +118,10 @@ def main():
 
     ws = websocket.WebSocket()
     ws.connect("wss://tileworld.org:7364")
-    ws.settimeout(0.01)
-    print("OK")
+    t = Thread(target=listen,args=(ws,))
+    t.start()
+
+    print(t)
 
     # For incoming data
     i = 0
@@ -137,13 +139,6 @@ def main():
     # Main logic loop
     while True:
         # ============= Tileworld->GBA =============
-        try:
-            recv = bytearray(ws.recv())
-            print("From Tileworld Server: " + recv.hex())
-            outbuf.append(recv)
-        except:
-            pass
-
         if outlen == 0 and len(outbuf) > 0:
             # new data to send
             print("Sending len: ", end="")
@@ -189,6 +184,15 @@ def main():
             incomingbuf = []
             expectedlen = 0
             i = 0
+
+
+def listen(ws):
+    print("Started thread")
+    while True:
+        message = ws.recv()
+        print("From tileworld server: " + message.hex())
+        outbuf.append(bytearray(message))
+
 
 if __name__ == "__main__":
     main()
