@@ -33,14 +33,14 @@ OBJ_AFFINE *obj_aff_buffer= (OBJ_AFFINE*)obj_buffer;
 
 
 //Fixed point, with a shift value of 16
-int playerx = 0 << SHIFT_AMOUNT, playery = 20 << SHIFT_AMOUNT;
-int camerax = 0 << SHIFT_AMOUNT, cameray = 20 << SHIFT_AMOUNT;
+int playerx = 32 << SHIFT_AMOUNT, playery = 32 << SHIFT_AMOUNT;
+int camerax = 32 << SHIFT_AMOUNT, cameray = 32 << SHIFT_AMOUNT;
 int xv = 0, yv = 0;
+bool startMovement = false;
 OBJ_ATTR *player= &obj_buffer[0];
 
 void init_map()
 {
-	int ii, jj, c;
 
 	// initialize a background
 	REG_BG0CNT= BG_CBB(CBB_0) | BG_SBB(SBB_0) | BG_REG_64x64;
@@ -58,6 +58,8 @@ void init_map()
 
 	// Create a map: four contingent blocks of 
 	//   0x0000, 0x1000, 0x2000, 0x3000.
+	/*
+	int ii, jj, c;
 	SCR_ENTRY *pse= bg0_map;
 	for(ii=0; ii<4; ii++)
 	{
@@ -79,6 +81,7 @@ void init_map()
 			*pse++ = SE_PALBANK(0) | c;
 		}
 	}
+	*/
 }
 
 void movement()
@@ -163,7 +166,8 @@ int main()
 		vid_vsync();
 		key_poll();
 
-		movement();
+		if(startMovement)
+			movement();
 		
 		renderPlayer();
 	}

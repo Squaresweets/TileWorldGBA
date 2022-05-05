@@ -118,18 +118,11 @@ void setChunk(int ID, u8 x, u8 y)
     int c = 0;
     for(u8 i=0;i<16;i++)
     {
-        for(u8 j=0;j<16;j++)
+        for(u8 j=0;j<8;j++)
         {
-            /*
-            c = map[x + (y*15) + (ii)/2];
-
-            //Extract correct nibble
-            if(ii % 2 == 0)
-                c = (c>>4) & 0xF;
-            else
-                c &= 0xF;
-            */
-            *pse++ = SE_PALBANK(0) | c;
+            c = map[(x*128) + (y*15*128) + ii];
+            *pse++ = SE_PALBANK(0) | ((c>>4) & 0xF);
+            *pse++ = SE_PALBANK(0) | (c & 0xF);
             ii++;
         }
         pse += 16;
@@ -145,6 +138,7 @@ void setupMap()
             setChunk(x+(4*y), x+5, y+5);
         }
     }
+    startMovement = true;
 }
 
 //If we are recieving loads of map data, we want to stream it straight into where it should be, not keep it in a buffer
@@ -209,7 +203,11 @@ void handle_serial()
     if (!expectedlen)
     {
         expectedlen = data;
-        mapdatamode = expectedlen > 57600;
+        if (expectedlen > 57600)
+        {
+            mapdatamode = true;
+            expectedlen /= 2; //Since we are dealing with nibbles
+        }
         return;
     }
 
@@ -227,9 +225,12 @@ void handle_serial()
             map[incomingoffset] = ((data >> 24) & 0xF) | (previousnibble << 4);
             incomingoffset +=1;
         }
-        map[incomingoffset] = ((data >> 8) & 0xF) + (((data >> 16) & 0xF) << 4);
-        incomingoffset += 1;
-        previousnibble = (data) & 0xF;
+        if(incomingoffset != 28800)
+        {
+            map[incomingoffset] = ((data >> 8) & 0xF) + (((data >> 16) & 0xF) << 4);
+            incomingoffset += 1;
+            previousnibble = (data) & 0xF;
+        }
 
     }
     else

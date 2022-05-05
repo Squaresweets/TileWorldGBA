@@ -4,4 +4,5 @@
 #include <tonc.h>
 
 void resetPlayerPos();
+extern bool startMovement;
 #endif
