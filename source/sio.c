@@ -106,11 +106,15 @@ u16 mapIDconversiontable[16] = {0,  1,  4,  5,
 
                                 8,  9,  12, 13, 
                                 10, 11, 14, 15};
-void setChunk(int ID, u8 x, u8 y)
+//sx and sy = Where to place on the tilemap (0-3)
+//x and y = Where to get from map (0-14)
+void setChunk(u8 sx, u8 sy, u8 x, u8 y)
 {	
+    sx = mod(sx, 4); sy = mod(sy, 4);
+    x = mod(x, 15); y = mod(y, 15);
     SCR_ENTRY *pse= bg_map;
     //First get our pointer to the start of the chunk we wanna edit
-    ID = mapIDconversiontable[ID];
+    int ID = mapIDconversiontable[sx+(4*sy)];
     ID = (ID/2)*512 + (ID%2)*16; //Map starters are dealed with in pairs, (Ax16)(Bx16)(Ax16)etc. (Imagine they are interlaced)
 	pse += ID;
     
@@ -135,7 +139,7 @@ void setupMap()
     {
         for(u8 x=0;x<4;x++)
         {
-            setChunk(x+(4*y), x+5, y+5);
+            setChunk(x, y, x+5, y+5);
         }
     }
     startMovement = true;

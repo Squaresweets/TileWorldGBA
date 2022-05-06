@@ -25,6 +25,9 @@
 #define ONE_SHIFTED (1 << SHIFT_AMOUNT)
 #define SHIFT_MASK ((1 << SHIFT_AMOUNT) - 1)
 
+
+
+
 BG_POINT bg0_pt= { 0, 0 };
 SCR_ENTRY *bg0_map= se_mem[SBB_0];
 

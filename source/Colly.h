@@ -2,6 +2,7 @@
 #define COLLY_H
 
 #include <tonc.h>
+#include "main.h"
 
 typedef struct Vector {
     //All fixed point (<< 16)
@@ -15,7 +16,7 @@ typedef struct CheckReturn {
     bool collided;
     bool ladder;
 } checkreturn;
-
+int mod(int x,int N);
 checkreturn Check(vector bounds, vector goal);
 
  //https://stackoverflow.com/questions/3437404/min-and-max-in-c

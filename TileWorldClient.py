@@ -118,10 +118,9 @@ def main():
 
     ws = websocket.WebSocket()
     ws.connect("wss://tileworld.org:7364")
+    # Setup thread so we can listen at the same time as the main logic loop
     t = Thread(target=listen,args=(ws,))
     t.start()
-
-    print(t)
 
     # For incoming data
     i = 0

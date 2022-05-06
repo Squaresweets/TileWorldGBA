@@ -5,4 +5,5 @@
 
 void resetPlayerPos();
 extern bool startMovement;
+int mod(int x,int N);
 #endif
