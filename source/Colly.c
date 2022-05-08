@@ -2,12 +2,6 @@
 
 #define mapsize 64
 
-//Fixed point stuff https://stackoverflow.com/questions/10067510/fixed-point-arithmetic-in-c-programming
-#define SHIFT_AMOUNT 16
-#define ONE_SHIFTED (1 << SHIFT_AMOUNT)
-#define DECIMAL_MASK ((1 << SHIFT_AMOUNT) - 1)
-#define INT_MASK ~((1 << SHIFT_AMOUNT) - 1)
-
 int mod(int x,int N){
     return (x % N + N) %N;
 }

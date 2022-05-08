@@ -137,23 +137,31 @@ void setChunk(u8 sx, u8 sy, u8 x, u8 y)
 
 //The following x y positions represent where the GBA tilemap is on the Map
 //Initial values are 5
-int mapX, mapY = 5;
+int mapX = 5, mapY = 5;
 //Say we wanted to move the map to the left, first we would subtract 5
 //from both values, then if we are moving to the left we +1, right -1
 //these values can then be put through mod(4) to show where to place the new chunks we
 //just loaded, hopefully that makes sense
 
-void loadChunksLR(s8 direction) //-1 = left, 1 = right
+void loadChunksLR(int direction) //-1 = left, 1 = right
 {  
     mapX += direction;
-    for(u8 i=0; i<5; i++)
-        setChunk(mapX - 5, i, mapX, mapY+i);
+    for(u8 i=0; i<4; i++)
+        setChunk(mapX - 5, i, mapX + (direction ? 5 : 0), mapY+i);
 }
-void loadChunksUD(s8 direction) //-1 = up, 1 = down
+void loadChunksUD(int direction) //-1 = up, 1 = down
 {  
     mapY += direction;
-    for(u8 i=0; i<5; i++)
+    for(u8 i=0; i<4; i++)
         setChunk(i, mapY - 5, mapX + i, mapY);
+}
+
+void loadChunks()
+{
+    if(camerax < (((mapX-4)*16) << SHIFT_AMOUNT)) loadChunksLR(-1);
+    if(camerax > (((mapX-2)*16) << SHIFT_AMOUNT)) loadChunksLR(1);
+    //if(cameray < (((mapY-4)*16) << SHIFT_AMOUNT)) loadChunksUD(-1);
+    //if(cameray > (((mapY-2)*16) << SHIFT_AMOUNT)) loadChunksUD(1);
 }
 
 void setupMap()

@@ -20,14 +20,6 @@
 #define CROSS_TX 15
 #define CROSS_TY 10
 
-//Fixed point stuff https://stackoverflow.com/questions/10067510/fixed-point-arithmetic-in-c-programming
-#define SHIFT_AMOUNT 16
-#define ONE_SHIFTED (1 << SHIFT_AMOUNT)
-#define SHIFT_MASK ((1 << SHIFT_AMOUNT) - 1)
-
-
-
-
 BG_POINT bg0_pt= { 0, 0 };
 SCR_ENTRY *bg0_map= se_mem[SBB_0];
 
@@ -36,8 +28,8 @@ OBJ_AFFINE *obj_aff_buffer= (OBJ_AFFINE*)obj_buffer;
 
 
 //Fixed point, with a shift value of 16
-int playerx = 32 << SHIFT_AMOUNT, playery = 32 << SHIFT_AMOUNT;
-int camerax = 32 << SHIFT_AMOUNT, cameray = 32 << SHIFT_AMOUNT;
+int playerx = 31 << SHIFT_AMOUNT, playery = 31 << SHIFT_AMOUNT;
+int camerax = 31 << SHIFT_AMOUNT, cameray = 31 << SHIFT_AMOUNT;
 int xv = 0, yv = 0;
 bool startMovement = false;
 OBJ_ATTR *player= &obj_buffer[0];
@@ -138,7 +130,6 @@ void renderPlayer()
 
 	REG_BG_OFS[0]= bg0_pt;	// write new position
 }
-
 //Temp for now, just to test stuff
 void resetPlayerPos()
 {
@@ -170,7 +161,10 @@ int main()
 		key_poll();
 
 		if(startMovement)
+		{
 			movement();
+			loadChunks();
+		}
 		
 		renderPlayer();
 	}
