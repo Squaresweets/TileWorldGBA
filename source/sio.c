@@ -110,7 +110,7 @@ u16 mapIDconversiontable[16] = {0,  1,  4,  5,
 
 //sx and sy = Where to place on the tilemap (0-3)
 //x and y = Where to get from map (0-14)
-void setChunk(u8 sx, u8 sy, u8 x, u8 y)
+void setChunk(int sx, int sy, int x, int y)
 {	
     sx = mod(sx, 4); sy = mod(sy, 4);
     x = mod(x, 15); y = mod(y, 15);
@@ -145,9 +145,10 @@ int mapX = 5, mapY = 5;
 
 void loadChunksLR(int direction) //-1 = left, 1 = right
 {  
+    cameray += (10 << SHIFT_AMOUNT);
     mapX += direction;
     for(u8 i=0; i<4; i++)
-        setChunk(mapX - 5, i, mapX + (direction ? 5 : 0), mapY+i);
+        setChunk(mapX - 5, i, mapX, mapY+i);
 }
 void loadChunksUD(int direction) //-1 = up, 1 = down
 {  
@@ -158,8 +159,8 @@ void loadChunksUD(int direction) //-1 = up, 1 = down
 
 void loadChunks()
 {
-    if(camerax < (((mapX-4)*16) << SHIFT_AMOUNT)) loadChunksLR(-1);
-    if(camerax > (((mapX-2)*16) << SHIFT_AMOUNT)) loadChunksLR(1);
+    //if(camerax < (((mapX-4)*16) << SHIFT_AMOUNT)) loadChunksLR(-1);
+    //if(camerax > (((mapX-2)*16) << SHIFT_AMOUNT)) loadChunksLR(1);
     //if(cameray < (((mapY-4)*16) << SHIFT_AMOUNT)) loadChunksUD(-1);
     //if(cameray > (((mapY-2)*16) << SHIFT_AMOUNT)) loadChunksUD(1);
 }
