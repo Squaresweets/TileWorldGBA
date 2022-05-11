@@ -159,7 +159,7 @@ void loadChunksUD(int direction) //-1 = up, 1 = down
 
 void loadChunks()
 {
-    //if(camerax < (((mapX-4)*16) << SHIFT_AMOUNT)) loadChunksLR(-1);
+    if(camerax < (((mapX-4)*16) << SHIFT_AMOUNT)) loadChunksLR(-1);
     //if(camerax > (((mapX-2)*16) << SHIFT_AMOUNT)) loadChunksLR(1);
     //if(cameray < (((mapY-4)*16) << SHIFT_AMOUNT)) loadChunksUD(-1);
     //if(cameray > (((mapY-2)*16) << SHIFT_AMOUNT)) loadChunksUD(1);
@@ -176,6 +176,7 @@ void setupMap()
         }
     }
     startMovement = true;
+    startsending = false;
 }
 
 //If we are recieving loads of map data, we want to stream it straight into where it should be, not keep it in a buffer

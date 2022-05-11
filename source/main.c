@@ -162,8 +162,8 @@ int main()
 
 		if(startMovement)
 		{
-			movement();
 			loadChunks();
+			movement();
 		}
 		
 		renderPlayer();
