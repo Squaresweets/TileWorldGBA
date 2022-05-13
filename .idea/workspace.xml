@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7cd8db5e-f5fa-48ef-87b3-b3e07ff343a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TileWorldClient.py" beforeDir="false" afterPath="$PROJECT_DIR$/TileWorldClient.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TileWorldGBA_mb.elf" beforeDir="false" afterPath="$PROJECT_DIR$/TileWorldGBA_mb.elf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TileWorldGBA_mb.gba" beforeDir="false" afterPath="$PROJECT_DIR$/TileWorldGBA_mb.gba" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/TileWorldGBA_mb.elf.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/TileWorldGBA_mb.elf.map" afterDir="false" />
@@ -22,8 +23,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TileWorldClient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="185" lean-forward="true" selection-start-line="185" selection-end-line="185" />
+            <state relative-caret-position="35">
+              <caret line="167" column="57" lean-forward="true" selection-start-line="167" selection-start-column="57" selection-end-line="167" selection-end-column="57" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -113,7 +114,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1640" />
+    <option name="x" value="2235" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1066" />
@@ -123,7 +124,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -135,6 +135,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -199,7 +200,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.48445874" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.45766345" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -277,8 +278,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TileWorldClient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="185" lean-forward="true" selection-start-line="185" selection-end-line="185" />
+        <state relative-caret-position="35">
+          <caret line="167" column="57" lean-forward="true" selection-start-line="167" selection-start-column="57" selection-end-line="167" selection-end-column="57" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

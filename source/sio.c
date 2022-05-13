@@ -32,6 +32,10 @@ u32 incomingoffset;
 u8 previousnibble;
 
 bool startsending = false;
+//If we are recieving loads of map data, we want to stream it straight into where it should be, not keep it in a buffer
+bool mapdatamode = false;
+
+volatile bool setupmapTrigger = false;
 
 
 //Length in bytes of each of the things the client could send
@@ -145,7 +149,6 @@ int mapX = 5, mapY = 5;
 
 void loadChunksLR(int direction) //-1 = left, 1 = right
 {  
-    cameray += (10 << SHIFT_AMOUNT);
     mapX += direction;
     for(u8 i=0; i<4; i++)
         setChunk(mapX - 5, i, mapX, mapY+i);
@@ -155,14 +158,6 @@ void loadChunksUD(int direction) //-1 = up, 1 = down
     mapY += direction;
     for(u8 i=0; i<4; i++)
         setChunk(i, mapY - 5, mapX + i, mapY);
-}
-
-void loadChunks()
-{
-    if(camerax < (((mapX-4)*16) << SHIFT_AMOUNT)) loadChunksLR(-1);
-    //if(camerax > (((mapX-2)*16) << SHIFT_AMOUNT)) loadChunksLR(1);
-    //if(cameray < (((mapY-4)*16) << SHIFT_AMOUNT)) loadChunksUD(-1);
-    //if(cameray > (((mapY-2)*16) << SHIFT_AMOUNT)) loadChunksUD(1);
 }
 
 void setupMap()
@@ -176,11 +171,24 @@ void setupMap()
         }
     }
     startMovement = true;
-    startsending = false;
 }
 
-//If we are recieving loads of map data, we want to stream it straight into where it should be, not keep it in a buffer
-bool mapdatamode = false;
+void loadChunks()
+{
+    if(setupmapTrigger)
+    {
+        setupMap();
+        setupmapTrigger = false;
+    }
+
+    if(!startMovement) return;
+    if(camerax < (((mapX-4)*16) << SHIFT_AMOUNT)) loadChunksLR(-1);
+    //if(camerax > (((mapX-2)*16) << SHIFT_AMOUNT)) loadChunksLR(1);
+    //if(cameray < (((mapY-4)*16) << SHIFT_AMOUNT)) loadChunksUD(-1);
+    //if(cameray > (((mapY-2)*16) << SHIFT_AMOUNT)) loadChunksUD(1);
+}
+
+
 
 void handle_serial()
 {
@@ -219,7 +227,8 @@ void handle_serial()
         //Shift array left
         memmove(&outbuf, &outbuf[1], 60);
     }
-    
+
+    //if(cutOffSerialTest) return;
     //=========================== INCOMING DATA ===========================
     /*Incoming is trickier as I am going to get ALOT of data through at once
     Like 60kb worth, not going to be fun
@@ -235,8 +244,6 @@ void handle_serial()
     Filled in with the new data
 
     This is the same on a bigger level for when new map data is added
-
-    Warning: May countain spaghetti code
     */
     if (!expectedlen)
     {
@@ -280,12 +287,12 @@ void handle_serial()
     if (incomingoffset >= expectedlen)
     {
         //TODO: Do stuff with data
-        if(mapdatamode)
-            setupMap();
         expectedlen = 0;
         incomingoffset = 0;
-        mapdatamode = false;
         previousnibble = 0;
+        if(mapdatamode)
+            setupmapTrigger = true;
+        mapdatamode = false;
     }
 }
 

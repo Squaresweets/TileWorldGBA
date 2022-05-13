@@ -159,12 +159,10 @@ int main()
 	{
 		vid_vsync();
 		key_poll();
+		loadChunks();
 
 		if(startMovement)
-		{
-			loadChunks();
 			movement();
-		}
 		
 		renderPlayer();
 	}

@@ -164,6 +164,8 @@ def main():
 
         # ============= GBA->Tileworld =============
         data = read4(epIn)
+        if data == 0xDEADBEEF:
+            print("==============DEADBEEF==============")
         if expectedlen == 0:
             expectedlen = data  # in bytes
             i = 0
