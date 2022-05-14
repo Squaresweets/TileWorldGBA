@@ -190,9 +190,9 @@ def main():
 def listen(ws):
     print("Started thread")
     while True:
-        message = ws.recv()
+        message = bytearray(ws.recv())
         print("From tileworld server: " + message.hex())
-        outbuf.append(bytearray(message))
+        outbuf.append(message)
 
 
 if __name__ == "__main__":

@@ -7,9 +7,7 @@
       <change beforePath="$PROJECT_DIR$/TileWorldGBA_mb.elf" beforeDir="false" afterPath="$PROJECT_DIR$/TileWorldGBA_mb.elf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TileWorldGBA_mb.gba" beforeDir="false" afterPath="$PROJECT_DIR$/TileWorldGBA_mb.gba" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/TileWorldGBA_mb.elf.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/TileWorldGBA_mb.elf.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/main.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/sio.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/sio.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/sio.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/sio.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TileWorldClient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="35">
-              <caret line="167" column="57" lean-forward="true" selection-start-line="167" selection-start-column="57" selection-end-line="167" selection-end-column="57" />
+            <state relative-caret-position="715">
+              <caret line="194" column="30" lean-forward="true" selection-start-line="194" selection-start-column="30" selection-end-line="194" selection-end-column="30" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -124,6 +122,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -135,7 +134,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -200,7 +198,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.45766345" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.45766345" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -278,8 +276,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TileWorldClient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="167" column="57" lean-forward="true" selection-start-line="167" selection-start-column="57" selection-end-line="167" selection-end-column="57" />
+        <state relative-caret-position="715">
+          <caret line="194" column="30" lean-forward="true" selection-start-line="194" selection-start-column="30" selection-end-line="194" selection-end-column="30" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
