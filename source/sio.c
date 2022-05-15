@@ -165,14 +165,14 @@ void loadChunksLR(int direction) //-1 = left, 1 = right
     u8 r = 3*(direction == 1);
     mapX += direction;
     for(u8 i=0; i<4; i++)
-        setChunk(mapX - 5 + r, i, mapX + r, mapY+i);
+        setChunk(mapX - 5 + r, i+mapY-5, mapX + r, mapY+i);
 }
 void loadChunksUD(int direction) //-1 = up, 1 = down
 {  
     u8 d = 3*(direction == 1);
     mapY += direction;
     for(u8 i=0; i<4; i++)
-        setChunk(i, mapY - 5 + d, mapX + i, mapY + d);
+        setChunk(i+mapX-5, mapY - 5 + d, mapX + i, mapY + d);
 }
 
 
