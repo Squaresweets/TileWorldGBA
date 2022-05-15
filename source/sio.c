@@ -44,8 +44,20 @@ u16 datalengthtable[10] = {0, 3, 0, 1, 0, 12, 18, 0, 16, 0}; //Message number 9 
 //Where the map is stored in memory [outer y][outer x][inner y][inner x]
 u8 map[28800];
 
+//The following x y positions represent where the GBA tilemap is on the Map
+//Initial values are 5
+int mapX = 5, mapY = 5;
+//Say we wanted to move the map to the left, first we would subtract 5
+//from both values, then if we are moving to the left we +1, right -1
+//these values can then be put through mod(4) to show where to place the new chunks we
+//just loaded, hopefully that makes sense
+
+
+//The following x y positions represent the offset of the map from spawn
+int MapOffsetX = 0, mapOffsetY = 0;
 
 //=========================== SENDING DATA ===========================
+//There may be some more 
 void connect()
 {
     outbuf[numinbuf][0] = 0x1;
@@ -64,11 +76,23 @@ void place(u32 x, u32 y, u8 ID)
     outbuf[numinbuf][10] = ID;
     numinbuf++;
 }
-void move(u8 keys, u32 x, u32 y, u32 xv, u32 yv)
+void move(u8 keys)
 {
     outbuf[numinbuf][0] = 0x6;
     outbuf[numinbuf][1] = keys;
-    //TODO: I gotta do other stuff first, bare with
+    *(float*)(&outbuf[numinbuf][1]) = Fixed_to_float(playerx * 32);
+    *(float*)(&outbuf[numinbuf][5]) = Fixed_to_float(playery * 32);
+    *(float*)(&outbuf[numinbuf][9]) = Fixed_to_float(xv * 32);
+    *(float*)(&outbuf[numinbuf][13]) = Fixed_to_float(yv * 32);
+    numinbuf++;
+}
+void requestChunks(s32 xDir, s32 yDir)
+{
+    outbuf[numinbuf][0] = 0x8;
+    *(u32*)(&outbuf[numinbuf][1]) = MapOffsetX;
+    *(u32*)(&outbuf[numinbuf][5]) = mapOffsetY;
+    *(u32*)(&outbuf[numinbuf][9]) = xDir;
+    *(u32*)(&outbuf[numinbuf][13]) = yDir;
     numinbuf++;
 }
 
@@ -151,14 +175,6 @@ void setupMap()
     }
     startMovement = true;
 }
-
-//The following x y positions represent where the GBA tilemap is on the Map
-//Initial values are 5
-int mapX = 5, mapY = 5;
-//Say we wanted to move the map to the left, first we would subtract 5
-//from both values, then if we are moving to the left we +1, right -1
-//these values can then be put through mod(4) to show where to place the new chunks we
-//just loaded, hopefully that makes sense
 
 void loadChunksLR(int direction) //-1 = left, 1 = right
 {
