@@ -2,6 +2,7 @@
 #include "Colly.h"
 #include "sio.h"
 #include "TileMap.h"
+#include "util.h"
 
 #include <string.h>
 #include <math.h>
@@ -28,8 +29,8 @@ OBJ_AFFINE *obj_aff_buffer= (OBJ_AFFINE*)obj_buffer;
 
 
 //Fixed point, with a shift value of 16
-int playerx = 31 << SHIFT_AMOUNT, playery = 31 << SHIFT_AMOUNT;
-int camerax = 31 << SHIFT_AMOUNT, cameray = 31 << SHIFT_AMOUNT;
+int playerx = 32 << SHIFT_AMOUNT, playery = 32 << SHIFT_AMOUNT;
+int camerax = 32 << SHIFT_AMOUNT, cameray = 32 << SHIFT_AMOUNT;
 int xv = 0, yv = 0;
 bool startMovement = false;
 OBJ_ATTR *player= &obj_buffer[0];
@@ -111,6 +112,7 @@ void movement()
 	xv *= !Check(bounds, g).collided;
 	g.y = playery - yv; g.x = bounds.x;
 	yv *= !Check(bounds, g).collided;
+
 }
 
 void renderPlayer()
@@ -162,7 +164,10 @@ int main()
 		loadChunks();
 
 		if(startMovement)
+		{
 			movement();
+			sioMove(0);
+		}
 		
 		renderPlayer();
 	}

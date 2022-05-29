@@ -1,7 +1,9 @@
 #include "sio.h"
 #include <tonc.h>
 #include "main.h"
+#include "util.h"
 #include <string.h>
+#include "Colly.h"
 
 //Much of this comes from here:
 //https://github.com/maciel310/gba-mmo/blob/main/source/serial.c
@@ -57,7 +59,6 @@ int mapX = 5, mapY = 5;
 int MapOffsetX = 0, mapOffsetY = 0;
 
 //=========================== SENDING DATA ===========================
-//There may be some more 
 void connect()
 {
     outbuf[numinbuf][0] = 0x1;
@@ -76,14 +77,31 @@ void place(u32 x, u32 y, u8 ID)
     outbuf[numinbuf][10] = ID;
     numinbuf++;
 }
-void move(u8 keys)
+void sioMove(u8 keys)
 {
+    if(numinbuf) return; //Only send movement stuff if the buffer is clear
     outbuf[numinbuf][0] = 0x6;
     outbuf[numinbuf][1] = keys;
-    *(float*)(&outbuf[numinbuf][1]) = Fixed_to_float(playerx * 32);
-    *(float*)(&outbuf[numinbuf][5]) = Fixed_to_float(playery * 32);
-    *(float*)(&outbuf[numinbuf][9]) = Fixed_to_float(xv * 32);
-    *(float*)(&outbuf[numinbuf][13]) = Fixed_to_float(yv * 32);
+
+    //Have to do a couple of things to position first
+    //Minus 32 to zero the position
+    //Add 1 to X and -0.125 to y (for some reason, just how TW likes it)
+    //Multiply them by 32 (idk why, just how tileworld does it)
+    //Finally convert to a float, gotta make it little endian because reasons
+    //*(float*)(&outbuf[numinbuf][1]) = ReverseFloat(Fixed_to_float((playerx-(31<<SHIFT_AMOUNT)) * 32));
+    //*(float*)(&outbuf[numinbuf][5]) = ReverseFloat(Fixed_to_float((playery+(ONE_SHIFTED/8)-(32 << SHIFT_AMOUNT)) * 32));
+
+    //*(float*)(&outbuf[numinbuf][2]) = ReverseFloat(320.0f);
+    //*(float*)(&outbuf[numinbuf][6]) = ReverseFloat(320.0f);
+    *(u32*)(&outbuf[numinbuf][2]) = 0x77777777;
+    *(u32*)(&outbuf[numinbuf][6]) = 0x65656565;
+
+    //https://gregstoll.com/~gregstoll/floattohex/
+
+
+    //Ignore velocity for now
+    //*(float*)(&outbuf[numinbuf][10]) = Fixed_to_float(xv * 32);
+    //*(float*)(&outbuf[numinbuf][14]) = Fixed_to_float(yv * 32);
     numinbuf++;
 }
 void requestChunks(s32 xDir, s32 yDir)

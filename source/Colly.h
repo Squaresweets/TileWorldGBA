@@ -29,5 +29,7 @@ checkreturn Check(vector bounds, vector goal);
    ({ __typeof__ (a) _a = (a); \
        __typeof__ (b) _b = (b); \
      _a < _b ? _a : _b; })
+     
+int mod(int x,int N);
 
 #endif
