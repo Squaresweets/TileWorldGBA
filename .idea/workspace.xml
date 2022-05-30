@@ -2,20 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cd8db5e-f5fa-48ef-87b3-b3e07ff343a3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TileWorldGBA_mb.elf" beforeDir="false" afterPath="$PROJECT_DIR$/TileWorldGBA_mb.elf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TileWorldGBA_mb.gba" beforeDir="false" afterPath="$PROJECT_DIR$/TileWorldGBA_mb.gba" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/TileWorldGBA_mb.elf.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/TileWorldGBA_mb.elf.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/colly.d" beforeDir="false" afterPath="$PROJECT_DIR$/build/colly.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main.d" beforeDir="false" afterPath="$PROJECT_DIR$/build/main.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/main.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/sio.d" beforeDir="false" afterPath="$PROJECT_DIR$/build/sio.d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/sio.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/sio.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Colly.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/Colly.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Colly.h" beforeDir="false" afterPath="$PROJECT_DIR$/source/Colly.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/main.h" beforeDir="false" afterPath="$PROJECT_DIR$/source/main.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/sio.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/sio.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/sio.h" beforeDir="false" afterPath="$PROJECT_DIR$/source/sio.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/util.h" beforeDir="false" afterPath="$PROJECT_DIR$/source/util.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -129,6 +122,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -140,7 +134,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">

@@ -17,3 +17,5 @@ https://user-images.githubusercontent.com/51029884/166960886-2b50a1c5-12ef-4bcb-
 - Other players?
 
 Big thanks to [maciel310](https://github.com/maciel310) for the help on this project!
+
+I just wanted to put it out there that this is my first C project, so I probably didn't conform to C norms (sorry about that)

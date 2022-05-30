@@ -91,10 +91,12 @@ void sioMove(u8 keys)
     //*(float*)(&outbuf[numinbuf][1]) = ReverseFloat(Fixed_to_float((playerx-(31<<SHIFT_AMOUNT)) * 32));
     //*(float*)(&outbuf[numinbuf][5]) = ReverseFloat(Fixed_to_float((playery+(ONE_SHIFTED/8)-(32 << SHIFT_AMOUNT)) * 32));
 
-    //*(float*)(&outbuf[numinbuf][2]) = ReverseFloat(320.0f);
-    //*(float*)(&outbuf[numinbuf][6]) = ReverseFloat(320.0f);
-    *(u32*)(&outbuf[numinbuf][2]) = 0x77777777;
-    *(u32*)(&outbuf[numinbuf][6]) = 0x65656565;
+    *(float*)(&outbuf[numinbuf][2]) = ReverseFloat(10000000.0f);
+    *(float*)(&outbuf[numinbuf][6]) = ReverseFloat(10000000.0f);
+    *(float*)(&outbuf[numinbuf][2]) = ReverseFloat(10000000.0f);
+    *(float*)(&outbuf[numinbuf][6]) = ReverseFloat(10000000.0f);
+    //*(u32*)(&outbuf[numinbuf][2]) = 0x77777777;
+    //*(u32*)(&outbuf[numinbuf][6]) = 0x65656565;
 
     //https://gregstoll.com/~gregstoll/floattohex/
 

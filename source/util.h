@@ -8,4 +8,5 @@
 #define Fixed_to_float(X) ((float)X / ONE_SHIFTED)
 
 float ReverseFloat( const float inFloat );
+float float_swap(float value);
 #endif

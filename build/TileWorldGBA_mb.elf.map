@@ -743,12 +743,12 @@ Linker script and memory map
  .debug_abbrev  0x00000000000002c3      0x3a6 main.o
  .debug_abbrev  0x0000000000000669      0x30e sio.o
 
-.debug_line     0x0000000000000000     0x192e
+.debug_line     0x0000000000000000     0x1941
  *(.debug_line)
  .debug_line    0x0000000000000000      0x885 Colly.o
  .debug_line    0x0000000000000885       0x5e TileMap.o
  .debug_line    0x00000000000008e3      0x651 main.o
- .debug_line    0x0000000000000f34      0x9fa sio.o
+ .debug_line    0x0000000000000f34      0xa0d sio.o
 
 .debug_frame    0x0000000000000000      0x2a4
  *(.debug_frame)
