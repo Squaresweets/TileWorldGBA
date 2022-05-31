@@ -7,6 +7,5 @@
 #define INT_MASK ~((1 << SHIFT_AMOUNT) - 1)
 #define Fixed_to_float(X) ((float)X / ONE_SHIFTED)
 
-float ReverseFloat( const float inFloat );
-float float_swap(float value);
+//float ReverseFloat( const float inFloat );
 #endif

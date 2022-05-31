@@ -84,19 +84,13 @@ void sioMove(u8 keys)
     outbuf[numinbuf][1] = keys;
 
     //Have to do a couple of things to position first
+    //-0.5 from both to get center of player(not top left)
+    //Add 1 to X and 4/32 to y (for some reason, just how TW likes it)
     //Minus 32 to zero the position
-    //Add 1 to X and -0.125 to y (for some reason, just how TW likes it)
     //Multiply them by 32 (idk why, just how tileworld does it)
     //Finally convert to a float, gotta make it little endian because reasons
-    //*(float*)(&outbuf[numinbuf][1]) = ReverseFloat(Fixed_to_float((playerx-(31<<SHIFT_AMOUNT)) * 32));
-    //*(float*)(&outbuf[numinbuf][5]) = ReverseFloat(Fixed_to_float((playery+(ONE_SHIFTED/8)-(32 << SHIFT_AMOUNT)) * 32));
-
-    *(float*)(&outbuf[numinbuf][2]) = ReverseFloat(10000000.0f);
-    *(float*)(&outbuf[numinbuf][6]) = ReverseFloat(10000000.0f);
-    *(float*)(&outbuf[numinbuf][2]) = ReverseFloat(10000000.0f);
-    *(float*)(&outbuf[numinbuf][6]) = ReverseFloat(10000000.0f);
-    //*(u32*)(&outbuf[numinbuf][2]) = 0x77777777;
-    //*(u32*)(&outbuf[numinbuf][6]) = 0x65656565;
+    *(float*)(&outbuf[numinbuf][2]) = (Fixed_to_float((playerx-(ONE_SHIFTED/2) +ONE_SHIFTED           -(32 << SHIFT_AMOUNT)) * 32));
+    *(float*)(&outbuf[numinbuf][6]) = (Fixed_to_float((playery+(ONE_SHIFTED/2) +(4<<SHIFT_AMOUNT)/32  -(32 << SHIFT_AMOUNT)) * 32));
 
     //https://gregstoll.com/~gregstoll/floattohex/
 

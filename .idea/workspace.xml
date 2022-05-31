@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cd8db5e-f5fa-48ef-87b3-b3e07ff343a3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TileWorldGBA_mb.elf" beforeDir="false" afterPath="$PROJECT_DIR$/TileWorldGBA_mb.elf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TileWorldGBA_mb.gba" beforeDir="false" afterPath="$PROJECT_DIR$/TileWorldGBA_mb.gba" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/TileWorldGBA_mb.elf.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/TileWorldGBA_mb.elf.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/sio.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/sio.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/util.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/util.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/bug notes.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/source/sio.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/sio.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/util.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/util.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/util.h" beforeDir="false" afterPath="$PROJECT_DIR$/source/util.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,29 +24,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TileWorldClient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="681">
-              <caret line="192" column="38" selection-start-line="192" selection-start-column="38" selection-end-line="192" selection-end-column="38" />
+            <state relative-caret-position="152">
+              <caret line="182" selection-start-line="182" selection-end-line="182" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/websocket/_core.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4012">
-              <caret line="249" selection-start-line="249" selection-end-line="249" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/websocket/_http.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2006">
-              <caret line="129" selection-start-line="129" selection-end-line="129" />
             </state>
           </provider>
         </entry>
@@ -191,13 +176,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.45766345" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.45766345" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -273,23 +259,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TileWorldClient.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="681">
-          <caret line="192" column="38" selection-start-line="192" selection-start-column="38" selection-end-line="192" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/websocket/_core.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4012">
-          <caret line="249" selection-start-line="249" selection-end-line="249" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/websocket/_http.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2006">
@@ -318,6 +287,23 @@
           <caret line="106" column="45" selection-start-line="106" selection-start-column="45" selection-end-line="106" selection-end-column="45" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/websocket/_core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="524" selection-start-line="524" selection-end-line="524" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TileWorldClient.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="182" selection-start-line="182" selection-end-line="182" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
