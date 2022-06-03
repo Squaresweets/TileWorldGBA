@@ -50,34 +50,30 @@ void init_map()
     memcpy(&tile_mem[4][0], TileMapTiles, TileMapTilesLen);
     memcpy(pal_bg_mem, TileMapPal, TileMapPalLen);
     memcpy(pal_obj_mem, TileMapPal, TileMapPalLen);
-    //memcpy(pal_obj_mem, playerspritePal, 1);
 
-	// Create a map: four contingent blocks of 
-	//   0x0000, 0x1000, 0x2000, 0x3000.
-	/*
+	//Code to load loading screen
 	int ii, jj, c;
 	SCR_ENTRY *pse= bg0_map;
 	for(ii=0; ii<4; ii++)
 	{
 		for(jj=0; jj<32*32; jj++)
 		{
+			//Here we are hardcoding the house
+			//MAKE THIS BETTER, THIS IS UGLY
 			c = 0;
-			if (ii>1) c = 8;
-			else if (jj >= 32*31) c = 9;
-			//ATM i am just hard coding in the house, obviously this will not stay, but it gives me somewhere to test physics
-			if(ii == 0)
-			{
-				//The roof of the house
-				if(jj == 802 || (jj > 832 && jj < 836) || (jj > 863 && jj < 869)) c = 2;
-				//The house
-				if((jj > 896 && jj < 900) || (jj > 928 && jj < 932) || (jj > 960 && jj < 964)) c = 7;
-			}
-			if(ii == 1) c = 11;
-
+			//Floor
+			if(ii > 1 && (jj/32) > 1) c = 8;
+			else if(ii > 1 && (jj/32) == 1) c = 9;
+			//Grey part of house
+			if((ii == 3 && jj > 8) && (jj < 12)) c = 7;
+			if(ii == 1 && (jj/32)>29 && (jj%32>8) && (jj%32<12)) c = 7;
+			//Red part of the house
+			if(ii == 1 && (jj == (32*27)+10)) c = 2;
+			if(ii == 1 && (jj/32)==28 && (jj%32>8) && (jj%32<12)) c = 2;
+			if(ii == 1 && (jj/32)==29 && (jj%32>7) && (jj%32<13)) c = 2;
 			*pse++ = SE_PALBANK(0) | c;
 		}
 	}
-	*/
 }
 
 void movement()
@@ -101,6 +97,7 @@ void movement()
 	yv *= (ladder ? 851 : 951); yv /= 1000;
 	xv *= (ladder ? 851 : 951); xv /= 1000;
 
+	//Cap to 0.5
 	xv = max(min(xv, (ONE_SHIFTED/2)), -(ONE_SHIFTED/2));
 
 	g.x = bounds.x + xv; g.y = bounds.y - yv;
@@ -117,6 +114,7 @@ void movement()
 
 void renderPlayer()
 {
+	//Lerp to player pos
 	camerax += (playerx - camerax) / 4;
 	cameray += (playery - cameray) / 4;
 
@@ -166,7 +164,7 @@ int main()
 		if(startMovement)
 		{
 			movement();
-			sioMove(0);
+			sioMove();
 		}
 		
 		renderPlayer();

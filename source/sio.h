@@ -5,5 +5,5 @@
 void sioInit();
 void handle_serial();
 void loadChunks();
-void sioMove(u8 keys);
+void sioMove();
 #endif

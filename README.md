@@ -11,8 +11,8 @@ https://user-images.githubusercontent.com/51029884/166960886-2b50a1c5-12ef-4bcb-
 - Python -> GBA communication ✔️
 - Multiboot (Hard) ✔️
 - Spawn loading ✔️
+- Location information sending ✔️
 - New chunks loading
-- Location information sending
 - 3D printed game holder
 - Other players?
 

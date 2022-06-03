@@ -44,5 +44,3 @@ const unsigned int playerspritePal[1] __attribute__((aligned(4)))=
 {
 	0x00007FFF,
 };
-
-//}}BLOCK(TileMap)

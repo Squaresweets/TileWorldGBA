@@ -77,27 +77,28 @@ void place(u32 x, u32 y, u8 ID)
     outbuf[numinbuf][10] = ID;
     numinbuf++;
 }
-void sioMove(u8 keys)
+void sioMove()
 {
     if(numinbuf) return; //Only send movement stuff if the buffer is clear
     outbuf[numinbuf][0] = 0x6;
-    outbuf[numinbuf][1] = keys;
+    //Keys (8 bit, up/down/left/right/jump are each mapped to a bit)
+    outbuf[numinbuf][1] = (key_is_down(KEY_UP)) |
+                          (key_is_down(KEY_DOWN) << 1) |
+                          (key_is_down(KEY_LEFT) << 2) |
+                          (key_is_down(KEY_RIGHT) << 3) |
+                          (key_is_down(KEY_A) << 4);
 
     //Have to do a couple of things to position first
     //-0.5 from both to get center of player(not top left)
-    //Add 1 to X and 4/32 to y (for some reason, just how TW likes it)
+    //Add 1 to X (for some reason, just how TW likes it)
     //Minus 32 to zero the position
     //Multiply them by 32 (idk why, just how tileworld does it)
     //Finally convert to a float, gotta make it little endian because reasons
-    *(float*)(&outbuf[numinbuf][2]) = (Fixed_to_float((playerx-(ONE_SHIFTED/2) +ONE_SHIFTED           -(32 << SHIFT_AMOUNT)) * 32));
-    *(float*)(&outbuf[numinbuf][6]) = (Fixed_to_float((playery+(ONE_SHIFTED/2) +(4<<SHIFT_AMOUNT)/32  -(32 << SHIFT_AMOUNT)) * 32));
+    *(float*)(&outbuf[numinbuf][2]) = (Fixed_to_float((playerx-(ONE_SHIFTED/2) + ONE_SHIFTED -(32 << SHIFT_AMOUNT)) * 32));
+    *(float*)(&outbuf[numinbuf][6]) = (Fixed_to_float((playery+(ONE_SHIFTED/2)               -(32 << SHIFT_AMOUNT)) * 32));
 
-    //https://gregstoll.com/~gregstoll/floattohex/
-
-
-    //Ignore velocity for now
-    //*(float*)(&outbuf[numinbuf][10]) = Fixed_to_float(xv * 32);
-    //*(float*)(&outbuf[numinbuf][14]) = Fixed_to_float(yv * 32);
+    *(float*)(&outbuf[numinbuf][10]) = Fixed_to_float(xv * 64);
+    *(float*)(&outbuf[numinbuf][14]) = Fixed_to_float(-yv * 32);
     numinbuf++;
 }
 void requestChunks(s32 xDir, s32 yDir)
@@ -111,38 +112,7 @@ void requestChunks(s32 xDir, s32 yDir)
 }
 
 //=========================== MAP STUFF ===========================
-/*
-    Tileworld data is orgnaised in 225 16x16 blocks
-    0   1   2   3...
-    15  16  17  18...
-    etc.
-
-    Tilemap displayed is organised in 4 32x32 blocks               
-    0 1
-    2 3
-
-    To get these to line up I split each 32x32 block in the tilemap into 4 16x16
-    0  1    4  5
-    2  3    6  7
-
-    8  9    12 13
-    10 11   14 15
-    (Keep in mind each of these is 16x16 (One chunk))
-
-
-    So for the following function I should give it a memory address in the map array for the chunk I wanna copy
-    And then give me an ID 0-15 for one of the chunks as seen above to copy it into
-    
-
-    First, I wanna get given the ID 0-15 in this pattern
-    0  1    2  3
-    4  5    6  7
-
-    8  9    10 11
-    12 13   14 15
-    And then convert it to the other pattern
-    Now I could do logic for this, but a conversion table is easier
-*/
+//See howMapIsStored.md for more info on this
 u16 mapIDconversiontable[16] = {0,  1,  4,  5, 
                                 2,  3,  6,  7, 
 
