@@ -58,19 +58,11 @@ void init_map()
 	{
 		for(jj=0; jj<32*32; jj++)
 		{
-			//Here we are hardcoding the house
-			//MAKE THIS BETTER, THIS IS UGLY
+			//Here we are hardcoding the loading screen
+			//I KNOW this code is ugly, but in terms of saving storage
+			//This makes the most sense, since storing the entire loading screen
+			//As a tilemap would take up loads of data which would have to be sent over
 			c = 0;
-			//Floor
-			if(ii > 1 && (jj/32) > 1) c = 8;
-			else if(ii > 1 && (jj/32) == 1) c = 9;
-			//Grey part of house
-			if((ii == 3 && jj > 8) && (jj < 12)) c = 7;
-			if(ii == 1 && (jj/32)>29 && (jj%32>8) && (jj%32<12)) c = 7;
-			//Red part of the house
-			if(ii == 1 && (jj == (32*27)+10)) c = 2;
-			if(ii == 1 && (jj/32)==28 && (jj%32>8) && (jj%32<12)) c = 2;
-			if(ii == 1 && (jj/32)==29 && (jj%32>7) && (jj%32<13)) c = 2;
 			*pse++ = SE_PALBANK(0) | c;
 		}
 	}

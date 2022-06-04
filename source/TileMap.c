@@ -1,4 +1,4 @@
-
+#include <tonc.h>
 //{{BLOCK(TileMap)
 
 //======================================================================
@@ -43,4 +43,22 @@ const unsigned int TileMapPal[8] __attribute__((aligned(4)))=
 const unsigned int playerspritePal[1] __attribute__((aligned(4)))=
 {
 	0x00007FFF,
+};
+
+//Tilemap for LOADING on the menu
+//It is split into two parts because of there being multiple screen blocks
+//There may be a better way to do this, (there probably is tbh)
+const  u16 LOAD[4][13] =
+{
+	{5,0,0,0,5,5,5,0,5,5,5,0,5},
+	{5,0,0,0,5,0,5,0,5,0,5,0,5},
+	{5,0,0,0,5,0,5,0,5,5,5,0,5},
+	{5,5,5,0,5,5,5,0,5,0,5,0,5}
+};
+const  u16 DING[4][14] =
+{
+	{5,0,0,5,5,5,0,5,5,5,0,5,5,5},
+	{0,5,0,0,5,0,0,5,0,5,0,5,0,0},
+	{0,5,0,0,5,0,0,5,0,5,0,5,0,5},
+	{5,5,0,5,5,5,0,5,0,5,0,5,5,5}
 };
