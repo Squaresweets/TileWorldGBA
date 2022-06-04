@@ -24,6 +24,9 @@ extern const unsigned int TileMapTiles[128];
 extern const unsigned int TileMapPal[8];
 extern const unsigned int playerspritePal[1];
 
+extern const u8 LOAD[4][13];
+extern const u8 DING[4][14];
+
 #endif // GRIT_TILEMAP_H
 
 //}}BLOCK(TileMap)

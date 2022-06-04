@@ -62,7 +62,21 @@ void init_map()
 			//I KNOW this code is ugly, but in terms of saving storage
 			//This makes the most sense, since storing the entire loading screen
 			//As a tilemap would take up loads of data which would have to be sent over
+
+			//God I hate this code, I really do, if you are reading this please forgive me
+			//This is not who I really am, this goddam loading screen haunted my nightmares
 			c = 0;
+			//LOADING
+			if((ii == 0) && (jj>=787) && (jj<896) && (jj%32 > 18) &&(LOAD[(jj-768)/32][(jj%32)-19])) c = 5;
+			if((ii == 1) && (jj>=768) && (jj<878) && (jj%32 < 14) &&(DING[(jj-768)/32][(jj%32)])) c = 5;
+			//Left grass
+			if(ii == 2)
+			{
+				if(jj > 224) c = 8; //Dirt at bottom
+				else if(jj>96 && jj < 117) c = 9;
+				else if(jj>=128 && (jj%32)<21) c = 8;
+				else if((jj > 189 && jj < 193) || (jj > 218 && jj < 225)) c = 8;
+			}
 			*pse++ = SE_PALBANK(0) | c;
 		}
 	}
