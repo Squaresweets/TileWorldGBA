@@ -14,6 +14,9 @@ Video showing latest progress:
 - Multiboot (Hard) ✔️
 - Spawn loading ✔️
 - Location information sending ✔️
+- Loading screen ✔️
+- Receiving tile places
+- Changing tiles
 - New chunks loading
 - 3D printed game holder
 - Other players?
