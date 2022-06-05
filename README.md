@@ -1,7 +1,9 @@
 # TileWorldGBA
 ![gamecart](https://github.com/Squaresweets/TileWorldGBA/blob/main/GameCart.png)
 
-https://user-images.githubusercontent.com/51029884/166960886-2b50a1c5-12ef-4bcb-9f7f-f51508d30568.mp4
+Video showing latest progress:
+
+[![Smooth movement](https://img.youtube.com/vi/H5mTd7O5Pho/0.jpg)](https://www.youtube.com/watch?v=H5mTd7O5Pho)
 
 [TileWorld](https://tileworld.org) for Gameboy Advance! Why? IDK I thought it was kinda funny
 
