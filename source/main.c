@@ -69,13 +69,19 @@ void init_map()
 			//LOADING
 			if((ii == 0) && (jj>=787) && (jj<896) && (jj%32 > 18) &&(LOAD[(jj-768)/32][(jj%32)-19])) c = 5;
 			if((ii == 1) && (jj>=768) && (jj<878) && (jj%32 < 14) &&(DING[(jj-768)/32][(jj%32)])) c = 5;
-			//Left grass
-			if(ii == 2)
+			if(ii == 1 && ((jj==938) || (jj>968 && jj < 972) || (jj>999 && jj < 1005))) c = 2; //Roof of house
+			else if(ii == 2)
 			{
 				if(jj > 224) c = 8; //Dirt at bottom
-				else if(jj>96 && jj < 117) c = 9;
-				else if(jj>=128 && (jj%32)<21) c = 8;
-				else if((jj > 189 && jj < 193) || (jj > 218 && jj < 225)) c = 8;
+				else if(jj>=128 && (jj%32)<21) c = 8; //Bunch of dirt on left
+				else if((jj > 189 && jj < 193) || (jj > 218 && jj < 225)) c = 8; //Dirt on right
+				else if((jj>96 && jj < 117) || (jj>157 && jj < 160) || (jj>186 && jj < 190) || (jj>212 && jj < 219)) c = 9; //Grass on left and right
+			}
+			else if(ii == 3)
+			{
+				if(jj>127) c = 8; //Dirt
+				if((jj>127 && jj < 134) || (jj>101 && jj<128)) c = 9; //Grass
+				else if(jj<96 && ((jj%32)>8) && ((jj%32)<12)) c = 7; //Main section of house
 			}
 			*pse++ = SE_PALBANK(0) | c;
 		}

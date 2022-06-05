@@ -124,8 +124,10 @@ u16 mapIDconversiontable[16] = {0,  1,  4,  5,
 //x and y = Where to get from map (0-14)
 void setChunk(int sx, int sy, int x, int y)
 {	
-    sx = mod(sx, 4); sy = mod(sy, 4);
-    x = mod(x, 15); y = mod(y, 15);
+    //Looking back on this I could have used se_index to do this
+    //But I'm not touching this now it works lol
+    sx = mod(sx, 4); sy = mod(sy, 4); //loop it round
+    x = mod(x, 15); y = mod(y, 15); //loop it round
     SCR_ENTRY *pse= bg_map;
     //First get our pointer to the start of the chunk we wanna edit
     int ID = mapIDconversiontable[sx+(4*sy)];
@@ -162,14 +164,14 @@ void setupMap()
 
 void loadChunksLR(int direction) //-1 = left, 1 = right
 {
-    u8 r = 3*(direction == 1);
+    u8 r = 3*(direction == 1); //Go to other side if we are going to the right
     mapX += direction;
     for(u8 i=0; i<4; i++)
         setChunk(mapX - 5 + r, i+mapY-5, mapX + r, mapY+i);
 }
 void loadChunksUD(int direction) //-1 = up, 1 = down
 {  
-    u8 d = 3*(direction == 1);
+    u8 d = 3*(direction == 1); //Go to other side if we are going down
     mapY += direction;
     for(u8 i=0; i<4; i++)
         setChunk(i+mapX-5, mapY - 5 + d, mapX + i, mapY + d);
@@ -290,13 +292,38 @@ void handle_serial()
 
     if (incomingoffset >= expectedlen)
     {
-        //TODO: Do stuff with data
+        processData();
         expectedlen = 0;
         incomingoffset = 0;
         previousnibble = 0;
         if(mapdatamode)
             setupmapTrigger = true;
         mapdatamode = false;
+    }
+}
+
+void processData()
+{
+    u8* incomingbuf8 = (u8*)incomingbuf;
+    //(For more info on these check docs.md)
+    if(*(u8 *)incomingbuf == 5) //Server Place
+    {
+        //To "set" a pixel, I have to update the map array, then set the pixel in the tileMap (if it is currently visable)
+        //                             Get X position (pos 1)           Get Y position (pos 5)                  Get TileID  
+        //se_mem[28][se_index(mod(*(int*)(incomingbuf8 + 1), 64), mod(*(int*)(incomingbuf8 + 5), 64), 64)] = *(incomingbuf8 + 10);
+
+        int x = *(int*)(incomingbuf8 + 1);
+        int y = *(int*)(incomingbuf8 + 5);
+        u8 id = incomingbuf8[10];
+        //Editing a value in the map array is so annoying
+        //Since it is all split into chunks and everything is in nibbles
+        //It is best for getting entire chunks, since then I can just memcpy them into place
+        //Not htis
+        
+        //Lets work out how to change a single value of the map together!
+        //I'm too tired for this, and I have exams for the next few weeks
+        //So I guess this will have to wait :(
+        
     }
 }
 

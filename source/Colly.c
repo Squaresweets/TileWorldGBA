@@ -7,12 +7,6 @@ int mod(int x,int N){
     return (x % N + N) %N;
 }
 
-u32 se_index(u32 tx, u32 ty, u32 pitch)
-{	
-	u32 sbb= ((tx>>5)+(ty>>5)*(pitch>>5));
-
-	return sbb*1024 + ((tx&31)+(ty&31)*32);
-}
 
 bool Intersects(vector *rect, vector *other, vector *intersection)
 {
