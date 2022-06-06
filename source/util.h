@@ -10,4 +10,5 @@
 #define Fixed_to_float(X) ((float)X / ONE_SHIFTED)
 
 u32 se_index(u32 tx, u32 ty, u32 pitch);
+u32 map_index(u32 tx, u32 ty);
 #endif

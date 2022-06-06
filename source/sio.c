@@ -315,15 +315,13 @@ void processData()
         int x = *(int*)(incomingbuf8 + 1);
         int y = *(int*)(incomingbuf8 + 5);
         u8 id = incomingbuf8[10];
-        //Editing a value in the map array is so annoying
-        //Since it is all split into chunks and everything is in nibbles
-        //It is best for getting entire chunks, since then I can just memcpy them into place
-        //Not htis
-        
-        //Lets work out how to change a single value of the map together!
-        //I'm too tired for this, and I have exams for the next few weeks
-        //So I guess this will have to wait :(
-        
+        //For this I can use map_index function I made from the util.c file
+        map[map_index(x+112, y+112)] = id;
+
+        //Now, since the map array is only used when loading new chunks
+        //I also have to set it on the actual map
+        //LOOK INTO IT BEING NEGATIVE AND STUFF
+        se_mem[28][se_index(mod(x+112-(16*mapX),64),mod(y+112-(16*mapY),64),64)] = id;
     }
 }
 
