@@ -140,7 +140,7 @@ def main():
         # ============= Tileworld->GBA =============
         if outlen == 0 and len(outbuf) > 0:
             # new data to send
-            print("Sending len: " + str(len(outbuf[0])))
+            print("Sending len: " + str(len(outbuf[0])) + " to GBA")
             send(len(outbuf[0]), epOut, False)
             outlen = len(outbuf[0])
             #Padding to avoid errors

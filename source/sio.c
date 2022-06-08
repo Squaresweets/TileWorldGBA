@@ -306,22 +306,23 @@ void processData()
 {
     u8* incomingbuf8 = (u8*)incomingbuf;
     //(For more info on these check docs.md)
-    if(*(u8 *)incomingbuf == 5) //Server Place
+    if(*incomingbuf8 == 5) //Server Place
     {
         //To "set" a pixel, I have to update the map array, then set the pixel in the tileMap (if it is currently visable)
         //                             Get X position (pos 1)           Get Y position (pos 5)                  Get TileID  
         //se_mem[28][se_index(mod(*(int*)(incomingbuf8 + 1), 64), mod(*(int*)(incomingbuf8 + 5), 64), 64)] = *(incomingbuf8 + 10);
 
-        int x = *(int*)(incomingbuf8 + 1);
-        int y = *(int*)(incomingbuf8 + 5);
-        u8 id = incomingbuf8[10];
+        //int x = *(int*)(incomingbuf8 + 1);
+        //int y = *(int*)(incomingbuf8 + 5);
+        //u8 id = incomingbuf8[10];
         //For this I can use map_index function I made from the util.c file
-        map[map_index(x+112, y+112)] = id;
+        //map[map_index(x+112, y+112)] = id;
 
         //Now, since the map array is only used when loading new chunks
         //I also have to set it on the actual map
         //LOOK INTO IT BEING NEGATIVE AND STUFF
-        se_mem[28][se_index(mod(x+112-(16*mapX),64),mod(y+112-(16*mapY),64),64)] = id;
+        //se_mem[28][se_index(mod(x+112-(16*(mapX-5)),64),mod(y+112-(16*(mapY-5)),64),64)] = id;
+        se_mem[28][se_index(31, 31, 64)] = 2;
     }
 }
 
