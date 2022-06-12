@@ -29,6 +29,9 @@ u8 datalen;
 
 //Input stuff
 u32 incomingbuf[6];
+//This may seem convoluted (because it is) But this allows me
+//To process the data on the main thread, which makes life alot easier
+u32 incomingbufcpy[6];
 u32 expectedlen;
 u32 incomingoffset;
 u8 previousnibble;
@@ -194,7 +197,33 @@ void loadChunks()
     if(cameray > (((mapY-2)*16) << SHIFT_AMOUNT)) loadChunksUD(1);
 }
 
+void processData()
+{
+    u8* incomingbuf8 = (u8*)incomingbufcpy;
+    if(!*incomingbuf8) //No data or data has already been processed
+        return;
+    else if(*incomingbuf8 == 5) //Server Place
+    {
+        //To "set" a pixel, I have to update the map array, then set the pixel in the tileMap (if it is currently visable)
+        //                             Get X position (pos 1)           Get Y position (pos 5)                  Get TileID  
+        //se_mem[28][se_index(mod(*(int*)(incomingbuf8 + 1), 64), mod(*(int*)(incomingbuf8 + 5), 64), 64)] = *(incomingbuf8 + 10);
 
+        int x = *(int*)(incomingbuf8 + 1);
+        int y = *(int*)(incomingbuf8 + 5);
+        //u8 id = incomingbuf8[10];
+        u8 id = *(u8*)(incomingbuf8 + 10);
+        se_mem[28][se_index(31, 31, 64)] = id % 12;
+        //For this I can use map_index function I made from the util.c file
+        //map[map_index(x+112, y+112)] = id;
+
+        //Now, since the map array is only used when loading new chunks
+        //I also have to set it on the actual map
+        //LOOK INTO IT BEING NEGATIVE AND STUFF
+        //se_mem[28][se_index(mod(x+112-(16*(mapX-5)),64),mod(y+112-(16*(mapY-5)),64),64)] = id;
+        //se_mem[28][se_index(31, 31, 64)] = id;
+    }
+    incomingbuf8 = 0; //So the data isn't processed again next time
+}
 
 void handle_serial()
 {
@@ -234,7 +263,6 @@ void handle_serial()
         memmove(&outbuf, &outbuf[1], 60);
     }
 
-    //if(cutOffSerialTest) return;
     //=========================== INCOMING DATA ===========================
     /*Incoming is trickier as I am going to get ALOT of data through at once
     Like 60kb worth, not going to be fun
@@ -286,45 +314,23 @@ void handle_serial()
     }
     else
     {
-        incomingbuf[incomingoffset] = data;
+        incomingbuf[incomingoffset] = Reverse32(data);
         incomingoffset += 4;
     }
 
     if (incomingoffset >= expectedlen)
     {
-        processData();
         expectedlen = 0;
         incomingoffset = 0;
         previousnibble = 0;
         if(mapdatamode)
             setupmapTrigger = true;
+        else
+            memcpy(incomingbufcpy, incomingbuf, 6); //Copy buf into the other one, to be processed on main thread
         mapdatamode = false;
     }
 }
 
-void processData()
-{
-    u8* incomingbuf8 = (u8*)incomingbuf;
-    //(For more info on these check docs.md)
-    if(*incomingbuf8 == 5) //Server Place
-    {
-        //To "set" a pixel, I have to update the map array, then set the pixel in the tileMap (if it is currently visable)
-        //                             Get X position (pos 1)           Get Y position (pos 5)                  Get TileID  
-        //se_mem[28][se_index(mod(*(int*)(incomingbuf8 + 1), 64), mod(*(int*)(incomingbuf8 + 5), 64), 64)] = *(incomingbuf8 + 10);
-
-        //int x = *(int*)(incomingbuf8 + 1);
-        //int y = *(int*)(incomingbuf8 + 5);
-        //u8 id = incomingbuf8[10];
-        //For this I can use map_index function I made from the util.c file
-        //map[map_index(x+112, y+112)] = id;
-
-        //Now, since the map array is only used when loading new chunks
-        //I also have to set it on the actual map
-        //LOOK INTO IT BEING NEGATIVE AND STUFF
-        //se_mem[28][se_index(mod(x+112-(16*(mapX-5)),64),mod(y+112-(16*(mapY-5)),64),64)] = id;
-        se_mem[28][se_index(31, 31, 64)] = 2;
-    }
-}
 
 //We are never the master, so no need to set any clock stuff
 void sioInit()
