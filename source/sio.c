@@ -17,21 +17,23 @@
 #define SBB_0 28
 SCR_ENTRY *bg_map= se_mem[SBB_0];
 
+//FOR ALL FUTURE REFERENCE!!!
+//In this file, output is gba->tileworld
+//Input is tileworld->GBA
 
-//Output stuff
 
+//~~~Output stuff~~~
 //buffer of 4, hopefully it doesn't back up more than that
 //each message is a max of 18 bytes (20 is used as it is divisible by 4)
 u8 outbuf[4][20];
-u8 numinbuf;
+u8 numinOutBuf;
 u8 dataoffset;
 u8 datalen;
 
-//Input stuff
-u32 incomingbuf[6];
-//This may seem convoluted (because it is) But this allows me
-//To process the data on the main thread, which makes life alot easier
-u32 incomingbufcpy[6];
+//~~~Input stuff~~~
+u32 incomingdata[6];
+u32 incomingbuf[6][6];
+u8 numinInbuf; //This naming convention is going to cause issues lol
 u32 expectedlen;
 u32 incomingoffset;
 u8 previousnibble;
@@ -64,28 +66,30 @@ int MapOffsetX = 0, mapOffsetY = 0;
 //=========================== SENDING DATA ===========================
 void connect()
 {
-    outbuf[numinbuf][0] = 0x1;
-    outbuf[numinbuf][1] = 0x1;
-    outbuf[numinbuf][2] = 0x0;
-    numinbuf++;
-    outbuf[numinbuf][0] = 0x3;
-    numinbuf++;
+    outbuf[numinOutBuf][0] = 0x1;
+    outbuf[numinOutBuf][1] = 0x1;
+    outbuf[numinOutBuf][2] = 0x0;
+    numinOutBuf++;
+    outbuf[numinOutBuf][0] = 0x3;
+    numinOutBuf++;
 }
 void place(u32 x, u32 y, u8 ID)
 {
-    outbuf[numinbuf][0] = 0x5;
-    *(u32*)(&outbuf[numinbuf][1]) = x;
-    *(u32*)(&outbuf[numinbuf][5]) = y;
-    outbuf[numinbuf][9] = 0x1;
-    outbuf[numinbuf][10] = ID;
-    numinbuf++;
+    if(numinOutBuf>3) return; //Lets just hope it doesn't back up more than this
+    outbuf[numinOutBuf][0] = 0x5;
+    *(u32*)(&outbuf[numinOutBuf][1]) = x;
+    *(u32*)(&outbuf[numinOutBuf][5]) = y;
+    outbuf[numinOutBuf][9] = 0x1;
+    outbuf[numinOutBuf][10] = ID;
+    numinOutBuf++;
 }
 void sioMove()
 {
-    if(numinbuf) return; //Only send movement stuff if the buffer is clear
-    outbuf[numinbuf][0] = 0x6;
+    if(numinOutBuf) return; //Only send movement stuff if the buffer is clear, for this reason we don't have to check numinbuf
+    
+    outbuf[numinOutBuf][0] = 0x6;
     //Keys (8 bit, up/down/left/right/jump are each mapped to a bit)
-    outbuf[numinbuf][1] = (key_is_down(KEY_UP)) |
+    outbuf[numinOutBuf][1] = (key_is_down(KEY_UP)) |
                           (key_is_down(KEY_DOWN) << 1) |
                           (key_is_down(KEY_LEFT) << 2) |
                           (key_is_down(KEY_RIGHT) << 3) |
@@ -97,21 +101,22 @@ void sioMove()
     //Minus 32 to zero the position
     //Multiply them by 32 (idk why, just how tileworld does it)
     //Finally convert to a float, gotta make it little endian because reasons
-    *(float*)(&outbuf[numinbuf][2]) = (Fixed_to_float((playerx-(ONE_SHIFTED/2) + ONE_SHIFTED -(32 << SHIFT_AMOUNT)) * 32));
-    *(float*)(&outbuf[numinbuf][6]) = (Fixed_to_float((playery+(ONE_SHIFTED/2)               -(32 << SHIFT_AMOUNT)) * 32));
+    *(float*)(&outbuf[numinOutBuf][2]) = (Fixed_to_float((playerx-(ONE_SHIFTED/2) + ONE_SHIFTED -(32 << SHIFT_AMOUNT)) * 32));
+    *(float*)(&outbuf[numinOutBuf][6]) = (Fixed_to_float((playery+(ONE_SHIFTED/2)               -(32 << SHIFT_AMOUNT)) * 32));
 
-    *(float*)(&outbuf[numinbuf][10]) = Fixed_to_float(xv * 64);
-    *(float*)(&outbuf[numinbuf][14]) = Fixed_to_float(-yv * 32);
-    numinbuf++;
+    *(float*)(&outbuf[numinOutBuf][10]) = Fixed_to_float(xv * 64);
+    *(float*)(&outbuf[numinOutBuf][14]) = Fixed_to_float(-yv * 32);
+    numinOutBuf++;
 }
 void requestChunks(s32 xDir, s32 yDir)
 {
-    outbuf[numinbuf][0] = 0x8;
-    *(u32*)(&outbuf[numinbuf][1]) = MapOffsetX;
-    *(u32*)(&outbuf[numinbuf][5]) = mapOffsetY;
-    *(u32*)(&outbuf[numinbuf][9]) = xDir;
-    *(u32*)(&outbuf[numinbuf][13]) = yDir;
-    numinbuf++;
+    if(numinOutBuf>3) return; //Lets just hope it doesn't back up more than this
+    outbuf[numinOutBuf][0] = 0x8;
+    *(u32*)(&outbuf[numinOutBuf][1]) = MapOffsetX;
+    *(u32*)(&outbuf[numinOutBuf][5]) = mapOffsetY;
+    *(u32*)(&outbuf[numinOutBuf][9]) = xDir;
+    *(u32*)(&outbuf[numinOutBuf][13]) = yDir;
+    numinOutBuf++;
 }
 
 //=========================== MAP STUFF ===========================
@@ -199,30 +204,22 @@ void loadChunks()
 
 void processData()
 {
-    u8* incomingbuf8 = (u8*)incomingbufcpy;
-    if(!*incomingbuf8) //No data or data has already been processed
+    u8* incomingbuf8 = (u8*)incomingbuf;
+    if(!*incomingbuf8 || !numinInbuf) //No data or data has already been processed
         return;
-    else if(*incomingbuf8 == 5) //Server Place
+    if(*incomingbuf8 == 5) //Server Place
     {
-        //To "set" a pixel, I have to update the map array, then set the pixel in the tileMap (if it is currently visable)
-        //                             Get X position (pos 1)           Get Y position (pos 5)                  Get TileID  
-        //se_mem[28][se_index(mod(*(int*)(incomingbuf8 + 1), 64), mod(*(int*)(incomingbuf8 + 5), 64), 64)] = *(incomingbuf8 + 10);
-
         int x = *(int*)(incomingbuf8 + 1);
         int y = *(int*)(incomingbuf8 + 5);
-        //u8 id = incomingbuf8[10];
-        u8 id = *(u8*)(incomingbuf8 + 10);
-        se_mem[28][se_index(31, 31, 64)] = id % 12;
+        u8 id = incomingbuf8[10];
         //For this I can use map_index function I made from the util.c file
         //map[map_index(x+112, y+112)] = id;
-
         //Now, since the map array is only used when loading new chunks
         //I also have to set it on the actual map
-        //LOOK INTO IT BEING NEGATIVE AND STUFF
-        //se_mem[28][se_index(mod(x+112-(16*(mapX-5)),64),mod(y+112-(16*(mapY-5)),64),64)] = id;
-        //se_mem[28][se_index(31, 31, 64)] = id;
+        se_mem[28][se_index(mod(x+112-(16*mapX),64), mod(y+112-(16*mapY), 64),64)] = id;
     }
-    incomingbuf8 = 0; //So the data isn't processed again next time
+    numinInbuf--;
+    memmove(&incomingbuf, &incomingbuf[1], 108); //Shift everything back along
 }
 
 void handle_serial()
@@ -241,12 +238,12 @@ void handle_serial()
 
     //=========================== OUTGOING DATA ===========================
     //Time to work out what we need to send
-    if(numinbuf != 0 && datalen == 0)
+    if(numinOutBuf != 0 && datalen == 0)
     {
         datalen = datalengthtable[outbuf[0][0]];
         REG_SIODATA32 = datalen;
     }
-    else if (numinbuf != 0 && dataoffset < datalengthtable[outbuf[0][0]]) //Calculates how long the message should be by the message ID
+    else if (numinOutBuf != 0 && dataoffset < datalengthtable[outbuf[0][0]]) //Calculates how long the message should be by the message ID
     {
         REG_SIODATA32 = outbuf[0][dataoffset++] << 24;
         REG_SIODATA32 |= outbuf[0][dataoffset++] << 16;
@@ -254,9 +251,9 @@ void handle_serial()
         REG_SIODATA32 |= outbuf[0][dataoffset++];
     }
     //Check if we have reached the end of the current thing to send
-    if (numinbuf != 0 && dataoffset >= datalengthtable[outbuf[0][0]])
+    if (numinOutBuf != 0 && dataoffset >= datalengthtable[outbuf[0][0]])
     {
-        numinbuf--;
+        numinOutBuf--;
         dataoffset = 0;
         datalen = 0;
         //Shift array left
@@ -314,7 +311,7 @@ void handle_serial()
     }
     else
     {
-        incomingbuf[incomingoffset] = Reverse32(data);
+        incomingdata[incomingoffset/4] = Reverse32(data);
         incomingoffset += 4;
     }
 
@@ -325,8 +322,11 @@ void handle_serial()
         previousnibble = 0;
         if(mapdatamode)
             setupmapTrigger = true;
-        else
-            memcpy(incomingbufcpy, incomingbuf, 6); //Copy buf into the other one, to be processed on main thread
+        else if(numinInbuf < 7) //If it is over 6 then we panic, I should hook up an alarm to the gba, that would be funny
+        {
+            memcpy(incomingbuf, incomingdata, 24); //Copy buf into the other one, to be processed on main thread
+            numinInbuf++;
+        }
         mapdatamode = false;
     }
 }
