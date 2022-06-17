@@ -15,9 +15,9 @@ Video showing latest progress:
 - Spawn loading ✔️
 - Location information sending ✔️
 - Loading screen ✔️
-- Receiving tile places
-- Changing tiles
+- Receiving tile places ✔️
 - New chunks loading
+- Changing tiles
 - 3D printed game holder
 - Other players?
 
