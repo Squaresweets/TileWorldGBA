@@ -32,8 +32,8 @@ u8 datalen;
 
 //~~~Input stuff~~~
 u32 incomingdata[6];
-u32 incomingbuf[6][6];
-u8 numinInbuf; //This naming convention is going to cause issues lol
+//u32 incomingbuf[6][6];
+//u8 numinInbuf; //This naming convention is going to cause issues lol
 u32 expectedlen;
 u32 incomingoffset;
 u8 previousnibble;
@@ -202,26 +202,6 @@ void loadChunks()
     if(cameray > (((mapY-2)*16) << SHIFT_AMOUNT)) loadChunksUD(1);
 }
 
-void processData()
-{
-    u8* incomingbuf8 = (u8*)incomingbuf;
-    if(!*incomingbuf8 || !numinInbuf) //No data or data has already been processed
-        return;
-    if(*incomingbuf8 == 5) //Server Place
-    {
-        int x = *(int*)(incomingbuf8 + 1);
-        int y = *(int*)(incomingbuf8 + 5);
-        u8 id = incomingbuf8[10];
-        //For this I can use map_index function I made from the util.c file
-        //map[map_index(x+112, y+112)] = id;
-        //Now, since the map array is only used when loading new chunks
-        //I also have to set it on the actual map
-        se_mem[28][se_index(mod(x+112-(16*mapX),64), mod(y+112-(16*mapY), 64),64)] = id;
-    }
-    numinInbuf--;
-    memmove(&incomingbuf, &incomingbuf[1], 108); //Shift everything back along
-}
-
 void handle_serial()
 {
     //Fetch our data
@@ -322,15 +302,34 @@ void handle_serial()
         previousnibble = 0;
         if(mapdatamode)
             setupmapTrigger = true;
-        else if(numinInbuf < 7) //If it is over 6 then we panic, I should hook up an alarm to the gba, that would be funny
-        {
-            memcpy(incomingbuf, incomingdata, 24); //Copy buf into the other one, to be processed on main thread
-            numinInbuf++;
-        }
+        else
+            processData();
         mapdatamode = false;
     }
 }
 
+void processData()
+{
+    u8* incomingbuf8 = (u8*)incomingdata;
+    if(!*incomingbuf8) //No data or data has already been processed
+        return;
+    if(*incomingbuf8 == 5) //Server Place
+    {
+        int x = *(int*)(incomingbuf8 + 1);
+        int y = *(int*)(incomingbuf8 + 5);
+        u8 id = incomingbuf8[10];
+        //For this I can use map_index function I made from the util.c file
+        //But we also have the issue of how it is all packed, with nibbles
+        int index = map_index(x+112, y+112);
+        map[index/2] = ((index % 2) ? (map[index/2] & 0xF0) | id         //Attempting to set the right nibble
+                                    : (map[index/2] & 0x0F) | id << 4);
+
+        //Now, since the map array is only used when loading new chunks
+        //I also have to set it on the actual map
+        if(x+112-(16*mapX) < 64 && x+112-(16*mapX) >= 0 && y+112-(16*mapY) < 64 && y+112-(16*mapY) >= 0)
+            se_mem[28][se_index(mod(x+112-(16*5), 64), mod(y+112-(16*5), 64), 64)] = id;
+    }
+}
 
 //We are never the master, so no need to set any clock stuff
 void sioInit()
