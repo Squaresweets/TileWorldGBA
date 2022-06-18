@@ -3,6 +3,7 @@
 #include "sio.h"
 #include "TileMap.h"
 #include "util.h"
+#include "map.h"
 
 #include <string.h>
 #include <math.h>

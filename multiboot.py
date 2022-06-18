@@ -17,7 +17,6 @@ def multiboot(epIn, epOut, path):
         print("File size error, max 256KB")
         exit()
 
-    input("Press enter when the GBA is fully turned on!")
     recv = 0
     while True:
         TileWorldClient.send(0x6202, epOut)

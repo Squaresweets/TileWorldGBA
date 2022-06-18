@@ -1,6 +1,11 @@
 #include "map.h"
+#include <tonc.h>
+#include "main.h"
+#include "colly.h"
+#include "util.h"
 
-
+#define SBB_0 28
+SCR_ENTRY *bg_map= se_mem[SBB_0];
 //Where the map is stored in memory [outer y][outer x][inner y][inner x]
 u8 map[28800];
 
@@ -14,6 +19,8 @@ int mapX = 5, mapY = 5;
 
 //The following x y positions represent the offset of the map from spawn
 int MapOffsetX = 0, mapOffsetY = 0;
+
+volatile bool setupmapTrigger = false;
 
 //See howMapIsStored.md for more info on this
 u16 mapIDconversiontable[16] = {0,  1,  4,  5, 
@@ -95,3 +102,22 @@ void loadChunks()
     if(cameray < (((mapY-4)*16) << SHIFT_AMOUNT)) loadChunksUD(-1);
     if(cameray > (((mapY-2)*16) << SHIFT_AMOUNT)) loadChunksUD(1);
 }
+
+/*
+The plan for sending and recieving chunks!
+In loadChunks check if playerpos is too far in any direction
+Places where next chunk should be loaded are: x<64 x>160 y<64 y>160
+Then like in normal load chunks we request chunks for that direction using the function in sio.c
+
+When the chunks are recieved it is harder, the question if I should store it in a large buffer like
+in map[], however i don't really want to have to do that
+Instead I will just create a 1 chunk buffer, with the position where it should be
+and one chunk worth of tile data packed into nibbles
+Then after I have completed one buffer, I can send it to ANOTHER buffer (just cause I don't want to do
+too much on the different thread cause that causes me nightmares) and start on the next one.
+Then I can stream that chunk into it's position mod 15 (240/16) and that should put it in the correct place
+so that when the next chunk to the left is attempted to be loaded it instead loads the new c hunk
+
+The main problem that this method gives is a whole bunch of shifting and annoying code, so i'll have to 
+look into it
+*/

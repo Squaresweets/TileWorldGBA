@@ -1,9 +1,11 @@
 #include "sio.h"
-#include <tonc.h>
 #include "main.h"
 #include "util.h"
-#include <string.h>
 #include "Colly.h"
+#include "map.h"
+
+#include <string.h>
+#include <tonc.h>
 
 //Much of this comes from here:
 //https://github.com/maciel310/gba-mmo/blob/main/source/serial.c
@@ -14,8 +16,6 @@
 #define SIO_START BIT(7)
 #define SIO_CLOCK_INTERNAL BIT(0)
 #define SIO_TRANSFER_32 BIT(12)
-#define SBB_0 28
-SCR_ENTRY *bg_map= se_mem[SBB_0];
 
 //FOR ALL FUTURE REFERENCE!!!
 //In this file, output is gba->tileworld
@@ -42,7 +42,6 @@ bool startsending = false;
 //If we are recieving loads of map data, we want to stream it straight into where it should be, not keep it in a buffer
 bool mapdatamode = false;
 
-volatile bool setupmapTrigger = false;
 
 
 //Length in bytes of each of the things the client could send

@@ -112,6 +112,7 @@ def main():
     dev.ctrl_transfer(bmRequestType = 1, bRequest = 0x22, wIndex = 2, wValue = 0x01)
     #</editor-fold>
 
+    input("Press enter when the GBA is fully turned on!")
     multiboot.multiboot(epIn, epOut, "TileWorldGBA_mb.gba")
     time.sleep(5)
     readall(epIn, False)
