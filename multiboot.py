@@ -17,33 +17,36 @@ def multiboot(epIn, epOut, path):
         print("File size error, max 256KB")
         exit()
 
+    TileWorldClient.readall(epIn)
     recv = 0
-    while True:
-        TileWorldClient.send(0x6202, epOut)
-        recv = TileWorldClient.readall(epIn)
-        if (recv >> 16) == 0x7202:
-            break
+    while (recv >> 16) != 0x7202:
+        for i in range(15):
+            recv = TileWorldClient.sendread4(0x6200, epOut, epIn)
+            print(hex(recv))
+            if (recv >> 16) == 0x7202:
+                break
+        time.sleep(0.0625)
+
     print("Lets do this thing!")
-    TileWorldClient.send(0x6102, epOut)
+    TileWorldClient.sendread4(0x6102, epOut, epIn)
 
     for i in range(96):
         out = (int(content[(i*2)])) + (int(content[(i*2)+1]) << 8)
-        TileWorldClient.send(out, epOut)
+        TileWorldClient.sendread4(out, epOut, epIn)
 
-    TileWorldClient.send(0x6200, epOut)
-    TileWorldClient.send(0x6200, epOut)
-    TileWorldClient.send(0x63D1, epOut)
-    #Clear buffer
-    TileWorldClient.readall(epIn)
+    TileWorldClient.sendread4(0x6200, epOut, epIn)
+    TileWorldClient.sendread4(0x6202, epOut, epIn)
+    TileWorldClient.sendread4(0x63D1, epOut, epIn)
 
-    TileWorldClient.send(0x63D1, epOut)
-    token = TileWorldClient.readall(epIn)
+    token = TileWorldClient.sendread4(0x63D1, epOut, epIn)
     if (token >> 24) != 0x73:
         print("Failed handshake!")
-        multiboot(epIn, epOut, path)
+        #multiboot(epIn, epOut, path)
         return
     else:
         print("Handshake successful!")
+
+    time.sleep(0.0625)
 
     crcA = (token >> 16) & 0xFF
     seed = 0xFFFF00D1 | (crcA << 8)

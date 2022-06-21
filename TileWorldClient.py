@@ -28,10 +28,14 @@ def send(data, epOut, debug = True, length = 4):
     print("")
 
 
+def sendread4(data, epOut, epIn, debug = True, length = 4):
+    send(data, epOut, debug, length)
+    return read4(epIn)
+
+
 def read(epIn):
     recv = int.from_bytes(epIn.read(4, 100), byteorder='big')
     return recv
-
 
 def read4(epIn):
     output = 0
@@ -112,7 +116,6 @@ def main():
     dev.ctrl_transfer(bmRequestType = 1, bRequest = 0x22, wIndex = 2, wValue = 0x01)
     #</editor-fold>
 
-    input("Press enter when the GBA is fully turned on!")
     multiboot.multiboot(epIn, epOut, "TileWorldGBA_mb.gba")
     time.sleep(5)
     readall(epIn, False)
