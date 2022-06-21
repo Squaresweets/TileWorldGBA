@@ -28,8 +28,8 @@ def send(data, epOut, debug = True, length = 4):
     print("")
 
 
-def sendread4(data, epOut, epIn, debug = True, length = 4):
-    send(data, epOut, debug, length)
+def sendread4(data, epOut, epIn, debug = True, length = 4): #Just used for multiboot
+    send(data, epOut, False, length)
     return read4(epIn)
 
 
@@ -117,7 +117,7 @@ def main():
     #</editor-fold>
 
     multiboot.multiboot(epIn, epOut, "TileWorldGBA_mb.gba")
-    time.sleep(5)
+    time.sleep(4)
     readall(epIn, False)
 
     ws = websocket.WebSocket()
