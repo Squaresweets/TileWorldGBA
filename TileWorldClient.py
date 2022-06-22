@@ -194,7 +194,12 @@ def main():
 def listen(ws):
     print("Started thread")
     while True:
-        message = bytearray(ws.recv())
+        m = ws.recv()
+        try:
+            message = bytearray(m)
+        except:
+            print(m)
+            exit()
         print("From tileworld server: " + message.hex())
         outbuf.append(message)
 
