@@ -3,6 +3,7 @@
 #include "main.h"
 #include "colly.h"
 #include "util.h"
+#include "sio.h"
 
 #define SBB_0 28
 SCR_ENTRY *bg_map= se_mem[SBB_0];
@@ -18,7 +19,7 @@ int mapX = 5, mapY = 5;
 //just loaded, hopefully that makes sense
 
 //The following x y positions represent the offset of the map from spawn
-int MapOffsetX = 0, mapOffsetY = 0;
+int mapOffsetX = 0, mapOffsetY = 0;
 
 volatile bool setupmapTrigger = false;
 
@@ -59,6 +60,20 @@ void setChunk(int sx, int sy, int x, int y)
     }
 }
 
+void setTile(u32 x, u32 y, u8 id)
+{
+    //For this I can use map_index function I made from the util.c file
+    //But we also have the issue of how it is all packed, with nibbles
+    int index = map_index(x+112, y+112);
+    map[index/2] = ((index % 2) ? (map[index/2] & 0xF0) | id         //Attempting to set the right nibble
+                                : (map[index/2] & 0x0F) | id << 4);
+
+    //Now, since the map array is only used when loading new chunks
+    //I also have to set it on the actual map
+    if(x+112-(16*mapX) < 64 && x+112-(16*mapX) >= 0 && y+112-(16*mapY) < 64 && y+112-(16*mapY) >= 0) //Tests if the tile is in the screen boundaries (probably a better way to do this)
+        se_mem[28][se_index(mod(x+112-(16*5), 64), mod(y+112-(16*5), 64), 64)] = id;
+}
+
 void setupMap()
 {
     //Starting map at position (5,5)
@@ -95,12 +110,19 @@ void loadChunks()
         setupmapTrigger = false;
         return;
     }
-
     if(!startMovement) return;
+
+    //LOADING CHUNKS IN TERMS OF GBA TILEMAP
     if(camerax < (((mapX-4)*16) << SHIFT_AMOUNT)) loadChunksLR(-1);
     if(camerax > (((mapX-2)*16) << SHIFT_AMOUNT)) loadChunksLR(1);
     if(cameray < (((mapY-4)*16) << SHIFT_AMOUNT)) loadChunksUD(-1);
     if(cameray > (((mapY-2)*16) << SHIFT_AMOUNT)) loadChunksUD(1);
+
+    //LOADING NEW CHUNKS
+    if((playerx - INITIAL_PLAYER_POS) < ((-32 + (mapOffsetX*16)) << SHIFT_AMOUNT)) requestChunks(-3, 0);
+    if((playerx - INITIAL_PLAYER_POS) > ((32  + (mapOffsetX*16)) << SHIFT_AMOUNT)) requestChunks(3, 0);
+    if((playery - INITIAL_PLAYER_POS) < ((-32 + (mapOffsetY*16)) << SHIFT_AMOUNT)) requestChunks(0, -3);
+    if((playery - INITIAL_PLAYER_POS) > ((32  + (mapOffsetY*16)) << SHIFT_AMOUNT)) requestChunks(0, 3);
 }
 
 /*
@@ -109,7 +131,7 @@ In loadChunks check if playerpos is too far in any direction
 Places where next chunk should be loaded are: x<64 x>160 y<64 y>160
 Then like in normal load chunks we request chunks for that direction using the function in sio.c
 
-When the chunks are recieved it is harder, the question if I should store it in a large buffer like
+When the chunks are recieved it is harder, the question is if I should store it in a large buffer like
 in map[], however i don't really want to have to do that
 Instead I will just create a 1 chunk buffer, with the position where it should be
 and one chunk worth of tile data packed into nibbles
@@ -120,4 +142,39 @@ so that when the next chunk to the left is attempted to be loaded it instead loa
 
 The main problem that this method gives is a whole bunch of shifting and annoying code, so i'll have to 
 look into it
+
+##(Server) 08 (Chunks)
+The server sends this when the client requests chunks. Seems to always consist
+of 45 chunks (a 3x15 or 15x3 area). Chunks are 16x16.
+
+	0x08
+	Chunk amount (uint32 little endian)
+	Chunk data * Chunk amount
+	(chunk format:
+		ChunkX (int32 little endian)
+		ChunkY (int32 little endian)
+		Tile*256 (uint8)
+	)
 */
+u32 ChunkX = 0, ChunkY = 0;
+void processNewChunkData(u32 data, u32 offset)
+{
+    return;
+    //We are only dealing with one u32 at a time, so it is best to check each byte and 
+    //Put it in the correct place
+    u8 *d = (u8 *)&data;
+    for(u8 i=0;i<4;i++) //Iterate through each byte in the data seperatly
+    {
+        u8 b = d[i]; //Current byte we are on
+        u32 o = offset + i; //id of current byte
+        if(o < 5) continue; //The first 5 bytes (packet type and amount of chunks) we can ignore
+        o = (o-5)%264; //Repeat for each chunk after the first 5
+
+        //The first 8 bytes of each chunk are the ChunkX and ChunkY, so put those in the right place
+        u8 *cx = (u8 *)&ChunkX; u8 *cy = (u8 *)&ChunkY; //Get pointer so we can set specific bytes
+        if(o < 4) cx[o] = b; //Set x
+        else if(o < 8) cy[o-4] = b; //Set y
+        //else //Otherwise we are dealing with map data, so time to slot it into the right place in the map
+            //setTile(x,y,b);
+    }
+}

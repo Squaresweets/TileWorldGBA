@@ -9,6 +9,8 @@
 #define INT_MASK ~((1 << SHIFT_AMOUNT) - 1)
 #define Fixed_to_float(X) ((float)X / ONE_SHIFTED)
 
+#define INITIAL_PLAYER_POS (32 << SHIFT_AMOUNT)
+
 u32 se_index(u32 tx, u32 ty, u32 pitch);
 u32 map_index(u32 tx, u32 ty);
 u32 Reverse32(u32 value);

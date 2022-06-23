@@ -30,8 +30,8 @@ OBJ_AFFINE *obj_aff_buffer= (OBJ_AFFINE*)obj_buffer;
 
 
 //Fixed point, with a shift value of 16
-int playerx = 32 << SHIFT_AMOUNT, playery = 32 << SHIFT_AMOUNT;
-int camerax = 32 << SHIFT_AMOUNT, cameray = 32 << SHIFT_AMOUNT;
+int playerx = INITIAL_PLAYER_POS, playery = INITIAL_PLAYER_POS;
+int camerax = INITIAL_PLAYER_POS, cameray = INITIAL_PLAYER_POS;
 int xv = 0, yv = 0;
 bool startMovement = false;
 OBJ_ATTR *player= &obj_buffer[0];

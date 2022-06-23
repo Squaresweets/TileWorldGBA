@@ -17,12 +17,13 @@ def multiboot(epIn, epOut, path):
         exit()
 
     print("Turn on the GBA!")
-
+    TileWorldClient.send(0x6200, epOut)
     TileWorldClient.readall(epIn, False)
     recv = 0
     while (recv >> 16) != 0x7202:
         for i in range(15):
             recv = TileWorldClient.sendread4(0x6200, epOut, epIn)
+            print(hex(recv))
             if (recv >> 16) == 0x7202:
                 break
         time.sleep(0.0625)

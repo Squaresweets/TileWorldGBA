@@ -6,4 +6,5 @@ void sioInit();
 void handle_serial();
 void sioMove();
 void processData();
+void requestChunks(int xDir, int yDir);
 #endif

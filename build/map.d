@@ -17,7 +17,8 @@ map.o: C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/map.c \
  C\:/devkitPro/libtonc/include/tonc_text.h \
  C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/main.h \
  C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/colly.h \
- C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/util.h
+ C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/util.h \
+ C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/sio.h
 C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/map.h:
 C\:/devkitPro/libtonc/include/tonc.h:
 C\:/devkitPro/libtonc/include/tonc_types.h:
@@ -37,3 +38,4 @@ C\:/devkitPro/libtonc/include/tonc_text.h:
 C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/main.h:
 C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/colly.h:
 C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/util.h:
+C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/sio.h:

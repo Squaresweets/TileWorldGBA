@@ -1,8 +1,8 @@
+#include "map.h"
 #include "sio.h"
 #include "main.h"
 #include "util.h"
 #include "Colly.h"
-#include "map.h"
 
 #include <string.h>
 #include <tonc.h>
@@ -32,20 +32,16 @@ u8 datalen;
 
 //~~~Input stuff~~~
 u32 incomingdata[6];
-//u32 incomingbuf[6][6];
-//u8 numinInbuf; //This naming convention is going to cause issues lol
 u32 expectedlen;
 u32 incomingoffset;
 u8 previousnibble;
 
 bool startsending = false;
-//If we are recieving loads of map data, we want to stream it straight into where it should be, not keep it in a buffer
-bool mapdatamode = false;
 
 
 
 //Length in bytes of each of the things the client could send
-u16 datalengthtable[10] = {0, 3, 0, 1, 0, 12, 18, 0, 16, 0}; //Message number 9 is used for message, but atm I am not planning on implementing this
+u16 datalengthtable[10] = {0, 3, 0, 1, 0, 11, 18, 0, 17, 0}; //Message number 9 is used for message, but atm I am not planning on implementing this
 
 //=========================== SENDING DATA ===========================
 void connect()
@@ -85,24 +81,30 @@ void sioMove()
     //Minus 32 to zero the position
     //Multiply them by 32 (idk why, just how tileworld does it)
     //Finally convert to a float, gotta make it little endian because reasons
-    *(float*)(&outbuf[numinOutBuf][2]) = (Fixed_to_float((playerx-(ONE_SHIFTED/2) + ONE_SHIFTED -(32 << SHIFT_AMOUNT)) * 32));
-    *(float*)(&outbuf[numinOutBuf][6]) = (Fixed_to_float((playery+(ONE_SHIFTED/2)               -(32 << SHIFT_AMOUNT)) * 32));
+    *(float*)(&outbuf[numinOutBuf][2]) = (Fixed_to_float((playerx-(ONE_SHIFTED/2) + ONE_SHIFTED -(INITIAL_PLAYER_POS)) * 32));
+    *(float*)(&outbuf[numinOutBuf][6]) = (Fixed_to_float((playery+(ONE_SHIFTED/2)               -(INITIAL_PLAYER_POS)) * 32));
 
     *(float*)(&outbuf[numinOutBuf][10]) = Fixed_to_float(xv * 64);
     *(float*)(&outbuf[numinOutBuf][14]) = Fixed_to_float(-yv * 32);
     numinOutBuf++;
 }
-void requestChunks(s32 xDir, s32 yDir)
+void requestChunks(int xDir, int yDir)
 {
     if(numinOutBuf>3) return; //Lets just hope it doesn't back up more than this
+    mapOffsetX += xDir; mapOffsetY += yDir;
     outbuf[numinOutBuf][0] = 0x8;
-    *(u32*)(&outbuf[numinOutBuf][1]) = MapOffsetX;
-    *(u32*)(&outbuf[numinOutBuf][5]) = mapOffsetY;
-    *(u32*)(&outbuf[numinOutBuf][9]) = xDir;
-    *(u32*)(&outbuf[numinOutBuf][13]) = yDir;
+    //*(int*)(&outbuf[numinOutBuf][1]) = (mapOffsetX*16);
+    //*(int*)(&outbuf[numinOutBuf][5]) = (mapOffsetY*16);
+    *(int*)(&outbuf[numinOutBuf][3]) = Reverse32(0x12345678);
+    //*(int*)(&outbuf[numinOutBuf][5]) = 6;
+    //*(int*)(&outbuf[numinOutBuf][9]) = xDir;
+    //*(int*)(&outbuf[numinOutBuf][13]) = yDir;
     numinOutBuf++;
 }
 
+//If we are recieving loads of map data, we want to stream it straight into where it should be, not keep it in a buffer
+bool mapdatamode = false;
+bool newchunksmode = false;
 void handle_serial()
 {
     //Fetch our data
@@ -142,6 +144,7 @@ void handle_serial()
     }
 
     //=========================== INCOMING DATA ===========================
+    //Looking at incoming spawn data
     /*Incoming is trickier as I am going to get ALOT of data through at once
     Like 60kb worth, not going to be fun
     It would be better not to store this in a buffer
@@ -160,23 +163,22 @@ void handle_serial()
     if (!expectedlen)
     {
         expectedlen = data;
+        //This way of doing it is really fragmented and annoying,
+        //but no packet types are really the same
         if (expectedlen > 57600)
         {
             mapdatamode = true;
             expectedlen /= 2; //Since we are dealing with nibbles
         }
+        else if (expectedlen == 11885)
+            newchunksmode = true;
         return;
     }
 
-    if (mapdatamode)
+    //INCOMING SPAWN CHUNKS
+    if(mapdatamode)
     {
-        //The server sends the data type at the start, which shifts everything along by one
-        //WHYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
-        //If it was just a u16 it would be easy, but no
-        //Now I have to do a bunch of really annoying shifting
-        //Thanks DFranx
-
-        //JK :D
+        //this could 100% be improved, but it works so i'm not touching it
         if(incomingoffset != 0) //So that we don't include the message ID in the map data
         {
             map[incomingoffset] = ((data >> 24) & 0xF) | (previousnibble << 4);
@@ -188,7 +190,11 @@ void handle_serial()
             incomingoffset += 1;
             previousnibble = (data) & 0xF;
         }
-
+    }
+    else if (newchunksmode)
+    {
+        processNewChunkData(data, incomingoffset); //map.c
+        incomingoffset += 4;
     }
     else
     {
@@ -203,9 +209,10 @@ void handle_serial()
         previousnibble = 0;
         if(mapdatamode)
             setupmapTrigger = true;
-        else
+        else if (!newchunksmode)
             processData();
         mapdatamode = false;
+        newchunksmode = false;
     }
 }
 
@@ -219,6 +226,11 @@ void processData()
         int x = *(int*)(incomingbuf8 + 1);
         int y = *(int*)(incomingbuf8 + 5);
         u8 id = incomingbuf8[10];
+
+        //IMPORTANT
+        //I'm aware that an identical function is in map.c, however calling 2 layers of functions from an interrupt
+        //Breaks stuff, so i have copied it here
+
         //For this I can use map_index function I made from the util.c file
         //But we also have the issue of how it is all packed, with nibbles
         int index = map_index(x+112, y+112);
@@ -228,7 +240,7 @@ void processData()
         //Now, since the map array is only used when loading new chunks
         //I also have to set it on the actual map
         if(x+112-(16*mapX) < 64 && x+112-(16*mapX) >= 0 && y+112-(16*mapY) < 64 && y+112-(16*mapY) >= 0) //Tests if the tile is in the screen boundaries (probably a better way to do this)
-            se_mem[28][se_index(mod(x+112-(16*5), 64), mod(y+112-(16*5), 64), 64)] = id;
+        se_mem[28][se_index(mod(x+112-(16*5), 64), mod(y+112-(16*5), 64), 64)] = id;
     }
 }
 

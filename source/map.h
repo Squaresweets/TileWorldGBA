@@ -3,10 +3,14 @@
 #include <tonc.h>
 
 extern u8 map[28800];
-extern int MapOffsetX, mapOffsetY, mapX, mapY;
+extern int mapOffsetX;
+extern int mapOffsetY;
+extern int mapX;
+extern int mapY;
 extern volatile bool setupmapTrigger;
 void loadChunks();
 void setupMap();
-
+void processNewChunkData(u32 data, u32 offset);
+void setTile(u32 x, u32 y, u8 id);
 
 #endif
