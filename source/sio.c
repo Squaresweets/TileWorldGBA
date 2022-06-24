@@ -91,14 +91,12 @@ void sioMove()
 void requestChunks(int xDir, int yDir)
 {
     if(numinOutBuf>3) return; //Lets just hope it doesn't back up more than this
-    mapOffsetX += xDir; mapOffsetY += yDir;
+    mapOffsetX += xDir*16; mapOffsetY += yDir*16;
     outbuf[numinOutBuf][0] = 0x8;
-    //*(int*)(&outbuf[numinOutBuf][1]) = (mapOffsetX*16);
-    //*(int*)(&outbuf[numinOutBuf][5]) = (mapOffsetY*16);
-    *(int*)(&outbuf[numinOutBuf][3]) = Reverse32(0x12345678);
-    //*(int*)(&outbuf[numinOutBuf][5]) = 6;
-    //*(int*)(&outbuf[numinOutBuf][9]) = xDir;
-    //*(int*)(&outbuf[numinOutBuf][13]) = yDir;
+    memcpy(&outbuf[numinOutBuf][1], &mapOffsetX, 4); //memcpy used due to allignment errors
+    memcpy(&outbuf[numinOutBuf][5], &mapOffsetY, 4);
+    memcpy(&outbuf[numinOutBuf][9], &xDir, 4);
+    memcpy(&outbuf[numinOutBuf][13], &yDir, 4);
     numinOutBuf++;
 }
 

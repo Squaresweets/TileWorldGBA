@@ -119,10 +119,10 @@ void loadChunks()
     if(cameray > (((mapY-2)*16) << SHIFT_AMOUNT)) loadChunksUD(1);
 
     //LOADING NEW CHUNKS
-    if((playerx - INITIAL_PLAYER_POS) < ((-32 + (mapOffsetX*16)) << SHIFT_AMOUNT)) requestChunks(-3, 0);
-    if((playerx - INITIAL_PLAYER_POS) > ((32  + (mapOffsetX*16)) << SHIFT_AMOUNT)) requestChunks(3, 0);
-    if((playery - INITIAL_PLAYER_POS) < ((-32 + (mapOffsetY*16)) << SHIFT_AMOUNT)) requestChunks(0, -3);
-    if((playery - INITIAL_PLAYER_POS) > ((32  + (mapOffsetY*16)) << SHIFT_AMOUNT)) requestChunks(0, 3);
+    if((playerx - INITIAL_PLAYER_POS) < ((-32 + (mapOffsetX)) << SHIFT_AMOUNT)) requestChunks(-3, 0);
+    if((playerx - INITIAL_PLAYER_POS) > ((32  + (mapOffsetX)) << SHIFT_AMOUNT)) requestChunks(3, 0);
+    if((playery - INITIAL_PLAYER_POS) < ((-32 + (mapOffsetY)) << SHIFT_AMOUNT)) requestChunks(0, -3);
+    if((playery - INITIAL_PLAYER_POS) > ((32  + (mapOffsetY)) << SHIFT_AMOUNT)) requestChunks(0, 3);
 }
 
 /*
@@ -162,7 +162,7 @@ void processNewChunkData(u32 data, u32 offset)
     return;
     //We are only dealing with one u32 at a time, so it is best to check each byte and 
     //Put it in the correct place
-    u8 *d = (u8 *)&data;
+    u8 *d = (u8*)&data;
     for(u8 i=0;i<4;i++) //Iterate through each byte in the data seperatly
     {
         u8 b = d[i]; //Current byte we are on
@@ -171,7 +171,7 @@ void processNewChunkData(u32 data, u32 offset)
         o = (o-5)%264; //Repeat for each chunk after the first 5
 
         //The first 8 bytes of each chunk are the ChunkX and ChunkY, so put those in the right place
-        u8 *cx = (u8 *)&ChunkX; u8 *cy = (u8 *)&ChunkY; //Get pointer so we can set specific bytes
+        u8 *cx = (u8*)&ChunkX; u8 *cy = (u8*)&ChunkY; //Get pointer so we can set specific bytes
         if(o < 4) cx[o] = b; //Set x
         else if(o < 8) cy[o-4] = b; //Set y
         //else //Otherwise we are dealing with map data, so time to slot it into the right place in the map
