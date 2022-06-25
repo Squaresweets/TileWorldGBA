@@ -10,7 +10,7 @@ u32 map_index(u32 tx, u32 ty)
 {
 	u32 sbb = ((tx/16) + (ty/16)*(240/16));
 	
-	return sbb*256 + ((tx%16)+(ty%16)*16);
+	return sbb*256 + ((tx&15)+(ty&15)*16);
 }
 //https://codereview.stackexchange.com/questions/151049/endianness-conversion-in-c
 u32 Reverse32(u32 value) 

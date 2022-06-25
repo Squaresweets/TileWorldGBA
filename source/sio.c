@@ -91,7 +91,7 @@ void sioMove()
 void requestChunks(int xDir, int yDir)
 {
     if(numinOutBuf>3) return; //Lets just hope it doesn't back up more than this
-    mapOffsetX += xDir*16; mapOffsetY += yDir*16;
+    mapOffsetX += xDir; mapOffsetY += yDir;
     outbuf[numinOutBuf][0] = 0x8;
     memcpy(&outbuf[numinOutBuf][1], &mapOffsetX, 4); //memcpy used due to allignment errors
     memcpy(&outbuf[numinOutBuf][5], &mapOffsetY, 4);
@@ -177,6 +177,8 @@ void handle_serial()
     if(mapdatamode)
     {
         //this could 100% be improved, but it works so i'm not touching it
+        //Infact this system is improved in the way we process new chunk data, but as I said
+        //Not much point in changing it now that it works
         if(incomingoffset != 0) //So that we don't include the message ID in the map data
         {
             map[incomingoffset] = ((data >> 24) & 0xF) | (previousnibble << 4);
@@ -232,13 +234,13 @@ void processData()
         //For this I can use map_index function I made from the util.c file
         //But we also have the issue of how it is all packed, with nibbles
         int index = map_index(x+112, y+112);
-        map[index/2] = ((index % 2) ? (map[index/2] & 0xF0) | id         //Attempting to set the right nibble
+        map[index/2] = ((index % 2) ? (map[index/2] & 0xF0) | (id & 0xF)        //Attempting to set the right nibble
                                     : (map[index/2] & 0x0F) | id << 4);
 
         //Now, since the map array is only used when loading new chunks
         //I also have to set it on the actual map
         if(x+112-(16*mapX) < 64 && x+112-(16*mapX) >= 0 && y+112-(16*mapY) < 64 && y+112-(16*mapY) >= 0) //Tests if the tile is in the screen boundaries (probably a better way to do this)
-        se_mem[28][se_index(mod(x+112-(16*5), 64), mod(y+112-(16*5), 64), 64)] = id;
+            se_mem[28][se_index(mod(x+112-(16*5), 64), mod(y+112-(16*5), 64), 64)] = id;
     }
 }
 

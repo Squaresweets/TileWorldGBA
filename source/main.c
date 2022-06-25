@@ -172,8 +172,8 @@ int main()
 	{
 		vid_vsync();
 		key_poll();
-		loadChunks();
 		processData();
+		loadChunks();
 		if(startMovement)
 		{
 			movement();
