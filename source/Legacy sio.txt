@@ -31,14 +31,14 @@ u8 dataoffset;
 u8 datalen;
 
 //~~~Input stuff~~~
-u32 incomingdata[10]; //Data coming in in no particular order (also including packet lengths)
-u8 numinInBuf;
-
-u32 incomingpacket[6]; //Packets of data, in the correct order
+u32 incomingdata[6];
 u32 expectedlen;
 u32 incomingoffset;
+u8 previousnibble;
 
 bool startsending = false;
+
+
 
 //Length in bytes of each of the things the client could send
 u16 datalengthtable[10] = {0, 3, 0, 1, 0, 11, 18, 0, 17, 0}; //Message number 9 is used for message, but atm I am not planning on implementing this
@@ -75,6 +75,12 @@ void sioMove()
                           (key_is_down(KEY_RIGHT) << 3) |
                           (key_is_down(KEY_A) << 4);
 
+    //Have to do a couple of things to position first
+    //-0.5 from both to get center of player(not top left)
+    //Add 1 to X (for some reason, just how TW likes it)
+    //Minus 32 to zero the position
+    //Multiply them by 32 (idk why, just how tileworld does it)
+    //Finally convert to a float, gotta make it little endian because reasons
     *(float*)(&outbuf[numinOutBuf][2]) = (Fixed_to_float((playerx-(ONE_SHIFTED/2) + ONE_SHIFTED -(INITIAL_PLAYER_POS)) * 32));
     *(float*)(&outbuf[numinOutBuf][6]) = (Fixed_to_float((playery+(ONE_SHIFTED/2)               -(INITIAL_PLAYER_POS)) * 32));
 
@@ -94,14 +100,15 @@ void requestChunks(int xDir, int yDir)
     numinOutBuf++;
 }
 
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~YOU ARE NOW ENTERING INTERRUPT TERRATORY, AS LITTLE CODE AS POSSIBLE HERE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-void sio_interrupt()
+bool mapdatamode = false;
+bool newchunksmode = false;
+void handle_serial()
 {
     //Fetch our data
     u32 data = REG_SIODATA32;
     REG_SIOCNT |= SION_ENABLE;
     REG_SIODATA32 = 0;
-    
+
     if (!startsending)
     {
         if(data == 0xDEADBEEF)
@@ -132,49 +139,82 @@ void sio_interrupt()
         //Shift array left
         memmove(&outbuf, &outbuf[1], 60);
     }
+
     //=========================== INCOMING DATA ===========================
-    incomingdata[numinInBuf] = data; //The reasoning behind putting this in a buffer is to reduce the length of the interrupt
-    numinInBuf++;
-}
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //Looking at incoming spawn data
+    /*Incoming is trickier as I am going to get ALOT of data through at once
+    Like 60kb worth, not going to be fun
+    It would be better not to store this in a buffer
+    but instead to put it in the exact place in memory where it is being stored
 
-void handle_serial()
-{
-    u32 data;
-    for(int i=0; i<numinInBuf; i++)
+    We are going to be getting 225 16x16 chunks
+    It would be better if it was stored in memory in 32x32 chunks like the GBA uses
+    but with the 240x240 map this isn't really possible
+
+    Another problem is that of the GBA tilemap only being 64x64
+    To get around this when you get to one side of the map the other side is
+    Filled in with the new data
+
+    This is the same on a bigger level for when new map data is added
+    */
+    if (!expectedlen)
     {
-        data = incomingdata[i];
-        if(!expectedlen) //If the current packet length is 0 (no current packet)
-            expectedlen = data; //If data is still 0, this will just repeat
-
-        if(expectedlen == 57601) //We are dealing with spawn data
+        expectedlen = data;
+        //This way of doing it is really fragmented and annoying,
+        //but no packet types are really the same
+        if (expectedlen > 57600)
         {
-            u8 o;
-            u8 *d = (u8*)&data;
-            for(u8 i=0;i<4;i++)
-            {
-                o = incomingoffset+i;
-                if(!o) continue; //Ignore the first byte
-                map[(o-1)/2] = (o&1) ? ((map[(o-1)/2] & 0x0F) | (d[i] << 4)) 
-                                     : ((map[(o-1)/2] & 0xF0) | (d[i] & 0xF)); //Put it in the right nibble in the map array
-            }
+            mapdatamode = true;
+            expectedlen /= 2; //Since we are dealing with nibbles
         }
-        else if(expectedlen == 11885) //New chunk data (not spawn)
-            processNewChunkData(data, incomingoffset); //This is more complicated, so is in map.c instead
-        else
-            incomingpacket[incomingoffset/4] = Reverse32(data); //Any other packet
-        incomingoffset += 4;
+        else if (expectedlen == 11885)
+            newchunksmode = true;
+        return;
+    }
 
-        if(incomingoffset>expectedlen)
+    //INCOMING SPAWN CHUNKS
+    if(mapdatamode)
+    {
+        //this could 100% be improved, but it works so i'm not touching it
+        //Infact this system is improved in the way we process new chunk data, but as I said
+        //Not much point in changing it now that it works
+        if(incomingoffset != 0) //So that we don't include the message ID in the map data
         {
-            if(expectedlen == 57601) setupMap();
-            else if(expectedlen<11885) processData();
-            expectedlen = 0; //Go back to current packet size being 0
-            incomingoffset = 0;
+            map[incomingoffset] = ((data >> 24) & 0xF) | (previousnibble << 4);
+            incomingoffset +=1;
+        }
+        if(incomingoffset != 28800)
+        {
+            map[incomingoffset] = ((data >> 8) & 0xF) + (((data >> 16) & 0xF) << 4);
+            incomingoffset += 1;
+            previousnibble = (data) & 0xF;
         }
     }
-    numinInBuf = 0; //Since new data will overwrite old data there is no need to clear the array
+    else if (newchunksmode)
+    {
+        processNewChunkData(data, incomingoffset); //map.c
+        incomingoffset += 4;
+    }
+    else
+    {
+        incomingdata[incomingoffset/4] = Reverse32(data);
+        incomingoffset += 4;
+    }
+
+    if (incomingoffset >= expectedlen)
+    {
+        expectedlen = 0;
+        incomingoffset = 0;
+        previousnibble = 0;
+        if(mapdatamode)
+            setupmapTrigger = true;
+        else if (!newchunksmode)
+            processData();
+        mapdatamode = false;
+        newchunksmode = false;
+    }
 }
+
 void processData()
 {
     u8* incomingbuf8 = (u8*)incomingdata;
@@ -185,7 +225,21 @@ void processData()
         int x = *(int*)(incomingbuf8 + 1);
         int y = *(int*)(incomingbuf8 + 5);
         u8 id = incomingbuf8[10];
-        setTile(x, y, id); //map.c
+
+        //IMPORTANT
+        //I'm aware that an identical function is in map.c, however calling 2 layers of functions from an interrupt
+        //Breaks stuff, so i have copied it here
+
+        //For this I can use map_index function I made from the util.c file
+        //But we also have the issue of how it is all packed, with nibbles
+        int index = map_index(x+112, y+112);
+        map[index/2] = ((index % 2) ? (map[index/2] & 0xF0) | (id & 0xF)        //Attempting to set the right nibble
+                                    : (map[index/2] & 0x0F) | id << 4);
+
+        //Now, since the map array is only used when loading new chunks
+        //I also have to set it on the actual map
+        if(x+112-(16*mapX) < 64 && x+112-(16*mapX) >= 0 && y+112-(16*mapY) < 64 && y+112-(16*mapY) >= 0) //Tests if the tile is in the screen boundaries (probably a better way to do this)
+            se_mem[28][se_index(mod(x+112-(16*5), 64), mod(y+112-(16*5), 64), 64)] = id;
     }
 }
 
@@ -195,6 +249,6 @@ void sioInit()
     REG_RCNT = 0;
     REG_SIODATA32 = 0;
     REG_SIOCNT = SION_CLK_EXT | SION_ENABLE | SIO_MODE_32BIT | SIO_IRQ;
-    irq_add(II_SERIAL, sio_interrupt);
+    irq_add(II_SERIAL, handle_serial);
     connect();
 }

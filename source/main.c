@@ -172,7 +172,7 @@ int main()
 	{
 		vid_vsync();
 		key_poll();
-		processData();
+		handle_serial();
 		loadChunks();
 		if(startMovement)
 		{

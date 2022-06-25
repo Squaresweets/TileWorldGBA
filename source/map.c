@@ -22,9 +22,6 @@ int mapX = 5, mapY = 5;
 //The following x y positions represent the offset of the map from spawn
 int mapOffsetX = 0, mapOffsetY = 0;
 
-volatile bool setupmapTrigger = false;
-bool newChunkDataFlag;
-
 //See howMapIsStored.md for more info on this
 u16 mapIDconversiontable[16] = {0,  1,  4,  5, 
                                 2,  3,  6,  7, 
@@ -66,15 +63,14 @@ void setTile(u32 x, u32 y, u8 id)
 {
     //For this I can use map_index function I made from the util.c file
     //But we also have the issue of how it is all packed, with nibbles
-    //int index = map_index(mod(x+112, 240), mod(y+112, 240));
-    int index = map_index((x+112) % 240, y+112 % 240);
+    int index = map_index(mod(x+112, 240), mod(y+112, 240));
 
     map[index/2] = ((index % 2) ? (map[index/2] & 0xF0) | id         //Set the right nibble
                                 : (map[index/2] & 0x0F) | id << 4);
     //Now, since the map array is only used when loading new chunks
     //I also have to set it on the actual map
-    //if(x+112-(16*mapX) < 64 && x+112-(16*mapX) >= 0 && y+112-(16*mapY) < 64 && y+112-(16*mapY) >= 0) //Tests if the tile is in the screen boundaries (probably a better way to do this)
-    //    se_mem[28][se_index(mod(x+112-(16*5), 64), mod(y+112-(16*5), 64), 64)] = id;
+    if(x+112-(16*mapX) < 64 && x+112-(16*mapX) >= 0 && y+112-(16*mapY) < 64 && y+112-(16*mapY) >= 0) //Tests if the tile is in the screen boundaries (probably a better way to do this)
+        se_mem[28][se_index(mod(x+112-(16*5), 64), mod(y+112-(16*5), 64), 64)] = id;
 }
 
 void setupMap()
@@ -107,12 +103,6 @@ void loadChunksUD(int direction) //-1 = up, 1 = down
 
 void loadChunks()
 {
-    if(setupmapTrigger)
-    {
-        setupMap();
-        setupmapTrigger = false;
-        return;
-    }
     if(!startMovement) return;
 
     //LOADING CHUNKS IN TERMS OF GBA TILEMAP
@@ -126,9 +116,6 @@ void loadChunks()
     if((playerx - INITIAL_PLAYER_POS) > ((32  + (mapOffsetX * 16)) << SHIFT_AMOUNT)) requestChunks(3, 0);
     if((playery - INITIAL_PLAYER_POS) < ((-32 + (mapOffsetY * 16)) << SHIFT_AMOUNT)) requestChunks(0, -3);
     if((playery - INITIAL_PLAYER_POS) > ((32  + (mapOffsetY * 16)) << SHIFT_AMOUNT)) requestChunks(0, 3);
-
-    if(newChunkDataFlag)
-        processNewChunk();
 }
 
 /*
@@ -149,17 +136,6 @@ so that when the next chunk to the left is attempted to be loaded it instead loa
 The main problem that this method gives is a whole bunch of shifting and annoying code, so i'll have to 
 look into it
 
-25/06/22
-Here is the final idea: we process each chunk of 4 bytes individually, looking at each byte and deciding
-what to do with it. If it is less than 5 we ignore it since it is just packet type and number of chunks.
-The rest is the same structure of 264 bytes repeated (4 x, 4y, 256 tiles). We mod the index, and then put
-ChunkX, ChunkY and actual data into buffers. Once the final byte of the chunk has been read, we copy everything
-from the buffer into their location. We also set a flag so that on the main thread it goes "oh new chunk data, time to
-process it!". It should sort that out before we get the next chunk through (hopefully) and then we repeat that until
-all new chunk data is collected.
-This process means that every time we get new data we don't need to work out where it should be, instead we just know
-where the first one should be and we add one to the pointer everytime (or just memcpy)
-
 ##(Server) 08 (Chunks)
 The server sends this when the client requests chunks. Seems to always consist
 of 45 chunks (a 3x15 or 15x3 area). Chunks are 16x16.
@@ -173,9 +149,7 @@ of 45 chunks (a 3x15 or 15x3 area). Chunks are 16x16.
 		Tile*256 (uint8)
 	)
 */
-s32 ChunkXBuf = 0, ChunkYBuf = 0;
 s32 ChunkX = 0, ChunkY = 0;
-u8 ChunkBuf[128]; //Packing stuff into nibbles
 u8 Chunk[128];
 
 void processNewChunkData(u32 data, u32 offset)
@@ -183,7 +157,7 @@ void processNewChunkData(u32 data, u32 offset)
     //We are only dealing with one u32 at a time, so it is best to check each byte and 
     //Put it in the correct place
     u8 *d = (u8*)&data;
-    u8 *cx = (u8*)&ChunkXBuf; u8 *cy = (u8*)&ChunkYBuf; //Get pointer so we can set specific bytes
+    u8 *cx = (u8*)&ChunkX; u8 *cy = (u8*)&ChunkY; //Get pointer so we can set specific bytes
     u32 o;
     for(u8 i=0;i<4;i++) //Iterate through each byte in the data seperatly
     {
@@ -196,28 +170,16 @@ void processNewChunkData(u32 data, u32 offset)
         if(o < 4) cx[o] = b; //Set x
         else if(o < 8) cy[o-4] = b; //Set y
         //If we are dealing with chunk data, we put it in the buffer
-        else ChunkBuf[(o-8)/2] = (o%2 == 0) ? ((ChunkBuf[(o-8)/2] & 0x0F) | (b << 4)) 
-                                            : ((ChunkBuf[(o-8)/2] & 0xF0) | (b & 0xF)) ; //Put it in the right nibble
+        else Chunk[(o-8)/2] = (o&1) ? ((Chunk[(o-8)/2] & 0x0F) | (b << 4)) 
+                                    : ((Chunk[(o-8)/2] & 0xF0) | (b & 0xF)) ; //Put it in the right nibble
         
         if(o == 263) //Final byte of this chunk
         {
-            //Copy buffers ot the acutal things
-            memcpy(Chunk, ChunkBuf, 128);
-            memset(ChunkBuf, 0, 128); //Clear array after
-            ChunkX = ChunkXBuf; ChunkY = ChunkYBuf;
-            newChunkDataFlag = true; //LoadChunks()
+            int x = mod((ChunkX + 7), 15);
+            int y = mod((ChunkY + 7), 15);
+            u8 id = x%15 + y*15;
+            if(id > 225) return; //We have an issue
+            memcpy(&map[id*128], Chunk, 128);
         }
     }
-}
-//The actual chunk processing only happens once per chunk and so I can make it pretty efficient
-//Also keep in mind this runs on the main thread, not an interupt
-void processNewChunk() 
-{
-    int x = mod((ChunkX + 7), 15);
-    int y = mod((ChunkY + 7), 15);
-    u8 id = x%15 + y*15;
-    if(id > 225) return; //We have an issue
-
-    memcpy(&map[id*128], Chunk, 128);
-    newChunkDataFlag = false;
 }

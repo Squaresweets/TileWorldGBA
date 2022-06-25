@@ -3,8 +3,8 @@
 
 #include <tonc.h>
 void sioInit();
-void handle_serial();
 void sioMove();
 void processData();
+void handle_serial();
 void requestChunks(int xDir, int yDir);
 #endif

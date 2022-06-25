@@ -7,7 +7,6 @@ extern int mapOffsetX;
 extern int mapOffsetY;
 extern int mapX;
 extern int mapY;
-extern volatile bool setupmapTrigger;
 void loadChunks();
 void setupMap();
 void processNewChunkData(u32 data, u32 offset);
