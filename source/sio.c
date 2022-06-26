@@ -31,7 +31,7 @@ u8 dataoffset;
 u8 datalen;
 
 //~~~Input stuff~~~
-u32 incomingdata[10]; //Data coming in in no particular order (also including packet lengths)
+u32 incomingdata[60]; //Data coming in in no particular order (also including packet lengths)
 u8 numinInBuf;
 
 u32 incomingpacket[6]; //Packets of data, in the correct order
@@ -94,6 +94,7 @@ void requestChunks(int xDir, int yDir)
     numinOutBuf++;
 }
 
+bool currentlyinforloopREMOVETHIS;
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~YOU ARE NOW ENTERING INTERRUPT TERRATORY, AS LITTLE CODE AS POSSIBLE HERE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 void sio_interrupt()
 {
@@ -133,6 +134,8 @@ void sio_interrupt()
         memmove(&outbuf, &outbuf[1], 60);
     }
     //=========================== INCOMING DATA ===========================
+    //if(numinInBuf >= 60) return;
+    if(currentlyinforloopREMOVETHIS) playerx = ONE_SHIFTED; else playerx = INITIAL_PLAYER_POS;
     incomingdata[numinInBuf] = data; //The reasoning behind putting this in a buffer is to reduce the length of the interrupt
     numinInBuf++;
 }
@@ -140,52 +143,68 @@ void sio_interrupt()
 
 void handle_serial()
 {
+    currentlyinforloopREMOVETHIS = true;
     u32 data;
-    for(int i=0; i<numinInBuf; i++)
+    for(u8 i=0; i<numinInBuf; i++)
     {
         data = incomingdata[i];
         if(!expectedlen) //If the current packet length is 0 (no current packet)
+        {
             expectedlen = data; //If data is still 0, this will just repeat
+            continue;
+        }
 
         if(expectedlen == 57601) //We are dealing with spawn data
         {
-            u8 o;
+            int o;
+            data = Reverse32(data);
             u8 *d = (u8*)&data;
-            for(u8 i=0;i<4;i++)
+            for(u8 j=0;j<4;j++)
             {
-                o = incomingoffset+i;
+                o = incomingoffset+j;
                 if(!o) continue; //Ignore the first byte
-                map[(o-1)/2] = (o&1) ? ((map[(o-1)/2] & 0x0F) | (d[i] << 4)) 
-                                     : ((map[(o-1)/2] & 0xF0) | (d[i] & 0xF)); //Put it in the right nibble in the map array
+                map[(o-1)/2] += ((o-1)&1) ? (d[j] & 0xF)
+                                          : (d[j] << 4); //Put it in the right nibble in the map array
             }
         }
         else if(expectedlen == 11885) //New chunk data (not spawn)
             processNewChunkData(data, incomingoffset); //This is more complicated, so is in map.c instead
-        else
-            incomingpacket[incomingoffset/4] = Reverse32(data); //Any other packet
+        else if(expectedlen < 25)
+            incomingpacket[incomingoffset/4] = Reverse32(data); //Any other packet (except messages)
         incomingoffset += 4;
 
-        if(incomingoffset>expectedlen)
+        if(incomingoffset >= expectedlen)
         {
             if(expectedlen == 57601) setupMap();
-            else if(expectedlen<11885) processData();
+            else if(expectedlen<25) processData();
             expectedlen = 0; //Go back to current packet size being 0
             incomingoffset = 0;
         }
     }
+    currentlyinforloopREMOVETHIS = false;
     numinInBuf = 0; //Since new data will overwrite old data there is no need to clear the array
 }
 void processData()
 {
-    u8* incomingbuf8 = (u8*)incomingdata;
-    if(!*incomingbuf8) //No data or data has already been processed
+    u8* incomingpacket8 = (u8*)incomingpacket;
+    if(!*incomingpacket8) //No data or data has already been processed
         return;
-    if(*incomingbuf8 == 5) //Server Place
+    if(*incomingpacket8 == 5) //Server Place
     {
-        int x = *(int*)(incomingbuf8 + 1);
-        int y = *(int*)(incomingbuf8 + 5);
-        u8 id = incomingbuf8[10];
-        setTile(x, y, id); //map.c
+        int x = *(int*)(incomingpacket8 + 1);
+        int y = *(int*)(incomingpacket8 + 5);
+        u8 id = incomingpacket8[10];
+        //setTile(x, y, id); //map.c
+        //For this I can use map_index function I made from the util.c file
+        //But we also have the issue of how it is all packed, with nibbles
+        int index = map_index(x+112, y+112);
+        map[index/2] = ((index % 2) ? (map[index/2] & 0xF0) | id         //Attempting to set the right nibble
+                                    : (map[index/2] & 0x0F) | id << 4);
+
+        //Now, since the map array is only used when loading new chunks
+        //I also have to set it on the actual map
+        if(x+112-(16*mapX) < 64 && x+112-(16*mapX) >= 0 && y+112-(16*mapY) < 64 && y+112-(16*mapY) >= 0)
+            se_mem[28][se_index(mod(x+112-(16*5), 64), mod(y+112-(16*5), 64), 64)] = id;
     }
 }
 

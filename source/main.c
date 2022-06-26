@@ -172,14 +172,14 @@ int main()
 	{
 		vid_vsync();
 		key_poll();
+
 		handle_serial();
-		loadChunks();
 		if(startMovement)
 		{
+			loadChunks();
 			movement();
 			sioMove();
 		}
-		
 		renderPlayer();
 	}
 	return 0;
