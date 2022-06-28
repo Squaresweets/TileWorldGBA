@@ -31,11 +31,11 @@ u8 dataoffset;
 u8 datalen;
 
 //~~~Input stuff~~~
-u32 incomingdata[60];
+u32 incomingdata[128];
 u8 numinInBuf;
 //This is pretty weird to have two, but it helps with keeping everything threadsafe
 //More information in the handle serial function
-u32 secondaryincomingdata[60];
+u32 secondaryincomingdata[128];
 u8 numinsecondInBuf;
 
 bool currentBuffer = 0; //0=incomingdata, 1=secondaryincomingdata
@@ -143,11 +143,13 @@ void sio_interrupt()
     {
         incomingdata[numinInBuf] = data; //The reasoning behind putting this in a buffer is to reduce the length of the interrupt
         numinInBuf++;
+        if(numinInBuf > 128) playerx = 0;
     }
     else
     {
         secondaryincomingdata[numinsecondInBuf] = data; //The reasoning behind putting this in a buffer is to reduce the length of the interrupt
         numinsecondInBuf++;
+        if(numinsecondInBuf > 128) playerx = 0;
     }
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -178,7 +180,7 @@ void handle_serial()
 
         if(expectedlen == 57601) //We are dealing with spawn data
         {
-            int o;
+            u32 o;
             data = Reverse32(data);
             u8 *d = (u8*)&data;
             for(u8 j=0;j<4;j++)
@@ -215,17 +217,7 @@ void processData()
         int x = *(int*)(incomingpacket8 + 1);
         int y = *(int*)(incomingpacket8 + 5);
         u8 id = incomingpacket8[10];
-        //setTile(x, y, id); //map.c
-        //For this I can use map_index function I made from the util.c file
-        //But we also have the issue of how it is all packed, with nibbles
-        int index = map_index(x+112, y+112);
-        map[index/2] = ((index % 2) ? (map[index/2] & 0xF0) | id         //Attempting to set the right nibble
-                                    : (map[index/2] & 0x0F) | id << 4);
-
-        //Now, since the map array is only used when loading new chunks
-        //I also have to set it on the actual map
-        if(x+112-(16*mapX) < 64 && x+112-(16*mapX) >= 0 && y+112-(16*mapY) < 64 && y+112-(16*mapY) >= 0)
-            se_mem[28][se_index(mod(x+112-(16*5), 64), mod(y+112-(16*5), 64), 64)] = id;
+        setTile(x, y, id); //map.c
     }
 }
 

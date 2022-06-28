@@ -22,6 +22,11 @@ int mapX = 5, mapY = 5;
 //The following x y positions represent the offset of the map from spawn
 int mapOffsetX = 0, mapOffsetY = 0;
 
+s32 ChunkX = 0, ChunkY = 0;
+u8 Chunk[128];
+u8 *d; u8 *cx; u8 *cy;
+u32 o;
+
 //See howMapIsStored.md for more info on this
 u16 mapIDconversiontable[16] = {0,  1,  4,  5, 
                                 2,  3,  6,  7, 
@@ -63,13 +68,13 @@ void setTile(u32 x, u32 y, u8 id)
 {
     //For this I can use map_index function I made from the util.c file
     //But we also have the issue of how it is all packed, with nibbles
-    int index = map_index(mod(x+112, 240), mod(y+112, 240));
-
-    map[index/2] = ((index % 2) ? (map[index/2] & 0xF0) | id         //Set the right nibble
+    int index = map_index(x+112, y+112);
+    map[index/2] = ((index % 2) ? (map[index/2] & 0xF0) | id         //Attempting to set the right nibble
                                 : (map[index/2] & 0x0F) | id << 4);
+
     //Now, since the map array is only used when loading new chunks
     //I also have to set it on the actual map
-    if(x+112-(16*mapX) < 64 && x+112-(16*mapX) >= 0 && y+112-(16*mapY) < 64 && y+112-(16*mapY) >= 0) //Tests if the tile is in the screen boundaries (probably a better way to do this)
+    if(x+112-(16*mapX) < 64 && x+112-(16*mapX) >= 0 && y+112-(16*mapY) < 64 && y+112-(16*mapY) >= 0)
         se_mem[28][se_index(mod(x+112-(16*5), 64), mod(y+112-(16*5), 64), 64)] = id;
 }
 
@@ -83,6 +88,7 @@ void setupMap()
             setChunk(x, y, x+5, y+5);
         }
     }
+    cx = (u8*)&ChunkX; cy = (u8*)&ChunkY; //Setting stuff up for loading new chunks
     startMovement = true;
 }
 
@@ -147,19 +153,13 @@ of 45 chunks (a 3x15 or 15x3 area). Chunks are 16x16.
 		Tile*256 (uint8)
 	)
 */
-s32 ChunkX = 0, ChunkY = 0;
-u8 Chunk[128];
 
 void processNewChunkData(u32 data, u32 offset)
 {
-    //We are only dealing with one u32 at a time, so it is best to check each byte and 
-    //Put it in the correct place
     u8 *d = (u8*)&data;
-    u8 *cx = (u8*)&ChunkX; u8 *cy = (u8*)&ChunkY; //Get pointer so we can set specific bytes
-    u32 o;
     for(u8 i=0;i<4;i++) //Iterate through each byte in the data seperatly
     {
-        u8 b = d[i]; //Current byte we are on
+        u8 b = d[3-i]; //Current byte we are on (reversing bytes)
         o = offset + i; //id of current byte
         if(o < 5) continue; //The first 5 bytes (packet type and amount of chunks) we can ignore
         o = (o-5)%264; //Repeat for each chunk after the first 5
@@ -168,16 +168,14 @@ void processNewChunkData(u32 data, u32 offset)
         if(o < 4) cx[o] = b; //Set x
         else if(o < 8) cy[o-4] = b; //Set y
         //If we are dealing with chunk data, we put it in the buffer
-        else Chunk[(o-8)/2] = ((o-8)&1) ? ((Chunk[(o-8)/2] & 0xF0) | (b & 0xF)) 
-                                        : ((Chunk[(o-8)/2] & 0x0F) | (b << 4)); //Put it in the right nibble
+        else Chunk[(o-8)/2] = ((o-8)&1) * ((Chunk[(o-8)/2] & 0xF0) | (b & 0xF)) 
+                           + !((o-8)&1) * ((Chunk[(o-8)/2] & 0x0F) | (b << 4)); //Put it in the right nibble
         
         if(o == 263) //Final byte of this chunk
         {
             int x = mod((ChunkX + 7), 15);
             int y = mod((ChunkY + 7), 15);
-            u8 id = x%15 + y*15;
-            if(id > 225) return; //We have an issue
-            memcpy(&map[id*128], Chunk, 128);
+            memcpy(&map[128*x + 1920*y], Chunk, 128);
         }
     }
 }

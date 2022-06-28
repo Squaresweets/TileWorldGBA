@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cd8db5e-f5fa-48ef-87b3-b3e07ff343a3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TileWorldGBA_mb.elf" beforeDir="false" afterPath="$PROJECT_DIR$/TileWorldGBA_mb.elf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TileWorldGBA_mb.gba" beforeDir="false" afterPath="$PROJECT_DIR$/TileWorldGBA_mb.gba" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/TileWorldGBA_mb.elf.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/TileWorldGBA_mb.elf.map" afterDir="false" />
@@ -198,6 +197,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
