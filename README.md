@@ -14,7 +14,7 @@
 - Location information sending ✔️
 - Loading screen ✔️
 - Receiving tile places ✔️
-- New chunks loading
+- New chunks loading ✔️
 - Changing tiles
 - 3D printed game holder
 - Other players?

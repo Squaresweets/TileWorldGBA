@@ -26,7 +26,8 @@ BG_POINT bg0_pt= { 0, 0 };
 SCR_ENTRY *bg0_map= se_mem[SBB_0];
 
 OBJ_ATTR obj_buffer[128];
-OBJ_AFFINE *obj_aff_buffer= (OBJ_AFFINE*)obj_buffer;
+OBJ_ATTR *player = &obj_buffer[0];
+OBJ_ATTR *colourselector =  &obj_buffer[1];
 
 
 //Fixed point, with a shift value of 16
@@ -34,11 +35,14 @@ int playerx = INITIAL_PLAYER_POS, playery = INITIAL_PLAYER_POS;
 int camerax = INITIAL_PLAYER_POS, cameray = INITIAL_PLAYER_POS;
 int xv = 0, yv = 0;
 bool startMovement = false;
-OBJ_ATTR *player= &obj_buffer[0];
+
+//Values to do with placing tiles
+u8 currentTileID = 1;
+bool placeMode = false;
+u8 tilex, tiley;
 
 void init_map()
 {
-
 	// initialize a background
 	REG_BG0CNT= BG_CBB(CBB_0) | BG_SBB(SBB_0) | BG_REG_64x64;
 	REG_BG0HOFS= 0;
@@ -97,11 +101,12 @@ void movement()
 	bool grounded = Check(bounds, g).collided;
 	bool ladder = Check(bounds, bounds).ladder;
 
-	xv += key_tri_horz() * (ONE_SHIFTED / 32);
+	//Only move if we are not in placeMode
+	xv += key_tri_horz() * (ONE_SHIFTED / 32) * !placeMode;
 	//Only move up and down if we are on a ladder
-	yv += -key_tri_vert() * (ONE_SHIFTED / 32) * ladder;
+	yv += -key_tri_vert() * (ONE_SHIFTED / 32) * ladder * !placeMode;
 
-	if(key_tri_fire() > 0 && grounded && !ladder)
+	if(key_tri_fire() > 0 && grounded && !ladder && !placeMode)
 		yv += ((25<<SHIFT_AMOUNT) / 32);
 	if (!grounded && !ladder)
 		yv -= 88166 / 32; //(8166 = 1.3453 << 16)
@@ -122,14 +127,13 @@ void movement()
 	xv *= !Check(bounds, g).collided;
 	g.y = playery - yv; g.x = bounds.x;
 	yv *= !Check(bounds, g).collided;
-
 }
 
 void renderPlayer()
 {
-	//Lerp to player pos
-	camerax += (playerx - camerax) / 4;
-	cameray += (playery - cameray) / 4;
+	//Lerp to player pos or tile pos
+	camerax += ((placeMode ? (tilex << SHIFT_AMOUNT) : playerx) - camerax) / 4;
+	cameray += ((placeMode ? (tiley << SHIFT_AMOUNT) : playery) - cameray) / 4;
 
 	//Rendering player to screen
 	//The -3 stuff is confusing, but basically just divides everything by the fixed point stuff to get the actual amount
@@ -139,14 +143,27 @@ void renderPlayer()
 	//Place player at correct position on the screen
     obj_set_pos(player, (playerx - (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3),
 						(playery - (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3));
-    oam_copy(oam_mem, obj_buffer, 1);   // (6) Update OAM (only one now)
+	if(startMovement) oam_copy(oam_mem, obj_buffer, 2); 	// Update all sprites
 
-	REG_BG_OFS[0]= bg0_pt;	// write new position
+	REG_BG_OFS[0]= bg0_pt;
 }
-//Temp for now, just to test stuff
-void resetPlayerPos()
+
+void placeTiles()
 {
-	playerx = 0; playery = 0;
+	if(key_hit(KEY_B))
+	{
+		placeMode = !placeMode;
+		tilex = playerx >> SHIFT_AMOUNT; tiley = playery >> SHIFT_AMOUNT;
+	}
+	if(!placeMode)
+	{
+		obj_hide(colourselector);
+		return;
+	}
+
+	obj_unhide(colourselector, 1);
+	currentTileID = mod(currentTileID + bit_tribool(key_hit(-1), KI_R, KI_L), 11);
+	//colourselector->attr2 = ATTR2_BUILD(currentTileID, 0, 0);
 }
 
 int main()
@@ -162,24 +179,29 @@ int main()
 	REG_DISPCNT= DCNT_MODE0 | DCNT_BG0 | DCNT_OBJ;
     oam_init(obj_buffer, 128);
 
-    u32 tid= 12, pb= 0;      // (3) tile id, pal-bank
-
     obj_set_attr(player, 
         ATTR0_SQUARE,              // Square, regular sprite
         ATTR1_SIZE_8,              // 8x8p, 
-        ATTR2_PALBANK(pb) | tid);   // palbank 0, tile 0
+        ATTR2_PALBANK(0) | 12);   // palbank 0, tile 0
+    obj_set_attr(colourselector, 
+        ATTR0_SQUARE,              // Square, regular sprite
+        ATTR1_SIZE_8,              // 8x8p, 
+        ATTR2_PALBANK(0) | 13);   // palbank 0, tile 0
+    obj_set_pos(colourselector, 8, 144);
+	
 	while(1)
 	{
 		vid_vsync();
 		key_poll();
 
-		handle_serial();
 		if(startMovement)
 		{
-			loadChunks();
+			placeTiles();
 			movement();
 			sioMove();
+			loadChunks();
 		}
+		handle_serial();
 		renderPlayer();
 	}
 	return 0;
