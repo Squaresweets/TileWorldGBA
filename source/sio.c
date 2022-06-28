@@ -31,8 +31,14 @@ u8 dataoffset;
 u8 datalen;
 
 //~~~Input stuff~~~
-u32 incomingdata[60]; //Data coming in in no particular order (also including packet lengths)
+u32 incomingdata[60];
 u8 numinInBuf;
+//This is pretty weird to have two, but it helps with keeping everything threadsafe
+//More information in the handle serial function
+u32 secondaryincomingdata[60];
+u8 numinsecondInBuf;
+
+bool currentBuffer = 0; //0=incomingdata, 1=secondaryincomingdata
 
 u32 incomingpacket[6]; //Packets of data, in the correct order
 u32 expectedlen;
@@ -94,7 +100,6 @@ void requestChunks(int xDir, int yDir)
     numinOutBuf++;
 }
 
-bool currentlyinforloopREMOVETHIS;
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~YOU ARE NOW ENTERING INTERRUPT TERRATORY, AS LITTLE CODE AS POSSIBLE HERE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 void sio_interrupt()
 {
@@ -134,20 +139,37 @@ void sio_interrupt()
         memmove(&outbuf, &outbuf[1], 60);
     }
     //=========================== INCOMING DATA ===========================
-    //if(numinInBuf >= 60) return;
-    if(currentlyinforloopREMOVETHIS) playerx = ONE_SHIFTED; else playerx = INITIAL_PLAYER_POS;
-    incomingdata[numinInBuf] = data; //The reasoning behind putting this in a buffer is to reduce the length of the interrupt
-    numinInBuf++;
+    if(!currentBuffer)
+    {
+        incomingdata[numinInBuf] = data; //The reasoning behind putting this in a buffer is to reduce the length of the interrupt
+        numinInBuf++;
+    }
+    else
+    {
+        secondaryincomingdata[numinsecondInBuf] = data; //The reasoning behind putting this in a buffer is to reduce the length of the interrupt
+        numinsecondInBuf++;
+    }
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 void handle_serial()
 {
-    currentlyinforloopREMOVETHIS = true;
     u32 data;
-    for(u8 i=0; i<numinInBuf; i++)
+    //RIGHT! time to explain why I need two buffers
+    /*
+    If i just had one buffer, throughout this function if we get more data through it could (and will)
+    break stuff, since we don't know on which line it will start the interupt
+
+    So instead we have alternating buffers, when I start processing one I switch it so all
+    new data is put into the other, then next time I switch it again.
+    This alternating pattern keeps new data from interfering
+    tdlr: Make it threadsafe
+    */
+    currentBuffer = !currentBuffer; //Switch which buffer is being used
+    u8 n = currentBuffer ? numinInBuf : numinsecondInBuf;
+    for(u8 i=0; i<n; i++)
     {
-        data = incomingdata[i];
+        if(currentBuffer) data = incomingdata[i]; else data = secondaryincomingdata[i];
         if(!expectedlen) //If the current packet length is 0 (no current packet)
         {
             expectedlen = data; //If data is still 0, this will just repeat
@@ -181,8 +203,7 @@ void handle_serial()
             incomingoffset = 0;
         }
     }
-    currentlyinforloopREMOVETHIS = false;
-    numinInBuf = 0; //Since new data will overwrite old data there is no need to clear the array
+    if(currentBuffer) numinInBuf = 0; else numinsecondInBuf = 0;
 }
 void processData()
 {

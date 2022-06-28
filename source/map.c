@@ -109,7 +109,6 @@ void loadChunks()
     if(cameray < (((mapY-4)*16) << SHIFT_AMOUNT)) loadChunksUD(-1);
     if(cameray > (((mapY-2)*16) << SHIFT_AMOUNT)) loadChunksUD(1);
 
-    return;
     //LOADING NEW CHUNKS
     if((playerx - INITIAL_PLAYER_POS) < ((-32 + (mapOffsetX * 16)) << SHIFT_AMOUNT)) requestChunks(-3, 0);
     if((playerx - INITIAL_PLAYER_POS) > ((32  + (mapOffsetX * 16)) << SHIFT_AMOUNT)) requestChunks(3, 0);
@@ -170,7 +169,7 @@ void processNewChunkData(u32 data, u32 offset)
         else if(o < 8) cy[o-4] = b; //Set y
         //If we are dealing with chunk data, we put it in the buffer
         else Chunk[(o-8)/2] = ((o-8)&1) ? ((Chunk[(o-8)/2] & 0xF0) | (b & 0xF)) 
-                                    : ((Chunk[(o-8)/2] & 0x0F) | (b << 4)); //Put it in the right nibble
+                                        : ((Chunk[(o-8)/2] & 0x0F) | (b << 4)); //Put it in the right nibble
         
         if(o == 263) //Final byte of this chunk
         {
