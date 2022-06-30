@@ -23,8 +23,8 @@ int mapX = 5, mapY = 5;
 int mapOffsetX = 0, mapOffsetY = 0;
 
 s32 ChunkX = 0, ChunkY = 0;
-u8 Chunk[128];
-u8 *d; u8 *cx; u8 *cy;
+u8 *d; u8 *cx; u8 *cy; //d = data
+u8 *c; //c = chunk position
 u32 o;
 
 //See howMapIsStored.md for more info on this
@@ -157,25 +157,36 @@ of 45 chunks (a 3x15 or 15x3 area). Chunks are 16x16.
 void processNewChunkData(u32 data, u32 offset)
 {
     u8 *d = (u8*)&data;
+    offset%=264;
     for(u8 i=0;i<4;i++) //Iterate through each byte in the data seperatly
     {
         u8 b = d[3-i]; //Current byte we are on (reversing bytes)
         o = offset + i; //id of current byte
         if(o < 5) continue; //The first 5 bytes (packet type and amount of chunks) we can ignore
-        o = (o-5)%264; //Repeat for each chunk after the first 5
+        //o = (o-5)%264; //Repeat for each chunk after the first 5 
+        o-=5;
 
         //The first 8 bytes of each chunk are the ChunkX and ChunkY, so put those in the right place
         if(o < 4) cx[o] = b; //Set x
-        else if(o < 8) cy[o-4] = b; //Set y
-        //If we are dealing with chunk data, we put it in the buffer
-        else Chunk[(o-8)/2] = ((o-8)&1) * ((Chunk[(o-8)/2] & 0xF0) | (b & 0xF)) 
-                           + !((o-8)&1) * ((Chunk[(o-8)/2] & 0x0F) | (b << 4)); //Put it in the right nibble
-        
-        if(o == 263) //Final byte of this chunk
+        else if(o < 8)
         {
-            int x = mod((ChunkX + 7), 15);
-            int y = mod((ChunkY + 7), 15);
-            memcpy(&map[128*x + 1920*y], Chunk, 128);
+            cy[o-4] = b; //Set y
+            if(o == 7) c = &map[128*mod((ChunkX + 7), 15) +
+                               1920*mod((ChunkY + 7), 15)]; //Get position in memory of where the current chunk should be put
+            continue;
         }
+        *(c + (o-8)/2) = (o&1) * ((*(c + (o-8)/2) & 0xF0) | (b & 0xF))
+                      + !(o&1) * ((*(c + (o-8)/2) & 0x0F) | (b << 4)); //Correct nibble
+        //c += ((o-8)&1); //If we just did the second nibble we add one to the pointer
+
+        //Chunk[(o-8)/2] = ((o-8)&1) * ((Chunk[(o-8)/2] & 0xF0) | (b & 0xF)) 
+        //                   + !((o-8)&1) * ((Chunk[(o-8)/2] & 0x0F) | (b << 4)); //Put it in the right nibble
+        
+        //if(o == 263) //Final byte of this chunk
+        //{
+            //int x = mod((ChunkX + 7), 15);
+            //int y = mod((ChunkY + 7), 15);
+            //memcpy(&map[128*x + 1920*y], Chunk, 128);
+        //}
     }
 }
