@@ -117,7 +117,7 @@ def main():
     #</editor-fold>
 
     multiboot.multiboot(epIn, epOut, "TileWorldGBA_mb.gba")
-    time.sleep(4)
+    time.sleep(5)
     readall(epIn, False)
 
     ws = websocket.WebSocket()

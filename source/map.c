@@ -157,14 +157,15 @@ of 45 chunks (a 3x15 or 15x3 area). Chunks are 16x16.
 void processNewChunkData(u32 data, u32 offset)
 {
     u8 *d = (u8*)&data;
-    offset%=264;
-    for(u8 i=0;i<4;i++) //Iterate through each byte in the data seperatly
+    o = (offset-5)%264;
+    for(u8 i=0;i<4;i++, o++) //Iterate through each byte in the data seperatly
     {
+        if(offset+i < 5) continue; //The first 5 bytes (packet type and amount of chunks) we can ignore
         u8 b = d[3-i]; //Current byte we are on (reversing bytes)
-        o = offset + i; //id of current byte
-        if(o < 5) continue; //The first 5 bytes (packet type and amount of chunks) we can ignore
+        //o = offset + i; //id of current byte
         //o = (o-5)%264; //Repeat for each chunk after the first 5 
-        o-=5;
+        //o-=5;
+        o -= (o>=264)*264; //Alternate to mod, much less expensive
 
         //The first 8 bytes of each chunk are the ChunkX and ChunkY, so put those in the right place
         if(o < 4) cx[o] = b; //Set x
