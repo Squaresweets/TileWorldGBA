@@ -39,7 +39,7 @@ bool startMovement = false;
 //Values to do with placing tiles
 u8 currentTileID = 1;
 bool placeMode = false;
-u8 tilex, tiley;
+int tilex, tiley;
 
 void init_map()
 {
@@ -109,7 +109,7 @@ void movement()
 	if(key_tri_fire() > 0 && grounded && !ladder && !placeMode)
 		yv += ((25<<SHIFT_AMOUNT) / 32);
 	if (!grounded && !ladder)
-		yv -= 88166 / 32; //(8166 = 1.3453 << 16)
+		yv -= 78166 / 32; //(8166 = 1.3453 << 16) //The movement is slowed down from the actual game
 	
 	//Apply friction
 	yv *= (ladder ? 851 : 951); yv /= 1000;
@@ -117,6 +117,7 @@ void movement()
 
 	//Cap to 0.5
 	xv = max(min(xv, (ONE_SHIFTED/2)), -(ONE_SHIFTED/2));
+	yv = max(min(yv, (ONE_SHIFTED)), -(ONE_SHIFTED));
 
 	g.x = bounds.x + xv; g.y = bounds.y - yv;
 	vector v = Check(bounds, g).v;
@@ -132,8 +133,8 @@ void movement()
 void renderPlayer()
 {
 	//Lerp to player pos or tile pos
-	camerax += ((placeMode ? (tilex << SHIFT_AMOUNT) : playerx) - camerax) / 4;
-	cameray += ((placeMode ? (tiley << SHIFT_AMOUNT) : playery) - cameray) / 4;
+	camerax += ((placeMode ? tilex : playerx) - camerax) / 4;
+	cameray += ((placeMode ? tiley : playery) - cameray) / 4;
 
 	//Rendering player to screen
 	//The -3 stuff is confusing, but basically just divides everything by the fixed point stuff to get the actual amount
@@ -153,7 +154,8 @@ void placeTiles()
 	if(key_hit(KEY_B))
 	{
 		placeMode = !placeMode;
-		tilex = playerx >> SHIFT_AMOUNT; tiley = playery >> SHIFT_AMOUNT;
+		tilex = (playerx >> SHIFT_AMOUNT) << SHIFT_AMOUNT;
+		tiley = (playery >> SHIFT_AMOUNT) << SHIFT_AMOUNT; //Round player position to nearest tile
 	}
 	if(!placeMode)
 	{
@@ -165,6 +167,8 @@ void placeTiles()
 	currentTileID = mod(currentTileID + bit_tribool(key_hit(-1), KI_R, KI_L), 11);
 	//colourselector->attr2 = ATTR2_BUILD(currentTileID, 0, 0);
 }
+
+int pingtimer; //For how often I send pings
 
 int main()
 {
@@ -194,14 +198,17 @@ int main()
 		vid_vsync();
 		key_poll();
 
+		handle_serial();
 		if(startMovement)
 		{
 			placeTiles();
 			movement();
+			if(pingtimer == 512) ping(); //Only ping every few seconds
+			else pingtimer++;
 			sioMove();
+
 			loadChunks();
 		}
-		handle_serial();
 		renderPlayer();
 	}
 	return 0;

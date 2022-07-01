@@ -63,6 +63,7 @@ def multiboot(epIn, epOut, path):
     crcB = (token >> 16) & 0xFF
     crcC = 0xC387
     print("Sending data, Length: " + str(fsize))
+    start = time.time()
     for i in range(0xC0, fsize, 4):
         dat = int(content[i])
         dat += int(content[i + 1]) << 8
@@ -102,4 +103,5 @@ def multiboot(epIn, epOut, path):
 
     TileWorldClient.sendread4(0x0066, epOut, epIn)
     TileWorldClient.sendread4(crcC & 0xFFFF, epOut, epIn)
+    print(f"{format(time.time() - start, '.3f')}s") # 2.003s
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~DONE!~~~~~~~~~~~~~~~~~~~~~~~~~~\n")

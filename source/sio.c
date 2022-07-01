@@ -47,7 +47,7 @@ u32 incomingoffset;
 bool startsending = false;
 
 //Length in bytes of each of the things the client could send
-u16 datalengthtable[10] = {0, 3, 0, 1, 0, 11, 18, 0, 17, 0}; //Message number 9 is used for message, but atm I am not planning on implementing this
+u8 datalengthtable[10] = {0, 3, 0, 1, 0, 11, 18, 0, 17, 0}; //Message number 9 is used for message, but atm I am not planning on implementing this
 
 //=========================== SENDING DATA ===========================
 void connect()
@@ -56,8 +56,14 @@ void connect()
     outbuf[numinOutBuf][1] = 0x1;
     outbuf[numinOutBuf][2] = 0x0;
     numinOutBuf++;
+    ping();
+}
+void ping()
+{
+    if(numinOutBuf>3) return; //Lets just hope it doesn't back up more than this
     outbuf[numinOutBuf][0] = 0x3;
     numinOutBuf++;
+    pingtimer = 0;
 }
 void place(u32 x, u32 y, u8 ID)
 {
@@ -130,7 +136,7 @@ void sio_interrupt()
         REG_SIODATA32 |= outbuf[0][dataoffset++];
     }
     //Check if we have reached the end of the current thing to send
-    if (numinOutBuf != 0 && dataoffset >= datalengthtable[outbuf[0][0]])
+    else if (numinOutBuf != 0 && dataoffset >= datalengthtable[outbuf[0][0]])
     {
         numinOutBuf--;
         dataoffset = 0;
@@ -157,8 +163,8 @@ void sio_interrupt()
 void handle_serial()
 {
     u32 data;
-    //RIGHT! time to explain why I need two buffers
     /*
+    RIGHT! time to explain why I need two buffers
     If i just had one buffer, throughout this function if we get more data through it could (and will)
     break stuff, since we don't know on which line it will start the interupt
 
@@ -178,7 +184,9 @@ void handle_serial()
             continue;
         }
 
-        if(expectedlen == 57601) //We are dealing with spawn data
+        if(expectedlen == 11885) //New chunk data (not spawn)
+            processNewChunkData(data, incomingoffset); //This is more complicated, so is in map.c instead
+        else if(expectedlen == 57601) //We are dealing with spawn data
         {
             u32 o;
             data = Reverse32(data);
@@ -191,8 +199,6 @@ void handle_serial()
                                           : (d[j] << 4); //Put it in the right nibble in the map array
             }
         }
-        else if(expectedlen == 11885) //New chunk data (not spawn)
-            processNewChunkData(data, incomingoffset); //This is more complicated, so is in map.c instead
         else if(expectedlen < 25)
             incomingpacket[incomingoffset/4] = Reverse32(data); //Any other packet (except messages)
         incomingoffset += 4;
@@ -205,7 +211,7 @@ void handle_serial()
             incomingoffset = 0;
         }
     }
-    if(currentBuffer) numinInBuf = 0; else numinsecondInBuf = 0;
+    if(currentBuffer) numinInBuf = 0; else numinsecondInBuf = 0; //Clear buffer
 }
 void processData()
 {

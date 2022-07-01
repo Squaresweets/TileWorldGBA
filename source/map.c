@@ -162,9 +162,6 @@ void processNewChunkData(u32 data, u32 offset)
     {
         if(offset+i < 5) continue; //The first 5 bytes (packet type and amount of chunks) we can ignore
         u8 b = d[3-i]; //Current byte we are on (reversing bytes)
-        //o = offset + i; //id of current byte
-        //o = (o-5)%264; //Repeat for each chunk after the first 5 
-        //o-=5;
         o -= (o>=264)*264; //Alternate to mod, much less expensive
 
         //The first 8 bytes of each chunk are the ChunkX and ChunkY, so put those in the right place
@@ -178,16 +175,5 @@ void processNewChunkData(u32 data, u32 offset)
         }
         *(c + (o-8)/2) = (o&1) * ((*(c + (o-8)/2) & 0xF0) | (b & 0xF))
                       + !(o&1) * ((*(c + (o-8)/2) & 0x0F) | (b << 4)); //Correct nibble
-        //c += ((o-8)&1); //If we just did the second nibble we add one to the pointer
-
-        //Chunk[(o-8)/2] = ((o-8)&1) * ((Chunk[(o-8)/2] & 0xF0) | (b & 0xF)) 
-        //                   + !((o-8)&1) * ((Chunk[(o-8)/2] & 0x0F) | (b << 4)); //Put it in the right nibble
-        
-        //if(o == 263) //Final byte of this chunk
-        //{
-            //int x = mod((ChunkX + 7), 15);
-            //int y = mod((ChunkY + 7), 15);
-            //memcpy(&map[128*x + 1920*y], Chunk, 128);
-        //}
     }
 }
