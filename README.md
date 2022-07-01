@@ -1,7 +1,7 @@
 # TileWorldGBA
 ![gamecart](https://github.com/Squaresweets/TileWorldGBA/blob/main/GameCart.png)
 
-[![Smooth movement](https://img.youtube.com/vi/H5mTd7O5Pho/0.jpg)](https://www.youtube.com/watch?v=H5mTd7O5Pho)
+[![Chunk loading](https://img.youtube.com/vi/uGY5kjLEVD8/0.jpg)](https://www.youtube.com/watch?v=uGY5kjLEVD8)
 
 [TileWorld](https://tileworld.org) for Gameboy Advance! Why? IDK I thought it was kinda funny
 
