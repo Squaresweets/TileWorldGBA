@@ -27,7 +27,8 @@ SCR_ENTRY *bg0_map= se_mem[SBB_0];
 
 OBJ_ATTR obj_buffer[128];
 OBJ_ATTR *player = &obj_buffer[0];
-OBJ_ATTR *colourselector =  &obj_buffer[1];
+OBJ_ATTR *hammer =  &obj_buffer[1];
+OBJ_ATTR *indicator =  &obj_buffer[2];
 
 
 //Fixed point, with a shift value of 16
@@ -50,11 +51,10 @@ void init_map()
 	bg0_pt.x = 0;
 	bg0_pt.y = 0;
 
-	// create the tiles: basic tile and a cross
     memcpy(&tile_mem[CBB_0][0], TileMapTiles, TileMapTilesLen);
-    memcpy(&tile_mem[4][0], TileMapTiles, TileMapTilesLen);
+    memcpy(&tile_mem[4][0], spritesTiles, spritesTilesLen);
     memcpy(pal_bg_mem, TileMapPal, TileMapPalLen);
-    memcpy(pal_obj_mem, TileMapPal, TileMapPalLen);
+    memcpy(pal_obj_mem, spritesPal, spritesPalLen);
 
 	//Code to load loading screen
 	int ii, jj, c;
@@ -109,7 +109,7 @@ void movement()
 	if(key_tri_fire() > 0 && grounded && !ladder && !placeMode)
 		yv += ((25<<SHIFT_AMOUNT) / 32);
 	if (!grounded && !ladder)
-		yv -= 78166 / 32; //(8166 = 1.3453 << 16) //The movement is slowed down from the actual game
+		yv -= 88166 / 32; //(88166 = 1.3453 << 16) //The movement is slowed down from the actual game
 	
 	//Apply friction
 	yv *= (ladder ? 851 : 951); yv /= 1000;
@@ -117,7 +117,6 @@ void movement()
 
 	//Cap to 0.5
 	xv = max(min(xv, (ONE_SHIFTED/2)), -(ONE_SHIFTED/2));
-	yv = max(min(yv, (ONE_SHIFTED)), -(ONE_SHIFTED));
 
 	g.x = bounds.x + xv; g.y = bounds.y - yv;
 	vector v = Check(bounds, g).v;
@@ -141,10 +140,12 @@ void renderPlayer()
 	//And then times it by 8 (<<3) to get it how the gameboy likes it
 	bg0_pt.x = (camerax>>(SHIFT_AMOUNT-3)) - SCREEN_O_W;
 	bg0_pt.y = (cameray>>(SHIFT_AMOUNT-3)) - SCREEN_O_H;
-	//Place player at correct position on the screen
-    obj_set_pos(player, (playerx - (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3),
-						(playery - (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3));
-	if(startMovement) oam_copy(oam_mem, obj_buffer, 2); 	// Update all sprites
+	//Place player and indicator at correct position on the screen
+    obj_set_pos(player,    (playerx -            (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3),
+						   (playery -            (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3));
+    obj_set_pos(indicator, ((tilex & INT_MASK) - (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3),
+						   ((tiley & INT_MASK) - (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3));
+	if(startMovement) oam_copy(oam_mem, obj_buffer, 3); 	// Update all sprites
 
 	REG_BG_OFS[0]= bg0_pt;
 }
@@ -154,21 +155,20 @@ void placeTiles()
 	if(key_hit(KEY_B))
 	{
 		placeMode = !placeMode;
-		tilex = (playerx >> SHIFT_AMOUNT) << SHIFT_AMOUNT;
-		tiley = (playery >> SHIFT_AMOUNT) << SHIFT_AMOUNT; //Round player position to nearest tile
-	}
-	if(!placeMode)
-	{
-		obj_hide(colourselector);
-		return;
-	}
+		//Following couple of lines turn on or off indicators (hammer and indicator)
+		BFN_SET2(hammer->attr0, !placeMode * 0x0200, ATTR0_MODE);
+		BFN_SET2(indicator->attr0, !placeMode * 0x0200, ATTR0_MODE);
 
-	obj_unhide(colourselector, 1);
-	currentTileID = mod(currentTileID + bit_tribool(key_hit(-1), KI_R, KI_L), 11);
-	//colourselector->attr2 = ATTR2_BUILD(currentTileID, 0, 0);
+		tilex = playerx & INT_MASK;
+		tiley = playery & INT_MASK; //Round player position to nearest tile
+	}
+	tilex += key_tri_horz() * (ONE_SHIFTED/4);
+	tiley += key_tri_vert() * (ONE_SHIFTED/4);
+	currentTileID = mod(currentTileID + key_tri_shoulder(), 11);
+	//hammer->attr2 = ATTR2_BUILD(currentTileID, 0, 0);
 }
 
-int pingtimer; //For how often I send pings
+u16 pingtimer; //For how often I send pings
 
 int main()
 {
@@ -180,18 +180,26 @@ int main()
 	
 	sioInit();
 
-	REG_DISPCNT= DCNT_MODE0 | DCNT_BG0 | DCNT_OBJ;
+	REG_DISPCNT= DCNT_MODE0 | DCNT_BG0 | DCNT_OBJ | DCNT_OBJ_1D;
     oam_init(obj_buffer, 128);
 
+	//There is probably a less messy way to do this
     obj_set_attr(player, 
         ATTR0_SQUARE,              // Square, regular sprite
         ATTR1_SIZE_8,              // 8x8p, 
-        ATTR2_PALBANK(0) | 12);   // palbank 0, tile 0
-    obj_set_attr(colourselector, 
+        ATTR2_PALBANK(0) | 0);     // palbank 0, tile 0
+    obj_set_attr(hammer, 
+        ATTR0_SQUARE,              // Square, regular sprite
+        ATTR1_SIZE_16,             // 16x16p, 
+        ATTR2_PALBANK(0) | 2);     // palbank 0, tile 2
+    obj_set_pos(hammer, 8, 136);
+	obj_hide(hammer);
+    obj_set_attr(indicator, 
         ATTR0_SQUARE,              // Square, regular sprite
         ATTR1_SIZE_8,              // 8x8p, 
-        ATTR2_PALBANK(0) | 13);   // palbank 0, tile 0
-    obj_set_pos(colourselector, 8, 144);
+        ATTR2_PALBANK(0) | 1);     // palbank 0, tile 1
+	obj_hide(indicator);
+
 	
 	while(1)
 	{

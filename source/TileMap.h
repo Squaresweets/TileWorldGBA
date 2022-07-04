@@ -22,7 +22,12 @@ extern const unsigned int TileMapTiles[128];
 
 #define TileMapPalLen 32
 extern const unsigned int TileMapPal[8];
-extern const unsigned int playerspritePal[1];
+
+#define spritesTilesLen 192
+extern const unsigned int spritesTiles[48];
+
+#define spritesPalLen 32
+extern const unsigned int spritesPal[8];
 
 extern const u8 LOAD[4][13];
 extern const u8 DING[4][14];
