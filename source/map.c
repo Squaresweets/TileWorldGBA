@@ -84,14 +84,11 @@ void setupMap()
     for(u8 y=0;y<4;y++)
     {
         for(u8 x=0;x<4;x++)
-        {
             setChunk(x, y, x+5, y+5);
-        }
     }
     cx = (u8*)&ChunkX; cy = (u8*)&ChunkY; //Setting stuff up for loading new chunks
     startMovement = true;
 }
-
 void loadChunksLR(int direction) //-1 = left, 1 = right
 {
     u8 r = 3*(direction == 1); //Go to other side if we are going to the right
@@ -109,6 +106,7 @@ void loadChunksUD(int direction) //-1 = up, 1 = down
 
 void loadChunks()
 {
+    if(placeMode) return;
     //LOADING CHUNKS IN TERMS OF GBA TILEMAP
     if(camerax < (((mapX-4)*16) << SHIFT_AMOUNT)) loadChunksLR(-1);
     if(camerax > (((mapX-2)*16) << SHIFT_AMOUNT)) loadChunksLR(1);
@@ -159,6 +157,7 @@ void processNewChunkData(u32 data, u32 offset)
     //In this function >>1 is used instead of /2 since it is more efficient
     u8 *d = (u8*)&data;
     o = (offset-5)%264;
+    bool chunkOnScreen = ChunkX > mapX-5 && ChunkX < mapX-1 && ChunkY > (mapY-5) && ChunkY < mapY-1;
     for(u8 i=0;i<4;i++, o++) //Iterate through each byte in the data seperatly
     {
         if(offset+i < 5) continue; //The first 5 bytes (packet type and amount of chunks) we can ignore
@@ -172,12 +171,13 @@ void processNewChunkData(u32 data, u32 offset)
             cy[o-4] = b; //Set y
             if(o == 7) c = &map[128*mod((ChunkX + 7), 15) +
                                1920*mod((ChunkY + 7), 15)]; //Get position in memory of where the current chunk should be put
+            chunkOnScreen = ChunkX > (mapX-5) && ChunkX < mapX-1 && ChunkY > (mapY-5) && ChunkY < mapY-1; //Repeated due to change of ChunkX and Y
             continue;
         }
         *(c + ((o-8)>>1)) = (o&1) * ((*(c + ((o-8)>>1)) & 0xF0) | (b & 0xF))
                          + !(o&1) * ((*(c + ((o-8)>>1)) & 0x0F) | (b << 4)); //Correct nibble
         
-        if(ChunkX > (mapX-5) && ChunkX < mapX-1 && ChunkY > (mapY-5) && ChunkY < mapY-1) //Check if this tile is currently in the GBA tilemap (if so we need to change it)
+        if(chunkOnScreen) //Check if this tile is currently in the GBA tilemap (if so we need to change it)
             se_mem[28][se_index(((ChunkX << 4) + 32 + (((o-8)>>1)&15))&63, //Keep in mind the & sign stuff is to make mod more efficient
                                 ((ChunkY << 4) + 32 + (((o-8)>>1)>>4))&63, 64)] = b; //"It just works" -Todd Howard
     }
