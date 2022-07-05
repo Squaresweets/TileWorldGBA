@@ -38,7 +38,7 @@ int xv = 0, yv = 0;
 bool startMovement = false;
 
 //Values to do with placing tiles
-u8 currentTileID = 1;
+u8 currentTileID = 0;
 bool placeMode = false;
 int tilex, tiley;
 
@@ -109,7 +109,7 @@ void movement()
 	if(key_tri_fire() > 0 && grounded && !ladder && !placeMode)
 		yv += ((25<<SHIFT_AMOUNT) / 32);
 	if (!grounded && !ladder)
-		yv -= 88166 / 32; //(88166 = 1.3453 << 16) //The movement is slowed down from the actual game
+		yv -= 88166 / 32; //(88166 = 1.3453 << 16)
 	
 	//Apply friction
 	yv *= (ladder ? 851 : 951); yv /= 1000;
@@ -132,8 +132,8 @@ void movement()
 void renderPlayer()
 {
 	//Lerp to player pos or tile pos
-	camerax += ((placeMode ? tilex : playerx) - camerax) / 4;
-	cameray += ((placeMode ? tiley : playery) - cameray) / 4;
+	camerax += ((placeMode ? (tilex & INT_MASK) : playerx) - camerax) / 4;
+	cameray += ((placeMode ? (tiley & INT_MASK) : playery) - cameray) / 4;
 
 	//Rendering player to screen
 	//The -3 stuff is confusing, but basically just divides everything by the fixed point stuff to get the actual amount
@@ -158,14 +158,20 @@ void placeTiles()
 		//Following couple of lines turn on or off indicators (hammer and indicator)
 		BFN_SET2(hammer->attr0, !placeMode * 0x0200, ATTR0_MODE);
 		BFN_SET2(indicator->attr0, !placeMode * 0x0200, ATTR0_MODE);
+		currentTileID = 0;
 
 		tilex = playerx & INT_MASK;
 		tiley = playery & INT_MASK; //Round player position to nearest tile
 	}
-	tilex += key_tri_horz() * (ONE_SHIFTED/4);
-	tiley += key_tri_vert() * (ONE_SHIFTED/4);
-	currentTileID = mod(currentTileID + key_tri_shoulder(), 11);
-	//hammer->attr2 = ATTR2_BUILD(currentTileID, 0, 0);
+	if(!placeMode) return;
+	tilex += key_tri_horz() * (ONE_SHIFTED/6);
+	tiley += key_tri_vert() * (ONE_SHIFTED/6);
+
+	currentTileID = mod(currentTileID + bit_tribool(key_hit(-1), KI_R, KI_L), 12);
+	indicator->attr2 = ATTR2_BUILD(currentTileID, 0, 0);
+	if(key_hit(KEY_A)) //Time to place the tile!
+		place((tilex-INITIAL_PLAYER_POS)>>SHIFT_AMOUNT,
+			  (tiley-INITIAL_PLAYER_POS)>>SHIFT_AMOUNT, currentTileID); 
 }
 
 u16 pingtimer; //For how often I send pings
@@ -187,20 +193,19 @@ int main()
     obj_set_attr(player, 
         ATTR0_SQUARE,              // Square, regular sprite
         ATTR1_SIZE_8,              // 8x8p, 
-        ATTR2_PALBANK(0) | 0);     // palbank 0, tile 0
+        ATTR2_PALBANK(0) | 12);     // palbank 0, tile 12
     obj_set_attr(hammer, 
         ATTR0_SQUARE,              // Square, regular sprite
         ATTR1_SIZE_16,             // 16x16p, 
-        ATTR2_PALBANK(0) | 2);     // palbank 0, tile 2
+        ATTR2_PALBANK(0) | 14);    // palbank 0, tile 14
     obj_set_pos(hammer, 8, 136);
 	obj_hide(hammer);
     obj_set_attr(indicator, 
         ATTR0_SQUARE,              // Square, regular sprite
         ATTR1_SIZE_8,              // 8x8p, 
-        ATTR2_PALBANK(0) | 1);     // palbank 0, tile 1
+        ATTR2_PALBANK(0) | 0);     // palbank 0, tile 1
 	obj_hide(indicator);
 
-	
 	while(1)
 	{
 		vid_vsync();

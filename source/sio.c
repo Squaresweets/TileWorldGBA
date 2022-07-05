@@ -47,7 +47,7 @@ u32 incomingoffset;
 bool startsending = false;
 
 //Length in bytes of each of the things the client could send
-u8 datalengthtable[10] = {0, 3, 0, 1, 0, 11, 18, 0, 17, 0}; //Message number 9 is used for message, but atm I am not planning on implementing this
+u8 datalengthtable[10] = {0, 3, 0, 1, 0, 12, 18, 0, 17, 0}; //Message number 9 is used for message, but atm I am not planning on implementing this
 
 //=========================== SENDING DATA ===========================
 void connect()
@@ -65,12 +65,14 @@ void ping()
     numinOutBuf++;
     pingtimer = 0;
 }
-void place(u32 x, u32 y, u8 ID)
+void place(s32 x, s32 y, u8 ID)
 {
+    setTile(x,y,ID);
     if(numinOutBuf>3) return; //Lets just hope it doesn't back up more than this
+
     outbuf[numinOutBuf][0] = 0x5;
-    *(u32*)(&outbuf[numinOutBuf][1]) = x;
-    *(u32*)(&outbuf[numinOutBuf][5]) = y;
+    memcpy(&outbuf[numinOutBuf][1], &x, 4); //memcpy used due to allignment errors
+    memcpy(&outbuf[numinOutBuf][5], &y, 4);
     outbuf[numinOutBuf][9] = 0x1;
     outbuf[numinOutBuf][10] = ID;
     numinOutBuf++;
@@ -81,11 +83,12 @@ void sioMove()
     
     outbuf[numinOutBuf][0] = 0x6;
     //Keys (8 bit, up/down/left/right/jump are each mapped to a bit)
-    outbuf[numinOutBuf][1] = (key_is_down(KEY_UP)) |
-                          (key_is_down(KEY_DOWN) << 1) |
-                          (key_is_down(KEY_LEFT) << 2) |
-                          (key_is_down(KEY_RIGHT) << 3) |
-                          (key_is_down(KEY_A) << 4);
+    if(!placeMode) //If we are in placeMode ignore inputs
+        outbuf[numinOutBuf][1] = (key_is_down(KEY_UP))         |
+                                 (key_is_down(KEY_DOWN)  << 1) |
+                                 (key_is_down(KEY_LEFT)  << 2) |
+                                 (key_is_down(KEY_RIGHT) << 3) |
+                                 (key_is_down(KEY_A)     << 4);
 
     *(float*)(&outbuf[numinOutBuf][2]) = (Fixed_to_float((playerx-(ONE_SHIFTED/2) + ONE_SHIFTED -(INITIAL_PLAYER_POS)) * 32));
     *(float*)(&outbuf[numinOutBuf][6]) = (Fixed_to_float((playery+(ONE_SHIFTED/2)               -(INITIAL_PLAYER_POS)) * 32));
