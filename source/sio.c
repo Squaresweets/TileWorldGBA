@@ -50,6 +50,7 @@ bool startsending = false;
 u8 datalengthtable[10] = {0, 3, 0, 1, 0, 12, 18, 0, 17, 0}; //Message number 9 is used for message, but atm I am not planning on implementing this
 
 //=========================== SENDING DATA ===========================
+//Note to self, this could have potentialy been done with unions and structs
 void connect()
 {
     outbuf[numinOutBuf][0] = 0x1;
