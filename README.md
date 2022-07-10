@@ -1,8 +1,9 @@
 # TileWorldGBA
 [![Discord](https://img.shields.io/discord/672474661388288021.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/6hswr9j)
 [<img src="https://img.shields.io/twitter/follow/SqSweetsGames?style=social" /></a>](https://twitter.com/SqSweetsGames)
-[![forthebadge](https://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](https://forthebadge.com)
-![gamecart](https://github.com/Squaresweets/TileWorldGBA/blob/main/GameCart.png)
+[<img src="https://forthebadge.com/images/badges/you-didnt-ask-for-this.svg" height=20/></a>](https://forthebadge.com)
+
+![gamecart](https://github.com/Squaresweets/TileWorldGBA/blob/main/Art/GameCart.png)
 
 [![Chunk loading](https://img.youtube.com/vi/uGY5kjLEVD8/0.jpg)](https://www.youtube.com/watch?v=uGY5kjLEVD8)
 
