@@ -1,0 +1,3 @@
+C:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/Pico Firmware/build/pioasm/CMakeFiles/pioasm.dir
+C:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/Pico Firmware/build/pioasm/CMakeFiles/edit_cache.dir
+C:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/Pico Firmware/build/pioasm/CMakeFiles/rebuild_cache.dir
