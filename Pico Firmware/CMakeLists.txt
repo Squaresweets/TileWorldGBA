@@ -21,7 +21,8 @@ pico_sdk_init()
 
 # Add your source files
 add_executable(${NAME}
-    picow_tls_client.c
+    wss_client.c
+    ws.c
 )
 target_compile_definitions(${NAME} PRIVATE
         WIFI_SSID=\"${WIFI_SSID}\"

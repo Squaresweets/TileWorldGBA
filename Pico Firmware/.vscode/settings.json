@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "altcp_tls.h": "c"
+        "altcp_tls.h": "c",
+        "time.h": "c",
+        "stdlib.h": "c"
     }
 }
