@@ -30,7 +30,7 @@ uint64_t WSBuildPacket(char* buffer, uint64_t bufferSize, enum WSOpCode opcode, 
 {
     WebsocketPacketHeader_t header;
 
-    int payloadIndex;
+    uint64_t payloadIndex;
 
     //Mask payload
     header.mask.maskKey = (uint32_t)rand();
@@ -65,24 +65,26 @@ uint64_t WSBuildPacket(char* buffer, uint64_t bufferSize, enum WSOpCode opcode, 
     }
 
     //Add the masking key
-    memcpy(&buffer[payloadIndex], &header.mask.maskKey, 4);
-    payloadIndex += 4;
+    //memcpy(&buffer[payloadIndex], &header.mask.maskKey, 4);
+    //payloadIndex += 4;
+    buffer[payloadIndex++] = header.mask.maskBytes[0];
+    buffer[payloadIndex++] = header.mask.maskBytes[1];
+    buffer[payloadIndex++] = header.mask.maskBytes[2];
+    buffer[payloadIndex++] = header.mask.maskBytes[3];
     
     if((payloadLen + payloadIndex) > bufferSize)
     {
         printf("WEBSOCKET BUFFER OVERFLOW \r\n");
-        return 1;
+        //return 1;
     }
 
     //Copy payload
     //memcpy(&buffer[payloadIndex], payload, payloadLen);
-    printf("%d\n", ((uint64_t)payloadIndex + payloadLen));
-    printf("%d\n", ((uint64_t)payloadIndex + payloadLen));
-    printf("%d\n", ((uint64_t)payloadIndex + payloadLen));
-    printf("%d\n", ((uint64_t)payloadIndex + payloadLen));
-    printf("%d\n", ((uint64_t)payloadIndex + payloadLen));
-    //return (payloadIndex + payloadLen);
-    return 65;
+    for(int i = 0; i < payloadLen; i++) {
+        buffer[payloadIndex + i] = payload[i];
+    }
+
+    return payloadIndex + payloadLen;
 }
 
 void WSParsePacket(WebsocketPacketHeader_t *header, char* buffer, uint32_t len)

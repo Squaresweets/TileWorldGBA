@@ -93,19 +93,19 @@ static err_t tls_client_connected(void *arg, struct altcp_pcb *pcb, err_t err) {
     return ERR_OK;
 }
 
-static err_t ws_client_send(TLS_CLIENT_T *state, void *dataptr, u16_t len)
+static err_t ws_client_send(TLS_CLIENT_T *state, void *dataptr, uint len)
 {
-    printf("Sending:\n");
+    printf("Data to send:\n");
     for(int i = 0; i<len; i++)
         printf("%#x ", ((char *) dataptr)[i]);
     printf("\n");
-
-    uint8_t buffer[BUF_SIZE];
+    
+    char buffer[BUF_SIZE];
     uint64_t numInBuf = WSBuildPacket(buffer, BUF_SIZE, WEBSOCKET_OPCODE_BIN, dataptr, len);
-    printf("%d\n", numInBuf);
-    printf("Sending:\n");
+    printf("%d\n", (int)numInBuf);
+    printf("Actual data we are sending:\n");
     for(uint64_t i = 0; i<numInBuf; i++)
-        printf("%#x ", buffer[i]);
+        printf("%#X ", buffer[i]);
     printf("\n");
 
     err_t err = altcp_write(state->pcb, buffer, numInBuf, TCP_WRITE_FLAG_COPY);
