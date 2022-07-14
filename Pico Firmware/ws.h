@@ -45,8 +45,8 @@ typedef struct {
    uint8_t  start;
    uint64_t length;
    union {
-       uint32_t maskKey;
-    uint8_t  maskBytes[4];
+        uint32_t maskKey;
+        uint8_t  maskBytes[4];
    } mask;
 } WebsocketPacketHeader_t;
 

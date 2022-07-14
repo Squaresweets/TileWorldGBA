@@ -32,11 +32,6 @@ uint64_t WSBuildPacket(char* buffer, uint64_t bufferSize, enum WSOpCode opcode, 
 
     uint64_t payloadIndex;
 
-    //Mask payload
-    header.mask.maskKey = (uint32_t)rand();
-    for(uint64_t i = 0; i < payloadLen; i++)
-        payload[i] ^= header.mask.maskBytes[i%4];
-
     //Set meta bytes
     header.meta.bits.FIN = 1;
     header.meta.bits.RSV = 0;
@@ -64,25 +59,24 @@ uint64_t WSBuildPacket(char* buffer, uint64_t bufferSize, enum WSOpCode opcode, 
         payloadIndex += 8;
     }
 
+    //Mask payload
+    header.mask.maskKey = (uint32_t)rand();
+
+    for(uint64_t i = 0; i < payloadLen; i++)
+        payload[i] ^= header.mask.maskBytes[i%4];
+
     //Add the masking key
-    //memcpy(&buffer[payloadIndex], &header.mask.maskKey, 4);
-    //payloadIndex += 4;
     buffer[payloadIndex++] = header.mask.maskBytes[0];
     buffer[payloadIndex++] = header.mask.maskBytes[1];
     buffer[payloadIndex++] = header.mask.maskBytes[2];
     buffer[payloadIndex++] = header.mask.maskBytes[3];
     
     if((payloadLen + payloadIndex) > bufferSize)
-    {
-        printf("WEBSOCKET BUFFER OVERFLOW \r\n");
-        //return 1;
-    }
+        printf("*****************WEBSOCKET BUFFER OVERFLOW*****************\r\n");
 
     //Copy payload
-    //memcpy(&buffer[payloadIndex], payload, payloadLen);
-    for(int i = 0; i < payloadLen; i++) {
+    for(int i = 0; i < payloadLen; i++)
         buffer[payloadIndex + i] = payload[i];
-    }
 
     return payloadIndex + payloadLen;
 }
@@ -108,17 +102,16 @@ void WSParsePacket(WebsocketPacketHeader_t *header, char* buffer, uint32_t len)
 
     if(header->meta.bits.MASK)
     {
+        printf("MASKING PACKET FROM SERVER, this should never happen\n"); 
         header->mask.maskBytes[0] = buffer[payloadIndex++];
         header->mask.maskBytes[1] = buffer[payloadIndex++];
         header->mask.maskBytes[2] = buffer[payloadIndex++];
         header->mask.maskBytes[3] = buffer[payloadIndex++];
+        printf("%#X\n", header->mask.maskKey);
         
         // Decrypt    
-        //for(uint64_t i = 0; i < header->length; i++) 
-        //    buffer[payloadIndex++] ^= header->mask.maskBytes[i%4];
-
         for(uint64_t i = 0; i < header->length; i++) 
-            buffer[payloadIndex + i] = buffer[payloadIndex + i] ^ header->mask.maskBytes[i%4];
+            buffer[payloadIndex++] ^= header->mask.maskBytes[i%4];
     }
-    //memcpy(buffer, &buffer[payloadIndex], header->length); //Move the unencrypted data back to the start
+    memmove(buffer, &buffer[payloadIndex], header->length); //Move the unencrypted data back to the start
 }

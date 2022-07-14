@@ -34,6 +34,7 @@ typedef struct {
 
 static struct altcp_tls_config *tls_config = NULL;
 
+bool testflag = false;
 
 /* Function to feed mbedtls entropy. May be better to move it to pico-sdk */
 int mbedtls_hardware_poll(void *data, unsigned char *output, size_t len, size_t *olen) {
@@ -76,6 +77,29 @@ static err_t tls_client_close(void *arg) {
     return err;
 }
 
+static err_t ws_client_send(TLS_CLIENT_T *state, void *dataptr, uint64_t len)
+{
+    printf("\n*****************SENDING*****************\n");
+    for(int i = 0; i<len; i++)
+        printf("%#x ", ((char *) dataptr)[i]);
+    printf("\n");
+    
+    char buffer[BUF_SIZE];
+    uint64_t numInBuf = WSBuildPacket(buffer, BUF_SIZE, WEBSOCKET_OPCODE_BIN, dataptr, len);
+    printf("Actual data we are sending:\n");
+    for(uint64_t i = 0; i<numInBuf; i++)
+        printf("%#X ", buffer[i]);
+    printf("\n\n\n\n");
+
+    err_t err = altcp_write(state->pcb, buffer, numInBuf, TCP_WRITE_FLAG_COPY);
+    if (err != ERR_OK) {
+        printf("error writing data, err=%d", err);
+        return tls_client_close(state);
+    }
+
+    return ERR_OK;
+}
+
 static err_t tls_client_connected(void *arg, struct altcp_pcb *pcb, err_t err) {
     TLS_CLIENT_T *state = (TLS_CLIENT_T*)arg;
     if (err != ERR_OK) {
@@ -90,29 +114,6 @@ static err_t tls_client_connected(void *arg, struct altcp_pcb *pcb, err_t err) {
         return tls_client_close(state);
     }
 
-    return ERR_OK;
-}
-
-static err_t ws_client_send(TLS_CLIENT_T *state, void *dataptr, uint len)
-{
-    printf("Data to send:\n");
-    for(int i = 0; i<len; i++)
-        printf("%#x ", ((char *) dataptr)[i]);
-    printf("\n");
-    
-    char buffer[BUF_SIZE];
-    uint64_t numInBuf = WSBuildPacket(buffer, BUF_SIZE, WEBSOCKET_OPCODE_BIN, dataptr, len);
-    printf("%d\n", (int)numInBuf);
-    printf("Actual data we are sending:\n");
-    for(uint64_t i = 0; i<numInBuf; i++)
-        printf("%#X ", buffer[i]);
-    printf("\n");
-
-    err_t err = altcp_write(state->pcb, buffer, numInBuf, TCP_WRITE_FLAG_COPY);
-    if (err != ERR_OK) {
-        printf("error writing data, err=%d", err);
-        return tls_client_close(state);
-    }
 
     return ERR_OK;
 }
@@ -140,27 +141,35 @@ static err_t tls_client_recv(void *arg, struct altcp_pcb *pcb, struct pbuf *p, e
            and copies all the data to it in one go.
            Do be aware that the amount of data can potentially be a bit large (TLS record size can be 16 KB),
            so you may want to use a smaller fixed size buffer and copy the data to it using a loop, if memory is a concern */
+        printf("\n*************************RECIEVING*************************\n");
         char buf[p->tot_len + 1];
 
         pbuf_copy_partial(p, buf, p->tot_len, 0);
         buf[p->tot_len] = 0;
-        printf("\nnew data received from server:\n%s\n", buf);
+        printf("%s\n", buf); //Print text data
 
         WebsocketPacketHeader_t header;
         WSParsePacket(&header, buf, p->tot_len);
 
         printf("Unencrypted data: \n");
-        //for(int i = 0; i<header.length; i++)
-        for(int i = 0; i<p->tot_len; i++)
-            printf("%#x ", buf[i]);
+        for(int i = 0; i<header.length; i++)
+            printf("%#X ", buf[i]);
         printf("\n\n\n\n");
 
         altcp_recved(pcb, p->tot_len);
     }
     pbuf_free(p);
-
-    char test[3] = {1, 1, 0};
-    ws_client_send(state, test, 3);
+    if(!testflag)
+    {
+        uint8_t test[3] = {1, 1, 0};
+        ws_client_send(state, test, 3);
+        testflag = true;
+    }
+    else
+    {
+        uint8_t test[18] = {6, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        ws_client_send(state, test, 18);
+    }
 
     return ERR_OK;
 }
@@ -288,18 +297,16 @@ int main() {
     cyw43_arch_enable_sta_mode();
 
     if (cyw43_arch_wifi_connect_timeout_ms(WIFI_SSID, WIFI_PASSWORD, CYW43_AUTH_WPA2_AES_PSK, 30000)) {
-        printf("failed to connect to wifi\n");
-        return 1;
+        printf("failed to connect to wifi, trying again!\n");
     }
     printf("Connected to wifi!\n");
     
     run_TLS_CLIENT();
-    while(1);
 
     /* sleep a bit to let usb stdio write out any buffer to host */
-    //sleep_ms(100);
+    sleep_ms(100);
 
-    //cyw43_arch_deinit();
+    cyw43_arch_deinit();
     return 0;
 }
 
