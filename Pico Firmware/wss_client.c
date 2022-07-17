@@ -15,17 +15,15 @@
 #define PORT_NUMBER              7364
 
 #define TLS_CLIENT_WWS_UPGRADE_REQUEST  "GET / HTTP/1.1\r\n" \
-                                        "Host: " TLS_CLIENT_SERVER "\r\n" \
+                                        "Host: tileworld.org:7364\r\n" \
+                                        "Origin: https://tileworld.org:7364\r\n" \
                                         "Upgrade: websocket\r\n" \
                                         "Connection: Upgrade\r\n" \
                                         "Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==\r\n" \
-                                        "Sec-WebSocket-Protocol: chat, superchat\r\n" \
                                         "Sec-WebSocket-Version: 13\r\n\r\n"
 #define TLS_CLIENT_TIMEOUT_SECS  15
-//IO in terms of from the TileWorld server
 #define BUF_SIZE               32
 #define rx_BUF_SIZE            57601
-//uint8_t buffer[BUF_SIZE];
 
 typedef struct {
     struct altcp_pcb *pcb;
@@ -141,7 +139,7 @@ static err_t tls_client_recv(void *arg, struct altcp_pcb *pcb, struct pbuf *p, e
            and copies all the data to it in one go.
            Do be aware that the amount of data can potentially be a bit large (TLS record size can be 16 KB),
            so you may want to use a smaller fixed size buffer and copy the data to it using a loop, if memory is a concern */
-        printf("\n*************************RECIEVING*************************\n");
+        printf("\n*************************RECIEVING************************* %d\n", p->tot_len);
         char buf[p->tot_len + 1];
 
         pbuf_copy_partial(p, buf, p->tot_len, 0);
@@ -161,14 +159,15 @@ static err_t tls_client_recv(void *arg, struct altcp_pcb *pcb, struct pbuf *p, e
     pbuf_free(p);
     if(!testflag)
     {
-        uint8_t test[3] = {1, 1, 0};
+        //uint8_t test[12] = {0x09, 0x00, 0x09, 0x70, 0x69, 0x63, 0x6f, 0x20, 0x74, 0x65, 0x73, 0x74};
+        uint8_t test[3] = {0x01, 0x01, 0x00};
         ws_client_send(state, test, 3);
         testflag = true;
     }
     else
     {
-        uint8_t test[18] = {6, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        ws_client_send(state, test, 18);
+        uint8_t test[12] = {6, 0, 0, 0, 18, 0, 0, 0, 8, 1, 8, 0};
+        //ws_client_send(state, test, 12);
     }
 
     return ERR_OK;
@@ -296,7 +295,8 @@ int main() {
     }
     cyw43_arch_enable_sta_mode();
 
-    if (cyw43_arch_wifi_connect_timeout_ms(WIFI_SSID, WIFI_PASSWORD, CYW43_AUTH_WPA2_AES_PSK, 30000)) {
+    //if (cyw43_arch_wifi_connect_timeout_ms(WIFI_SSID, WIFI_PASSWORD, CYW43_AUTH_WPA2_AES_PSK, 30000)) {
+    while (cyw43_arch_wifi_connect_timeout_ms("NETGEAR29", "pinkflute287", CYW43_AUTH_WPA2_AES_PSK, 30000)) {
         printf("failed to connect to wifi, trying again!\n");
     }
     printf("Connected to wifi!\n");

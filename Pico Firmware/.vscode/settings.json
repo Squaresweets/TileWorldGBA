@@ -3,6 +3,7 @@
         "altcp_tls.h": "c",
         "time.h": "c",
         "stdlib.h": "c",
-        "string_view": "c"
+        "string_view": "c",
+        "pico_websocket_client.h": "c"
     }
 }

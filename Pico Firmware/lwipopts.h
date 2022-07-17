@@ -23,6 +23,7 @@
 #define MEMP_NUM_TCP_SEG            32
 #define MEMP_NUM_ARP_QUEUE          10
 #define PBUF_POOL_SIZE              24
+//#define PBUF_POOL_SIZE              128
 #define LWIP_ARP                    1
 #define LWIP_ETHERNET               1
 #define LWIP_ICMP                   1
@@ -90,6 +91,7 @@
    or you will get a warning "altcp_tls: TCP_WND is smaller than the RX decrypion buffer, connection RX might stall!" */
 #undef TCP_WND
 #define TCP_WND  16384
+//#define TCP_WND 65534
 
 #define LWIP_ALTCP               1
 #define LWIP_ALTCP_TLS           1
