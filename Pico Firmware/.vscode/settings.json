@@ -4,6 +4,9 @@
         "time.h": "c",
         "stdlib.h": "c",
         "string_view": "c",
-        "pico_websocket_client.h": "c"
+        "pico_websocket_client.h": "c",
+        "altcp_tcp.h": "c",
+        "altcp.h": "c",
+        "string.h": "c"
     }
 }

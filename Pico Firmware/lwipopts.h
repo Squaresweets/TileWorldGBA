@@ -19,15 +19,17 @@
 #define MEM_LIBC_MALLOC             0
 #endif
 #define MEM_ALIGNMENT               4
-#define MEM_SIZE                    4000
+#define MEM_SIZE                    64000
 #define MEMP_NUM_TCP_SEG            32
 #define MEMP_NUM_ARP_QUEUE          10
+
 #define PBUF_POOL_SIZE              24
-//#define PBUF_POOL_SIZE              128
+
 #define LWIP_ARP                    1
 #define LWIP_ETHERNET               1
 #define LWIP_ICMP                   1
 #define LWIP_RAW                    1
+
 #define TCP_WND                     (8 * TCP_MSS)
 #define TCP_MSS                     1460
 #define TCP_SND_BUF                 (8 * TCP_MSS)
@@ -98,7 +100,7 @@
 #define LWIP_ALTCP_TLS_MBEDTLS   1
 
 #define LWIP_DEBUG 1
+#define ALTCP_MBEDTLS_LIB_DEBUG  LWIP_DBG_ON
 #define ALTCP_MBEDTLS_DEBUG  LWIP_DBG_ON
 
 #endif
-
