@@ -1,10 +1,13 @@
 /* Workaround for some mbedtls source files using INT_MAX without including limits.h */
 #include <limits.h>
 
+
 #define MBEDTLS_NO_PLATFORM_ENTROPY
 
 #define MBEDTLS_ENTROPY_HARDWARE_ALT
+
 #define MBEDTLS_SSL_OUT_CONTENT_LEN    2048
+
 #define MBEDTLS_ALLOW_PRIVATE_ACCESS
 #define MBEDTLS_HAVE_TIME
 #define MBEDTLS_CIPHER_MODE_CBC
@@ -45,7 +48,7 @@
 #define MBEDTLS_SHA512_C
 #define MBEDTLS_SSL_CLI_C
 
-#define MBEDTLS_SSL_SRV_C
+//#define MBEDTLS_SSL_SRV_C
 
 #define MBEDTLS_SSL_TLS_C
 #define MBEDTLS_X509_CRT_PARSE_C
@@ -62,8 +65,18 @@
 #define MBEDTLS_ASN1_WRITE_C
 
 #define MBEDTLS_DEBUG_C
+#define mbedtls_fprintf         fprintf
+#define mbedtls_printf          printf
+#define MBEDTLS_MEMORY_DEBUG
+#define mbedtls_time            time
+#define mbedtls_time_t          time_t
+#define mbedtls_fprintf         fprintf
+#define mbedtls_printf          printf
+#define mbedtls_exit            exit
+#define MBEDTLS_EXIT_SUCCESS    EXIT_SUCCESS
+#define MBEDTLS_EXIT_FAILURE    EXIT_FAILURE
+
 //#define MBEDTLS_SSL_VARIABLE_BUFFER_LENGTH
 //#define MBEDTLS_SSL_MAX_FRAGMENT_LENGTH
 
 //#define MBEDTLS_SSL_MAX_FRAGMENT_LENGTH
-//#define MBEDTLS_SSL_MAX_CONTENT_LEN 2048
