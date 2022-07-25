@@ -21,7 +21,8 @@ pico_sdk_init()
 
 # Add your source files
 add_executable(${NAME}
-    picow_tcp_client.c
+    wss_client.c
+    ws.c
 )
 target_compile_definitions(${NAME} PRIVATE
         WIFI_SSID=\"${WIFI_SSID}\"
@@ -31,8 +32,10 @@ target_compile_definitions(${NAME} PRIVATE
 target_include_directories(${NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR} )
 
 target_link_libraries(${NAME}
-    pico_cyw43_arch_lwip_threadsafe_background
     pico_stdlib
+    pico_mbedtls
+    pico_lwip_mbedtls
+    pico_cyw43_arch_lwip_poll
 )
 
 pico_enable_stdio_usb(${NAME} 1)
