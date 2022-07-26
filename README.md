@@ -3,7 +3,7 @@
 [<img src="https://img.shields.io/twitter/follow/SqSweetsGames?style=social" /></a>](https://twitter.com/SqSweetsGames)
 [<img src="https://forthebadge.com/images/badges/you-didnt-ask-for-this.svg" height=20/></a>](https://forthebadge.com)
 
-![gamecart](https://github.com/Squaresweets/TileWorldGBA/blob/main/Art/GameCart.png)
+![gamebox](https://github.com/Squaresweets/TileWorldGBA/blob/main/Art/Boxart.png)
 
 [![Chunk loading](https://img.youtube.com/vi/uGY5kjLEVD8/0.jpg)](https://www.youtube.com/watch?v=uGY5kjLEVD8)
 
