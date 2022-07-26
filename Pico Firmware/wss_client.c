@@ -22,12 +22,14 @@
                                         "Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==\r\n" \
                                         "Sec-WebSocket-Version: 13\r\n\r\n"
 #define TLS_CLIENT_TIMEOUT_SECS  15
-#define BUF_SIZE               32
-#define rx_BUF_SIZE            57601
+#define BUF_SIZE               57601
 
 typedef struct {
     struct altcp_pcb *pcb;
     bool complete;
+
+    uint64_t buffer_pos;
+    uint64_t buffer_size;
 } TLS_CLIENT_T;
 
 static struct altcp_tls_config *tls_config = NULL;
@@ -82,8 +84,8 @@ static err_t ws_client_send(TLS_CLIENT_T *state, void *dataptr, uint64_t len)
         printf("%#x ", ((char *) dataptr)[i]);
     printf("\n");
     
-    char buffer[BUF_SIZE];
-    uint64_t numInBuf = WSBuildPacket(buffer, BUF_SIZE, WEBSOCKET_OPCODE_BIN, dataptr, len);
+    char buffer[32];
+    uint64_t numInBuf = WSBuildPacket(buffer, 32, WEBSOCKET_OPCODE_BIN, dataptr, len);
     printf("Actual data we are sending:\n");
     for(uint64_t i = 0; i<numInBuf; i++)
         printf("%#X ", buffer[i]);
@@ -139,40 +141,42 @@ static err_t tls_client_recv(void *arg, struct altcp_pcb *pcb, struct pbuf *p, e
     // cyw43_arch_lwip_begin IS needed
     cyw43_arch_lwip_check();
     if (p->tot_len > 0) {
-        /* For simplicity this examples creates a buffer on stack the size of the data pending here, 
-           and copies all the data to it in one go.
-           Do be aware that the amount of data can potentially be a bit large (TLS record size can be 16 KB),
-           so you may want to use a smaller fixed size buffer and copy the data to it using a loop, if memory is a concern */
-        printf("\n*************************RECIEVING************************* %d\n", p->tot_len);
         char buf[p->tot_len + 1];
         pbuf_copy_partial(p, buf, p->tot_len, 0);
         buf[p->tot_len] = 0;
-        printf("%s\n", buf); //Print text data
+
         
         WebsocketPacketHeader_t header;
-        WSParsePacket(&header, buf, p->tot_len);
-
-        printf("Unencrypted data: \n");
-        for(int i = 0; i<header.length; i++)
-            printf("%#X ", buf[i]);
-        printf("\n\n\n\n");
+        uint64_t lenReceived = (uint64_t)p->tot_len;
+        if(state->buffer_size == 0)  //This is a new message!
+        {
+            printf("\n\n\nStart of a new message!\n");
+            WSParsePacket(&header, buf, p->tot_len); //Parse the packet only when it is a new message
+            state->buffer_size = header.totalLen; 
+            lenReceived = header.payloadLen;
+        }
+        state->buffer_pos += lenReceived; //Add however many bytes we recieved
+        if(state->buffer_pos >= state->buffer_size)
+        {
+            state->buffer_size = 0; //Have to decrypt the header for the next one
+            state->buffer_pos = 0;
+        }
+        
+        
+        for(int i = 0; i<lenReceived; i++)
+            printf("%X", buf[i]);
 
         altcp_recved(pcb, p->tot_len);
+
     }
     pbuf_free(p);
+
     if(!testflag)
     {
-        //uint8_t test[12] = {0x09, 0x00, 0x09, 0x70, 0x69, 0x63, 0x6f, 0x20, 0x74, 0x65, 0x73, 0x74};
         uint8_t test[3] = {0x01, 0x01, 0x00};
         ws_client_send(state, test, 3);
         testflag = true;
     }
-    else
-    {
-        uint8_t test[12] = {6, 0, 0, 0, 18, 0, 0, 0, 8, 1, 8, 0};
-        //ws_client_send(state, test, 12);
-    }
-
     return ERR_OK;
 }
 

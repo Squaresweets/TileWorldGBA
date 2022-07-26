@@ -87,24 +87,23 @@ void WSParsePacket(WebsocketPacketHeader_t *header, char* buffer, uint32_t len)
     header->meta.bytes.byte0 = buffer[payloadIndex++];
     header->meta.bytes.byte1 = buffer[payloadIndex++];
 
-    header->length = header->meta.bits.PAYLOADLEN;
+    header->totalLen = header->meta.bits.PAYLOADLEN;
 
     if(header->meta.bits.PAYLOADLEN == 126)
     {
-        header->length = (uint16_t)(buffer[payloadIndex] << 8 | buffer[payloadIndex + 1]);
-        printf("header->length: %u\n", header->length);
-        printf("buffer1: %u, buffer2: %u", buffer[payloadIndex], buffer[payloadIndex + 1]);
+        header->totalLen = (uint16_t)(buffer[payloadIndex] << 8 | buffer[payloadIndex + 1]);
         payloadIndex += 2;
     }
     else if(header->meta.bits.PAYLOADLEN == 127)
     {
-        memcpy(&header->length, &buffer[payloadIndex], 8);
+        memcpy(&header->totalLen, &buffer[payloadIndex], 8);
         payloadIndex += 8;
     }
+    header->payloadLen = (uint64_t)((int)len - payloadIndex);
 
     if(header->meta.bits.MASK)
     {
-        printf("MASKING PACKET FROM SERVER, this should never happen\n"); 
+        printf("MASKING PACKET FROM SERVER, this should probably never happen\n"); 
         header->mask.maskBytes[0] = buffer[payloadIndex++];
         header->mask.maskBytes[1] = buffer[payloadIndex++];
         header->mask.maskBytes[2] = buffer[payloadIndex++];
@@ -112,8 +111,8 @@ void WSParsePacket(WebsocketPacketHeader_t *header, char* buffer, uint32_t len)
         printf("%#X\n", header->mask.maskKey);
         
         // Decrypt    
-        for(uint64_t i = 0; i < header->length; i++) 
+        for(uint64_t i = 0; i < header->payloadLen; i++) 
             buffer[payloadIndex++] ^= header->mask.maskBytes[i%4];
     }
-    memmove(buffer, &buffer[payloadIndex], header->length); //Move the unencrypted data back to the start
+    memmove(buffer, &buffer[payloadIndex], header->payloadLen); //Move the unencrypted data back to the start
 }

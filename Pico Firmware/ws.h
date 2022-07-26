@@ -43,7 +43,8 @@ typedef struct {
        } bytes;
    } meta;
    uint8_t  start;
-   uint64_t length;
+   uint64_t totalLen;
+   uint64_t payloadLen;
    union {
         uint32_t maskKey;
         uint8_t  maskBytes[4];
