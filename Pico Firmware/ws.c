@@ -91,9 +91,9 @@ void WSParsePacket(WebsocketPacketHeader_t *header, char* buffer, uint32_t len)
 
     if(header->meta.bits.PAYLOADLEN == 126)
     {
-        printf("This is probably going to be the issue\n");
-        header->length = buffer[payloadIndex + 1] << 8 | buffer[payloadIndex];
-        printf("header->length: %d", header->length);
+        header->length = (uint16_t)(buffer[payloadIndex] << 8 | buffer[payloadIndex + 1]);
+        printf("header->length: %u\n", header->length);
+        printf("buffer1: %u, buffer2: %u", buffer[payloadIndex], buffer[payloadIndex + 1]);
         payloadIndex += 2;
     }
     else if(header->meta.bits.PAYLOADLEN == 127)

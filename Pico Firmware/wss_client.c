@@ -298,7 +298,8 @@ int main() {
     }
     cyw43_arch_enable_sta_mode();
 
-    if (cyw43_arch_wifi_connect_timeout_ms(WIFI_SSID, WIFI_PASSWORD, CYW43_AUTH_WPA2_AES_PSK, 30000)) {
+    //if (cyw43_arch_wifi_connect_timeout_ms(WIFI_SSID, WIFI_PASSWORD, CYW43_AUTH_WPA2_AES_PSK, 30000)) {
+    while (cyw43_arch_wifi_connect_timeout_ms("NETGEAR29", "pinkflute287", CYW43_AUTH_WPA2_AES_PSK, 30000)) {
         printf("failed to connect to wifi, trying again!\n");
     }
     printf("Connected to wifi!\n");
