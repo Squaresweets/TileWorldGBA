@@ -8,6 +8,8 @@
 #include "lwip/altcp_tcp.h"
 #include "lwip/altcp_tls.h"
 #include "lwip/dns.h"
+#include "hardware/pio.h"
+#include "pio/pio_spi.h"
 
 #include "ws.h"
 
@@ -35,6 +37,12 @@ typedef struct {
 static struct altcp_tls_config *tls_config = NULL;
 
 bool testflag = false;
+
+/*------------- PIO -------------*/
+  pio_spi_inst_t spi = {
+          .pio = pio1,
+          .sm = 0
+  };
 
 /* Function to feed mbedtls entropy. May be better to move it to pico-sdk */
 int mbedtls_hardware_poll(void *data, unsigned char *output, size_t len, size_t *olen) {
@@ -164,7 +172,11 @@ static err_t tls_client_recv(void *arg, struct altcp_pcb *pcb, struct pbuf *p, e
         
         
         for(int i = 0; i<lenReceived; i++)
+        {
             printf("%X", buf[i]);
+            unsigned char rx;
+            pio_spi_write8_read8_blocking(&spi, buf, &rx, 1);
+        }
 
         altcp_recved(pcb, p->tot_len);
 
@@ -281,12 +293,12 @@ void run_TLS_CLIENT(void) {
         // if you are using pico_cyw43_arch_poll, then you must poll periodically from your
         // main loop (not from a timer) to check for WiFi driver or lwIP work that needs to be done.
         cyw43_arch_poll();
-        sleep_ms(1);
+        //sleep_ms(1);
+        printf("hell yeah I sure do be testing\n");
 #else
         // if you are not using pico_cyw43_arch_poll, then WiFI driver and lwIP work
         // is done via interrupt in the background. This sleep is just an example of some (blocking)
         // work you might be doing.
-        sleep_ms(1000);
 #endif
     }
     free(state);
@@ -295,6 +307,10 @@ void run_TLS_CLIENT(void) {
 
 int main() {
     stdio_init_all();
+    
+    //uint cpha1_prog_offs = pio_add_program(spi.pio, &spi_cpha1_program);
+    //pio_spi_init(spi.pio, spi.sm, cpha1_prog_offs, 8, 32, 1, 1, PIN_SCK, PIN_SOUT, PIN_SIN);
+    ////129.8828125 519.53125
 
     if (cyw43_arch_init()) {
         printf("failed to initialise\n");
