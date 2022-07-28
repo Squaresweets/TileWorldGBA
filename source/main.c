@@ -65,11 +65,7 @@ void init_map()
 		{
 			//Here we are hardcoding the loading screen
 			//I KNOW this code is ugly, but in terms of saving storage
-			//This makes the most sense, since storing the entire loading screen
-			//As a tilemap would take up loads of data which would have to be sent over
-
-			//God I hate this code, I really do, if you are reading this please forgive me
-			//This is not who I really am, this goddam loading screen haunted my nightmares
+			//This makes the most sense
 			c = 0;
 			//LOADING
 			if((ii == 0) && (jj>=787) && (jj<896) && (jj%32 > 18) &&(LOAD[(jj-768)/32][(jj%32)-19])) c = 5;
@@ -95,6 +91,7 @@ void init_map()
 
 void movement()
 {
+	//Quick optimisation, instead of dividing by 32 we shift right by 5
 	vector bounds = {playerx, playery, ONE_SHIFTED, ONE_SHIFTED};
 	
 	vector g = {playerx, playery + 6, ONE_SHIFTED, ONE_SHIFTED};
@@ -102,21 +99,21 @@ void movement()
 	bool ladder = Check(bounds, bounds).ladder;
 
 	//Only move if we are not in placeMode
-	xv += key_tri_horz() * (ONE_SHIFTED / 32) * !placeMode;
+	xv += key_tri_horz() * (ONE_SHIFTED >> 5) * !placeMode;
 	//Only move up and down if we are on a ladder
-	yv += -key_tri_vert() * (ONE_SHIFTED / 32) * ladder * !placeMode;
+	yv += -key_tri_vert() * (ONE_SHIFTED >> 5) * ladder * !placeMode;
 
 	if(key_tri_fire() > 0 && grounded && !ladder && !placeMode)
-		yv += ((25<<SHIFT_AMOUNT) / 32);
+		yv += ((25<<SHIFT_AMOUNT) >> 5);
 	if (!grounded && !ladder)
-		yv -= 88166 / 32; //(88166 = 1.3453 << 16)
+		yv -= 88166 >> 5; //(88166 = 1.3453 << SHIFT_AMOUNT)
 	
 	//Apply friction
-	yv *= (ladder ? 851 : 951); yv /= 1000;
-	xv *= (ladder ? 851 : 951); xv /= 1000;
+	yv *= (ladder ? 871 : 973); yv >>= 10; //Divide by 1024
+	xv *= (ladder ? 871 : 973); xv >>= 10;
 
 	//Cap to 0.5
-	xv = max(min(xv, (ONE_SHIFTED/2)), -(ONE_SHIFTED/2));
+	xv = max(min(xv, (ONE_SHIFTED >> 1)), -(ONE_SHIFTED >> 1));
 
 	g.x = bounds.x + xv; g.y = bounds.y - yv;
 	vector v = Check(bounds, g).v;
@@ -129,7 +126,7 @@ void movement()
 	yv *= !Check(bounds, g).collided;
 }
 
-void renderPlayer()
+void render()
 {
 	//Lerp to player pos or tile pos
 	camerax += ((placeMode ? (tilex & INT_MASK) : playerx) - camerax) / 4;
@@ -223,13 +220,14 @@ int main()
 		{
 			placeTiles();
 			movement();
+			MovePlayers();
 			if(pingtimer == 512) ping(); //Only ping every few seconds
 			else pingtimer++;
 			sioMove();
 
 			loadChunks();
 		}
-		renderPlayer();
+		render();
 	}
 	return 0;
 }

@@ -3,6 +3,7 @@
 #include "main.h"
 #include "util.h"
 #include "Colly.h"
+#include "players.h"
 
 #include <string.h>
 #include <tonc.h>
@@ -222,13 +223,17 @@ void processData()
     u8* incomingpacket8 = (u8*)incomingpacket;
     if(!*incomingpacket8) //No data or data has already been processed
         return;
-    if(*incomingpacket8 == 5) //Server Place
+    if(*incomingpacket8 == 6) //Player move
+        UpdatePlayer(incomingpacket8); //players.c
+    else if(*incomingpacket8 == 5) //Server Place
     {
         int x = *(int*)(incomingpacket8 + 1);
         int y = *(int*)(incomingpacket8 + 5);
         u8 id = incomingpacket8[10];
         setTile(x, y, id); //map.c
     }
+    else if(*incomingpacket8 == 2) //Player leave
+        PlayerLeave(*(u32*)(incomingpacket8 + 1));  //players.c, +1 since the first byte is always 2
 }
 
 //We are never the master, so no need to set any clock stuff

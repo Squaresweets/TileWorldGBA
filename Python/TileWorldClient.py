@@ -116,7 +116,7 @@ def main():
     dev.ctrl_transfer(bmRequestType = 1, bRequest = 0x22, wIndex = 2, wValue = 0x01)
     #</editor-fold>
 
-    multiboot.multiboot(epIn, epOut, "TileWorldGBA_mb.gba")
+    multiboot.multiboot(epIn, epOut, os.path.dirname(os.getcwd()) + "/TileWorldGBA_mb.gba")
     time.sleep(5)
     readall(epIn, False)
 

@@ -8,6 +8,7 @@
 #define DECIMAL_MASK ((1 << SHIFT_AMOUNT) - 1)
 #define INT_MASK ~((1 << SHIFT_AMOUNT) - 1)
 #define Fixed_to_float(X) ((float)X / ONE_SHIFTED)
+#define Float_to_fixed(x) ((int)((x) * ONE_SHIFTED)) 
 
 #define INITIAL_PLAYER_POS (32 << SHIFT_AMOUNT)
 
