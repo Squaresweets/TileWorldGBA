@@ -48,7 +48,7 @@ u32 incomingoffset;
 bool startsending = false;
 
 //Length in bytes of each of the things the client could send
-u8 datalengthtable[10] = {0, 3, 0, 1, 0, 12, 18, 0, 17, 0}; //Message number 9 is used for message, but atm I am not planning on implementing this
+u8 datalengthtable[11] = {0, 3, 0, 1, 0, 12, 18, 0, 17, 0, 20}; //Message 10 is for debug
 
 //=========================== SENDING DATA ===========================
 //Note to self, this could have potentialy been done with unions and structs
@@ -108,6 +108,14 @@ void requestChunks(int xDir, int yDir)
     memcpy(&outbuf[numinOutBuf][5], &mapOffsetY, 4);
     memcpy(&outbuf[numinOutBuf][9], &xDir, 4);
     memcpy(&outbuf[numinOutBuf][13], &yDir, 4);
+    numinOutBuf++;
+}
+//DEBUG PURPOSES
+void sioPrint(char *str)
+{
+    if(numinOutBuf>3 || strlen(str) > 19) return; //Lets just hope it doesn't back up more than this
+    outbuf[numinOutBuf][0] = 10;
+    memcpy(&outbuf[numinOutBuf][1], str, strlen(str));
     numinOutBuf++;
 }
 

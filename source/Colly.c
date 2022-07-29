@@ -37,7 +37,7 @@ void increment(vector *checkRegion, vector *goal, vector *intersect, vector *bou
     {
         for(int x = (checkRegion->x & INT_MASK); x <= (checkRegion->w & INT_MASK); x += ONE_SHIFTED)
         {
-            int id = se_mem[28][se_index((x >> SHIFT_AMOUNT) & 63, (y >> SHIFT_AMOUNT) & 63),mapsize)];
+            int id = se_mem[28][se_index((x >> SHIFT_AMOUNT) & 63, (y >> SHIFT_AMOUNT) & 63,mapsize)];
 
             //If it is air carry on
             if(id == 0) continue;

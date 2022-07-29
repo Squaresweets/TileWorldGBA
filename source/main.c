@@ -4,6 +4,7 @@
 #include "TileMap.h"
 #include "util.h"
 #include "map.h"
+#include "players.h"
 
 #include <string.h>
 #include <math.h>
@@ -13,8 +14,6 @@
 #define CBB_0  0
 #define SBB_0 28
 
-#define SCREEN_W      240
-#define SCREEN_H      160
 //Screen offset from player
 #define SCREEN_O_W    116
 #define SCREEN_O_H    76
@@ -145,11 +144,13 @@ void render()
 
 	//Place player and indicator at correct position on the screen
 	//TODO: use a mask instead of whatever this is
+
     obj_set_pos(player,    (playerx -            (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3),
 						   (playery -            (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3));
     obj_set_pos(indicator, ((tilex & INT_MASK) - (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3),
 						   ((tiley & INT_MASK) - (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3));
-	if(startMovement) oam_copy(oam_mem, obj_buffer, 3); 	// Update all sprites
+	RenderAllPlayers(bg0_pt);
+	if(startMovement) oam_copy(oam_mem, obj_buffer, 19); 	// Update all sprites
 
 	REG_BG_OFS[0]= bg0_pt;
 }
@@ -209,6 +210,8 @@ int main()
         ATTR1_SIZE_8,              // 8x8p, 
         ATTR2_PALBANK(0) | 0);     // palbank 0, tile 1
 	obj_hide(indicator);
+
+	InitAllPlayers();
 
 	while(1)
 	{

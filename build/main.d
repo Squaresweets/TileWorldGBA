@@ -19,7 +19,8 @@ main.o: C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/main.c \
  C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/sio.h \
  C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/TileMap.h \
  C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/util.h \
- C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/map.h
+ C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/map.h \
+ C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/players.h
 C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/main.h:
 C\:/devkitPro/libtonc/include/tonc.h:
 C\:/devkitPro/libtonc/include/tonc_types.h:
@@ -41,3 +42,4 @@ C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/sio.h:
 C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/TileMap.h:
 C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/util.h:
 C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/map.h:
+C\:/Users/Daniel/Desktop/GBAWork/TileWorldGBA/source/players.h:

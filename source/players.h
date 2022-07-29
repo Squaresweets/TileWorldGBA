@@ -2,8 +2,10 @@
 #define PLAYERS_H
 #include <tonc.h>
 
-void updatePlayer(u8* packet);
+void UpdatePlayer(u8* packet);
 void PlayerLeave(u32 id);
 void MovePlayers();
+void InitAllPlayers();
+void RenderAllPlayers(BG_POINT bg0_pt);
 
 #endif

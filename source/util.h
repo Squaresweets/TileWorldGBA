@@ -12,6 +12,9 @@
 
 #define INITIAL_PLAYER_POS (32 << SHIFT_AMOUNT)
 
+#define SCREEN_W      240
+#define SCREEN_H      160
+
 u32 se_index(u32 tx, u32 ty, u32 pitch);
 u32 map_index(u32 tx, u32 ty);
 u32 Reverse32(u32 value);

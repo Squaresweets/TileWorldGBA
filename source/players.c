@@ -3,8 +3,11 @@
 #include "main.h"
 #include "util.h"
 #include "map.h"
+#include "sio.h"
 
+#include <string.h>
 #include <tonc.h>
+#include <stdlib.h>
 /*
 BOYS, THE PLAN IS SIMPLE!
 
@@ -58,21 +61,28 @@ typedef struct OPlayer //(Other player)
 
 oplayer players[16];
 
-
+//********************************** POOLING AND MOVEMENT LOGIC **********************************
 void UpdatePlayer(u8* packet)
 {
+    u32 id; memcpy(&id, (packet+18), 4); //The start of the u32 is 17 bytes into the packet
+
     //Before we do anything we need to convert from floating point to fixed point and /32
-    //CHECK IF THERE IS A PROBLEM WITH ALIGNMENT HERE
-    *(u32*)(packet + 2)  = Float_to_fixed(*(float*)(packet + 2)) >> 5; //X
-    *(u32*)(packet + 6)  = Float_to_fixed(*(float*)(packet + 6)) >> 5; //Y
-    *(u32*)(packet + 10) = Float_to_fixed(*(float*)(packet + 10)) >> 5; //XV
-    *(u32*)(packet + 12) = Float_to_fixed(*(float*)(packet + 12)) >> 5; //YV
+    //Sorry for the annoying code here, if you have any better ideas please let me know
+    float Xf;  memcpy(&Xf, (packet+2), 4);    int X  = Float_to_fixed(Xf) >> 5;
+    float Yf;  memcpy(&Yf, (packet+6), 4);    int Y  = Float_to_fixed(Yf) >> 5;
+    float XVf; memcpy(&XVf, (packet+10), 4);  int XV = Float_to_fixed(XVf) >> 5;
+    float YVf; memcpy(&YVf, (packet+12), 4);  int YV = Float_to_fixed(YVf) >> 5;
 
-    //Check if the player position is even in the bounds of the map
-    if(*(u32*)(packet + 2) < camerax || *(u32*)(packet + 2) > camerax + (SCREEN_W << ONE_SHIFTED << 3)) return;
-    if(*(u32*)(packet + 6) < cameray || *(u32*)(packet + 6) > cameray + (SCREEN_H << ONE_SHIFTED << 3)) return;
+    char str[20];
+    itoa(X,str,10);
+    sioPrint(str);
+    return;
 
-    u32 id = *(packet + 17); //The start of the u32 is 17 bytes into the packet
+
+    //Check if the player position is even in the bounds of the camera
+    if(*(int*)(packet + 2) < camerax || *(int*)(packet + 2) > camerax + (240 << SHIFT_AMOUNT << 3) ||
+       *(int*)(packet + 6) < cameray || *(int*)(packet + 6) > cameray + (160 << SHIFT_AMOUNT << 3)) { PlayerLeave(id); return; }
+
     u8 freeSlot = 105; //If it is more than 15 we know there are no free slots
     for(u8 i = 0; i < 16; i++)
     {
@@ -81,7 +91,6 @@ void UpdatePlayer(u8* packet)
         if(players[i].ID == id) //The player we got movement info from is already in the array, woo!
         {
             memcpy(&(players[i]) + 3, packet + 1, 18); //Update the data already there ʕ•ᴥ•ʔ
-            PlayerFloatToFixed(i);
             return;
         }
     }
@@ -89,20 +98,19 @@ void UpdatePlayer(u8* packet)
     if(freeSlot > 15) return; //No free slots, oh well ¯\_(ツ)_/¯
 
     memcpy(&(players[freeSlot]) + 3, packet + 1, 18); //Put the data into the right place (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
-    PlayerFloatToFixed(freeSlot);
     players[freeSlot].active = true;
     //We only actually move the players later
 }
+
 void PlayerLeave(u32 id)
 {
     for(u8 i = 0; i < 16; i++)
         if(players[i].ID == id) { players[i].active = false; return; }
-    //Should never get here, fingers crossed we don't
 }
-
 
 void MovePlayers()
 {
+    return;
     for(u8 i = 0; i < 16; i++)
     {
         if(!players[i].active) continue;
@@ -118,12 +126,11 @@ void MovePlayers()
         bool grounded = Check(bounds, g).collided;
         bool ladder = Check(bounds, bounds).ladder;
 
-        //Only move if we are not in placeMode
-        p->XV += keysX * (ONE_SHIFTED >> 5) * !placeMode;
+        p->XV += keysX * (ONE_SHIFTED >> 5);
         //Only move up and down if we are on a ladder
-        p->YV += -keysY * (ONE_SHIFTED >> 5) * ladder * !placeMode;
+        p->YV += -keysY * (ONE_SHIFTED >> 5) * ladder;
 
-        if((p->keys & (1 << 4)) && grounded && !ladder && !placeMode)
+        if((p->keys & (1 << 4)) && grounded && !ladder)
             p->YV += ((25<<SHIFT_AMOUNT) >> 5);
         if (!grounded && !ladder)
             p->YV -= 88166 >> 5; //(88166 = 1.3453 << SHIFT_AMOUNT)
@@ -144,5 +151,28 @@ void MovePlayers()
         p->XV *= !Check(bounds, g).collided;
         g.y = p->Y - p->YV; g.x = bounds.x;
         p->YV *= !Check(bounds, g).collided;
+    }
+}
+
+//********************************** RENDERING **********************************
+void InitAllPlayers()
+{
+    for(u8 i = 0; i < 16; i++)
+    {
+        obj_set_attr(&obj_buffer[i+3], //+3 due to player, hammer + indicator sprites
+            ATTR0_SQUARE,              // Square, regular sprite
+            ATTR1_SIZE_8,              // 8x8p, 
+            ATTR2_PALBANK(0) | 12);     // palbank 0, tile 12
+	    obj_hide(&obj_buffer[i+3]);    //Start all sprites off hidden
+    }
+}
+void RenderAllPlayers(BG_POINT bg0_pt)
+{
+    for(u8 i = 0; i < 16; i++)
+    {
+        if(!players[i].active) {obj_hide(&obj_buffer[i+3]); continue; }
+        obj_unhide(&obj_buffer[i+3], 0);
+        obj_set_pos(&obj_buffer[i+3], (players[i].X + INITIAL_PLAYER_POS - (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3),
+						              (players[i].Y + INITIAL_PLAYER_POS- (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3));
     }
 }
