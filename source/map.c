@@ -154,7 +154,7 @@ of 45 chunks (a 3x15 or 15x3 area). Chunks are 16x16.
 
 void processNewChunkData(u32 data, u32 offset)
 {
-    //In this function >>1 is used instead of /2 since it is more efficient
+    //In this function >>1 is used instead of /2 since it is more efficient (i think)
     u8 *d = (u8*)&data;
     o = (offset-5)%264;
     bool chunkOnScreen = ChunkX > mapX-5 && ChunkX < mapX-1 && ChunkY > (mapY-5) && ChunkY < mapY-1;

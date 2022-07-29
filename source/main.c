@@ -130,10 +130,11 @@ void render()
 	//Lerp to player pos or tile pos
 	camerax += ((placeMode ? (tilex & INT_MASK) : playerx) - camerax) / 4;
 	cameray += ((placeMode ? (tiley & INT_MASK) : playery) - cameray) / 4;
-	if(placeMode) //Lock camera to current screen during place mode
+	if(placeMode) //Lock camera and player to current screen during place mode
 	{
-		camerax = max(min(camerax, (34+((mapX-4)<<4))<<SHIFT_AMOUNT), ((mapX-4)<<4)<<SHIFT_AMOUNT); //34 is how far the screen can go right
-		cameray = max(min(cameray, (34+((mapY-4)<<4))<<SHIFT_AMOUNT), ((mapY-4)<<4)<<SHIFT_AMOUNT); //34 is how far the screen can go right
+		camerax = max(min(camerax, (((mapX-2)<<4))<<SHIFT_AMOUNT), ((mapX-4)<<4)<<SHIFT_AMOUNT); //32 is how far the screen can go right
+		cameray = max(min(cameray, (((mapY-2)<<4))<<SHIFT_AMOUNT), ((mapY-4)<<4)<<SHIFT_AMOUNT); //32 is how far the screen can go down
+		playery = min(playery, (((mapY-2)<<4)+10)<<SHIFT_AMOUNT); //Only thing which matters for the player since you can fall during placeMode
 	}
 
 	//Rendering player to screen
@@ -143,8 +144,6 @@ void render()
 	bg0_pt.y = (cameray>>(SHIFT_AMOUNT-3)) - SCREEN_O_H;
 
 	//Place player and indicator at correct position on the screen
-	//TODO: use a mask instead of whatever this is
-
     obj_set_pos(player,    (playerx -            (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3),
 						   (playery -            (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3));
     obj_set_pos(indicator, ((tilex & INT_MASK) - (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3),
@@ -223,7 +222,6 @@ int main()
 		{
 			placeTiles();
 			movement();
-			MovePlayers();
 			if(pingtimer == 512) ping(); //Only ping every few seconds
 			else pingtimer++;
 			sioMove();

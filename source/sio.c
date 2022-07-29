@@ -91,6 +91,7 @@ void sioMove()
                                  (key_is_down(KEY_LEFT)  << 2) |
                                  (key_is_down(KEY_RIGHT) << 3) |
                                  (key_is_down(KEY_A)     << 4);
+    else outbuf[numinOutBuf][1] = 0;
 
     *(float*)(&outbuf[numinOutBuf][2]) = (Fixed_to_float((playerx-(ONE_SHIFTED/2) + ONE_SHIFTED -(INITIAL_PLAYER_POS)) * 32));
     *(float*)(&outbuf[numinOutBuf][6]) = (Fixed_to_float((playery+(ONE_SHIFTED/2)               -(INITIAL_PLAYER_POS)) * 32));
