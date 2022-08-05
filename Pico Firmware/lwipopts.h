@@ -25,7 +25,7 @@
 
 #define PBUF_POOL_SIZE              3                                                 ////////////////////////////////////////////////////
 #undef  PBUF_POOL_BUFSIZE
-#define PBUF_POOL_BUFSIZE           60000
+#define PBUF_POOL_BUFSIZE           16384
 
 #define LWIP_ARP                    1
 #define LWIP_ETHERNET               1
@@ -107,5 +107,6 @@
 #define LWIP_DEBUG 1
 #define ALTCP_MBEDTLS_LIB_DEBUG  LWIP_DBG_ON
 #define ALTCP_MBEDTLS_DEBUG  LWIP_DBG_ON
+#define LWIP_DISABLE_TCP_SANITY_CHECKS 1
 
 #endif

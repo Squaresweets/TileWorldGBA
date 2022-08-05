@@ -54,8 +54,6 @@ typedef struct OPlayer //(Other player)
     u8 keys;
     int X;
     int Y;
-    int XV;
-    int YV;
     u32 ID;
 } oplayer;
 
@@ -118,11 +116,14 @@ void InitAllPlayers()
 }
 void RenderAllPlayers(BG_POINT bg0_pt)
 {
+    int x, y;
     for(u8 i = 0; i < 16; i++)
     {
-        if(!players[i].active) {obj_hide(&obj_buffer[i+3]); continue; }
+        if(!players[i].active)                             {obj_hide(&obj_buffer[i+3]); continue; }
+        x = (players[i].X + INITIAL_PLAYER_POS - (ONE_SHIFTED/2) - (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3);
+        y = (players[i].Y + INITIAL_PLAYER_POS - (ONE_SHIFTED/2) - (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3);
+        if(x < 0 || x > SCREEN_W || y < 0 || y > SCREEN_H) {obj_hide(&obj_buffer[i+3]); continue; } //So the player doesn't rap around
         obj_unhide(&obj_buffer[i+3], 0);
-        obj_set_pos(&obj_buffer[i+3], (players[i].X + INITIAL_PLAYER_POS - (ONE_SHIFTED/2) - (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3),
-						              (players[i].Y + INITIAL_PLAYER_POS - (ONE_SHIFTED/2) - (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3));
+        obj_set_pos(&obj_buffer[i+3], x, y);
     }
 }

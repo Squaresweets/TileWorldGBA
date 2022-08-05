@@ -46,7 +46,7 @@ void increment(vector *checkRegion, vector *goal, vector *intersect, vector *bou
             cell.x = x; cell.y = y; cell.w = ONE_SHIFTED; cell.h = ONE_SHIFTED;
             if(Intersects(&cell, bounds, intersect))
             {
-                if(id == 11) { r->ladder = true; continue;}
+                if(id == 11 || id == 15) { r->ladder = true; continue;} //15 is the debug tile, 11 is ladder
                 r->collided = true;
                 if((X && intersect->w < intersect->h) || (!X && intersect->w > intersect->h))
                 {

@@ -29,7 +29,7 @@
 typedef struct {
     struct altcp_pcb *pcb;
     bool complete;
-
+    uint8_t  buf[BUF_SIZE];
     uint64_t buffer_pos;
     uint64_t buffer_size;
 } TLS_CLIENT_T;
@@ -43,7 +43,7 @@ bool testflag = false;
           .pio = pio1,
           .sm = 0
   };
-
+#pragma region tlsCallbacks
 /* Function to feed mbedtls entropy. May be better to move it to pico-sdk */
 int mbedtls_hardware_poll(void *data, unsigned char *output, size_t len, size_t *olen) {
     /* Code borrowed from pico_lwip_random_byte(), which is static, so we cannot call it directly */
@@ -62,7 +62,6 @@ int mbedtls_hardware_poll(void *data, unsigned char *output, size_t len, size_t 
     *olen = len;
     return 0;
 }
-
 
 static err_t tls_client_close(void *arg) {
     TLS_CLIENT_T *state = (TLS_CLIENT_T*)arg;
@@ -83,29 +82,6 @@ static err_t tls_client_close(void *arg) {
         state->pcb = NULL;
     }
     return err;
-}
-
-static err_t ws_client_send(TLS_CLIENT_T *state, void *dataptr, uint64_t len)
-{
-    printf("\n*****************SENDING*****************\n");
-    for(int i = 0; i<len; i++)
-        printf("%#x ", ((char *) dataptr)[i]);
-    printf("\n");
-    
-    char buffer[32];
-    uint64_t numInBuf = WSBuildPacket(buffer, 32, WEBSOCKET_OPCODE_BIN, dataptr, len);
-    printf("Actual data we are sending:\n");
-    for(uint64_t i = 0; i<numInBuf; i++)
-        printf("%#X ", buffer[i]);
-    printf("\n\n\n\n");
-
-    err_t err = altcp_write(state->pcb, buffer, numInBuf, TCP_WRITE_FLAG_COPY);
-    if (err != ERR_OK) {
-        printf("error writing data, err=%d", err);
-        return tls_client_close(state);
-    }
-
-    return ERR_OK;
 }
 
 static err_t tls_client_connected(void *arg, struct altcp_pcb *pcb, err_t err) {
@@ -136,8 +112,32 @@ static void tls_client_err(void *arg, err_t err) {
     printf("tls_client_err %d\n", err);
     state->pcb = NULL; /* pcb freed by lwip when _err function is called */
 }
+#pragma endregion
 
-static err_t tls_client_recv(void *arg, struct altcp_pcb *pcb, struct pbuf *p, err_t err) {
+static err_t ws_client_send(TLS_CLIENT_T *state, void *dataptr, uint64_t len)
+{
+    printf("\n*****************SENDING*****************\n");
+    for(int i = 0; i<len; i++)
+        printf("%#x ", ((char *) dataptr)[i]);
+    printf("\n");
+    
+    char buffer[32];
+    uint64_t numInBuf = WSBuildPacket(buffer, 32, WEBSOCKET_OPCODE_BIN, dataptr, len);
+    printf("Actual data we are sending:\n");
+    for(uint64_t i = 0; i<numInBuf; i++)
+        printf("%#X ", buffer[i]);
+    printf("\n\n\n\n");
+
+    err_t err = altcp_write(state->pcb, buffer, numInBuf, TCP_WRITE_FLAG_COPY);
+    if (err != ERR_OK) {
+        printf("error writing data, err=%d", err);
+        return tls_client_close(state);
+    }
+
+    return ERR_OK;
+}
+
+static err_t ws_client_recv(void *arg, struct altcp_pcb *pcb, struct pbuf *p, err_t err) {
     TLS_CLIENT_T *state = (TLS_CLIENT_T*)arg;
     if (!p) {
         printf("connection closed\n");
@@ -149,35 +149,36 @@ static err_t tls_client_recv(void *arg, struct altcp_pcb *pcb, struct pbuf *p, e
     // cyw43_arch_lwip_begin IS needed
     cyw43_arch_lwip_check();
     if (p->tot_len > 0) {
-        char buf[p->tot_len + 1];
-        pbuf_copy_partial(p, buf, p->tot_len, 0);
-        buf[p->tot_len] = 0;
+        char msgBuf[p->tot_len + 1];
+        pbuf_copy_partial(p, msgBuf, p->tot_len, 0);
+        msgBuf[p->tot_len] = 0; //Not sure why it does this in the example but who am I to complain
 
-        
-        WebsocketPacketHeader_t header;
         uint64_t lenReceived = (uint64_t)p->tot_len;
         if(state->buffer_size == 0)  //This is a new message!
         {
-            printf("\n\n\nStart of a new message!\n");
-            WSParsePacket(&header, buf, p->tot_len); //Parse the packet only when it is a new message
+            WebsocketPacketHeader_t header;
+            WSParsePacket(&header, msgBuf, p->tot_len); //Parse the packet only when it is a new message
+            printf("\n\n\nStart of a new message! tot_len: %d\n", header.totalLen);
+            
             state->buffer_size = header.totalLen; 
             lenReceived = header.payloadLen;
         }
-        state->buffer_pos += lenReceived; //Add however many bytes we recieved
-        if(state->buffer_pos >= state->buffer_size)
+        memcpy(&state->buf[state->buffer_pos], msgBuf, lenReceived);
+        state->buffer_pos += lenReceived; //Add however many bytes we recieved (either tot_len or header.payloadlen)
+
+        if(state->buffer_pos >= state->buffer_size) //Recieved all bytes
         {
+            for(int i = 0; i<state->buffer_size; i++) //Recieved an entire message
+            {
+                printf("%X", state->buf[i]);
+                
+                unsigned char rx;
+                pio_spi_write8_read8_blocking(&spi, state->buf[i], &rx, 1);
+            }
             state->buffer_size = 0; //Have to decrypt the header for the next one
             state->buffer_pos = 0;
         }
         
-        
-        for(int i = 0; i<lenReceived; i++)
-        {
-            printf("%X", buf[i]);
-            unsigned char rx;
-            pio_spi_write8_read8_blocking(&spi, buf, &rx, 1);
-        }
-
         altcp_recved(pcb, p->tot_len);
 
     }
@@ -191,7 +192,7 @@ static err_t tls_client_recv(void *arg, struct altcp_pcb *pcb, struct pbuf *p, e
     }
     return ERR_OK;
 }
-
+#pragma region TLSConnect
 static void tls_client_connect_to_server_ip(const ip_addr_t *ipaddr, TLS_CLIENT_T *state)
 {
     err_t err;
@@ -233,7 +234,7 @@ static bool tls_client_open(const char *hostname, void *arg) {
 
     altcp_arg(state->pcb, state);
     altcp_poll(state->pcb, tls_client_poll, TLS_CLIENT_TIMEOUT_SECS * 2);
-    altcp_recv(state->pcb, tls_client_recv);
+    altcp_recv(state->pcb, ws_client_recv);
     altcp_err(state->pcb, tls_client_err);
 
     /* Set SNI */
@@ -274,7 +275,7 @@ static TLS_CLIENT_T* tls_client_init(void) {
 
     return state;
 }
-
+#pragma endregion
 void run_TLS_CLIENT(void) {
     /* No CA certificate checking */
     tls_config = altcp_tls_create_config_client(NULL, 0);
@@ -293,8 +294,8 @@ void run_TLS_CLIENT(void) {
         // if you are using pico_cyw43_arch_poll, then you must poll periodically from your
         // main loop (not from a timer) to check for WiFi driver or lwIP work that needs to be done.
         cyw43_arch_poll();
-        //sleep_ms(1);
-        printf("hell yeah I sure do be testing\n");
+        sleep_ms(1);
+        //printf("hell yeah I sure do be testing\n");
 #else
         // if you are not using pico_cyw43_arch_poll, then WiFI driver and lwIP work
         // is done via interrupt in the background. This sleep is just an example of some (blocking)

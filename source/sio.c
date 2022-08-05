@@ -163,13 +163,13 @@ void sio_interrupt()
     {
         incomingdata[numinInBuf] = data; //The reasoning behind putting this in a buffer is to reduce the length of the interrupt
         numinInBuf++;
-        if(numinInBuf > 128) playerx = 0;
+        if(numinInBuf > 128) sioPrint("E: numinBuf1");
     }
     else
     {
         secondaryincomingdata[numinsecondInBuf] = data; //The reasoning behind putting this in a buffer is to reduce the length of the interrupt
         numinsecondInBuf++;
-        if(numinsecondInBuf > 128) playerx = 0;
+        if(numinsecondInBuf > 128) sioPrint("E: numinBuf2");
     }
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

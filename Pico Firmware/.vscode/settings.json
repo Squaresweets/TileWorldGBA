@@ -7,6 +7,9 @@
         "pico_websocket_client.h": "c",
         "altcp_tcp.h": "c",
         "altcp.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "stdbool.h": "c",
+        "stdint.h": "c",
+        "ws.h": "c"
     }
 }

@@ -143,9 +143,16 @@ void render()
 	bg0_pt.x = (camerax>>(SHIFT_AMOUNT-3)) - SCREEN_O_W;
 	bg0_pt.y = (cameray>>(SHIFT_AMOUNT-3)) - SCREEN_O_H;
 
+	//To make sure the player doesn't rap around the screen, may be some easier way to do this with minmax
+	int px = (playerx -            (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3);
+	int py = (playery -            (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3);
+    if(px < 0 || px > SCREEN_W || py < 0 || py > SCREEN_H)   obj_hide(player);
+	else                                                   obj_unhide(player, 0);
+
+
+
 	//Place player and indicator at correct position on the screen
-    obj_set_pos(player,    (playerx -            (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3),
-						   (playery -            (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3));
+    obj_set_pos(player, px, py);
     obj_set_pos(indicator, ((tilex & INT_MASK) - (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3),
 						   ((tiley & INT_MASK) - (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3));
 	RenderAllPlayers(bg0_pt);

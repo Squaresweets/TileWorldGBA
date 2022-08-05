@@ -75,7 +75,7 @@ void setTile(u32 x, u32 y, u8 id)
     //Now, since the map array is only used when loading new chunks
     //I also have to set it on the actual map
     if(x+112-(16*mapX) < 64 && x+112-(16*mapX) >= 0 && y+112-(16*mapY) < 64 && y+112-(16*mapY) >= 0)
-        se_mem[28][se_index(mod(x+32, 64), mod(y+32, 64), 64)] = id;
+        se_mem[28][se_index((x+32) & 63, (y+32) & 63, 64)] = id;
 }
 
 void setupMap()
@@ -178,7 +178,7 @@ void processNewChunkData(u32 data, u32 offset)
                          + !(o&1) * ((*(c + ((o-8)>>1)) & 0x0F) | (b << 4)); //Correct nibble
         
         if(chunkOnScreen) //Check if this tile is currently in the GBA tilemap (if so we need to change it)
-            se_mem[28][se_index(((ChunkX << 4) + 32 + (((o-8)>>1)&15))&63, //Keep in mind the & sign stuff is to make mod more efficient
-                                ((ChunkY << 4) + 32 + (((o-8)>>1)>>4))&63, 64)] = b; //"It just works" -Todd Howard
+            se_mem[28][se_index(((ChunkX << 4) + 32 + (((o-8)>>1)&0xF))&63, //Keep in mind the & sign stuff is to make mod more efficient
+                                ((ChunkY << 4) + 32 + (((o-8)>>1)>>4 ))&63, 64)] = b; //"It just works" -Todd Howard
     }
 }
