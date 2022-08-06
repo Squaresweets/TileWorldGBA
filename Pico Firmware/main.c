@@ -13,8 +13,11 @@
 
 #include "ws.h"
 
-#define TLS_CLIENT_SERVER        "tileworld.org"
-#define PORT_NUMBER              7364
+#define TW_HOSTNAME         "tileworld.org"
+#define TW_PORT             7364
+
+#define GH_HOSTNAME        "github.com"
+#define GH_PORT            443
 
 #define TLS_CLIENT_WWS_UPGRADE_REQUEST  "GET / HTTP/1.1\r\n" \
                                         "Host: tileworld.org:7364\r\n" \
@@ -23,6 +26,11 @@
                                         "Connection: Upgrade\r\n" \
                                         "Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==\r\n" \
                                         "Sec-WebSocket-Version: 13\r\n\r\n"
+
+#define TLS_CLIENT_GH_ROM_GET_REQUEST   "GET github.com/Squaresweets/TileWorldGBA/raw/main/TileWorldGBA_mb.gba HTTP/1.1\r\n" \
+                                        "Host: github.com\r\n\n" \
+                                        "Referer: github.com/Squaresweets/TileWorldGBA/raw/main/TileWorldGBA_mb.gba\r\n\r\n"
+
 #define TLS_CLIENT_TIMEOUT_SECS  15
 #define BUF_SIZE               57601
 
@@ -32,6 +40,8 @@ typedef struct {
     uint8_t  buf[BUF_SIZE];
     uint64_t buffer_pos;
     uint64_t buffer_size;
+
+    u16_t port;
 } TLS_CLIENT_T;
 
 static struct altcp_tls_config *tls_config = NULL;
@@ -91,8 +101,11 @@ static err_t tls_client_connected(void *arg, struct altcp_pcb *pcb, err_t err) {
         return tls_client_close(state);
     }
 
-    printf("connected to server, sending upgrade request\n");
-    err = altcp_write(state->pcb, TLS_CLIENT_WWS_UPGRADE_REQUEST, strlen(TLS_CLIENT_WWS_UPGRADE_REQUEST), TCP_WRITE_FLAG_COPY);
+    printf("connected to server\n");
+    if(state->port == GH_PORT) //If we are connecting to github send the request to download the ROM
+        err = altcp_write(state->pcb, TLS_CLIENT_GH_ROM_GET_REQUEST, strlen(TLS_CLIENT_GH_ROM_GET_REQUEST), TCP_WRITE_FLAG_COPY);
+    else if(state->port == TW_PORT) //If we are connecting to tileworld send a WS upgrade request
+        err = altcp_write(state->pcb, TLS_CLIENT_WWS_UPGRADE_REQUEST, strlen(TLS_CLIENT_WWS_UPGRADE_REQUEST), TCP_WRITE_FLAG_COPY);
     if (err != ERR_OK) {
         printf("error writing data, err=%d", err);
         return tls_client_close(state);
@@ -153,43 +166,54 @@ static err_t ws_client_recv(void *arg, struct altcp_pcb *pcb, struct pbuf *p, er
         pbuf_copy_partial(p, msgBuf, p->tot_len, 0);
         msgBuf[p->tot_len] = 0; //Not sure why it does this in the example but who am I to complain
 
-        uint64_t lenReceived = (uint64_t)p->tot_len;
-        if(state->buffer_size == 0)  //This is a new message!
-        {
-            WebsocketPacketHeader_t header;
-            WSParsePacket(&header, msgBuf, p->tot_len); //Parse the packet only when it is a new message
-            printf("\n\n\nStart of a new message! tot_len: %d\n", header.totalLen);
-            
-            state->buffer_size = header.totalLen; 
-            lenReceived = header.payloadLen;
-        }
-        memcpy(&state->buf[state->buffer_pos], msgBuf, lenReceived);
-        state->buffer_pos += lenReceived; //Add however many bytes we recieved (either tot_len or header.payloadlen)
 
-        if(state->buffer_pos >= state->buffer_size) //Recieved all bytes
+        if(state->port == GH_PORT) //If we are connected to github
         {
-            for(int i = 0; i<state->buffer_size; i++) //Recieved an entire message
-            {
-                printf("%X", state->buf[i]);
-                
-                unsigned char rx;
-                pio_spi_write8_read8_blocking(&spi, state->buf[i], &rx, 1);
-            }
-            state->buffer_size = 0; //Have to decrypt the header for the next one
-            state->buffer_pos = 0;
+            printf("\nRecieved %d bytes from github:\n\n%s\n\n\n\n\n", p->tot_len, msgBuf);
         }
-        
+        else if(state->port == TW_PORT) //If we are connecting to tileworld
+        {
+            uint64_t lenReceived = (uint64_t)p->tot_len;
+            if(state->buffer_size == 0)  //This is a new message!
+            {
+                WebsocketPacketHeader_t header;
+                WSParsePacket(&header, msgBuf, p->tot_len); //Parse the packet only when it is a new message
+                printf("\n\n\nStart of a new message! Buffer size: %llu\n", header.totalLen);
+                
+                state->buffer_size = header.totalLen; 
+                lenReceived = header.payloadLen;
+            }
+            printf("Reciveved %llu bytes!\n", lenReceived);
+            memcpy(&state->buf[state->buffer_pos], msgBuf, lenReceived);
+            state->buffer_pos += lenReceived; //Add however many bytes we recieved (either tot_len or header.payloadlen)
+
+            if(state->buffer_pos >= state->buffer_size) //Recieved all bytes
+            {
+                for(int i = 0; i<state->buffer_size; i++) //Recieved an entire message
+                {
+                    printf("%X", state->buf[i]);
+                    
+                    //unsigned char rx;
+                    //pio_spi_write8_read8_blocking(&spi, state->buf[i], &rx, 1);
+                }
+                state->buffer_size = 0; //Have to decrypt the header for the next one
+                state->buffer_pos = 0;
+            }
+        }
+
         altcp_recved(pcb, p->tot_len);
 
     }
     pbuf_free(p);
 
+    /*
     if(!testflag)
     {
         uint8_t test[3] = {0x01, 0x01, 0x00};
         ws_client_send(state, test, 3);
         testflag = true;
     }
+    */
     return ERR_OK;
 }
 #pragma region TLSConnect
@@ -197,8 +221,8 @@ static void tls_client_connect_to_server_ip(const ip_addr_t *ipaddr, TLS_CLIENT_
 {
     err_t err;
 
-    printf("connecting to server IP %s port %d\n", ipaddr_ntoa(ipaddr), PORT_NUMBER);
-    err = altcp_connect(state->pcb, ipaddr, PORT_NUMBER, tls_client_connected);
+    printf("connecting to server IP %s port %d\n", ipaddr_ntoa(ipaddr), state->port);
+    err = altcp_connect(state->pcb, ipaddr, state->port, tls_client_connected);
     if (err != ERR_OK)
     {
         fprintf(stderr, "error initiating connect, err=%d\n", err);
@@ -221,10 +245,12 @@ static void tls_client_dns_found(const char* hostname, const ip_addr_t *ipaddr, 
 }
 
 
-static bool tls_client_open(const char *hostname, void *arg) {
+static bool tls_client_open(const char *hostname, void *arg, u16_t port) {
     err_t err;
     ip_addr_t server_ip;
     TLS_CLIENT_T *state = (TLS_CLIENT_T*)arg;
+
+    state->port = port;
 
     state->pcb = altcp_tls_new(tls_config, IPADDR_TYPE_ANY);
     if (!state->pcb) {
@@ -249,12 +275,7 @@ static bool tls_client_open(const char *hostname, void *arg) {
     cyw43_arch_lwip_begin();
 
     err = dns_gethostbyname(hostname, &server_ip, tls_client_dns_found, state);
-    if (err == ERR_OK)
-    {
-        /* host is in DNS cache */
-        tls_client_connect_to_server_ip(&server_ip, state);
-    }
-    else if (err != ERR_INPROGRESS)
+    if (err != ERR_INPROGRESS)
     {
         printf("error initiating DNS resolving, err=%d\n", err);
         tls_client_close(state->pcb);
@@ -276,7 +297,7 @@ static TLS_CLIENT_T* tls_client_init(void) {
     return state;
 }
 #pragma endregion
-void run_TLS_CLIENT(void) {
+void run_TLS_CLIENT(char* hostname, u16_t port) {
     /* No CA certificate checking */
     tls_config = altcp_tls_create_config_client(NULL, 0);
 
@@ -284,7 +305,7 @@ void run_TLS_CLIENT(void) {
     if (!state) {
         return;
     }
-    if (!tls_client_open(TLS_CLIENT_SERVER, state)) {
+    if (!tls_client_open(hostname, state, port)) {
         return;
     }
     while(!state->complete) {
@@ -325,7 +346,10 @@ int main() {
     }
     printf("Connected to wifi!\n");
     
-    run_TLS_CLIENT();
+    /*Throughout this program we make two connections, one to connect to github and download
+    the rom and one to actually connect to tileworld*/
+    run_TLS_CLIENT(GH_HOSTNAME, GH_PORT); //First connect to github
+    //run_TLS_CLIENT(TW_HOSTNAME, TW_PORT); //Then connect to TW
 
     /* sleep a bit to let usb stdio write out any buffer to host */
     sleep_ms(100);
