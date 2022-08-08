@@ -7,9 +7,12 @@
 
 [![Chunk loading](https://img.youtube.com/vi/uGY5kjLEVD8/0.jpg)](https://www.youtube.com/watch?v=uGY5kjLEVD8)
 
-[TileWorld](https://tileworld.org) for Gameboy Advance! Why? IDK I thought it was kinda funny
+[TileWorld](https://tileworld.org) for Gameboy Advance!
 
-For this you have two options, either using a normal pico connected to your computer using the stuff found in the Python folder, or using the custom firmware to do it all just on a Pico W.
+# What and why
+Basically, I wanted to port something to the Gameboy Advance, and I thought it would be kinda funny to make a cross platform multiplayer game since it hadn't been done before. The perfect candidete for this was TileWorld since I had worked on the mobile port and it is a pretty simple game. This whole thing has taken a long time, partially due to exams and partially due to lots of problem solving.
+
+For playing this you have two options, either using a normal pico connected to your computer using the stuff found in the Python folder, or using the custom firmware to do it all just on a Pico W.
 
 Using this project requires [this adapter](https://stacksmashing.gumroad.com/l/gb-link)!
 
@@ -26,13 +29,15 @@ Using this project requires [this adapter](https://stacksmashing.gumroad.com/l/g
 - Changing tiles ✔️
 - Other players ✔️
 - Wireless
-  -TLS ✔️
-  -Custom WS client ✔️
-  -Downloading ROM from github ✔️
-  -Sending data via PIO
-  -Multiboot
+  - TLS ✔️
+  - Custom WS client ✔️
+  - Downloading ROM from github ✔️
+  - Sending data via PIO
+  - Multiboot
 - Map system
 - 3D printed game holder
 
-The collision system used is a port of [this](https://github.com/dfranx/Colly) 
-I just wanted to put it out there that this is my first C project, and my first GBA game, so none of this is particularly optimised, sorry 'bout that
+# Notes
+The collision system used is a port of [this](https://github.com/dfranx/Colly) system by the creator of TileWorld.
+
+Also, I just wanted to put it out there that this is my first C project, and my first GBA game, so none of this is particularly optimised or neat. This is a passion project and was done completly for fun and to learn C, so feedback is always appreciated!
