@@ -24,9 +24,15 @@ Using this project requires [this adapter](https://stacksmashing.gumroad.com/l/g
 - Receiving tile places ✔️
 - New chunks loading ✔️
 - Changing tiles ✔️
+- Other players ✔️
 - Wireless
+  -TLS ✔️
+  -Custom WS client ✔️
+  -Downloading ROM from github ✔️
+  -Sending data via PIO
+  -Multiboot
+- Map system
 - 3D printed game holder
-- Other players?
 
 The collision system used is a port of [this](https://github.com/dfranx/Colly) 
 I just wanted to put it out there that this is my first C project, and my first GBA game, so none of this is particularly optimised, sorry 'bout that

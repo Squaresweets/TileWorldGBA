@@ -16,7 +16,7 @@
 #define TW_HOSTNAME         "tileworld.org"
 #define TW_PORT             7364
 
-#define GH_HOSTNAME        "github.com"
+#define GH_HOSTNAME        "raw.githubusercontent.com"
 #define GH_PORT            443
 
 #define TLS_CLIENT_WWS_UPGRADE_REQUEST  "GET / HTTP/1.1\r\n" \
@@ -27,9 +27,8 @@
                                         "Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==\r\n" \
                                         "Sec-WebSocket-Version: 13\r\n\r\n"
 
-#define TLS_CLIENT_GH_ROM_GET_REQUEST   "GET github.com/Squaresweets/TileWorldGBA/raw/main/TileWorldGBA_mb.gba HTTP/1.1\r\n" \
-                                        "Host: github.com\r\n\n" \
-                                        "Referer: github.com/Squaresweets/TileWorldGBA/raw/main/TileWorldGBA_mb.gba\r\n\r\n"
+#define TLS_CLIENT_GH_ROM_GET_REQUEST   "GET https://raw.githubusercontent.com/Squaresweets/TileWorldGBA/main/TileWorldGBA_mb.gba HTTP/1.1\r\n" \
+                                        "Host: raw.githubusercontent.com\r\n\r\n"
 
 #define TLS_CLIENT_TIMEOUT_SECS  15
 #define BUF_SIZE               57601
@@ -42,6 +41,7 @@ typedef struct {
     uint64_t buffer_size;
 
     u16_t port;
+    uint32_t recvNum;
 } TLS_CLIENT_T;
 
 static struct altcp_tls_config *tls_config = NULL;
@@ -152,6 +152,8 @@ static err_t ws_client_send(TLS_CLIENT_T *state, void *dataptr, uint64_t len)
 
 static err_t ws_client_recv(void *arg, struct altcp_pcb *pcb, struct pbuf *p, err_t err) {
     TLS_CLIENT_T *state = (TLS_CLIENT_T*)arg;
+    state->recvNum++;
+
     if (!p) {
         printf("connection closed\n");
         return tls_client_close(state);
@@ -169,7 +171,24 @@ static err_t ws_client_recv(void *arg, struct altcp_pcb *pcb, struct pbuf *p, er
 
         if(state->port == GH_PORT) //If we are connected to github
         {
-            printf("\nRecieved %d bytes from github:\n\n%s\n\n\n\n\n", p->tot_len, msgBuf);
+            if(state->recvNum == 1) //This is the first message we recieved and so will be a "HTTP/1.1 200 OK" message
+            {
+                /*the +57 and strtok removes:
+                HTTP/1.1 200 OK
+                Connection: keep-alive
+                Content-Length: 
+                And then everything after the number
+                Then we convert it to an int*/
+                char* result = msgBuf + 57;
+                result = strtok(result, "\n");
+                int len = strtol(result, NULL, 10);
+                printf("Length of ROM:%d\n", len);
+            }
+            else
+            {
+                for(int i = 0; i<p->tot_len; i++) //Recieved an entire message
+                    printf("%X", msgBuf[i]);
+            }
         }
         else if(state->port == TW_PORT) //If we are connecting to tileworld
         {

@@ -9,4 +9,4 @@ Hopefully connect to the Tileworld server and send the connect packet to make su
 Next up, port multiboot into c, shouldn't be too hard, but idk how to actually put files like the .gba file onto the pico.
 Then get the sio system working with the gba
 
-Finally, make a system which allows you to input text into the gba to allow you to choose a wifi SSID and password.
+Finally, make a system which allows you to input text into the gba to allow you to choose a wifi SSID and password. (maybe)
