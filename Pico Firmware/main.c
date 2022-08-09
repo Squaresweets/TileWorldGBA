@@ -12,6 +12,7 @@
 #include "pio/pio_spi.h"
 
 #include "ws.h"
+#include "multiboot.h"
 
 #define TW_HOSTNAME         "tileworld.org"
 #define TW_PORT             7364
@@ -168,8 +169,8 @@ static err_t ws_client_recv(void *arg, struct altcp_pcb *pcb, struct pbuf *p, er
         pbuf_copy_partial(p, msgBuf, p->tot_len, 0);
         msgBuf[p->tot_len] = 0; //Not sure why it does this in the example but who am I to complain
 
-
-        if(state->port == GH_PORT) //If we are connected to github
+        //************************************ CONNECTING TO GITHUB ************************************
+        if(state->port == GH_PORT)
         {
             if(state->recvNum == 1) //This is the first message we recieved and so will be a "HTTP/1.1 200 OK" message
             {
@@ -182,15 +183,23 @@ static err_t ws_client_recv(void *arg, struct altcp_pcb *pcb, struct pbuf *p, er
                 char* result = msgBuf + 57;
                 result = strtok(result, "\n");
                 int len = strtol(result, NULL, 10);
-                printf("Length of ROM:%d\n", len);
+                printf("\nLength of ROM:%d\n", len);
+                state->buffer_size = len;
             }
             else
             {
-                for(int i = 0; i<p->tot_len; i++) //Recieved an entire message
-                    printf("%X", msgBuf[i]);
+                memcpy(&state->buf[state->buffer_pos], msgBuf, p->tot_len);
+                state->buffer_pos += p->tot_len;
+                if(state->buffer_pos == state->buffer_size) //We have recieved the entire game rom!
+                {
+                    printf("Game ROM recieved! Starting multiboot!\n");
+                    multiboot(state->buf, state->buffer_size);
+                    state->complete = true; //Disconnect from GH then connect to TW
+                }
             }
         }
-        else if(state->port == TW_PORT) //If we are connecting to tileworld
+        //************************************ CONNECTING TO TILEWORLD ************************************
+        else if(state->port == TW_PORT)
         {
             uint64_t lenReceived = (uint64_t)p->tot_len;
             if(state->buffer_size == 0)  //This is a new message!
@@ -270,6 +279,7 @@ static bool tls_client_open(const char *hostname, void *arg, u16_t port) {
     TLS_CLIENT_T *state = (TLS_CLIENT_T*)arg;
 
     state->port = port;
+    memset(state->buf, 0, BUF_SIZE); //Default all values to 0 (only used for multiboot stuff)
 
     state->pcb = altcp_tls_new(tls_config, IPADDR_TYPE_ANY);
     if (!state->pcb) {
@@ -335,7 +345,6 @@ void run_TLS_CLIENT(char* hostname, u16_t port) {
         // main loop (not from a timer) to check for WiFi driver or lwIP work that needs to be done.
         cyw43_arch_poll();
         sleep_ms(1);
-        //printf("hell yeah I sure do be testing\n");
 #else
         // if you are not using pico_cyw43_arch_poll, then WiFI driver and lwIP work
         // is done via interrupt in the background. This sleep is just an example of some (blocking)
@@ -368,7 +377,7 @@ int main() {
     /*Throughout this program we make two connections, one to connect to github and download
     the rom and one to actually connect to tileworld*/
     run_TLS_CLIENT(GH_HOSTNAME, GH_PORT); //First connect to github
-    //run_TLS_CLIENT(TW_HOSTNAME, TW_PORT); //Then connect to TW
+    run_TLS_CLIENT(TW_HOSTNAME, TW_PORT); //Then connect to TW
 
     /* sleep a bit to let usb stdio write out any buffer to host */
     sleep_ms(100);

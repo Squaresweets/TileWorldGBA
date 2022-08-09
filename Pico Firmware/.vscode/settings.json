@@ -10,6 +10,7 @@
         "string.h": "c",
         "stdbool.h": "c",
         "stdint.h": "c",
-        "ws.h": "c"
+        "ws.h": "c",
+        "stdio.h": "c"
     }
 }
