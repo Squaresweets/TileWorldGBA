@@ -147,7 +147,7 @@ void render()
 	int px = (playerx -            (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3);
 	int py = (playery -            (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3);
     if(px < 0 || px > SCREEN_W || py < 0 || py > SCREEN_H)   obj_hide(player);
-	else                                                   obj_unhide(player, 0);
+	else                                                     obj_unhide(player, 0);
 
 
 
@@ -156,7 +156,7 @@ void render()
     obj_set_pos(indicator, ((tilex & INT_MASK) - (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3),
 						   ((tiley & INT_MASK) - (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3));
 	RenderAllPlayers(bg0_pt);
-	if(startMovement) oam_copy(oam_mem, obj_buffer, 19); 	// Update all sprites
+	if(startMovement) oam_copy(oam_mem, obj_buffer, 19); 	// Update all sprites, I don't update map objects since they aren't changed during gameplay
 
 	REG_BG_OFS[0]= bg0_pt;
 }
@@ -174,6 +174,7 @@ void placeTiles()
 		tilex = playerx & INT_MASK;
 		tiley = playery & INT_MASK; //Round player position to nearest tile
 	}
+	
 	if(!placeMode) return;
 	tilex += key_tri_horz() * (ONE_SHIFTED/6);
 	tiley += key_tri_vert() * (ONE_SHIFTED/6);
@@ -218,6 +219,7 @@ int main()
 	obj_hide(indicator);
 
 	InitAllPlayers();
+	//InitMapObjects();
 
 	while(1)
 	{
@@ -225,6 +227,10 @@ int main()
 		key_poll();
 
 		handle_serial();
+		
+		if(key_hit(KEY_START))
+			miniMapMode();
+
 		if(startMovement)
 		{
 			placeTiles();

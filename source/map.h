@@ -13,4 +13,5 @@ void processNewChunkData(u32 data, u32 offset);
 void setTile(u32 x, u32 y, u8 id);
 void processNewChunk();
 
+void miniMapMode();
 #endif
