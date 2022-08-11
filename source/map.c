@@ -211,7 +211,7 @@ void EnableMiniMapMode()
     //Now to set the actual tiles
     u32* p = (u32*)&tile_mem[0][0];
     u32* m = (u32*)map;
-    u8 x,y = 0;
+    u8 x,y,ii = 0;
     u32 i,j = 0;
     //In total it should loop for 900 tiles
     //The problem I am facing is that the map array stores stuff in chunks of 16x16, I need it in chunks of 8x8
@@ -219,17 +219,10 @@ void EnableMiniMapMode()
     {
         for(x = 0; x < 30; x++)
         {
-            //Unwrapping a for function, hopefully for efficiency
             i = (((y*30)+x)+16)*8;
             j = map_index(x*8, y*8)/8;
-            p[i + 0] = ReverseNibbles32(m[j + 0]);
-            p[i + 1] = ReverseNibbles32(m[j + 2]);
-            p[i + 2] = ReverseNibbles32(m[j + 4]);
-            p[i + 3] = ReverseNibbles32(m[j + 6]);
-            p[i + 4] = ReverseNibbles32(m[j + 8]);
-            p[i + 5] = ReverseNibbles32(m[j + 10]);
-            p[i + 6] = ReverseNibbles32(m[j + 12]);
-            p[i + 7] = ReverseNibbles32(m[j + 14]);
+            for(ii=0; ii<8; ii++)
+                p[i + ii] = ReverseNibbles32(m[j + 2*ii]);
         }
         //Sure it is annoying, but every so often we gotta look at the serial stuff to prevent an overflow
         if((y&7) == 0) handle_serial();

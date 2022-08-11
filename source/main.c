@@ -34,6 +34,7 @@ OBJ_ATTR *indicator =  &obj_buffer[2];
 //Fixed point, with a shift value of 16
 int playerx = INITIAL_PLAYER_POS, playery = INITIAL_PLAYER_POS;
 int camerax = INITIAL_PLAYER_POS, cameray = INITIAL_PLAYER_POS;
+int mmcameray = 0;
 int xv = 0, yv = 0;
 bool startMovement = false;
 
@@ -197,8 +198,7 @@ void handleMiniMap()
 		{
 			EnableMiniMapMode();
 			REG_BG0CNT= BG_CBB(0) | BG_SBB(24) | BG_REG_64x64;
-			bg1_pt.x = 0; bg1_pt.y = 0;
-			REG_BG_OFS[0]= bg1_pt;
+			bg1_pt.x = 0; 
 			obj_hide(player);
 		}
 		else
@@ -209,7 +209,13 @@ void handleMiniMap()
 		}
 		oam_copy(oam_mem, obj_buffer, 19);
 	}
-
+	if(miniMapMode)
+	{
+		mmcameray += key_tri_vert() << SHIFT_AMOUNT;
+		mmcameray = max(min(mmcameray, 80<<(SHIFT_AMOUNT-3)), 0);
+		bg1_pt.y = mmcameray>>(SHIFT_AMOUNT-3);
+		REG_BG_OFS[0]= bg1_pt;
+	}
 }
 
 u16 pingtimer; //For how often I send pings
