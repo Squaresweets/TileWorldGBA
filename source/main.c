@@ -21,7 +21,8 @@
 #define CROSS_TX 15
 #define CROSS_TY 10
 
-BG_POINT bg0_pt= { 0, 0 };
+BG_POINT bg0_pt = { 0, 0 }; //For gameplay
+BG_POINT bg1_pt = { 0, 0 }; //For minimap
 SCR_ENTRY *bg0_map= se_mem[SBB_0];
 
 OBJ_ATTR obj_buffer[128];
@@ -39,6 +40,7 @@ bool startMovement = false;
 //Values to do with placing tiles
 u8 currentTileID = 0;
 bool placeMode = false;
+bool miniMapMode = false;
 int tilex, tiley;
 
 void init_map()
@@ -149,7 +151,8 @@ void render()
     if(px < 0 || px > SCREEN_W || py < 0 || py > SCREEN_H)   obj_hide(player);
 	else                                                     obj_unhide(player, 0);
 
-
+	
+	if(miniMapMode) return;
 
 	//Place player and indicator at correct position on the screen
     obj_set_pos(player, px, py);
@@ -185,6 +188,29 @@ void placeTiles()
 		place((tilex-INITIAL_PLAYER_POS)>>SHIFT_AMOUNT,
 			  (tiley-INITIAL_PLAYER_POS)>>SHIFT_AMOUNT, currentTileID); 
 }
+void handleMiniMap()
+{
+	if(key_hit(KEY_START))
+	{
+		miniMapMode = !miniMapMode;                   
+		if(miniMapMode)
+		{
+			EnableMiniMapMode();
+			REG_BG0CNT= BG_CBB(0) | BG_SBB(24) | BG_REG_64x64;
+			bg1_pt.x = 0; bg1_pt.y = 0;
+			REG_BG_OFS[0]= bg1_pt;
+			obj_hide(player);
+		}
+		else
+		{
+			REG_BG0CNT= BG_CBB(0) | BG_SBB(SBB_0) | BG_REG_64x64;
+			REG_BG_OFS[0]= bg0_pt;
+			obj_unhide(player, 0);
+		}
+		oam_copy(oam_mem, obj_buffer, 19);
+	}
+
+}
 
 u16 pingtimer; //For how often I send pings
 
@@ -219,7 +245,6 @@ int main()
 	obj_hide(indicator);
 
 	InitAllPlayers();
-	//InitMapObjects();
 
 	while(1)
 	{
@@ -227,13 +252,11 @@ int main()
 		key_poll();
 
 		handle_serial();
-		
-		if(key_hit(KEY_START))
-			miniMapMode();
 
 		if(startMovement)
 		{
 			placeTiles();
+			handleMiniMap();
 			movement();
 			if(pingtimer == 512) ping(); //Only ping every few seconds
 			else pingtimer++;

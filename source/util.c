@@ -20,3 +20,14 @@ u32 Reverse32(u32 value)
             ((value & 0x00FF0000) >>  8) |
             ((value & 0xFF000000) >> 24));
 }
+u32 swapNibbles(u32 x)
+{
+    return ( (x & 0x0F)<<4 | (x & 0xF0)>>4 );
+}
+u32 ReverseNibbles32(u32 value) 
+{
+    return ((swapNibbles(value & 0x000000FF)) |
+            (swapNibbles((value & 0x0000FF00) >> 8) <<  8) |
+            (swapNibbles((value & 0x00FF0000) >> 16) <<  16) |
+            (swapNibbles((value & 0xFF000000) >> 24) << 24));
+}

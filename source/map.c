@@ -9,7 +9,7 @@
 #define SBB_0 28
 SCR_ENTRY *bg_map= se_mem[SBB_0];
 //Where the map is stored in memory [outer y][outer x][inner y][inner x]
-u8 map[28800];
+u8 map[28800] __attribute__((aligned(4)));
 
 //The following x y positions represent where the GBA tilemap is on the Map
 //Initial values are 5
@@ -196,78 +196,42 @@ so the camera must be changed to 0,0.
 The IDs of these tiles are from 16 upward, and are adjusted depending on mapX and mapY.
 The actual tiles themselves are changed, via copying from the map array
 */
-void miniMapMode()
+void EnableMiniMapMode()
 {
-	REG_BG0CNT= BG_CBB(0) | BG_SBB(24) | BG_REG_64x64;
     //From the top left set each to have an ID of one more than the previous, starting at 16
     //This will have to be changed later to work as screen scrolls
-    for(u16 i = 0; i < 900; i++)
-        se_mem[24][se_index(mod(i,30), (i/30), 64)] = i+16;
+    for(u8 y = 0; y < 30; y++)
+        for(u8 x = 0; x < 30; x++)
+            se_mem[24][se_index(x, y, 64)] = ((y*30)+x)+16;
+
+    //This should hopefully prevent the buffers filling up during
+    //This rather intensive function (will look at optimising it asap)
+    handle_serial();
 
     //Now to set the actual tiles
-    
     u32* p = (u32*)&tile_mem[0][0];
     u32* m = (u32*)map;
+    u8 x,y = 0;
+    u32 i,j = 0;
     //In total it should loop for 900 tiles
-    for(u16 i = 0; i < 900; i++)
+    //The problem I am facing is that the map array stores stuff in chunks of 16x16, I need it in chunks of 8x8
+    for(y = 0; y < 30; y++)
     {
-        //The problem I am facing is that the map array stores stuff in chunks of 16x16, I need it in chunks of 8x8
-        for(u8 j=0; j<8; j++)
+        for(x = 0; x < 30; x++)
         {
-            p[(i+16)*8 + j] = m[map_index(i%30, i/30)/4 + j*2];
+            //Unwrapping a for function, hopefully for efficiency
+            i = (((y*30)+x)+16)*8;
+            j = map_index(x*8, y*8)/8;
+            p[i + 0] = ReverseNibbles32(m[j + 0]);
+            p[i + 1] = ReverseNibbles32(m[j + 2]);
+            p[i + 2] = ReverseNibbles32(m[j + 4]);
+            p[i + 3] = ReverseNibbles32(m[j + 6]);
+            p[i + 4] = ReverseNibbles32(m[j + 8]);
+            p[i + 5] = ReverseNibbles32(m[j + 10]);
+            p[i + 6] = ReverseNibbles32(m[j + 12]);
+            p[i + 7] = ReverseNibbles32(m[j + 14]);
         }
-    }
-    sioPrint("finished minimap");
-    /*
-    for(u16 i = 0; i < 255; i++)
-    {
-        for(u8 j=0; j<8;j++)
-        {
-            p[]
-        }
-    }
-    */
-}
-
-
-/*
-void InitMapObjects()
-{
-    for(u8 i = 0; i < 150; i++)
-    {
-        obj_set_attr(&obj_buffer[i+19],//+19 due to player, hammer + indicator sprites, other players
-            ATTR0_SQUARE,              // Square, regular sprite
-            ATTR1_SIZE_16,             // 16x16p, 
-            //ATTR2_PALBANK(0) | i+17);  // palbank 0, Tile id is all tiles after the first 17
-            ATTR2_PALBANK(0) | 14);  // palbank 0, Tile id is all tiles after the first 17
-	    //obj_hide(&obj_buffer[i+19]);   // Start all map objects off hidden
-        obj_set_pos(&obj_buffer[i+19], (i&15)*16, (i/16)*16);
+        //Sure it is annoying, but every so often we gotta look at the serial stuff to prevent an overflow
+        if((y&7) == 0) handle_serial();
     }
 }
-void UpdateMiniMapTiles()
-{
-    u32* p = (u32*)pal_obj_mem;
-    u32* m = (u32*)map;
-    //Looking at how sprite data is stored in TileMap.C it looks like we have just 4 bits
-    //Per colour, which is perfect! Except for the fact that in the sprite tilemap everything is
-    //Shifted along by one due to the transparent colour being magenta, shouldn't be too hard to fix
-
-    //Wait actually scrap that nothing lines up, ugh
-
-    //Loop through every sprite
-    for(u8 i = 0; i < 255; i++)
-    {
-        //Each 16x16 sprite is made of 4 8*8 sprites, we do two at once tho due to them being intertwined
-        //Each 16*16 sprite takes up 32 u32s
-        for(u8 j = 0; j < 8; j++)
-        {
-            //Top half                              //Adjust for magenta at start
-            p[i*32+j]      = m[i*32 + 2*j]          + 0x11111111; //First 8x8
-            p[i*32+j+8]    = m[i*32 + 2*j + 1]      + 0x11111111; //second 8x8
-            //Bottom half
-            p[i*32+j+16]   = m[i*32 + 2*j + 16]     + 0x11111111; //First 8x8
-            p[i*32+j+8+16] = m[i*32 + 2*j + 1 + 16] + 0x11111111; //second 8x8
-        }
-    }
-}
-*/
