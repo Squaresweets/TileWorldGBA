@@ -9,5 +9,7 @@ void processData();
 void handle_serial();
 void requestChunks(int xDir, int yDir);
 void place(s32 x, s32 y, u8 ID);
+
 void sioPrint(char *str);
+void sioPrintInt(int i);
 #endif

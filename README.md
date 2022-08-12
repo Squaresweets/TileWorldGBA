@@ -28,13 +28,13 @@ Using this project requires [this adapter](https://stacksmashing.gumroad.com/l/g
 - New chunks loading ✔️
 - Changing tiles ✔️
 - Other players ✔️
+- Map system ✔️
 - Wireless
   - TLS ✔️
   - Custom WS client ✔️
   - Downloading ROM from github ✔️
   - Sending data via PIO
   - Multiboot
-- Map system
 - 3D printed game holder
 
 # Notes

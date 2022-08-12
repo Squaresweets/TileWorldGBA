@@ -4,6 +4,7 @@
 #include "colly.h"
 #include "util.h"
 #include "sio.h"
+
 #include <string.h>
 
 #define SBB_0 28
@@ -23,6 +24,7 @@ int mapX = 5, mapY = 5;
 int mapOffsetX = 0, mapOffsetY = 0;
 
 s32 ChunkX = 0, ChunkY = 0;
+
 u8 *d; u8 *cx; u8 *cy; //d = data
 u8 *c; //c = chunk position
 u32 o;
@@ -156,8 +158,7 @@ void processNewChunkData(u32 data, u32 offset)
 {
     //In this function >>1 is used instead of /2 since it is more efficient (i think)
     u8 *d = (u8*)&data;
-    o = (offset-5)%264;
-    bool chunkOnScreen = ChunkX > mapX-5 && ChunkX < mapX-1 && ChunkY > (mapY-5) && ChunkY < mapY-1;
+    o = mod((offset-5), 264);
     for(u8 i=0;i<4;i++, o++) //Iterate through each byte in the data seperatly
     {
         if(offset+i < 5) continue; //The first 5 bytes (packet type and amount of chunks) we can ignore
@@ -165,21 +166,18 @@ void processNewChunkData(u32 data, u32 offset)
         o -= (o>=264)*264; //Alternate to mod, much less expensive
 
         //The first 8 bytes of each chunk are the ChunkX and ChunkY, so put those in the right place
-        if(o < 4) cx[o] = b; //Set x
+        if(o < 4)
+            cx[o] = b; //Set x
         else if(o < 8)
         {
             cy[o-4] = b; //Set y
-            if(o == 7) c = &map[128*mod((ChunkX + 7), 15) +
-                               1920*mod((ChunkY + 7), 15)]; //Get position in memory of where the current chunk should be put
-            chunkOnScreen = ChunkX > (mapX-5) && ChunkX < mapX-1 && ChunkY > (mapY-5) && ChunkY < mapY-1; //Repeated due to change of ChunkX and Y
+            if(o == 7)
+                c = &map[128*mod((ChunkX + 7), 15) +
+                        1920*mod((ChunkY + 7), 15)]; //Get position in memory of where the current chunk should be put
             continue;
         }
         *(c + ((o-8)>>1)) = (o&1) * ((*(c + ((o-8)>>1)) & 0xF0) | (b & 0xF))
-                         + !(o&1) * ((*(c + ((o-8)>>1)) & 0x0F) | (b << 4)); //Correct nibble
-        
-        if(chunkOnScreen) //Check if this tile is currently in the GBA tilemap (if so we need to change it)
-            se_mem[28][se_index(((ChunkX << 4) + 32 + (((o-8)>>1)&0xF))&63, //Keep in mind the & sign stuff is to make mod more efficient
-                                ((ChunkY << 4) + 32 + (((o-8)>>1)>>4 ))&63, 64)] = b; //"It just works" -Todd Howard
+                         + !(o&1) * ((*(c + ((o-8)>>1)) & 0x0F) | (b << 4)); //Set the correct nibble
     }
 }
 
@@ -198,33 +196,25 @@ The actual tiles themselves are changed, via copying from the map array
 */
 void EnableMiniMapMode()
 {
-    //From the top left set each to have an ID of one more than the previous, starting at 16
-    //This will have to be changed later to work as screen scrolls
-    for(u8 y = 0; y < 30; y++)
-        for(u8 x = 0; x < 30; x++)
-            se_mem[24][se_index(x, y, 64)] = ((y*30)+x)+16;
-
-    //This should hopefully prevent the buffers filling up during
-    //This rather intensive function (will look at optimising it asap)
-    handle_serial();
-
-    //Now to set the actual tiles
     u32* p = (u32*)&tile_mem[0][0];
     u32* m = (u32*)map;
-    u8 x,y,ii = 0;
-    u32 i,j = 0;
+    u32 x,y,ii,i,j = 0;
     //In total it should loop for 900 tiles
     //The problem I am facing is that the map array stores stuff in chunks of 16x16, I need it in chunks of 8x8
     for(y = 0; y < 30; y++)
     {
         for(x = 0; x < 30; x++)
         {
+            //for each tile set the right tile ID, offset by mapOffset
+            se_mem[24][se_index(x, y, 64)] = ((mod(y + (mapOffsetY*2), 30)*30)+
+                                               mod(x + (mapOffsetX*2), 30))+16;
+
             i = (((y*30)+x)+16)*8;
             j = map_index(x*8, y*8)/8;
             for(ii=0; ii<8; ii++)
                 p[i + ii] = ReverseNibbles32(m[j + 2*ii]);
         }
         //Sure it is annoying, but every so often we gotta look at the serial stuff to prevent an overflow
-        if((y&7) == 0) handle_serial();
+        if((y&3) == 0) handle_serial();
     }
 }

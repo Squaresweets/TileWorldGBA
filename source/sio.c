@@ -7,6 +7,7 @@
 
 #include <string.h>
 #include <tonc.h>
+#include <stdlib.h>
 
 //Much of this comes from here:
 //https://github.com/maciel310/gba-mmo/blob/main/source/serial.c
@@ -118,6 +119,12 @@ void sioPrint(char *str)
     outbuf[numinOutBuf][0] = 10;
     memcpy(&outbuf[numinOutBuf][1], str, strlen(str));
     numinOutBuf++;
+}
+void sioPrintInt(int i)
+{
+    char snum[20];
+    itoa(i, snum, 10);
+    sioPrint(snum);
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~YOU ARE NOW ENTERING INTERRUPT TERRATORY, AS LITTLE CODE AS POSSIBLE HERE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

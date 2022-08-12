@@ -3,7 +3,7 @@
 
 #include <tonc.h>
 
-#define SHIFT_AMOUNT 16
+#define SHIFT_AMOUNT 8
 #define ONE_SHIFTED (1 << SHIFT_AMOUNT)
 #define DECIMAL_MASK ((1 << SHIFT_AMOUNT) - 1)
 #define INT_MASK ~((1 << SHIFT_AMOUNT) - 1)

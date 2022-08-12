@@ -108,11 +108,13 @@ void movement()
 	if(key_tri_fire() > 0 && grounded && !ladder && !placeMode)
 		yv += ((25<<SHIFT_AMOUNT) >> 5);
 	if (!grounded && !ladder)
-		yv -= 88166 >> 5; //(88166 = 1.3453 << SHIFT_AMOUNT)
+		yv -= 344 >> 5; //(344 = 1.3453 << SHIFT_AMOUNT), could be 88166 for different shift ammount
 	
 	//Apply friction
 	yv *= (ladder ? 871 : 973); yv >>= 10; //Divide by 1024
 	xv *= (ladder ? 871 : 973); xv >>= 10;
+	xv *= (xv != -20); //If it is too small, just make it 0, this is to prevent sliding
+	yv *= (yv != -20); //If it is too small, just make it 0, this is to prevent sliding
 
 	//Cap to 0.5
 	xv = max(min(xv, (ONE_SHIFTED >> 1)), -(ONE_SHIFTED >> 1));
@@ -152,7 +154,6 @@ void render()
     if(px < 0 || px > SCREEN_W || py < 0 || py > SCREEN_H)   obj_hide(player);
 	else                                                     obj_unhide(player, 0);
 
-	
 	if(miniMapMode) return;
 
 	//Place player and indicator at correct position on the screen
@@ -199,6 +200,7 @@ void handleMiniMap()
 			EnableMiniMapMode();
 			REG_BG0CNT= BG_CBB(0) | BG_SBB(24) | BG_REG_64x64;
 			bg1_pt.x = 0; 
+			mmcameray = 40<<(SHIFT_AMOUNT-3);
 			obj_hide(player);
 		}
 		else

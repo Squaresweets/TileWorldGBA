@@ -21,6 +21,7 @@ def signal_handler(sig, frame):
 def send(data, epOut, debug = True, length = 4):
     epOut.write(data.to_bytes(length, byteorder="big"))
 
+    return
     if not debug:
         return
     print("SENDING: ", end="")
@@ -145,7 +146,7 @@ def main():
         # ============= Tileworld->GBA =============
         if outlen == 0 and len(outbuf) > 0:
             # new data to send
-            print("Sending len: " + str(len(outbuf[0])) + " to GBA")
+            #print("Sending len: " + str(len(outbuf[0])) + " to GBA")
             send(len(outbuf[0]), epOut, False)
             outlen = len(outbuf[0])
             #Padding to avoid errors
@@ -187,7 +188,7 @@ def main():
             if ba[0] == 10: # This is a debug message
                 del ba[0]
                 print("DEBUG MESSAGE: ", end="")
-                print(str(ba, 'utf-8') + "*******************************")
+                print(str(ba, 'utf-8'))
             else:
                 ws.send(ba, websocket.ABNF.OPCODE_BINARY)
 
@@ -205,7 +206,7 @@ def listen(ws):
         except:
             print(m)
             exit()
-        print("From tileworld server: " + message.hex())
+        # print("From tileworld server: " + message.hex())
         outbuf.append(message)
 
 
