@@ -10,8 +10,9 @@ Basically, I wanted to port something to the Gameboy Advance, and I thought it w
 
 For playing this you have two options, either using a normal pico connected to your computer using the stuff found in the Python folder, or using the custom firmware to do it all just on a Pico W.
 
+Latest video about the project can be found [here](https://www.youtube.com/watch?v=uGY5kjLEVD8)
+
 Using this project requires [this adapter](https://stacksmashing.gumroad.com/l/gb-link)!
-Latest video can be found [here](https://www.youtube.com/watch?v=uGY5kjLEVD8)
 
 # Development checklist
 - Physics ✔️
