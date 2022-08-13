@@ -5,14 +5,12 @@
 
 ![gamebox](https://github.com/Squaresweets/TileWorldGBA/blob/main/Art/Boxart.png)
 
-[![Chunk loading](https://img.youtube.com/vi/uGY5kjLEVD8/0.jpg)](https://www.youtube.com/watch?v=uGY5kjLEVD8)
-
-[TileWorld](https://tileworld.org) for Gameboy Advance!
-
 # What and why
-Basically, I wanted to port something to the Gameboy Advance, and I thought it would be kinda funny to make a cross platform multiplayer game since it hadn't been done before. The perfect candidete for this was TileWorld since I had worked on the mobile port and it is a pretty simple game. This whole thing has taken a long time, partially due to exams and partially due to lots of problem solving.
+Basically, I wanted to port something to the Gameboy Advance, and I thought it would be kinda funny to make a cross platform multiplayer game since it hadn't been done before. The perfect candidete for this was [TileWorld](https://tileworld.org) since I had worked on the mobile port and it is a pretty simple game. This whole thing has taken a long time, partially due to exams and partially due to lots of problem solving.
 
 For playing this you have two options, either using a normal pico connected to your computer using the stuff found in the Python folder, or using the custom firmware to do it all just on a Pico W.
+
+Latest video about the project can be found [here](https://www.youtube.com/watch?v=uGY5kjLEVD8)
 
 Using this project requires [this adapter](https://stacksmashing.gumroad.com/l/gb-link)!
 
@@ -35,7 +33,7 @@ Using this project requires [this adapter](https://stacksmashing.gumroad.com/l/g
   - Downloading ROM from github ✔️
   - Sending data via PIO
   - Multiboot
-- 3D printed game holder
+- 3D printed game holder, and potentially a custom PCB
 
 # Notes
 The collision system used is a port of [this](https://github.com/dfranx/Colly) system by the creator of TileWorld.
