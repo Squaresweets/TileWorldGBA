@@ -184,7 +184,7 @@ def main():
         if i >= expectedlen:
             incomingbuf = incomingbuf[:expectedlen]
             ba = bytearray(incomingbuf)
-            print("Sending to TileWorld server: " + ba.hex())
+            # print("Sending to TileWorld server: " + ba.hex())
             if ba[0] == 10: # This is a debug message
                 del ba[0]
                 print("DEBUG MESSAGE: ", end="")

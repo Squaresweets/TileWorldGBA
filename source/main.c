@@ -101,20 +101,26 @@ void movement()
 	bool ladder = Check(bounds, bounds).ladder;
 
 	//Only move if we are not in placeMode
-	xv += key_tri_horz() * (ONE_SHIFTED >> 5) * !placeMode;
+	xv += key_tri_horz() * (ONE_SHIFTED >> 5) * !placeMode * !miniMapMode;
 	//Only move up and down if we are on a ladder
-	yv += -key_tri_vert() * (ONE_SHIFTED >> 5) * ladder * !placeMode;
+	yv += -key_tri_vert() * (ONE_SHIFTED >> 5) * ladder * !placeMode * !miniMapMode;
 
-	if(key_tri_fire() > 0 && grounded && !ladder && !placeMode)
+	if(key_tri_fire() > 0 && grounded && !ladder && !placeMode && !miniMapMode)
 		yv += ((25<<SHIFT_AMOUNT) >> 5);
 	if (!grounded && !ladder)
-		yv -= 344 >> 5; //(344 = 1.3453 << SHIFT_AMOUNT), could be 88166 for different shift ammount
+	#if SHIFT_AMOUNT == 8
+		yv -= 344 >> 5; //(344 = 1.3453 << SHIFT_AMOUNT)
+	#elif SHIFT_AMOUNT == 16
+		yv -= 88166 >> 5; //(88166 = 1.3453 << SHIFT_AMOUNT)
+	#endif
 	
 	//Apply friction
 	yv *= (ladder ? 871 : 973); yv >>= 10; //Divide by 1024
 	xv *= (ladder ? 871 : 973); xv >>= 10;
+	#if SHIFT_AMOUNT == 8
 	xv *= (xv != -20); //If it is too small, just make it 0, this is to prevent sliding
-	yv *= (yv != -20); //If it is too small, just make it 0, this is to prevent sliding
+	#endif
+	//yv *= (yv != -20); //If it is too small, just make it 0, this is to prevent sliding
 
 	//Cap to 0.5
 	xv = max(min(xv, (ONE_SHIFTED >> 1)), -(ONE_SHIFTED >> 1));
@@ -201,7 +207,9 @@ void handleMiniMap()
 			REG_BG0CNT= BG_CBB(0) | BG_SBB(24) | BG_REG_64x64;
 			bg1_pt.x = 0; 
 			mmcameray = 40<<(SHIFT_AMOUNT-3);
-			obj_hide(player);
+
+			placeMode = false;
+    		obj_hide_multi(obj_buffer, 19);
 		}
 		else
 		{
