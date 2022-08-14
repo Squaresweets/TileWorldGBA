@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d61e4b9-0564-42fd-be4e-728f11e45a5b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Art/Box art.psd" beforeDir="false" afterPath="$PROJECT_DIR$/Art/Box art.psd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Art/Boxart.png" beforeDir="false" afterPath="$PROJECT_DIR$/Art/Boxart.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Python/TileWorldClient.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/TileWorldClient.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TileWorldGBA_mb.elf" beforeDir="false" afterPath="$PROJECT_DIR$/TileWorldGBA_mb.elf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TileWorldGBA_mb.gba" beforeDir="false" afterPath="$PROJECT_DIR$/TileWorldGBA_mb.gba" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/TileWorldGBA_mb.elf.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/TileWorldGBA_mb.elf.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/main.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/players.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/players.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/players.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/players.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Python/TileWorldClient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="186" column="14" selection-start-line="186" selection-start-column="14" selection-end-line="186" selection-end-column="14" />
+            <state relative-caret-position="130">
+              <caret line="193" column="44" lean-forward="true" selection-start-line="193" selection-start-column="44" selection-end-line="193" selection-end-column="44" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -165,8 +165,8 @@
       <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.10748156" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5305466" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5294748" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -202,8 +202,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Python/TileWorldClient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="186" column="14" selection-start-line="186" selection-start-column="14" selection-end-line="186" selection-end-column="14" />
+        <state relative-caret-position="130">
+          <caret line="193" column="44" lean-forward="true" selection-start-line="193" selection-start-column="44" selection-end-line="193" selection-end-column="44" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

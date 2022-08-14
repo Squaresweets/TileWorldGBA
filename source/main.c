@@ -124,10 +124,12 @@ void movement()
 
 	//Cap to 0.5
 	xv = max(min(xv, (ONE_SHIFTED >> 1)), -(ONE_SHIFTED >> 1));
+	if(key_held(KEY_SELECT)) xv *= 2;
 
 	g.x = bounds.x + xv; g.y = bounds.y - yv;
 	vector v = Check(bounds, g).v;
 	playerx = v.x; playery = v.y;
+	if(playerx > 2543 << SHIFT_AMOUNT)  playerx = 2543 << SHIFT_AMOUNT; //Prevent clipping through bottom of world
 
 	//Stuff for next frame
 	g.y = bounds.y;
@@ -152,12 +154,13 @@ void render()
 	//The -3 stuff is confusing, but basically just divides everything by the fixed point stuff to get the actual amount
 	//And then times it by 8 (<<3) to get it how the gameboy likes it
 	bg0_pt.x = (camerax>>(SHIFT_AMOUNT-3)) - SCREEN_O_W;
+	bg0_pt.x &= 511;
 	bg0_pt.y = (cameray>>(SHIFT_AMOUNT-3)) - SCREEN_O_H;
 
+	u32 px = (playerx - (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3) & 511;
+	u32 py = (playery - (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3) & 511;
 	//To make sure the player doesn't rap around the screen, may be some easier way to do this with minmax
-	int px = (playerx -            (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3);
-	int py = (playery -            (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3);
-    if(px < 0 || px > SCREEN_W || py < 0 || py > SCREEN_H)   obj_hide(player);
+    if(px < 0 || px > SCREEN_W || py < 0 || py > SCREEN_H)     obj_hide(player);
 	else                                                     obj_unhide(player, 0);
 
 	if(miniMapMode) return;

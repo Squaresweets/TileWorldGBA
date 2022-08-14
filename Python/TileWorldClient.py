@@ -188,7 +188,10 @@ def main():
             if ba[0] == 10: # This is a debug message
                 del ba[0]
                 print("DEBUG MESSAGE: ", end="")
-                print(str(ba, 'utf-8'))
+                try:
+                    print(str(ba, 'utf-8'))
+                except:
+                    print("Invalid message")
             else:
                 ws.send(ba, websocket.ABNF.OPCODE_BINARY)
 
