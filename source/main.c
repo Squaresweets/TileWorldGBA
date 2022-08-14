@@ -157,6 +157,7 @@ void render()
 	bg0_pt.x &= 511;
 	bg0_pt.y = (cameray>>(SHIFT_AMOUNT-3)) - SCREEN_O_H;
 
+	//&511 is used to wrap the screen so as to prevent player sprites disapering when too far away from spawn
 	u32 px = (playerx - (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3) & 511;
 	u32 py = (playery - (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3) & 511;
 	//To make sure the player doesn't rap around the screen, may be some easier way to do this with minmax
@@ -167,8 +168,8 @@ void render()
 
 	//Place player and indicator at correct position on the screen
     obj_set_pos(player, px, py);
-    obj_set_pos(indicator, ((tilex & INT_MASK) - (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3),
-						   ((tiley & INT_MASK) - (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3));
+    obj_set_pos(indicator, ((tilex & INT_MASK) - (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3)& 511,
+						   ((tiley & INT_MASK) - (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3)& 511);
 	RenderAllPlayers(bg0_pt);
 	if(startMovement) oam_copy(oam_mem, obj_buffer, 19); 	// Update all sprites, I don't update map objects since they aren't changed during gameplay
 
