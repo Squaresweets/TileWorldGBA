@@ -3,7 +3,7 @@
 
 #include <tonc.h>
 
-#define SHIFT_AMOUNT 8
+#define SHIFT_AMOUNT 16
 #define ONE_SHIFTED (1 << SHIFT_AMOUNT)
 #define DECIMAL_MASK ((1 << SHIFT_AMOUNT) - 1)
 #define INT_MASK ~((1 << SHIFT_AMOUNT) - 1)
@@ -16,7 +16,7 @@
 #define SCREEN_H      160
 
 u32 se_index(u32 tx, u32 ty, u32 pitch);
-u32 map_index(u32 tx, u32 ty);
+s32 map_index(s32 tx, s32 ty);
 u32 Reverse32(u32 value);
 u32 ReverseNibbles32(u32 value);
 #endif

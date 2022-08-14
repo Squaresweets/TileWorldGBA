@@ -124,12 +124,12 @@ void movement()
 
 	//Cap to 0.5
 	xv = max(min(xv, (ONE_SHIFTED >> 1)), -(ONE_SHIFTED >> 1));
-	if(key_held(KEY_SELECT)) xv *= 2;
+	if(key_held(KEY_SELECT)) xv *= 5;
 
 	g.x = bounds.x + xv; g.y = bounds.y - yv;
 	vector v = Check(bounds, g).v;
 	playerx = v.x; playery = v.y;
-	if(playerx > 2543 << SHIFT_AMOUNT)  playerx = 2543 << SHIFT_AMOUNT; //Prevent clipping through bottom of world
+	if(playery > 2543 << SHIFT_AMOUNT)  playery = 2543 << SHIFT_AMOUNT; //Prevent clipping through bottom of world
 
 	//Stuff for next frame
 	g.y = bounds.y;
@@ -219,7 +219,6 @@ void handleMiniMap()
 		{
 			REG_BG0CNT= BG_CBB(0) | BG_SBB(SBB_0) | BG_REG_64x64;
 			REG_BG_OFS[0]= bg0_pt;
-			obj_unhide(player, 0);
 		}
 		oam_copy(oam_mem, obj_buffer, 19);
 	}

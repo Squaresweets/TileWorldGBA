@@ -6,11 +6,11 @@ u32 se_index(u32 tx, u32 ty, u32 pitch)
 
 	return sbb*1024 + ((tx&31)+(ty&31)*32);
 }
-u32 map_index(u32 tx, u32 ty)
+s32 map_index(s32 tx, s32 ty)
 {
-	u32 sbb = ((tx/16) + (ty/16)*(240/16));
+	s32 sbb = ((tx>>4) + (ty>>4)*(15));
 	
-	return sbb*256 + ((tx&15)+(ty&15)*16);
+	return (sbb<<8) + ((tx&15)+((ty&15)<<4));
 }
 //https://codereview.stackexchange.com/questions/151049/endianness-conversion-in-c
 u32 Reverse32(u32 value) 

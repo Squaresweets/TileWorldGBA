@@ -7,9 +7,14 @@
       <change beforePath="$PROJECT_DIR$/TileWorldGBA_mb.gba" beforeDir="false" afterPath="$PROJECT_DIR$/TileWorldGBA_mb.gba" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/TileWorldGBA_mb.elf.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/TileWorldGBA_mb.elf.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/main.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/map.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/map.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/players.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/players.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/sio.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/sio.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/util.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/util.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/players.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/players.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/map.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/map.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/util.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/util.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/util.h" beforeDir="false" afterPath="$PROJECT_DIR$/source/util.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Python/TileWorldClient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="193" column="44" lean-forward="true" selection-start-line="193" selection-start-column="44" selection-end-line="193" selection-end-column="44" />
+            <state relative-caret-position="266">
+              <caret line="195" column="57" lean-forward="true" selection-start-line="195" selection-start-column="57" selection-end-line="195" selection-end-column="57" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -74,7 +79,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1495" />
+    <option name="x" value="2176" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1057" />
@@ -202,8 +207,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Python/TileWorldClient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="193" column="44" lean-forward="true" selection-start-line="193" selection-start-column="44" selection-end-line="193" selection-end-column="44" />
+        <state relative-caret-position="266">
+          <caret line="195" column="57" lean-forward="true" selection-start-line="195" selection-start-column="57" selection-end-line="195" selection-end-column="57" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

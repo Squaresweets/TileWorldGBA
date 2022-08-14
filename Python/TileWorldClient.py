@@ -195,6 +195,7 @@ def main():
             else:
                 ws.send(ba, websocket.ABNF.OPCODE_BINARY)
 
+
             incomingbuf = []
             expectedlen = 0
             i = 0
