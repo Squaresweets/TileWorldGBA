@@ -3,7 +3,9 @@
 [<img src="https://img.shields.io/twitter/follow/SqSweetsGames?style=social" /></a>](https://twitter.com/SqSweetsGames)
 [<img src="https://forthebadge.com/images/badges/you-didnt-ask-for-this.svg" height=20/></a>](https://forthebadge.com)
 
-![gamebox](https://github.com/Squaresweets/TileWorldGBA/blob/main/Art/Boxart.png)
+<p align="center">
+  <img src="https://github.com/Squaresweets/TileWorldGBA/blob/main/Art/Box.gif" alt="gamebox"/>
+</p>
 
 # What and why
 Basically, I wanted to port something to the Gameboy Advance, and I thought it would be kinda funny to make a cross platform multiplayer game since it hadn't been done before. The perfect candidete for this was [TileWorld](https://tileworld.org) since I had worked on the mobile port and it is a pretty simple game. This whole thing has taken a long time, partially due to exams and partially due to lots of problem solving.
