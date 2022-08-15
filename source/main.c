@@ -124,7 +124,6 @@ void movement()
 
 	//Cap to 0.5
 	xv = max(min(xv, (ONE_SHIFTED >> 1)), -(ONE_SHIFTED >> 1));
-	if(key_held(KEY_SELECT)) xv *= 5;
 
 	g.x = bounds.x + xv; g.y = bounds.y - yv;
 	vector v = Check(bounds, g).v;
@@ -145,16 +144,20 @@ void render()
 	cameray += ((placeMode ? (tiley & INT_MASK) : playery) - cameray) / 4;
 	if(placeMode) //Lock camera and player to current screen during place mode
 	{
-		camerax = max(min(camerax, (((mapX-2)<<4))<<SHIFT_AMOUNT), ((mapX-4)<<4)<<SHIFT_AMOUNT); //32 is how far the screen can go right
-		cameray = max(min(cameray, (((mapY-2)<<4))<<SHIFT_AMOUNT), ((mapY-4)<<4)<<SHIFT_AMOUNT); //32 is how far the screen can go down
+		//You may be asking how I got these values, the answer is I made a blood sacrifice to the coding gods
+		camerax = max(camerax, (((mapX-5)<<4)<<SHIFT_AMOUNT) + (SCREEN_O_W<<(SHIFT_AMOUNT-3)));
+		camerax = min(camerax, (((mapX-1)<<4)<<SHIFT_AMOUNT) - (SCREEN_O_W<<(SHIFT_AMOUNT-3)) - ONE_SHIFTED);
+		cameray = max(cameray, (((mapY-5)<<4)<<SHIFT_AMOUNT) + (SCREEN_O_H<<(SHIFT_AMOUNT-3)));
+		cameray = min(cameray, (((mapY-1)<<4)<<SHIFT_AMOUNT) - (SCREEN_O_H<<(SHIFT_AMOUNT-3)) - ONE_SHIFTED);
+		
 		playery = min(playery, (((mapY-2)<<4)+10)<<SHIFT_AMOUNT); //Only thing which matters for the player since you can fall during placeMode
 	}
 
 	//Rendering player to screen
 	//The -3 stuff is confusing, but basically just divides everything by the fixed point stuff to get the actual amount
-	//And then times it by 8 (<<3) to get it how the gameboy likes it
+	//And then times it by 8 (<<3) to get it how the gameboy likes it (8 px per tile)
 	bg0_pt.x = (camerax>>(SHIFT_AMOUNT-3)) - SCREEN_O_W;
-	bg0_pt.x &= 511;
+	bg0_pt.x &= 511; //&511 is used to wrap the screen so as to prevent player sprites disapering when too far away from spawn
 	bg0_pt.y = (cameray>>(SHIFT_AMOUNT-3)) - SCREEN_O_H;
 
 	//&511 is used to wrap the screen so as to prevent player sprites disapering when too far away from spawn
@@ -245,6 +248,12 @@ int main()
 
 	REG_DISPCNT= DCNT_MODE0 | DCNT_BG0 | DCNT_OBJ | DCNT_OBJ_1D;
     oam_init(obj_buffer, 128);
+
+	//txt_init_std();
+    //txt_init_obj(&oam_mem[20], 0xF200, CLR_WHITE, 0xEE);
+	//const char hwstr[]= "(0,0) Loading...";
+    //OBJ_ATTR *oe= &oam_mem[20];
+    //obj_puts2(0, 0, hwstr, 0xF200, oe);
 
 	//There is probably a less messy way to do this
     obj_set_attr(player, 

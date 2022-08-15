@@ -23,7 +23,7 @@ int mapX = 5, mapY = 5;
 //The following x y positions represent the offset of the map from spawn
 int mapOffsetX = 0, mapOffsetY = 0;
 
-s32 ChunkX = 0, ChunkY = 0;
+int ChunkX = 0, ChunkY = 0;
 
 u8 *d; u8 *cx; u8 *cy; //d = data
 u8 *c; //c = chunk position
@@ -65,32 +65,6 @@ void setChunk(int sx, int sy, int x, int y)
         pse += 16;
     }
 }
-void blankChunk(int sx, int sy, int x, int y)
-{	
-    //Looking back on this I could have used se_index to do this
-    //But I'm not touching this now it works lol
-    sx &= 3; sy &= 3; //loop it round
-    x = mod(x, 15); y = mod(y, 15); //loop it round
-    SCR_ENTRY *pse= bg_map;
-    //First get our pointer to the start of the chunk we wanna edit
-    int ID = mapIDconversiontable[sx+(4*sy)];
-    ID = (ID/2)*512 + (ID%2)*16; //Map starters are dealed with in pairs, (Ax16)(Bx16)(Ax16)etc. (Imagine they are interlaced)
-	pse += ID;
-    
-    int ii = 0;
-    int c = 0;
-    for(u8 i=0;i<16;i++)
-    {
-        for(u8 j=0;j<8;j++)
-        {
-            c = map[(x*128) + (y*15*128) + ii];
-            *pse++ = ((0xF0>>4) & 0xF);
-            *pse++ = (0xF & 0xF);
-            ii++;
-        }
-        pse += 16;
-    }
-}
 
 void setTile(u32 x, u32 y, u8 id)
 {
@@ -119,6 +93,7 @@ void setupMap()
 }
 void loadChunksLR(int direction) //-1 = left, 1 = right
 {
+    //Hey all, Future Matthew here, why did I do it like this?
     u8 r = 3*(direction == 1); //Go to other side if we are going to the right
     mapX += direction;
     for(u8 y=0; y<4; y++)
@@ -197,10 +172,7 @@ void processNewChunkData(u32 data, u32 offset)
             if(o&1) *(c + ((o-8)>>1)) |= b;
             else *(c + ((o-8)>>1)) = b << 4;
             if (o == 263 && ChunkX+7 >= mapX && ChunkX+7 <= mapX+3 && ChunkY+7 >= mapY && ChunkY+7 <= mapY+3) //We have syncing issues :/
-            {
-                sioPrint("Syncing");
-                blankChunk((ChunkX+7)-mapX, (ChunkY+7)-mapY, ChunkX+7, ChunkY+7);
-            }
+                setChunk(ChunkX+2, ChunkY+2, ChunkX+7, ChunkY+7); //This is a short version of (for X) (ChunkX+5)-mapx+mapX-5
         }
         else if(o < 4)
             cx[o] = b; //Set x
