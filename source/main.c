@@ -174,7 +174,7 @@ void render()
     obj_set_pos(indicator, ((tilex & INT_MASK) - (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3)& 511,
 						   ((tiley & INT_MASK) - (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3)& 511);
 	RenderAllPlayers(bg0_pt);
-	if(startMovement) oam_copy(oam_mem, obj_buffer, 19); 	// Update all sprites, I don't update map objects since they aren't changed during gameplay
+	if(startMovement) oam_copy(oam_mem, obj_buffer, 128); 	// Update all sprites, I don't update map objects since they aren't changed during gameplay
 
 	REG_BG_OFS[0]= bg0_pt;
 }
@@ -223,7 +223,7 @@ void handleMiniMap()
 			REG_BG0CNT= BG_CBB(0) | BG_SBB(SBB_0) | BG_REG_64x64;
 			REG_BG_OFS[0]= bg0_pt;
 		}
-		oam_copy(oam_mem, obj_buffer, 19);
+		oam_copy(oam_mem, obj_buffer, 128);
 	}
 	if(miniMapMode)
 	{
@@ -249,11 +249,25 @@ int main()
 	REG_DISPCNT= DCNT_MODE0 | DCNT_BG0 | DCNT_OBJ | DCNT_OBJ_1D;
     oam_init(obj_buffer, 128);
 
-	//txt_init_std();
-    //txt_init_obj(&oam_mem[20], 0xF200, CLR_WHITE, 0xEE);
+	sioPrintInt(gptxt->dx);
+    gptxt->dx = gptxt->dx;
+    //gptxt->dx= gptxt->dy= 8;
+
+    //gptxt->dst0= vid_mem;
+    //gptxt->font= (u32*)toncfontTiles;
+    //gptxt->chars= txt_lut;
+    //gptxt->cws= NULL;
+
+    //int ii;
+    //for(ii=0; ii<96; ii++)
+    //    gptxt->chars[ii+32]= ii;
+
+
+    //txt_init_obj(&obj_buffer[32], 0x1018, CLR_WHITE, 0xEE);
+    //gptxt->dx= 8;
 	//const char hwstr[]= "(0,0) Loading...";
-    //OBJ_ATTR *oe= &oam_mem[20];
-    //obj_puts2(0, 0, hwstr, 0xF200, oe);
+    //OBJ_ATTR *oe= &obj_buffer[32];
+    //obj_puts2(0, 0, hwstr, 0x1018, oe);
 
 	//There is probably a less messy way to do this
     obj_set_attr(player, 
