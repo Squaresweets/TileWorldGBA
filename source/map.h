@@ -2,7 +2,7 @@
 #define MAP_H
 #include <tonc.h>
 
-extern u8 map[28800];
+extern u8* map;
 extern int mapOffsetX;
 extern int mapOffsetY;
 extern int mapX;

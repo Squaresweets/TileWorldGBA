@@ -20,7 +20,6 @@ The structs are in an array of 16, if there are more than 16 players ¯\_(ツ)_/
 
 Struct has:
     1 byte acting as a boolean to show whether this struct is "active"
-    2 bytes PADDING *********** (to make everything align)
     1 byte for keys
     4 bytes X
     4 bytes Y
@@ -50,7 +49,6 @@ We do not worry about player join commands, just player moves and player leaves
 typedef struct OPlayer //(Other player)
 {
     bool active;
-    u8 padding[2];
     u8 keys;
     int X;
     int Y;

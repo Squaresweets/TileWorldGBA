@@ -10,7 +10,7 @@
 #define SBB_0 28
 SCR_ENTRY *bg_map= se_mem[SBB_0];
 //Where the map is stored in memory [outer y][outer x][inner y][inner x]
-u8 map[28800] __attribute__((aligned(4)));
+u8* map; //Of length 28800
 
 //The following x y positions represent where the GBA tilemap is on the Map
 //Initial values are 5
@@ -79,7 +79,6 @@ void setTile(u32 x, u32 y, u8 id)
     if(x+112-(16*mapX) < 64 && x+112-(16*mapX) >= 0 && y+112-(16*mapY) < 64 && y+112-(16*mapY) >= 0)
         se_mem[28][se_index((x+32) & 63, (y+32) & 63, 64)] = id;
 }
-
 void setupMap()
 {
     //Starting map at position (5,5)
@@ -170,7 +169,7 @@ void processNewChunkData(u32 data, u32 offset)
         if(o >= 8)
         {
             if(o&1) *(c + ((o-8)>>1)) |= b;
-            else *(c + ((o-8)>>1)) = b << 4;
+            else    *(c + ((o-8)>>1))  = b << 4;
             if (o == 263 && ChunkX+7 >= mapX && ChunkX+7 <= mapX+3 && ChunkY+7 >= mapY && ChunkY+7 <= mapY+3) //We have syncing issues :/
                 setChunk(ChunkX+2, ChunkY+2, ChunkX+7, ChunkY+7); //This is a short version of (for X) (ChunkX+5)-mapx+mapX-5
         }

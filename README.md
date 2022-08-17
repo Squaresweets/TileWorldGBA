@@ -29,6 +29,7 @@ Using this project requires [this adapter](https://stacksmashing.gumroad.com/l/g
 - Changing tiles ✔️
 - Other players ✔️
 - Map system ✔️
+- Coordinate system ✔️
 - Wireless
   - TLS ✔️
   - Custom WS client ✔️

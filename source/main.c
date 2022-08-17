@@ -9,6 +9,7 @@
 #include <string.h>
 #include <math.h>
 #include <tonc.h>
+#include <stdlib.h>
 
 
 #define CBB_0  0
@@ -169,13 +170,28 @@ void render()
 
 	if(miniMapMode) return;
 
+	//Rendering position and loading data
+	tte_erase_screen();
+	tte_set_pos(0,0);
+
+	//I could use sprintf for this, but that adds like 40kb to the filesize
+	//So imma just deal with this kinda messy code
+    char snum[20];
+    itoa((playerx-INITIAL_PLAYER_POS + ONE_SHIFTED/2)>>SHIFT_AMOUNT, snum, 10); //The adding of a half just makes it line up with tileworld's coordinates
+    tte_write("(");
+	tte_write(snum);
+    tte_write(",");
+    itoa((playery-INITIAL_PLAYER_POS + ONE_SHIFTED/2)>>SHIFT_AMOUNT, snum, 10);
+	tte_write(snum);
+    tte_write(")");
+
 	//Place player and indicator at correct position on the screen
     obj_set_pos(player, px, py);
     obj_set_pos(indicator, ((tilex & INT_MASK) - (bg0_pt.x<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3)& 511,
 						   ((tiley & INT_MASK) - (bg0_pt.y<<(SHIFT_AMOUNT-3)))>>(SHIFT_AMOUNT-3)& 511);
 	RenderAllPlayers(bg0_pt);
-	if(startMovement) oam_copy(oam_mem, obj_buffer, 128); 	// Update all sprites, I don't update map objects since they aren't changed during gameplay
 
+	if(startMovement) oam_copy(oam_mem, obj_buffer, 128); 	// Update all sprites, I don't update map objects since they aren't changed during gameplay
 	REG_BG_OFS[0]= bg0_pt;
 }
 
@@ -216,7 +232,7 @@ void handleMiniMap()
 			mmcameray = 40<<(SHIFT_AMOUNT-3);
 
 			placeMode = false;
-    		obj_hide_multi(obj_buffer, 19);
+    		obj_hide_multi(obj_buffer, 128);
 		}
 		else
 		{
@@ -236,10 +252,26 @@ void handleMiniMap()
 
 u16 pingtimer; //For how often I send pings
 
+void txt_init_objxxx(OBJ_ATTR *obj0, u16 attr2, u32 clrs, u32 bupofs)
+{
+	gptxt->dst0= (u16*)obj0;
+	
+	// What the hell am I doing? Shading my 1bpp font :p
+	// (A 0xnm offset for a 1-4 bup gives m+1 for the real nybbles 
+	//  and n for the empty nybble on its right)
+	COLOR *pbank= pal_obj_bank[BFN_GET(attr2, ATTR2_PALBANK)];
+	pbank[(bupofs+1)&15]= clrs&0xFFFF;
+	pbank[(bupofs>>4)&15]= clrs>>16;
+	
+	txt_bup_1toX(&tile_mem[4][attr2&ATTR2_ID_MASK], toncfontTiles, 
+		toncfontTilesLen, 4, bupofs);
+}
+
 int main()
 {
 	//Initialise stuff
 	init_map();
+    map = malloc(28800); //The reason we do it this way is so that it goes into EWRAM
 
     irq_init(NULL);
     irq_enable(II_VBLANK);
@@ -249,26 +281,18 @@ int main()
 	REG_DISPCNT= DCNT_MODE0 | DCNT_BG0 | DCNT_OBJ | DCNT_OBJ_1D;
     oam_init(obj_buffer, 128);
 
-	sioPrintInt(gptxt->dx);
-    gptxt->dx = gptxt->dx;
-    //gptxt->dx= gptxt->dy= 8;
+	//Init text stuff
+	tte_init_obj(
+        &obj_buffer[127],       // Start 32 into buffer
+        ATTR0_SQUARE,          // attr0: 8x8 objects
+        ATTR1_SIZE_8,          // attr1: 8x8 objects
+        0x1018,                // attr2
+        CLR_WHITE,             // White ink
+        0xEE,                  // ink pixel 14+1 = 15
+        NULL,                  // System 8 font
+        NULL);                 // Default renderer (obj_drawg)
 
-    //gptxt->dst0= vid_mem;
-    //gptxt->font= (u32*)toncfontTiles;
-    //gptxt->chars= txt_lut;
-    //gptxt->cws= NULL;
-
-    //int ii;
-    //for(ii=0; ii<96; ii++)
-    //    gptxt->chars[ii+32]= ii;
-
-
-    //txt_init_obj(&obj_buffer[32], 0x1018, CLR_WHITE, 0xEE);
-    //gptxt->dx= 8;
-	//const char hwstr[]= "(0,0) Loading...";
-    //OBJ_ATTR *oe= &obj_buffer[32];
-    //obj_puts2(0, 0, hwstr, 0x1018, oe);
-
+	oam_copy(oam_mem, obj_buffer, 128);
 	//There is probably a less messy way to do this
     obj_set_attr(player, 
         ATTR0_SQUARE,              // Square, regular sprite
