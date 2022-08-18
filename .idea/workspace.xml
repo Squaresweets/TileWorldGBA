@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d61e4b9-0564-42fd-be4e-728f11e45a5b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Python/TileWorldClient.py" beforeDir="false" afterPath="$PROJECT_DIR$/Python/TileWorldClient.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TileWorldGBA_mb.elf" beforeDir="false" afterPath="$PROJECT_DIR$/TileWorldGBA_mb.elf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TileWorldGBA_mb.gba" beforeDir="false" afterPath="$PROJECT_DIR$/TileWorldGBA_mb.gba" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TileWorld_mb.elf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/TileWorldGBA_mb.elf.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/TileWorldGBA_mb.elf.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/main.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/map.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/map.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/players.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/players.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/sio.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/sio.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/map.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/map.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/map.h" beforeDir="false" afterPath="$PROJECT_DIR$/source/map.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/players.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/players.c" afterDir="false" />
-    </list>
+    <list default="true" id="6d61e4b9-0564-42fd-be4e-728f11e45a5b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Python/TileWorldClient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="1003">
+              <caret line="116" column="84" selection-start-line="116" selection-start-column="84" selection-end-line="116" selection-end-column="84" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -79,11 +64,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1424" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
-    <option name="height" value="1057" />
+    <option name="height" value="1066" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -163,15 +148,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.10748156" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5294748" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2540193" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -208,8 +192,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Python/TileWorldClient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="1003">
+          <caret line="116" column="84" selection-start-line="116" selection-start-column="84" selection-end-line="116" selection-end-column="84" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
