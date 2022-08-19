@@ -37,6 +37,10 @@ Using this project requires [this adapter](https://stacksmashing.gumroad.com/l/g
   - Sending data via PIO
   - Multiboot
 - 3D printed game holder, and potentially a custom PCB
+  - Box ✔️
+  - Schematic ✔️
+  - PCB
+  - Case
 
 # Notes
 The collision system used is a port of [this](https://github.com/dfranx/Colly) system by the creator of TileWorld.
