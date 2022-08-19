@@ -170,7 +170,7 @@ void processNewChunkData(u32 data, u32 offset)
         {
             if(o&1) *(c + ((o-8)>>1)) |= b;
             else    *(c + ((o-8)>>1))  = b << 4;
-            if (o == 263 && ChunkX+7 >= mapX && ChunkX+7 <= mapX+3 && ChunkY+7 >= mapY && ChunkY+7 <= mapY+3) //We have syncing issues :/
+            if (o == 263 && (ChunkX+7 >= mapX && ChunkX+7 <= mapX+3 && ChunkY+7 >= mapY && ChunkY+7 <= mapY+3)) //We have syncing issues :/
                 setChunk(ChunkX+2, ChunkY+2, ChunkX+7, ChunkY+7); //This is a short version of (for X) (ChunkX+5)-mapx+mapX-5
         }
         else if(o < 4)

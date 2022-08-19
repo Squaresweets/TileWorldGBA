@@ -141,8 +141,8 @@ void movement()
 void render()
 {
 	//Lerp to player pos or tile pos
-	camerax += ((placeMode ? (tilex & INT_MASK) : playerx) - camerax) / 4;
-	cameray += ((placeMode ? (tiley & INT_MASK) : playery) - cameray) / 4;
+	camerax += ((placeMode ? (tilex & INT_MASK) : playerx) - camerax) / 8;
+	cameray += ((placeMode ? (tiley & INT_MASK) : playery) - cameray) / 8;
 	if(placeMode) //Lock camera and player to current screen during place mode
 	{
 		//You may be asking how I got these values, the answer is I made a blood sacrifice to the coding gods
