@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d61e4b9-0564-42fd-be4e-728f11e45a5b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/TileWorldGBA_mb.elf" beforeDir="false" afterPath="$PROJECT_DIR$/TileWorldGBA_mb.elf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/main.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/map.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/map.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/map.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/map.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Art/SSG Logo BW.png" beforeDir="false" afterPath="$PROJECT_DIR$/Art/SSG Logo BW.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hardware/Adapter/#auto_saved_files#" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hardware/Adapter/Adapter-backups/Adapter-2022-08-21_214657.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hardware/Adapter/Adapter.kicad_pcb" beforeDir="false" afterPath="$PROJECT_DIR$/Hardware/Adapter/Adapter.kicad_pcb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hardware/Adapter/Adapter.kicad_prl" beforeDir="false" afterPath="$PROJECT_DIR$/Hardware/Adapter/Adapter.kicad_prl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hardware/Adapter/fp-info-cache" beforeDir="false" afterPath="$PROJECT_DIR$/Hardware/Adapter/fp-info-cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hardware/Blender stuff/Adapter.blend" beforeDir="false" afterPath="$PROJECT_DIR$/Hardware/Blender stuff/Adapter.blend" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +33,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Python/TileWorldClient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
+            <state relative-caret-position="137">
               <caret line="116" column="84" selection-start-line="116" selection-start-column="84" selection-end-line="116" selection-end-column="84" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
@@ -69,7 +72,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="1912" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -80,7 +83,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -97,6 +99,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -153,15 +156,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
+    <frame x="1912" y="-8" width="1936" height="1066" extended-state="7" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.10748156" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.50589496" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.50589496" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978564" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -198,7 +200,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Python/TileWorldClient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
+        <state relative-caret-position="137">
           <caret line="116" column="84" selection-start-line="116" selection-start-column="84" selection-end-line="116" selection-end-column="84" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />

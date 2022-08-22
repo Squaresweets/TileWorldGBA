@@ -367,7 +367,7 @@
       "idf": "",
       "netlist": "Adapter.net",
       "specctra_dsn": "",
-      "step": "",
+      "step": "Adapter.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
