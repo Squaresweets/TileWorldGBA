@@ -109,19 +109,25 @@ void movement()
 	if(key_tri_fire() > 0 && grounded && !ladder && !placeMode && !miniMapMode)
 		yv += ((25<<SHIFT_AMOUNT) >> 5);
 	if (!grounded && !ladder)
+
+	//Experimenting with different shift amounts
 	#if SHIFT_AMOUNT == 8
 		yv -= 344 >> 5; //(344 = 1.3453 << SHIFT_AMOUNT)
 	#elif SHIFT_AMOUNT == 16
 		yv -= 88166 >> 5; //(88166 = 1.3453 << SHIFT_AMOUNT)
+	#elif SHIFT_AMOUNT == 12
+		yv -= 5510 >> 5; //(5510 = 1.3453 << SHIFT_AMOUNT)
 	#endif
 	
 	//Apply friction
 	yv *= (ladder ? 871 : 973); yv >>= 10; //Divide by 1024
 	xv *= (ladder ? 871 : 973); xv >>= 10;
-	#if SHIFT_AMOUNT == 8
-	xv *= (xv != -20); //If it is too small, just make it 0, this is to prevent sliding
+
+	#if SHIFT_AMOUNT == 8 || SHIFT_AMOUNT == 12
+	//This stuff is a little strange, if the shift amount is 8 or 12 the player tends to slide, and this just makes sure this doesn't happen
+	xv *= !(xv == -20); //If it is too small, just make it 0, this is to prevent sliding
+	yv *= !(yv == -6 && !key_held(KEY_DOWN) && ladder); //If it is too small, just make it 0, this is to prevent sliding
 	#endif
-	//yv *= (yv != -20); //If it is too small, just make it 0, this is to prevent sliding
 
 	//Cap to 0.5
 	xv = max(min(xv, (ONE_SHIFTED >> 1)), -(ONE_SHIFTED >> 1));
@@ -176,12 +182,12 @@ void render()
 
 	//I could use sprintf for this, but that adds like 40kb to the filesize
 	//So imma just deal with this kinda messy code
-    char snum[20];
-    itoa((playerx-INITIAL_PLAYER_POS + ONE_SHIFTED/2)>>SHIFT_AMOUNT, snum, 10); //The adding of a half just makes it line up with tileworld's coordinates
+	char snum[20];
+    itoa(((playerx-INITIAL_PLAYER_POS)>>SHIFT_AMOUNT) + (playerx < INITIAL_PLAYER_POS), snum, 10); //With slight adjustment to line up with tileworld's coordinates
     tte_write("(");
 	tte_write(snum);
     tte_write(",");
-    itoa((playery-INITIAL_PLAYER_POS + ONE_SHIFTED/2)>>SHIFT_AMOUNT, snum, 10);
+    itoa(((playery-INITIAL_PLAYER_POS)>>SHIFT_AMOUNT) + (playery < INITIAL_PLAYER_POS), snum, 10);
 	tte_write(snum);
     tte_write(")");
 
