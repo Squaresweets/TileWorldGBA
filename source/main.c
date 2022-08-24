@@ -109,7 +109,6 @@ void movement()
 	if(key_tri_fire() > 0 && grounded && !ladder && !placeMode && !miniMapMode)
 		yv += ((25<<SHIFT_AMOUNT) >> 5);
 	if (!grounded && !ladder)
-
 	//Experimenting with different shift amounts
 	#if SHIFT_AMOUNT == 8
 		yv -= 344 >> 5; //(344 = 1.3453 << SHIFT_AMOUNT)
