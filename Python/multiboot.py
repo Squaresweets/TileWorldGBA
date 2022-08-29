@@ -102,5 +102,5 @@ def multiboot(epIn, epOut, path):
 
     TileWorldClient.sendread4(0x0066, epOut, epIn)
     TileWorldClient.sendread4(crcC & 0xFFFF, epOut, epIn)
-    print(f"{format(time.time() - start, '.3f')}s") # 2.003s
+    print(f"{format(time.time() - start, '.3f')}s")
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~DONE!~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
