@@ -365,7 +365,7 @@
     "last_paths": {
       "gencad": "",
       "idf": "",
-      "netlist": "Adapter.net",
+      "netlist": "Adapter2.net",
       "specctra_dsn": "",
       "step": "Adapter.step",
       "vrml": ""
