@@ -124,21 +124,19 @@ void loadChunks()
 
 /*
 The plan for sending and recieving chunks!
-In loadChunks check if playerpos is too far in any direction
-Places where next chunk should be loaded are: x<64 x>160 y<64 y>160
-Then like in normal load chunks we request chunks for that direction using the function in sio.c
+Right, so this is one of the most complicated functions here, I will attempt to explain it
+First, there isn't really any point in storing the entire message and then processing it, just takes lots of space
+And would make a single really laggy frame.
 
-When the chunks are recieved it is harder, the question is if I should store it in a large buffer like
-in map[], however i don't really want to have to do that
-Instead I will just create a 1 chunk buffer, with the position where it should be
-and one chunk worth of tile data packed into nibbles
-Then after I have completed one buffer, I can send it to ANOTHER buffer (just cause I don't want to do
-too much on the different thread cause that causes me nightmares) and start on the next one.
-Then I can stream that chunk into it's position mod 15 (240/16) and that should put it in the correct place
-so that when the next chunk to the left is attempted to be loaded it instead loads the new c hunk
+Instead we look at each chunk of 4 bytes seperatly, processing each byte one after another
+We first ignore the first 5 bytes, they are just 0x08 and the chunk amount
+After the first 5 the message consists of 45 chunks
+We mod the byte offset with the length of a single chunk (264) and then put the first 8
+Bytes into the ChunkX and ChunkY variables. We then set the pointer c to the right place and start blitting in each
+tile, making sure to pack it all into nibbles
 
-The main problem that this method gives is a whole bunch of shifting and annoying code, so i'll have to 
-look into it
+Sometimes when falling down the main elevator the chunks that are being loaded are already in the tileMap (the small gba one)
+This can lead to syncing issues, so if neccesary we update the chunk on the tileMap once the chunk is read
 
 ##(Server) 08 (Chunks)
 The server sends this when the client requests chunks. Seems to always consist
@@ -153,7 +151,6 @@ of 45 chunks (a 3x15 or 15x3 area). Chunks are 16x16.
 		Tile*256 (uint8)
 	)
 */
-
 void processNewChunkData(u32 data, u32 offset)
 {
     //In this function >>1 is used instead of /2 since it is more efficient (i think)

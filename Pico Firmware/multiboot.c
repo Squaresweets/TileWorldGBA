@@ -3,13 +3,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "pico/stdlib.h"
+#include "sio.h"
 
-//Read 4 bytes and write four bytes
-int rw4(uint32_t data)
-{
-    //TODO: This
-    return 0;
-}
 //REFERENCE: http://problemkaputt.de/gbatek-bios-multi-boot-single-game-pak.htm
 int multiboot(uint8_t* rom, uint64_t len)
 {
@@ -110,5 +105,7 @@ int multiboot(uint8_t* rom, uint64_t len)
     rw4(crcC & 0xFFFF);
 
     printf("~~~~~~~~~~~~~~~~~~~~~~~~~~DONE!~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+    sleep_ms(5000);
+    rw4(0xDEADBEEF);
     return 1;
 }

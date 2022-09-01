@@ -13,6 +13,7 @@
 
 #include "ws.h"
 #include "multiboot.h"
+#include "sio.h"
 
 #define TW_HOSTNAME         "tileworld.org"
 #define TW_PORT             7364
@@ -32,18 +33,22 @@
                                         "Host: raw.githubusercontent.com\r\n\r\n"
 
 #define TLS_CLIENT_TIMEOUT_SECS  15
-#define BUF_SIZE               57601
+#define BUF_SIZE               57604
 
 typedef struct {
     struct altcp_pcb *pcb;
     bool complete;
-    uint8_t  buf[BUF_SIZE];
+    uint8_t  buf[BUF_SIZE]; //For data from Tileworld->GBA
     uint64_t buffer_pos;
-    uint64_t buffer_size;
+    uint64_t buffer_len;
 
     u16_t port;
     uint32_t recvNum;
 } TLS_CLIENT_T;
+
+uint8_t  outBuf[20]; //For data from GBA->TileWorld
+uint64_t out_buffer_pos;
+uint64_t out_buffer_len;
 
 static struct altcp_tls_config *tls_config = NULL;
 
@@ -169,6 +174,7 @@ static err_t ws_client_recv(void *arg, struct altcp_pcb *pcb, struct pbuf *p, er
         pbuf_copy_partial(p, msgBuf, p->tot_len, 0);
         msgBuf[p->tot_len] = 0; //Not sure why it does this in the example but who am I to complain
 
+#pragma region github
         //************************************ CONNECTING TO GITHUB ************************************
         if(state->port == GH_PORT)
         {
@@ -184,51 +190,46 @@ static err_t ws_client_recv(void *arg, struct altcp_pcb *pcb, struct pbuf *p, er
                 result = strtok(result, "\n");
                 int len = strtol(result, NULL, 10);
                 printf("\nLength of ROM:%d\n", len);
-                state->buffer_size = len;
+                state->buffer_len = len;
             }
             else
             {
                 memcpy(&state->buf[state->buffer_pos], msgBuf, p->tot_len);
                 state->buffer_pos += p->tot_len;
-                if(state->buffer_pos == state->buffer_size) //We have recieved the entire game rom!
+                if(state->buffer_pos == state->buffer_len) //We have recieved the entire game rom!
                 {
                     printf("Game ROM recieved! Starting multiboot!\n");
-                    multiboot(state->buf, state->buffer_size);
+                    multiboot(state->buf, state->buffer_len);
                     state->complete = true; //Disconnect from GH then connect to TW
                 }
             }
         }
+#pragma endregion
         //************************************ CONNECTING TO TILEWORLD ************************************
         else if(state->port == TW_PORT)
         {
             uint64_t lenReceived = (uint64_t)p->tot_len;
-            if(state->buffer_size == 0)  //This is a new message!
+            if(state->buffer_len == 0)  //This is a new message!
             {
                 WebsocketPacketHeader_t header;
                 WSParsePacket(&header, msgBuf, p->tot_len); //Parse the packet only when it is a new message
                 printf("\n\n\nStart of a new message! Buffer size: %llu\n", header.totalLen);
                 
-                state->buffer_size = header.totalLen; 
+                state->buffer_len = header.totalLen; 
                 lenReceived = header.payloadLen;
             }
             printf("Reciveved %llu bytes!\n", lenReceived);
             memcpy(&state->buf[state->buffer_pos], msgBuf, lenReceived);
             state->buffer_pos += lenReceived; //Add however many bytes we recieved (either tot_len or header.payloadlen)
 
-            if(state->buffer_pos >= state->buffer_size) //Recieved all bytes
+            if(state->buffer_pos >= state->buffer_len) //Recieved all bytes
             {
-                for(int i = 0; i<state->buffer_size; i++) //Recieved an entire message
-                {
-                    printf("%X", state->buf[i]);
-                    
-                    //unsigned char rx;
-                    //pio_spi_write8_read8_blocking(&spi, state->buf[i], &rx, 1);
-                }
-                state->buffer_size = 0; //Have to decrypt the header for the next one
+                for(int i = 0; i<(state->buffer_len/4)+1; i++) //loop through each u32 in the message
+                    handleSIO(((u32_t*)outBuf)[i], state);
+                state->buffer_len = 0; //Have to decrypt the header for the next one
                 state->buffer_pos = 0;
             }
         }
-
         altcp_recved(pcb, p->tot_len);
 
     }
@@ -243,6 +244,34 @@ static err_t ws_client_recv(void *arg, struct altcp_pcb *pcb, struct pbuf *p, er
     }
     */
     return ERR_OK;
+}
+//This function handles sending data from TileWorld->GBA
+//But more importantly keeps track of packet lengths and the outbuf for GBA->TileWorld
+void handleSIO(uint32_t data, TLS_CLIENT_T *state)
+{
+    //Data is what we are sending
+    //This is entirelly optional, and if there is currently no data being recieved from the server
+    //This will just be 0, this is fine as that is sorted out by the GBA
+    uint32_t rx = rw4(data); //send and recieve all data!
+
+    //Now we start doing GBA->TileWorld stuff
+    if(out_buffer_len == 0)
+    {
+        out_buffer_len = data;
+        out_buffer_pos = 0;
+        return;
+    }
+
+    outBuf[out_buffer_pos++] = ((data >> 24) & 0xFF);
+    outBuf[out_buffer_pos++] = ((data >> 16) & 0xFF);
+    outBuf[out_buffer_pos++] = ((data >> 8) & 0xFF);
+    outBuf[out_buffer_pos++] = (data & 0xFF);
+
+    if(out_buffer_pos >= out_buffer_len) //We have recieved a full message, time to send it on
+    {
+        ws_client_send(state, outBuf, out_buffer_len);
+        out_buffer_len = 0;
+    }
 }
 #pragma region TLSConnect
 static void tls_client_connect_to_server_ip(const ip_addr_t *ipaddr, TLS_CLIENT_T *state)
@@ -344,7 +373,7 @@ void run_TLS_CLIENT(char* hostname, u16_t port) {
         // if you are using pico_cyw43_arch_poll, then you must poll periodically from your
         // main loop (not from a timer) to check for WiFi driver or lwIP work that needs to be done.
         cyw43_arch_poll();
-        sleep_ms(1);
+        handleSIO(0, state);
 #else
         // if you are not using pico_cyw43_arch_poll, then WiFI driver and lwIP work
         // is done via interrupt in the background. This sleep is just an example of some (blocking)
@@ -358,8 +387,9 @@ void run_TLS_CLIENT(char* hostname, u16_t port) {
 int main() {
     stdio_init_all();
     
-    //uint cpha1_prog_offs = pio_add_program(spi.pio, &spi_cpha1_program);
-    //pio_spi_init(spi.pio, spi.sm, cpha1_prog_offs, 8, 32, 1, 1, PIN_SCK, PIN_SOUT, PIN_SIN);
+    uint cpha1_prog_offs = pio_add_program(spi.pio, &spi_cpha1_program);
+    pio_spi_init(spi.pio, spi.sm, cpha1_prog_offs, 8, 32, 1, 1, PIN_SCK, PIN_SOUT, PIN_SIN);
+    sio_spi = &spi;
     ////129.8828125 519.53125
 
     if (cyw43_arch_init()) {

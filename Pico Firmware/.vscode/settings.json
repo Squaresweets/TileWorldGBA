@@ -11,6 +11,7 @@
         "stdbool.h": "c",
         "stdint.h": "c",
         "ws.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "multiboot.h": "c"
     }
 }
