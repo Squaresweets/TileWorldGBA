@@ -12,6 +12,7 @@
         "stdint.h": "c",
         "ws.h": "c",
         "stdio.h": "c",
-        "multiboot.h": "c"
+        "multiboot.h": "c",
+        "pio.h": "c"
     }
 }

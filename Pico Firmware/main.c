@@ -52,13 +52,26 @@ uint64_t out_buffer_len;
 
 static struct altcp_tls_config *tls_config = NULL;
 
-bool testflag = false;
-
 /*------------- PIO -------------*/
   pio_spi_inst_t spi = {
           .pio = pio1,
           .sm = 0
   };
+
+
+#define TileWorldThingamabobLayout
+
+#ifdef TileWorldThingamabobLayout
+#define PIN_SCK 27
+#define PIN_SIN 26
+#define PIN_SOUT 25
+#else
+#define PIN_SCK 0
+#define PIN_SIN 1
+#define PIN_SOUT 2
+#endif
+
+
 #pragma region tlsCallbacks
 /* Function to feed mbedtls entropy. May be better to move it to pico-sdk */
 int mbedtls_hardware_poll(void *data, unsigned char *output, size_t len, size_t *olen) {
@@ -156,6 +169,35 @@ static err_t ws_client_send(TLS_CLIENT_T *state, void *dataptr, uint64_t len)
     return ERR_OK;
 }
 
+//This function handles sending data from TileWorld->GBA
+//But more importantly keeps track of packet lengths and the outbuf for GBA->TileWorld
+void handleSIO(uint32_t data, TLS_CLIENT_T *state)
+{
+    //Data is what we are sending
+    //This is entirelly optional, and if there is currently no data being recieved from the server
+    //This will just be 0, this is fine as that is sorted out by the GBA
+    uint32_t rx = rw4(data); //send and recieve all data!
+
+    //Now we start doing GBA->TileWorld stuff
+    if(out_buffer_len == 0)
+    {
+        out_buffer_len = data;
+        out_buffer_pos = 0;
+        return;
+    }
+
+    outBuf[out_buffer_pos++] = ((data >> 24) & 0xFF);
+    outBuf[out_buffer_pos++] = ((data >> 16) & 0xFF);
+    outBuf[out_buffer_pos++] = ((data >> 8) & 0xFF);
+    outBuf[out_buffer_pos++] = (data & 0xFF);
+
+    if(out_buffer_pos >= out_buffer_len) //We have recieved a full message, time to send it on
+    {
+        ws_client_send(state, outBuf, out_buffer_len);
+        out_buffer_len = 0;
+    }
+}
+
 static err_t ws_client_recv(void *arg, struct altcp_pcb *pcb, struct pbuf *p, err_t err) {
     TLS_CLIENT_T *state = (TLS_CLIENT_T*)arg;
     state->recvNum++;
@@ -244,34 +286,6 @@ static err_t ws_client_recv(void *arg, struct altcp_pcb *pcb, struct pbuf *p, er
     }
     */
     return ERR_OK;
-}
-//This function handles sending data from TileWorld->GBA
-//But more importantly keeps track of packet lengths and the outbuf for GBA->TileWorld
-void handleSIO(uint32_t data, TLS_CLIENT_T *state)
-{
-    //Data is what we are sending
-    //This is entirelly optional, and if there is currently no data being recieved from the server
-    //This will just be 0, this is fine as that is sorted out by the GBA
-    uint32_t rx = rw4(data); //send and recieve all data!
-
-    //Now we start doing GBA->TileWorld stuff
-    if(out_buffer_len == 0)
-    {
-        out_buffer_len = data;
-        out_buffer_pos = 0;
-        return;
-    }
-
-    outBuf[out_buffer_pos++] = ((data >> 24) & 0xFF);
-    outBuf[out_buffer_pos++] = ((data >> 16) & 0xFF);
-    outBuf[out_buffer_pos++] = ((data >> 8) & 0xFF);
-    outBuf[out_buffer_pos++] = (data & 0xFF);
-
-    if(out_buffer_pos >= out_buffer_len) //We have recieved a full message, time to send it on
-    {
-        ws_client_send(state, outBuf, out_buffer_len);
-        out_buffer_len = 0;
-    }
 }
 #pragma region TLSConnect
 static void tls_client_connect_to_server_ip(const ip_addr_t *ipaddr, TLS_CLIENT_T *state)
@@ -389,8 +403,8 @@ int main() {
     
     uint cpha1_prog_offs = pio_add_program(spi.pio, &spi_cpha1_program);
     pio_spi_init(spi.pio, spi.sm, cpha1_prog_offs, 8, 32, 1, 1, PIN_SCK, PIN_SOUT, PIN_SIN);
-    sio_spi = &spi;
     ////129.8828125 519.53125
+    sio_spi = &spi; //In sio.h
 
     if (cyw43_arch_init()) {
         printf("failed to initialise\n");

@@ -24,6 +24,7 @@ pico_sdk_init()
 add_executable(${NAME}
     main.c
     ws.c
+    sio.c
     multiboot.c
 
     # PIO components
