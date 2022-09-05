@@ -17,5 +17,5 @@ target_sources(configTest PRIVATE
         )
         
 target_link_libraries(configTest PRIVATE pico_stdlib tinyusb_device tinyusb_board)
+pico_enable_stdio_usb(configTest 1)
 pico_add_extra_outputs(configTest)
-

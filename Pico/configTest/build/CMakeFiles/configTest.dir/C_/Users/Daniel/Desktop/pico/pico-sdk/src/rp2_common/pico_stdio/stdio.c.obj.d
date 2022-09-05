@@ -67,4 +67,5 @@ CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\p
  C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_uart\include/hardware/uart.h \
  C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/uart.h \
  C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/uart.h \
- C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/dreq.h
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/dreq.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\include/pico/stdio_usb.h

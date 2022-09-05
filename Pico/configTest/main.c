@@ -24,7 +24,7 @@
  */
 
 #include <stdlib.h>
-#include <stdio.h>
+#include "pico/stdlib.h"
 #include <string.h>
 
 #include "bsp/board.h"
@@ -51,15 +51,14 @@ void led_blinking_task(void);
 void cdc_task(void);
 
 /*------------- MAIN -------------*/
-int main(void)
+int main()
 {
-  stdio_init_all();
   board_init();
   tusb_init();
 
   while (1)
   {
-    printf("TESTING OH YEAH");
+    //printf("WHY DOESN'T THIS WORK\n");
     tud_task(); // tinyusb device task
     led_blinking_task();
 
@@ -155,6 +154,7 @@ void tud_cdc_rx_cb(uint8_t itf)
 //--------------------------------------------------------------------+
 void led_blinking_task(void)
 {
+  return;
   static uint32_t start_ms = 0;
   static bool led_state = false;
 

@@ -1,2 +1,1 @@
-testssid
-testpassword
+1234567890

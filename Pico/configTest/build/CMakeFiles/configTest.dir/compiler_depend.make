@@ -53,6 +53,7 @@ CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\b
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\uart.h
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\dreq.h
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_uart\include\pico\stdio_uart.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\include\pico\stdio_usb.h
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_binary_info\include\pico\binary_info.h
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_binary_info\include\pico\binary_info\defs.h
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_binary_info\include\pico\binary_info\structure.h
@@ -1347,6 +1348,45 @@ CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\h
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_clocks\clocks.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\io_bank0.h
 
 
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\include\hardware\flash.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\types.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\assert.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\lib\gcc\arm-none-eabi\10.3.1\include\stdbool.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\assert.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\_ansi.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\newlib.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\_newlib_version.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\config.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\machine\ieeefp.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\features.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\lib\gcc\arm-none-eabi\10.3.1\include\stdint.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\stdint.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\machine\_default_types.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_intsup.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_stdint.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\lib\gcc\arm-none-eabi\10.3.1\include\stddef.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: generated\pico_base\pico\version.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\config.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: generated\pico_base\pico\config_autogen.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\boards\include\boards\pico.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\cmsis\include\cmsis\rename_exceptions.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_platform\include\pico\platform.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\platform_defs.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\addressmap.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\sio.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\cdefs.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\types.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\error.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_bootrom\include\pico\bootrom.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\ssi.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_base\include\hardware\address_mapped.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\ssi.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\ioqspi.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\io_qspi.h
+
+
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_gpio\gpio.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_gpio\gpio.c
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_gpio\gpio.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_gpio\include\hardware\gpio.h
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_gpio\gpio.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico.h
@@ -2314,6 +2354,7 @@ CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\p
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio\stdio.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\uart.h
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio\stdio.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\uart.h
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio\stdio.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\dreq.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio\stdio.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\include\pico\stdio_usb.h
 
 
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c
@@ -2370,6 +2411,190 @@ CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\p
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\m0plus.h
 
 
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_common.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\lib\gcc\arm-none-eabi\10.3.1\include\stdbool.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\lib\gcc\arm-none-eabi\10.3.1\include\stdint.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\stdint.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\machine\_default_types.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\features.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\_newlib_version.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_intsup.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_stdint.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\lib\gcc\arm-none-eabi\10.3.1\include\stddef.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\string.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\_ansi.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\newlib.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\config.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\machine\ieeefp.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\reent.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\_ansi.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_types.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\machine\_types.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\lock.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\cdefs.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_locale.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\strings.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\string.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\stdio.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\lib\gcc\arm-none-eabi\10.3.1\include\stdarg.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\types.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\machine\endian.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\machine\_endian.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\select.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_sigset.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_timeval.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\timespec.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_timespec.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_pthreadtypes.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\sched.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\machine\types.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\stdio.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb_option.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: ..\tusb_config.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_compiler.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_verify.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_types.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_error.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_timeout.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\osal\osal.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_common.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\osal\osal_pico.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\include\pico\time.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\types.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\assert.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\assert.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: generated\pico_base\pico\version.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\config.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: generated\pico_base\pico\config_autogen.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\boards\include\boards\pico.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\cmsis\include\cmsis\rename_exceptions.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_platform\include\pico\platform.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\platform_defs.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\addressmap.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\sio.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\types.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\error.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_timer\include\hardware\timer.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\timer.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_base\include\hardware\address_mapped.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\timer.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\include\pico\sem.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\include\pico\lock_core.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_sync\include\hardware\sync.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\include\pico\mutex.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\include\pico\critical_section.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\osal\osal.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_bootrom\include\pico\bootrom.h
+
+
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_common.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\lib\gcc\arm-none-eabi\10.3.1\include\stdbool.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\lib\gcc\arm-none-eabi\10.3.1\include\stdint.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\stdint.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\machine\_default_types.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\features.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\_newlib_version.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_intsup.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_stdint.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\lib\gcc\arm-none-eabi\10.3.1\include\stddef.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\string.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\_ansi.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\newlib.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\config.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\machine\ieeefp.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\reent.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\_ansi.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_types.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\machine\_types.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\lock.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\cdefs.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_locale.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\strings.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\string.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\stdio.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\lib\gcc\arm-none-eabi\10.3.1\include\stdarg.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\types.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\machine\endian.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\machine\_endian.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\select.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_sigset.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_timeval.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\timespec.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_timespec.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_pthreadtypes.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\sched.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\machine\types.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\stdio.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb_option.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: ..\tusb_config.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_compiler.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_verify.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_types.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_error.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_timeout.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\osal\osal.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_common.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\osal\osal_pico.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\include\pico\time.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\types.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\assert.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\assert.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: generated\pico_base\pico\version.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\config.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: generated\pico_base\pico\config_autogen.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\boards\include\boards\pico.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\cmsis\include\cmsis\rename_exceptions.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_platform\include\pico\platform.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\platform_defs.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\addressmap.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\sio.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\types.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\error.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_timer\include\hardware\timer.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\timer.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_base\include\hardware\address_mapped.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\timer.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\include\pico\sem.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\include\pico\lock_core.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_sync\include\hardware\sync.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\include\pico\mutex.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\include\pico\critical_section.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\osal\osal.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\include\pico\stdio_usb.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio\include\pico\stdio.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_binary_info\include\pico\binary_info.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_binary_info\include\pico\binary_info\defs.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_binary_info\include\pico\binary_info\structure.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_binary_info\include\pico\binary_info\code.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio\include\pico\stdio\driver.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_irq\include\hardware\irq.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\intctrl.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\m0plus.h
+
+
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c
+
+
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_stdlib\include\pico\stdlib.h
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico.h
@@ -2422,12 +2647,47 @@ CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\p
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\uart.h
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\dreq.h
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_uart\include\pico\stdio_uart.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\include\pico\stdio_usb.h
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_pll\include\hardware\pll.h
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\pll.h
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\pll.h
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_clocks\include\hardware\clocks.h
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\clocks.h
 CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\clocks.h
+
+
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\include\hardware\flash.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\types.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\assert.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\lib\gcc\arm-none-eabi\10.3.1\include\stdbool.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\assert.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\_ansi.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\newlib.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\_newlib_version.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\config.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\machine\ieeefp.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\features.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\lib\gcc\arm-none-eabi\10.3.1\include\stdint.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\stdint.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\machine\_default_types.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_intsup.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_stdint.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\lib\gcc\arm-none-eabi\10.3.1\include\stddef.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: generated\pico_base\pico\version.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\config.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: generated\pico_base\pico\config_autogen.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\boards\include\boards\pico.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\cmsis\include\cmsis\rename_exceptions.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_platform\include\pico\platform.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\platform_defs.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\addressmap.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\sio.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\cdefs.h"
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\types.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\error.h
+CMakeFiles\configTest.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\include\pico\unique_id.h
 
 
 CMakeFiles\configTest.dir\main.c.obj: ..\main.c
@@ -2448,48 +2708,16 @@ CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolcha
 CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\cdefs.h"
 CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\machine\stdlib.h"
 CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\alloca.h"
-CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\stdio.h"
-CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\lib\gcc\arm-none-eabi\10.3.1\include\stdarg.h"
-CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\types.h"
-CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_stdint.h"
-CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\machine\endian.h"
-CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\machine\_endian.h"
-CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\select.h"
-CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_sigset.h"
-CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_timeval.h"
-CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\timespec.h"
-CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_timespec.h"
-CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_pthreadtypes.h"
-CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\sched.h"
-CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\machine\types.h"
-CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\stdio.h"
-CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\string.h"
-CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_locale.h"
-CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\strings.h"
-CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\string.h"
-CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\board.h
-CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\lib\gcc\arm-none-eabi\10.3.1\include\stdint.h"
-CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\stdint.h"
-CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_intsup.h"
-CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\lib\gcc\arm-none-eabi\10.3.1\include\stdbool.h"
-CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\ansi_escape.h
-CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.h
-CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_common.h
-CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb_option.h
-CMakeFiles\configTest.dir\main.c.obj: ..\tusb_config.h
-CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_compiler.h
-CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_verify.h
-CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_types.h
-CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_error.h
-CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_timeout.h
-CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\osal\osal.h
-CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_common.h
-CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\osal\osal_pico.h
-CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\include\pico\time.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_stdlib\include\pico\stdlib.h
 CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico.h
 CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\types.h
 CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\assert.h
+CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\lib\gcc\arm-none-eabi\10.3.1\include\stdbool.h"
 CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\assert.h"
+CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\lib\gcc\arm-none-eabi\10.3.1\include\stdint.h"
+CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\stdint.h"
+CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_intsup.h"
+CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_stdint.h"
 CMakeFiles\configTest.dir\main.c.obj: generated\pico_base\pico\version.h
 CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\config.h
 CMakeFiles\configTest.dir\main.c.obj: generated\pico_base\pico\config_autogen.h
@@ -2501,10 +2729,60 @@ CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\
 CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\sio.h
 CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\types.h
 CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\error.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio\include\pico\stdio.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\include\pico\time.h
 CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_timer\include\hardware\timer.h
 CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\timer.h
 CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_base\include\hardware\address_mapped.h
 CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\timer.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_gpio\include\hardware\gpio.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\sio.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\interp.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\padsbank0.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\pads_bank0.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\iobank0.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\io_bank0.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_irq\include\hardware\irq.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\intctrl.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\m0plus.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_uart\include\hardware\uart.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\uart.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\uart.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\dreq.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_uart\include\pico\stdio_uart.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\include\pico\stdio_usb.h
+CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\string.h"
+CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_locale.h"
+CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\strings.h"
+CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\string.h"
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\board.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\ansi_escape.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_common.h
+CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\stdio.h"
+CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\lib\gcc\arm-none-eabi\10.3.1\include\stdarg.h"
+CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\types.h"
+CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\machine\endian.h"
+CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\machine\_endian.h"
+CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\select.h"
+CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_sigset.h"
+CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_timeval.h"
+CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\timespec.h"
+CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_timespec.h"
+CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\_pthreadtypes.h"
+CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\sched.h"
+CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\machine\types.h"
+CMakeFiles\configTest.dir\main.c.obj: "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\stdio.h"
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb_option.h
+CMakeFiles\configTest.dir\main.c.obj: ..\tusb_config.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_compiler.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_verify.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_types.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_error.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_timeout.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\osal\osal.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_common.h
+CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\osal\osal_pico.h
 CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\include\pico\sem.h
 CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\include\pico\lock_core.h
 CMakeFiles\configTest.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_sync\include\hardware\sync.h
@@ -2703,8 +2981,6 @@ C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_stdlib\include\pico\stdlib
 
 C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico\assert.h:
 
-"D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\reent.h":
-
 C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include\pico.h:
 
 C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\time.c:
@@ -2837,6 +3113,8 @@ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\
 
 C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_binary_info\include\pico\binary_info\structure.h:
 
+C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\include\pico\stdio_usb.h:
+
 C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_bootrom\include\pico\bootrom.h:
 
 C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\uart.h:
@@ -2855,7 +3133,11 @@ C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c:
 
 C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\board.h:
 
+C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\include\pico\unique_id.h:
+
 "D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\string.h":
+
+"D:\Program Files\GBU Arm Embedded Toolchain\arm-none-eabi\include\sys\reent.h":
 
 C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio\include\pico\stdio\driver.h:
 
@@ -3061,6 +3343,14 @@ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include\hardwa
 
 C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\xosc.h:
 
+C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c:
+
+C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\include\hardware\flash.h:
+
+C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\ssi.h:
+
+C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\ssi.h:
+
 C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_gpio\gpio.c:
 
 C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\scb.h:
@@ -3129,7 +3419,15 @@ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\new_dele
 
 C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio\stdio.c:
 
+C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c:
+
+C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c:
+
+C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c:
+
 C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c:
+
+C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c:
 
 ..\main.c:
 
