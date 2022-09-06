@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d61e4b9-0564-42fd-be4e-728f11e45a5b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Hardware/Adapter/42b2a35b0dbea85e8c0aaf6ed839f858.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hardware/Blender stuff/Adapter.blend" beforeDir="false" afterPath="$PROJECT_DIR$/Hardware/Blender stuff/Adapter.blend" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hardware/Blender stuff/Adapter.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/Hardware/Blender stuff/Adapter.blend1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pico Firmware/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Pico Firmware/.vscode/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pico Firmware/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Pico Firmware/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pico Firmware/multiboot.c" beforeDir="false" afterPath="$PROJECT_DIR$/Pico Firmware/multiboot.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/map.c" beforeDir="false" afterPath="$PROJECT_DIR$/source/map.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pico/configTest/msc_disk.c" beforeDir="false" afterPath="$PROJECT_DIR$/Pico/configTest/msc_disk.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/Python/TileWorldClient.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="307">
-              <caret line="156" column="38" lean-forward="true" selection-start-line="156" selection-start-column="38" selection-end-line="156" selection-end-column="38" />
+              <caret line="156" column="38" selection-start-line="156" selection-start-column="38" selection-end-line="156" selection-end-column="38" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -73,7 +67,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1912" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1066" />
@@ -156,7 +150,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
@@ -202,7 +196,7 @@
     <entry file="file://$PROJECT_DIR$/Python/TileWorldClient.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
-          <caret line="156" column="38" lean-forward="true" selection-start-line="156" selection-start-column="38" selection-end-line="156" selection-end-column="38" />
+          <caret line="156" column="38" selection-start-line="156" selection-start-column="38" selection-end-line="156" selection-end-column="38" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
