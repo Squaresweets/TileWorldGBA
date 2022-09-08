@@ -981,7 +981,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ELF2UF2Build::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ELF2UF2Build-Debug-87f40b83f421971c6a2f.json",
+					"jsonFile" : "target-ELF2UF2Build-Debug-3b72654d312b1fe05ba3.json",
 					"name" : "ELF2UF2Build",
 					"projectIndex" : 0
 				},
@@ -1030,7 +1030,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "pico::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-pico-Debug-75419bf50374711dfb52.json",
+					"jsonFile" : "target-pico-Debug-16bcac00a94f75abf89b.json",
 					"name" : "pico",
 					"projectIndex" : 0
 				}

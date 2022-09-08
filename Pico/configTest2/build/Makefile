@@ -2345,6 +2345,30 @@ C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\zepif.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\zepif.c.s
 .PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\zepif.c.s
 
+C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.obj: C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.obj
+.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.obj
+
+# target to build an object file
+C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.obj
+.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.obj
+
+C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.i: C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.i
+.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.i
+
+# target to preprocess a source file
+C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.i
+.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.i
+
+C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.s: C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.s
+.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.s
+
+# target to generate assembly for a file
+C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.s
+.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.s
+
 C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.obj: C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.obj
 .PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.obj
 
@@ -3945,78 +3969,6 @@ C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.s
 .PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.s
 
-C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.obj: C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj
-.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.obj
-
-# target to build an object file
-C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj
-.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj
-
-C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.i: C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.i
-.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.i
-
-# target to preprocess a source file
-C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.i
-.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.i
-
-C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.s: C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.s
-.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.s
-
-# target to generate assembly for a file
-C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.s
-.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.s
-
-C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.obj: C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj
-.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.obj
-
-# target to build an object file
-C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj
-.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj
-
-C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.i: C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.i
-.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.i
-
-# target to preprocess a source file
-C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.i
-.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.i
-
-C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.s: C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.s
-.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.s
-
-# target to generate assembly for a file
-C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.s
-.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.s
-
-C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.obj: C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.obj
-.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.obj
-
-# target to build an object file
-C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.obj
-.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.obj
-
-C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.i: C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.i
-.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.i
-
-# target to preprocess a source file
-C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.i
-.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.i
-
-C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.s: C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.s
-.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.s
-
-# target to generate assembly for a file
-C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.s
-.PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.s
-
 C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.obj: C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj
 .PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.obj
 
@@ -4065,29 +4017,77 @@ C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.s
 .PHONY : C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.s
 
-picow_tcp_client.obj: picow_tcp_client.c.obj
-.PHONY : picow_tcp_client.obj
+main.obj: main.c.obj
+.PHONY : main.obj
 
 # target to build an object file
-picow_tcp_client.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\picow_tcp_client.c.obj
-.PHONY : picow_tcp_client.c.obj
+main.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\main.c.obj
+.PHONY : main.c.obj
 
-picow_tcp_client.i: picow_tcp_client.c.i
-.PHONY : picow_tcp_client.i
+main.i: main.c.i
+.PHONY : main.i
 
 # target to preprocess a source file
-picow_tcp_client.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\picow_tcp_client.c.i
-.PHONY : picow_tcp_client.c.i
+main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\main.c.i
+.PHONY : main.c.i
 
-picow_tcp_client.s: picow_tcp_client.c.s
-.PHONY : picow_tcp_client.s
+main.s: main.c.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-picow_tcp_client.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\picow_tcp_client.c.s
-.PHONY : picow_tcp_client.c.s
+main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\main.c.s
+.PHONY : main.c.s
+
+msc_disk.obj: msc_disk.c.obj
+.PHONY : msc_disk.obj
+
+# target to build an object file
+msc_disk.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\msc_disk.c.obj
+.PHONY : msc_disk.c.obj
+
+msc_disk.i: msc_disk.c.i
+.PHONY : msc_disk.i
+
+# target to preprocess a source file
+msc_disk.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\msc_disk.c.i
+.PHONY : msc_disk.c.i
+
+msc_disk.s: msc_disk.c.s
+.PHONY : msc_disk.s
+
+# target to generate assembly for a file
+msc_disk.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\msc_disk.c.s
+.PHONY : msc_disk.c.s
+
+usb_descriptors.obj: usb_descriptors.c.obj
+.PHONY : usb_descriptors.obj
+
+# target to build an object file
+usb_descriptors.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\usb_descriptors.c.obj
+.PHONY : usb_descriptors.c.obj
+
+usb_descriptors.i: usb_descriptors.c.i
+.PHONY : usb_descriptors.i
+
+# target to preprocess a source file
+usb_descriptors.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\usb_descriptors.c.i
+.PHONY : usb_descriptors.c.i
+
+usb_descriptors.s: usb_descriptors.c.s
+.PHONY : usb_descriptors.s
+
+# target to generate assembly for a file
+usb_descriptors.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico.dir\usb_descriptors.c.s
+.PHONY : usb_descriptors.c.s
 
 # Help Target
 help:
@@ -4372,6 +4372,9 @@ help:
 	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/zepif.obj
 	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/zepif.i
 	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/zepif.s
+	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.obj
+	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.i
+	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.s
 	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj
 	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.i
 	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.s
@@ -4572,24 +4575,21 @@ help:
 	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.obj
 	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i
 	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s
-	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.obj
-	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.i
-	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.s
-	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.obj
-	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.i
-	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.s
-	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.obj
-	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.i
-	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.s
 	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.obj
 	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.i
 	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.s
 	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.obj
 	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.i
 	@echo ... C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.s
-	@echo ... picow_tcp_client.obj
-	@echo ... picow_tcp_client.i
-	@echo ... picow_tcp_client.s
+	@echo ... main.obj
+	@echo ... main.i
+	@echo ... main.s
+	@echo ... msc_disk.obj
+	@echo ... msc_disk.i
+	@echo ... msc_disk.s
+	@echo ... usb_descriptors.obj
+	@echo ... usb_descriptors.i
+	@echo ... usb_descriptors.s
 .PHONY : help
 
 

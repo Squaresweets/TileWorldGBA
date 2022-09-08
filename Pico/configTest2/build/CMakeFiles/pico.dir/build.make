@@ -58,24 +58,52 @@ include CMakeFiles\pico.dir\progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles\pico.dir\flags.make
 
-CMakeFiles\pico.dir\picow_tcp_client.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\picow_tcp_client.c.obj: ..\picow_tcp_client.c
-CMakeFiles\pico.dir\picow_tcp_client.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/pico.dir/picow_tcp_client.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\picow_tcp_client.c.obj -MF CMakeFiles\pico.dir\picow_tcp_client.c.obj.d -o CMakeFiles\pico.dir\picow_tcp_client.c.obj -c C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\picow_tcp_client.c
+CMakeFiles\pico.dir\main.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\main.c.obj: ..\main.c
+CMakeFiles\pico.dir\main.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/pico.dir/main.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\main.c.obj -MF CMakeFiles\pico.dir\main.c.obj.d -o CMakeFiles\pico.dir\main.c.obj -c C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\main.c
 
-CMakeFiles\pico.dir\picow_tcp_client.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/picow_tcp_client.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\picow_tcp_client.c > CMakeFiles\pico.dir\picow_tcp_client.c.i
+CMakeFiles\pico.dir\main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/main.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\main.c > CMakeFiles\pico.dir\main.c.i
 
-CMakeFiles\pico.dir\picow_tcp_client.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/picow_tcp_client.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\picow_tcp_client.c -o CMakeFiles\pico.dir\picow_tcp_client.c.s
+CMakeFiles\pico.dir\main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/main.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\main.c -o CMakeFiles\pico.dir\main.c.s
+
+CMakeFiles\pico.dir\msc_disk.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\msc_disk.c.obj: ..\msc_disk.c
+CMakeFiles\pico.dir\msc_disk.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/pico.dir/msc_disk.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\msc_disk.c.obj -MF CMakeFiles\pico.dir\msc_disk.c.obj.d -o CMakeFiles\pico.dir\msc_disk.c.obj -c C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\msc_disk.c
+
+CMakeFiles\pico.dir\msc_disk.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/msc_disk.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\msc_disk.c > CMakeFiles\pico.dir\msc_disk.c.i
+
+CMakeFiles\pico.dir\msc_disk.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/msc_disk.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\msc_disk.c -o CMakeFiles\pico.dir\msc_disk.c.s
+
+CMakeFiles\pico.dir\usb_descriptors.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\usb_descriptors.c.obj: ..\usb_descriptors.c
+CMakeFiles\pico.dir\usb_descriptors.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/pico.dir/usb_descriptors.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\usb_descriptors.c.obj -MF CMakeFiles\pico.dir\usb_descriptors.c.obj.d -o CMakeFiles\pico.dir\usb_descriptors.c.obj -c C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\usb_descriptors.c
+
+CMakeFiles\pico.dir\usb_descriptors.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/usb_descriptors.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\usb_descriptors.c > CMakeFiles\pico.dir\usb_descriptors.c.i
+
+CMakeFiles\pico.dir\usb_descriptors.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/usb_descriptors.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\usb_descriptors.c -o CMakeFiles\pico.dir\usb_descriptors.c.s
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.i: cmake_force
@@ -89,7 +117,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_st
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_gpio\gpio.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_gpio\gpio.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_gpio\gpio.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_gpio\gpio.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_gpio\gpio.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_gpio\gpio.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_gpio\gpio.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_gpio\gpio.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_gpio\gpio.c.i: cmake_force
@@ -103,7 +131,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardwar
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_claim\claim.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_claim\claim.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_claim\claim.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_claim\claim.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_claim\claim.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_claim\claim.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_claim\claim.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_claim\claim.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_claim\claim.c.i: cmake_force
@@ -117,7 +145,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardwar
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_platform\platform.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_platform\platform.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_platform\platform.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_platform\platform.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_platform/platform.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_platform\platform.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_platform\platform.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_platform\platform.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_platform\platform.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_platform\platform.c.i: cmake_force
@@ -131,7 +159,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_pl
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_sync\sync.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_sync\sync.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_sync\sync.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_sync\sync.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_sync\sync.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_sync\sync.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_sync\sync.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_sync\sync.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_sync\sync.c.i: cmake_force
@@ -145,7 +173,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardwar
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_irq\irq.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_irq\irq.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_irq\irq.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_irq\irq.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_irq\irq.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_irq\irq.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_irq\irq.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_irq\irq.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_irq\irq.c.i: cmake_force
@@ -158,7 +186,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardwar
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_irq\irq_handler_chain.S.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_irq\irq_handler_chain.S.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_irq\irq_handler_chain.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building ASM object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building ASM object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_irq\irq_handler_chain.S.obj   -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_irq\irq_handler_chain.S
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_irq\irq_handler_chain.S.i: cmake_force
@@ -172,7 +200,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardwar
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\sem.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\sem.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\sem.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\sem.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/common/pico_sync/sem.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/common/pico_sync/sem.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\sem.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\sem.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\sem.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\sem.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\sem.c.i: cmake_force
@@ -186,7 +214,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\s
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\lock_core.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\lock_core.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\lock_core.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\lock_core.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/common/pico_sync/lock_core.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\lock_core.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\lock_core.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\lock_core.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\lock_core.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\lock_core.c.i: cmake_force
@@ -200,7 +228,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\l
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\time.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\time.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\time.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\time.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/common/pico_time/time.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/common/pico_time/time.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\time.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\time.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\time.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\time.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\time.c.i: cmake_force
@@ -214,7 +242,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\t
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\timeout_helper.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\timeout_helper.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\timeout_helper.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\timeout_helper.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/common/pico_time/timeout_helper.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/common/pico_time/timeout_helper.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\timeout_helper.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\timeout_helper.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\timeout_helper.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\timeout_helper.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\timeout_helper.c.i: cmake_force
@@ -228,7 +256,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\t
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_timer\timer.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_timer\timer.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_timer\timer.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_timer\timer.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_timer\timer.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_timer\timer.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_timer\timer.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_timer\timer.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_timer\timer.c.i: cmake_force
@@ -242,7 +270,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardwar
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\datetime.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\datetime.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\datetime.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\datetime.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/common/pico_util/datetime.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/common/pico_util/datetime.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\datetime.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\datetime.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\datetime.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\datetime.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\datetime.c.i: cmake_force
@@ -256,7 +284,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\d
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\pheap.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\pheap.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\pheap.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\pheap.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/common/pico_util/pheap.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/common/pico_util/pheap.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\pheap.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\pheap.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\pheap.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\pheap.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\pheap.c.i: cmake_force
@@ -270,7 +298,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\p
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\queue.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\queue.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\queue.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\queue.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/common/pico_util/queue.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/common/pico_util/queue.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\queue.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\queue.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\queue.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\queue.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\queue.c.i: cmake_force
@@ -284,7 +312,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_util\q
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\mutex.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\mutex.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\mutex.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\mutex.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/common/pico_sync/mutex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/common/pico_sync/mutex.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\mutex.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\mutex.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\mutex.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\mutex.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\mutex.c.i: cmake_force
@@ -298,7 +326,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\m
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\critical_section.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\critical_section.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\critical_section.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\critical_section.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/common/pico_sync/critical_section.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\critical_section.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\critical_section.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\critical_section.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\critical_section.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\critical_section.c.i: cmake_force
@@ -312,7 +340,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_uart\uart.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_uart\uart.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_uart\uart.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_uart\uart.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_uart\uart.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_uart\uart.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_uart\uart.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_uart\uart.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_uart\uart.c.i: cmake_force
@@ -325,7 +353,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardwar
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_divider\divider.S.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_divider\divider.S.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_divider\divider.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building ASM object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building ASM object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_divider\divider.S.obj   -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_divider\divider.S
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_divider\divider.S.i: cmake_force
@@ -339,7 +367,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardwar
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_runtime\runtime.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_runtime\runtime.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_runtime\runtime.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_runtime\runtime.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_runtime\runtime.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_runtime\runtime.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_runtime\runtime.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_runtime\runtime.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_runtime\runtime.c.i: cmake_force
@@ -353,7 +381,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_ru
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_clocks\clocks.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_clocks\clocks.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_clocks\clocks.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_clocks\clocks.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_clocks\clocks.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_clocks\clocks.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_clocks\clocks.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_clocks\clocks.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_clocks\clocks.c.i: cmake_force
@@ -367,7 +395,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardwar
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_pll\pll.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_pll\pll.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_pll\pll.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_pll\pll.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_pll\pll.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_pll\pll.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_pll\pll.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_pll\pll.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_pll\pll.c.i: cmake_force
@@ -381,7 +409,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardwar
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_vreg\vreg.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_vreg\vreg.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_vreg\vreg.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_vreg\vreg.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_vreg\vreg.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_vreg\vreg.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_vreg\vreg.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_vreg\vreg.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_vreg\vreg.c.i: cmake_force
@@ -395,7 +423,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardwar
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_watchdog\watchdog.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_watchdog\watchdog.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_watchdog\watchdog.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_watchdog\watchdog.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_watchdog\watchdog.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_watchdog\watchdog.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_watchdog\watchdog.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_watchdog\watchdog.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_watchdog\watchdog.c.i: cmake_force
@@ -409,7 +437,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardwar
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_xosc\xosc.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_xosc\xosc.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_xosc\xosc.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_xosc\xosc.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_xosc\xosc.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_xosc\xosc.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_xosc\xosc.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_xosc\xosc.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_xosc\xosc.c.i: cmake_force
@@ -423,7 +451,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardwar
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_printf\printf.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_printf\printf.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_printf\printf.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_printf\printf.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_printf\printf.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_printf\printf.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_printf\printf.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_printf\printf.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_printf\printf.c.i: cmake_force
@@ -436,7 +464,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_pr
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_bit_ops\bit_ops_aeabi.S.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_bit_ops\bit_ops_aeabi.S.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_bit_ops\bit_ops_aeabi.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building ASM object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building ASM object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_bit_ops\bit_ops_aeabi.S.obj   -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_bit_ops\bit_ops_aeabi.S
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_bit_ops\bit_ops_aeabi.S.i: cmake_force
@@ -450,7 +478,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_bi
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_bootrom\bootrom.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_bootrom\bootrom.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_bootrom\bootrom.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_bootrom\bootrom.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_bootrom\bootrom.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_bootrom\bootrom.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_bootrom\bootrom.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_bootrom\bootrom.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_bootrom\bootrom.c.i: cmake_force
@@ -463,7 +491,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_bo
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_divider\divider.S.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_divider\divider.S.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_divider\divider.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building ASM object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building ASM object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_divider/divider.S.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_divider\divider.S.obj   -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_divider\divider.S
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_divider\divider.S.i: cmake_force
@@ -476,7 +504,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_di
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_aeabi.S.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_aeabi.S.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_aeabi.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building ASM object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building ASM object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_aeabi.S.obj   -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_aeabi.S
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_aeabi.S.i: cmake_force
@@ -490,7 +518,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_do
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_init_rom.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_init_rom.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_init_rom.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_init_rom.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_init_rom.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_init_rom.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_init_rom.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_init_rom.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_init_rom.c.i: cmake_force
@@ -504,7 +532,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_do
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_math.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_math.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_math.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_math.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_double/double_math.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_math.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_math.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_math.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_math.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_math.c.i: cmake_force
@@ -517,7 +545,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_do
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_v1_rom_shim.S.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_v1_rom_shim.S.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_v1_rom_shim.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building ASM object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building ASM object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_v1_rom_shim.S.obj   -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_v1_rom_shim.S
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_double\double_v1_rom_shim.S.i: cmake_force
@@ -530,7 +558,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_do
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_int64_ops\pico_int64_ops_aeabi.S.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_int64_ops\pico_int64_ops_aeabi.S.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_int64_ops\pico_int64_ops_aeabi.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building ASM object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building ASM object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_int64_ops\pico_int64_ops_aeabi.S.obj   -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_int64_ops\pico_int64_ops_aeabi.S
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_int64_ops\pico_int64_ops_aeabi.S.i: cmake_force
@@ -543,7 +571,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_in
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_aeabi.S.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_aeabi.S.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_aeabi.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building ASM object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building ASM object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_aeabi.S.obj   -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_aeabi.S
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_aeabi.S.i: cmake_force
@@ -557,7 +585,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fl
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_init_rom.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_init_rom.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_init_rom.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_init_rom.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_init_rom.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_init_rom.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_init_rom.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_init_rom.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_init_rom.c.i: cmake_force
@@ -571,7 +599,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fl
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_math.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_math.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_math.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_math.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_float/float_math.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_math.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_math.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_math.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_math.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_math.c.i: cmake_force
@@ -584,7 +612,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fl
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_v1_rom_shim.S.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_v1_rom_shim.S.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_v1_rom_shim.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building ASM object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building ASM object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_v1_rom_shim.S.obj   -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_v1_rom_shim.S
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_float\float_v1_rom_shim.S.i: cmake_force
@@ -598,7 +626,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fl
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_malloc\pico_malloc.c.i: cmake_force
@@ -611,7 +639,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_ma
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_mem_ops\mem_ops_aeabi.S.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_mem_ops\mem_ops_aeabi.S.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_mem_ops\mem_ops_aeabi.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building ASM object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building ASM object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_mem_ops\mem_ops_aeabi.S.obj   -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_mem_ops\mem_ops_aeabi.S
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_mem_ops\mem_ops_aeabi.S.i: cmake_force
@@ -624,7 +652,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_me
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\crt0.S.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\crt0.S.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\crt0.S
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building ASM object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building ASM object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\crt0.S.obj   -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\crt0.S
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\crt0.S.i: cmake_force
@@ -638,7 +666,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_st
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\new_delete.cpp.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\new_delete.cpp.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\new_delete.cpp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\new_delete.cpp.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR10B2~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\new_delete.cpp.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\new_delete.cpp.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\new_delete.cpp.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\new_delete.cpp
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\new_delete.cpp.i: cmake_force
@@ -652,7 +680,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_st
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\binary_info.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\binary_info.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\binary_info.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\binary_info.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\binary_info.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\binary_info.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\binary_info.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\binary_info.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\binary_info.c.i: cmake_force
@@ -666,7 +694,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_st
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio\stdio.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio\stdio.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio\stdio.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio\stdio.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio\stdio.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio\stdio.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio\stdio.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio\stdio.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio\stdio.c.i: cmake_force
@@ -680,7 +708,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_st
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.i: cmake_force
@@ -691,346 +719,10 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_st
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.s
 
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.s
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.s
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.s
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.s
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.s
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.s
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.s
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.s
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.s
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.s
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.s
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.s
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.s
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.s
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.s
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.s
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.s
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.s
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.s
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/tusb.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/tusb.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.s
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.s
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.s
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.s
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: CMakeFiles\pico.dir\flags.make
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.i"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.i
-
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.s"
-	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.s
-
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch.c.i: cmake_force
@@ -1044,7 +736,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cy
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_poll.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_poll.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_poll.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_poll.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_poll.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_poll.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_poll.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_poll.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_poll.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_poll.c.i: cmake_force
@@ -1058,7 +750,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cy
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_threadsafe_background.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_threadsafe_background.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_threadsafe_background.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_threadsafe_background.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_threadsafe_background.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_threadsafe_background.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_threadsafe_background.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_threadsafe_background.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_threadsafe_background.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_threadsafe_background.c.i: cmake_force
@@ -1072,7 +764,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cy
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_freertos.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_freertos.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_freertos.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_freertos.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_freertos.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_freertos.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_freertos.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_freertos.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_freertos.c.i: cmake_force
@@ -1083,10 +775,38 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cy
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_cyw43_arch/cyw43_arch_freertos.c.s"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_freertos.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_freertos.c.s
 
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.i
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.s
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.i
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.s
+
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\cyw43_driver\cyw43_bus_pio_spi.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\cyw43_driver\cyw43_bus_pio_spi.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\cyw43_driver\cyw43_bus_pio_spi.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\cyw43_driver\cyw43_bus_pio_spi.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/cyw43_driver/cyw43_bus_pio_spi.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/cyw43_driver/cyw43_bus_pio_spi.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\cyw43_driver\cyw43_bus_pio_spi.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\cyw43_driver\cyw43_bus_pio_spi.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\cyw43_driver\cyw43_bus_pio_spi.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\cyw43_driver\cyw43_bus_pio_spi.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\cyw43_driver\cyw43_bus_pio_spi.c.i: cmake_force
@@ -1100,7 +820,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\cyw43_d
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_ll.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_ll.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_ll.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_ll.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ll.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_ll.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_ll.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_ll.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_ll.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_ll.c.i: cmake_force
@@ -1114,7 +834,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_stats.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_stats.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_stats.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_stats.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/cyw43-driver/src/cyw43_stats.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_stats.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_stats.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_stats.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_stats.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_stats.c.i: cmake_force
@@ -1128,7 +848,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_lwip.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_lwip.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_lwip.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_lwip.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/cyw43-driver/src/cyw43_lwip.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_lwip.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_lwip.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_lwip.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_lwip.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_lwip.c.i: cmake_force
@@ -1142,7 +862,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_ctrl.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_ctrl.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_ctrl.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_ctrl.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/cyw43-driver/src/cyw43_ctrl.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_ctrl.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_ctrl.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_ctrl.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_ctrl.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_ctrl.c.i: cmake_force
@@ -1156,7 +876,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_pio\pio.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_pio\pio.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_pio\pio.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_pio\pio.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_pio\pio.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_pio\pio.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_pio\pio.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_pio\pio.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_pio\pio.c.i: cmake_force
@@ -1170,7 +890,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardwar
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_dma\dma.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_dma\dma.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_dma\dma.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_dma\dma.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_dma/dma.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_dma\dma.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_dma\dma.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_dma\dma.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_dma\dma.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_dma\dma.c.i: cmake_force
@@ -1184,7 +904,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardwar
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_exception\exception.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_exception\exception.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_exception\exception.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_exception\exception.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/hardware_exception/exception.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_exception\exception.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_exception\exception.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_exception\exception.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_exception\exception.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_exception\exception.c.i: cmake_force
@@ -1198,7 +918,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardwar
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\init.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\init.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\init.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\init.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/init.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/init.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\init.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\init.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\init.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\init.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\init.c.i: cmake_force
@@ -1212,7 +932,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\init
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\def.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\def.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\def.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\def.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/def.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/def.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\def.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\def.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\def.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\def.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\def.c.i: cmake_force
@@ -1226,7 +946,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\def.
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\dns.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\dns.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\dns.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\dns.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/dns.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/dns.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\dns.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\dns.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\dns.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\dns.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\dns.c.i: cmake_force
@@ -1240,7 +960,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\dns.
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\inet_chksum.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\inet_chksum.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\inet_chksum.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\inet_chksum.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/inet_chksum.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/inet_chksum.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\inet_chksum.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\inet_chksum.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\inet_chksum.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\inet_chksum.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\inet_chksum.c.i: cmake_force
@@ -1254,7 +974,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\inet
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ip.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ip.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ip.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ip.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ip.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ip.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ip.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ip.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ip.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ip.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ip.c.i: cmake_force
@@ -1268,7 +988,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ip.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\mem.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\mem.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\mem.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\mem.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/mem.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/mem.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\mem.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\mem.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\mem.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\mem.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\mem.c.i: cmake_force
@@ -1282,7 +1002,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\mem.
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\memp.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\memp.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\memp.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\memp.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/memp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/memp.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\memp.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\memp.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\memp.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\memp.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\memp.c.i: cmake_force
@@ -1296,7 +1016,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\memp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\netif.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\netif.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\netif.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\netif.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/netif.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/netif.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\netif.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\netif.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\netif.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\netif.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\netif.c.i: cmake_force
@@ -1310,7 +1030,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\neti
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\pbuf.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\pbuf.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\pbuf.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\pbuf.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/pbuf.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/pbuf.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\pbuf.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\pbuf.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\pbuf.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\pbuf.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\pbuf.c.i: cmake_force
@@ -1324,7 +1044,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\pbuf
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\raw.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\raw.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\raw.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\raw.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/raw.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/raw.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\raw.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\raw.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\raw.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\raw.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\raw.c.i: cmake_force
@@ -1338,7 +1058,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\raw.
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\stats.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\stats.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\stats.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\stats.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/stats.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/stats.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\stats.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\stats.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\stats.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\stats.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\stats.c.i: cmake_force
@@ -1352,7 +1072,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\stat
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\sys.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\sys.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\sys.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\sys.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/sys.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/sys.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\sys.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\sys.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\sys.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\sys.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\sys.c.i: cmake_force
@@ -1366,7 +1086,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\sys.
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/altcp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/altcp.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp.c.i: cmake_force
@@ -1380,7 +1100,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altc
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp_alloc.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp_alloc.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp_alloc.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp_alloc.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/altcp_alloc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/altcp_alloc.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp_alloc.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp_alloc.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp_alloc.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp_alloc.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp_alloc.c.i: cmake_force
@@ -1394,7 +1114,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altc
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp_tcp.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp_tcp.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp_tcp.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp_tcp.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/altcp_tcp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/altcp_tcp.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp_tcp.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp_tcp.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp_tcp.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp_tcp.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altcp_tcp.c.i: cmake_force
@@ -1408,7 +1128,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\altc
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/tcp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/tcp.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp.c.i: cmake_force
@@ -1422,7 +1142,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp.
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp_in.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp_in.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp_in.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp_in.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/tcp_in.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/tcp_in.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp_in.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp_in.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp_in.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp_in.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp_in.c.i: cmake_force
@@ -1436,7 +1156,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp_
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp_out.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp_out.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp_out.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp_out.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/tcp_out.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/tcp_out.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp_out.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp_out.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp_out.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp_out.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp_out.c.i: cmake_force
@@ -1450,7 +1170,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\tcp_
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\timeouts.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\timeouts.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\timeouts.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\timeouts.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/timeouts.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/timeouts.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\timeouts.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\timeouts.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\timeouts.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\timeouts.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\timeouts.c.i: cmake_force
@@ -1464,7 +1184,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\time
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\udp.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\udp.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\udp.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\udp.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/udp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/udp.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\udp.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\udp.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\udp.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\udp.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\udp.c.i: cmake_force
@@ -1478,7 +1198,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\udp.
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lwip\random.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lwip\random.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lwip\random.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lwip\random.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_lwip/random.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_lwip/random.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lwip\random.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lwip\random.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lwip\random.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lwip\random.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lwip\random.c.i: cmake_force
@@ -1492,7 +1212,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lw
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\acd.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\acd.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\acd.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\acd.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv4/acd.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv4/acd.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\acd.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\acd.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\acd.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\acd.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\acd.c.i: cmake_force
@@ -1506,7 +1226,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\autoip.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\autoip.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\autoip.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\autoip.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv4/autoip.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv4/autoip.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\autoip.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\autoip.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\autoip.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\autoip.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\autoip.c.i: cmake_force
@@ -1520,7 +1240,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\dhcp.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\dhcp.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\dhcp.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\dhcp.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv4/dhcp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv4/dhcp.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\dhcp.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\dhcp.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\dhcp.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\dhcp.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\dhcp.c.i: cmake_force
@@ -1534,7 +1254,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\etharp.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\etharp.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\etharp.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\etharp.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv4/etharp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv4/etharp.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\etharp.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\etharp.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\etharp.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\etharp.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\etharp.c.i: cmake_force
@@ -1548,7 +1268,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\icmp.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\icmp.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\icmp.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\icmp.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv4/icmp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv4/icmp.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\icmp.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\icmp.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\icmp.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\icmp.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\icmp.c.i: cmake_force
@@ -1562,7 +1282,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\igmp.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\igmp.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\igmp.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\igmp.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv4/igmp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv4/igmp.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\igmp.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\igmp.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\igmp.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\igmp.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\igmp.c.i: cmake_force
@@ -1576,7 +1296,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4_frag.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4_frag.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4_frag.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4_frag.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_frag.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_frag.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4_frag.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4_frag.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4_frag.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4_frag.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4_frag.c.i: cmake_force
@@ -1590,7 +1310,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4.c.i: cmake_force
@@ -1604,7 +1324,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4_addr.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4_addr.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4_addr.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4_addr.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_addr.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv4/ip4_addr.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4_addr.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4_addr.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4_addr.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4_addr.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4\ip4_addr.c.i: cmake_force
@@ -1618,7 +1338,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv4
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\dhcp6.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\dhcp6.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\dhcp6.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\dhcp6.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv6/dhcp6.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv6/dhcp6.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\dhcp6.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\dhcp6.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\dhcp6.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\dhcp6.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\dhcp6.c.i: cmake_force
@@ -1632,7 +1352,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ethip6.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ethip6.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ethip6.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ethip6.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv6/ethip6.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv6/ethip6.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ethip6.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ethip6.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ethip6.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ethip6.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ethip6.c.i: cmake_force
@@ -1646,7 +1366,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\icmp6.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\icmp6.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\icmp6.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\icmp6.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv6/icmp6.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv6/icmp6.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\icmp6.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\icmp6.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\icmp6.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\icmp6.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\icmp6.c.i: cmake_force
@@ -1660,7 +1380,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\inet6.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\inet6.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\inet6.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\inet6.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv6/inet6.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv6/inet6.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\inet6.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\inet6.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\inet6.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\inet6.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\inet6.c.i: cmake_force
@@ -1674,7 +1394,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6.c.i: cmake_force
@@ -1688,7 +1408,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6_addr.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6_addr.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6_addr.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6_addr.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_addr.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_addr.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6_addr.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6_addr.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6_addr.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6_addr.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6_addr.c.i: cmake_force
@@ -1702,7 +1422,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6_frag.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6_frag.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6_frag.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6_frag.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_frag.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv6/ip6_frag.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6_frag.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6_frag.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6_frag.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6_frag.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\ip6_frag.c.i: cmake_force
@@ -1716,7 +1436,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\mld6.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\mld6.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\mld6.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\mld6.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv6/mld6.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv6/mld6.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\mld6.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\mld6.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\mld6.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\mld6.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\mld6.c.i: cmake_force
@@ -1730,7 +1450,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\nd6.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\nd6.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\nd6.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\nd6.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_121) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv6/nd6.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/core/ipv6/nd6.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\nd6.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\nd6.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\nd6.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\nd6.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6\nd6.c.i: cmake_force
@@ -1744,7 +1464,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\core\ipv6
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\api_lib.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\api_lib.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\api_lib.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\api_lib.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_122) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/api/api_lib.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/api/api_lib.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\api_lib.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\api_lib.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\api_lib.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\api_lib.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\api_lib.c.i: cmake_force
@@ -1758,7 +1478,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\api_l
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\api_msg.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\api_msg.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\api_msg.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\api_msg.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/api/api_msg.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/api/api_msg.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\api_msg.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\api_msg.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\api_msg.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\api_msg.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\api_msg.c.i: cmake_force
@@ -1772,7 +1492,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\api_m
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\err.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\err.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\err.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\err.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_124) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/api/err.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/api/err.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\err.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\err.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\err.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\err.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\err.c.i: cmake_force
@@ -1786,7 +1506,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\err.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\if_api.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\if_api.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\if_api.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\if_api.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_125) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/api/if_api.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/api/if_api.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\if_api.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\if_api.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\if_api.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\if_api.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\if_api.c.i: cmake_force
@@ -1800,7 +1520,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\if_ap
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netbuf.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netbuf.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netbuf.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netbuf.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_126) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/api/netbuf.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/api/netbuf.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netbuf.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netbuf.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netbuf.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netbuf.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netbuf.c.i: cmake_force
@@ -1814,7 +1534,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netbu
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netdb.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netdb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netdb.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netdb.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_127) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/api/netdb.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/api/netdb.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netdb.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netdb.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netdb.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netdb.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netdb.c.i: cmake_force
@@ -1828,7 +1548,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netdb
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netifapi.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netifapi.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netifapi.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netifapi.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_128) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/api/netifapi.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/api/netifapi.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netifapi.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netifapi.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netifapi.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netifapi.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netifapi.c.i: cmake_force
@@ -1842,7 +1562,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\netif
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\sockets.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\sockets.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\sockets.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\sockets.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_129) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/api/sockets.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/api/sockets.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\sockets.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\sockets.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\sockets.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\sockets.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\sockets.c.i: cmake_force
@@ -1856,7 +1576,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\socke
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\tcpip.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\tcpip.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\tcpip.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\tcpip.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_130) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/api/tcpip.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/api/tcpip.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\tcpip.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\tcpip.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\tcpip.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\tcpip.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\tcpip.c.i: cmake_force
@@ -1870,7 +1590,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\api\tcpip
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ethernet.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ethernet.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ethernet.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ethernet.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_131) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ethernet.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ethernet.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ethernet.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ethernet.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ethernet.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ethernet.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ethernet.c.i: cmake_force
@@ -1884,7 +1604,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\eth
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\bridgeif.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\bridgeif.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\bridgeif.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\bridgeif.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_132) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/bridgeif.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/bridgeif.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\bridgeif.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\bridgeif.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\bridgeif.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\bridgeif.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\bridgeif.c.i: cmake_force
@@ -1898,7 +1618,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\bri
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\bridgeif_fdb.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\bridgeif_fdb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\bridgeif_fdb.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\bridgeif_fdb.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_133) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/bridgeif_fdb.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/bridgeif_fdb.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\bridgeif_fdb.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\bridgeif_fdb.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\bridgeif_fdb.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\bridgeif_fdb.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\bridgeif_fdb.c.i: cmake_force
@@ -1912,7 +1632,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\bri
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\slipif.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\slipif.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\slipif.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\slipif.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_134) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/slipif.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/slipif.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\slipif.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\slipif.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\slipif.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\slipif.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\slipif.c.i: cmake_force
@@ -1926,7 +1646,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\sli
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6_common.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6_common.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6_common.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6_common.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_135) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/lowpan6_common.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/lowpan6_common.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6_common.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6_common.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6_common.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6_common.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6_common.c.i: cmake_force
@@ -1940,7 +1660,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\low
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_136) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/lowpan6.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/lowpan6.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6.c.i: cmake_force
@@ -1954,7 +1674,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\low
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6_ble.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6_ble.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6_ble.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6_ble.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_137) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/lowpan6_ble.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/lowpan6_ble.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6_ble.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6_ble.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6_ble.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6_ble.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\lowpan6_ble.c.i: cmake_force
@@ -1968,7 +1688,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\low
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\zepif.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\zepif.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\zepif.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\zepif.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_138) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/zepif.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/zepif.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\zepif.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\zepif.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\zepif.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\zepif.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\zepif.c.i: cmake_force
@@ -1982,7 +1702,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\zep
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\auth.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\auth.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\auth.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\auth.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_139) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/auth.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/auth.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\auth.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\auth.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\auth.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\auth.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\auth.c.i: cmake_force
@@ -1996,7 +1716,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ccp.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ccp.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ccp.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ccp.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_140) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/ccp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/ccp.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ccp.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ccp.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ccp.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ccp.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ccp.c.i: cmake_force
@@ -2010,7 +1730,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap-md5.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap-md5.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap-md5.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap-md5.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_141) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-md5.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_121) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-md5.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap-md5.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap-md5.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap-md5.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap-md5.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap-md5.c.i: cmake_force
@@ -2024,7 +1744,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap_ms.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap_ms.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap_ms.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap_ms.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_142) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/chap_ms.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_122) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/chap_ms.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap_ms.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap_ms.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap_ms.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap_ms.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap_ms.c.i: cmake_force
@@ -2038,7 +1758,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap-new.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap-new.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap-new.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap-new.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_143) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-new.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/chap-new.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap-new.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap-new.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap-new.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap-new.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\chap-new.c.i: cmake_force
@@ -2052,7 +1772,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\demand.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\demand.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\demand.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\demand.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_144) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/demand.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_124) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/demand.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\demand.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\demand.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\demand.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\demand.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\demand.c.i: cmake_force
@@ -2066,7 +1786,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\eap.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\eap.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\eap.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\eap.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_145) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/eap.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_125) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/eap.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\eap.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\eap.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\eap.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\eap.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\eap.c.i: cmake_force
@@ -2080,7 +1800,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ecp.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ecp.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ecp.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ecp.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_146) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/ecp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_126) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/ecp.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ecp.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ecp.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ecp.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ecp.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ecp.c.i: cmake_force
@@ -2094,7 +1814,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\eui64.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\eui64.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\eui64.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\eui64.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_147) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/eui64.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_127) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/eui64.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\eui64.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\eui64.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\eui64.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\eui64.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\eui64.c.i: cmake_force
@@ -2108,7 +1828,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\fsm.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\fsm.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\fsm.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\fsm.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_148) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/fsm.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_128) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/fsm.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\fsm.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\fsm.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\fsm.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\fsm.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\fsm.c.i: cmake_force
@@ -2122,7 +1842,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ipcp.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ipcp.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ipcp.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ipcp.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_149) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/ipcp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_129) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/ipcp.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ipcp.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ipcp.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ipcp.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ipcp.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ipcp.c.i: cmake_force
@@ -2136,7 +1856,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ipv6cp.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ipv6cp.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ipv6cp.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ipv6cp.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_150) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/ipv6cp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_130) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/ipv6cp.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ipv6cp.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ipv6cp.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ipv6cp.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ipv6cp.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ipv6cp.c.i: cmake_force
@@ -2150,7 +1870,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\lcp.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\lcp.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\lcp.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\lcp.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_151) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/lcp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_131) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/lcp.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\lcp.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\lcp.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\lcp.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\lcp.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\lcp.c.i: cmake_force
@@ -2164,7 +1884,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\magic.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\magic.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\magic.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\magic.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_152) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/magic.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_132) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/magic.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\magic.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\magic.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\magic.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\magic.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\magic.c.i: cmake_force
@@ -2178,7 +1898,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\mppe.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\mppe.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\mppe.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\mppe.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_153) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/mppe.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_133) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/mppe.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\mppe.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\mppe.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\mppe.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\mppe.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\mppe.c.i: cmake_force
@@ -2192,7 +1912,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\multilink.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\multilink.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\multilink.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\multilink.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_154) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/multilink.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_134) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/multilink.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\multilink.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\multilink.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\multilink.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\multilink.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\multilink.c.i: cmake_force
@@ -2206,7 +1926,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ppp.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ppp.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ppp.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ppp.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_155) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/ppp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_135) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/ppp.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ppp.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ppp.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ppp.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ppp.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\ppp.c.i: cmake_force
@@ -2220,7 +1940,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppapi.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppapi.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppapi.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppapi.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_156) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/pppapi.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_136) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/pppapi.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppapi.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppapi.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppapi.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppapi.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppapi.c.i: cmake_force
@@ -2234,7 +1954,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppcrypt.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppcrypt.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppcrypt.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppcrypt.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_157) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/pppcrypt.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_137) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/pppcrypt.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppcrypt.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppcrypt.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppcrypt.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppcrypt.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppcrypt.c.i: cmake_force
@@ -2248,7 +1968,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppoe.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppoe.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppoe.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppoe.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_158) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/pppoe.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_138) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/pppoe.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppoe.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppoe.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppoe.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppoe.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppoe.c.i: cmake_force
@@ -2262,7 +1982,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppol2tp.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppol2tp.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppol2tp.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppol2tp.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_159) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/pppol2tp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_139) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/pppol2tp.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppol2tp.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppol2tp.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppol2tp.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppol2tp.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppol2tp.c.i: cmake_force
@@ -2276,7 +1996,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppos.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppos.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppos.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppos.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_160) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/pppos.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_140) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/pppos.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppos.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppos.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppos.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppos.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\pppos.c.i: cmake_force
@@ -2290,7 +2010,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\upap.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\upap.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\upap.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\upap.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_161) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/upap.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_141) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/upap.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\upap.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\upap.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\upap.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\upap.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\upap.c.i: cmake_force
@@ -2304,7 +2024,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\utils.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\utils.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\utils.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\utils.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_162) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/utils.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_142) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/utils.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\utils.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\utils.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\utils.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\utils.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\utils.c.i: cmake_force
@@ -2318,7 +2038,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\vj.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\vj.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\vj.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\vj.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_163) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/vj.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_143) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/vj.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\vj.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\vj.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\vj.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\vj.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\vj.c.i: cmake_force
@@ -2332,7 +2052,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\arc4.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\arc4.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\arc4.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\arc4.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_164) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/arc4.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_144) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/arc4.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\arc4.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\arc4.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\arc4.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\arc4.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\arc4.c.i: cmake_force
@@ -2346,7 +2066,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\des.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\des.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\des.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\des.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_165) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/des.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_145) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/des.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\des.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\des.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\des.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\des.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\des.c.i: cmake_force
@@ -2360,7 +2080,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\md4.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\md4.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\md4.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\md4.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_166) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md4.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_146) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md4.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\md4.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\md4.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\md4.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\md4.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\md4.c.i: cmake_force
@@ -2374,7 +2094,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\md5.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\md5.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\md5.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\md5.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_167) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md5.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_147) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/md5.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\md5.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\md5.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\md5.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\md5.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\md5.c.i: cmake_force
@@ -2388,7 +2108,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\sha1.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\sha1.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\sha1.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\sha1.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_168) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/sha1.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_148) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/lwip/src/netif/ppp/polarssl/sha1.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\sha1.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\sha1.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\sha1.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\sha1.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\sha1.c.i: cmake_force
@@ -2402,7 +2122,7 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lwip\nosys.c.obj: CMakeFiles\pico.dir\flags.make
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lwip\nosys.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lwip\nosys.c
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lwip\nosys.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_169) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_lwip/nosys.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_149) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_lwip/nosys.c.obj"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lwip\nosys.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lwip\nosys.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lwip\nosys.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lwip\nosys.c
 
 CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lwip\nosys.c.i: cmake_force
@@ -2413,9 +2133,291 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lw
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_lwip/nosys.c.s"
 	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lwip\nosys.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lwip\nosys.c.s
 
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_150) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.i
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.s
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_151) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.i
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.s
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_152) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.i
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/device/usbd.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.s
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_153) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.i
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/device/usbd_control.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.s
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_154) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.i
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.s
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_155) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.i
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.s
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_156) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.i
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_device.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.s
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_157) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.i
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.s
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_158) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.i
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/hid/hid_device.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.s
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_159) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.i
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.s
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_160) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.i
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/msc/msc_device.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.s
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_161) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.i
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.s
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_162) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.i
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/net/ncm_device.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.s
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_163) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.i
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/usbtmc/usbtmc_device.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.s
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_164) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.i
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.s
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_165) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.i
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.s
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_166) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/tusb.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/tusb.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.i
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/tusb.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.s
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_167) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.i
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.s
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_168) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.i
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/src/rp2_common/pico_fix/rp2040_usb_device_enumeration/rp2040_usb_device_enumeration.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.s
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.obj: CMakeFiles\pico.dir\flags.make
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.obj: CMakeFiles\pico.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_169) "Building C object CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.obj"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.obj -MF CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.obj.d -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.obj -c C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.i"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c > CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.i
+
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico.dir/C_/Users/Daniel/Desktop/pico/pico-sdk/lib/tinyusb/hw/bsp/rp2040/family.c.s"
+	D:\PROGRA~2\GBUARM~1\bin\AR19DD~1.EXE $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c -o CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.s
+
 # Object files for target pico
 pico_OBJECTS = \
-"CMakeFiles\pico.dir\picow_tcp_client.c.obj" \
+"CMakeFiles\pico.dir\main.c.obj" \
+"CMakeFiles\pico.dir\msc_disk.c.obj" \
+"CMakeFiles\pico.dir\usb_descriptors.c.obj" \
 "CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj" \
 "CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_gpio\gpio.c.obj" \
 "CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_claim\claim.c.obj" \
@@ -2461,34 +2463,12 @@ pico_OBJECTS = \
 "CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\binary_info.c.obj" \
 "CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio\stdio.c.obj" \
 "CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj" \
 "CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch.c.obj" \
 "CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_poll.c.obj" \
 "CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_threadsafe_background.c.obj" \
 "CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_freertos.c.obj" \
+"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj" \
+"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj" \
 "CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\cyw43_driver\cyw43_bus_pio_spi.c.obj" \
 "CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_ll.c.obj" \
 "CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_stats.c.obj" \
@@ -2583,12 +2563,34 @@ pico_OBJECTS = \
 "CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\md4.c.obj" \
 "CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\md5.c.obj" \
 "CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\sha1.c.obj" \
-"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lwip\nosys.c.obj"
+"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lwip\nosys.c.obj" \
+"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.obj" \
+"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.obj" \
+"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.obj" \
+"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.obj" \
+"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.obj" \
+"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.obj" \
+"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.obj" \
+"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.obj" \
+"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.obj" \
+"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.obj" \
+"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.obj" \
+"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.obj" \
+"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.obj" \
+"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.obj" \
+"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.obj" \
+"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.obj" \
+"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.obj" \
+"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.obj" \
+"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.obj" \
+"CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.obj"
 
 # External object files for target pico
 pico_EXTERNAL_OBJECTS =
 
-pico.elf: CMakeFiles\pico.dir\picow_tcp_client.c.obj
+pico.elf: CMakeFiles\pico.dir\main.c.obj
+pico.elf: CMakeFiles\pico.dir\msc_disk.c.obj
+pico.elf: CMakeFiles\pico.dir\usb_descriptors.c.obj
 pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdlib\stdlib.c.obj
 pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_gpio\gpio.c.obj
 pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_claim\claim.c.obj
@@ -2634,34 +2636,12 @@ pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_comm
 pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_standard_link\binary_info.c.obj
 pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio\stdio.c.obj
 pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_uart\stdio_uart.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\reset_interface.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_usb\stdio_usb_descriptors.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj
-pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj
 pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch.c.obj
 pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_poll.c.obj
 pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_threadsafe_background.c.obj
 pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_cyw43_arch\cyw43_arch_freertos.c.obj
+pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c.obj
+pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_flash\flash.c.obj
 pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\cyw43_driver\cyw43_bus_pio_spi.c.obj
 pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_ll.c.obj
 pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\cyw43-driver\src\cyw43_stats.c.obj
@@ -2757,6 +2737,26 @@ pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src
 pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\md5.c.obj
 pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\netif\ppp\polarssl\sha1.c.obj
 pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_lwip\nosys.c.obj
+pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.obj
+pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.c.obj
+pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd.c.obj
+pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\device\usbd_control.c.obj
+pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\audio\audio_device.c.obj
+pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc_device.c.obj
+pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_device.c.obj
+pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\dfu\dfu_rt_device.c.obj
+pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\hid\hid_device.c.obj
+pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\midi\midi_device.c.obj
+pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.c.obj
+pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ecm_rndis_device.c.obj
+pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\net\ncm_device.c.obj
+pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\usbtmc\usbtmc_device.c.obj
+pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\vendor\vendor_device.c.obj
+pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\video\video_device.c.obj
+pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\tusb.c.obj
+pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\common\tusb_fifo.c.obj
+pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_fix\rp2040_usb_device_enumeration\rp2040_usb_device_enumeration.c.obj
+pico.elf: CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.obj
 pico.elf: CMakeFiles\pico.dir\build.make
 pico.elf: pico-sdk\src\rp2_common\boot_stage2\bs2_default_padded_checksummed.S
 pico.elf: pico-sdk\src\rp2_common\cyw43_driver\cyw43_resource.o

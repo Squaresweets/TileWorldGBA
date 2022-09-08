@@ -22,7 +22,9 @@ pico_sdk_init()
 
 # Add your source files
 add_executable(${NAME}
-    picow_tcp_client.c
+    main.c
+    msc_disk.c
+    usb_descriptors.c
 )
 
 target_include_directories(${NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR} )
@@ -30,8 +32,10 @@ target_include_directories(${NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR} )
 target_link_libraries(${NAME}
     pico_stdlib
     pico_cyw43_arch_lwip_poll
+    tinyusb_device
+    tinyusb_board
 )
 
-pico_enable_stdio_usb(${NAME} 1)
+#pico_enable_stdio_usb(${NAME} 1)
 
 pico_add_extra_outputs(${NAME})

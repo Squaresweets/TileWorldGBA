@@ -1,7 +1,6 @@
-CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c.obj: \
- C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\dcd_rp2040.c \
- C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src/tusb_option.h \
- C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2/tusb_config.h \
+CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c.obj: \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\family.c \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_stdlib\include/pico/stdlib.h \
  C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include/pico.h \
  C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include/pico/types.h \
  C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include/pico/assert.h \
@@ -31,7 +30,37 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portab
  d:\progra~2\gbuarm~1\arm-none-eabi\include\sys\cdefs.h \
  C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include/pico/types.h \
  C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_base\include/pico/error.h \
- C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portable\raspberrypi\rp2040\rp2040_usb.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio\include/pico/stdio.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\include/pico/time.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_timer\include/hardware/timer.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/timer.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_base\include/hardware/address_mapped.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/timer.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_gpio\include/hardware/gpio.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/sio.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/interp.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/padsbank0.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/pads_bank0.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/iobank0.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/io_bank0.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_irq\include/hardware/irq.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/intctrl.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/m0plus.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_uart\include/hardware/uart.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/uart.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/uart.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/dreq.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\pico_stdio_uart\include/pico/stdio_uart.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_binary_info\include/pico/binary_info.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_binary_info\include/pico/binary_info/defs.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_binary_info\include/pico/binary_info/structure.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_binary_info\include/pico/binary_info/code.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_sync\include/hardware/sync.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/ioqspi.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/io_qspi.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw/bsp/board.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw/bsp/ansi_escape.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src/tusb.h \
  C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src/common/tusb_common.h \
  d:\progra~2\gbuarm~1\arm-none-eabi\include\string.h \
  d:\progra~2\gbuarm~1\arm-none-eabi\include\sys\reent.h \
@@ -56,31 +85,26 @@ CMakeFiles\pico.dir\C_\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\portab
  d:\progra~2\gbuarm~1\arm-none-eabi\include\sys\sched.h \
  d:\progra~2\gbuarm~1\arm-none-eabi\include\machine\types.h \
  d:\progra~2\gbuarm~1\arm-none-eabi\include\sys\stdio.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src/tusb_option.h \
+ C:\Users\Daniel\Desktop\GBAWork\TileWorldGBA\Pico\configTest2/tusb_config.h \
  C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src/common/tusb_compiler.h \
  C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src/common/tusb_verify.h \
  C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src/common/tusb_types.h \
  C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src/common/tusb_error.h \
  C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src/common/tusb_timeout.h \
- C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/usb.h \
- C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_base\include/hardware/address_mapped.h \
- C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/usb.h \
- C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_irq\include/hardware/irq.h \
- C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/intctrl.h \
- C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/m0plus.h \
- C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_resets\include/hardware/resets.h \
- C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/resets.h \
- C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/resets.h \
- C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src/device/dcd.h \
  C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src/osal/osal.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src/common/tusb_common.h \
  C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src/osal/osal_pico.h \
- C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_time\include/pico/time.h \
- C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_timer\include/hardware/timer.h \
- C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/timer.h \
- C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/timer.h \
  C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\include/pico/sem.h \
  C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\include/pico/lock_core.h \
- C:\Users\Daniel\Desktop\pico\pico-sdk\src\rp2_common\hardware_sync\include/hardware/sync.h \
  C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\include/pico/mutex.h \
  C:\Users\Daniel\Desktop\pico\pico-sdk\src\common\pico_sync\include/pico/critical_section.h \
  C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src/common/tusb_fifo.h \
- C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src/device/dcd_attr.h
+ C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src/osal/osal.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src/common/tusb_fifo.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src/device/usbd.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src/class/cdc/cdc_device.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src/class/cdc/cdc.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src/class/msc/msc_device.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src/class/msc/msc.h \
+ C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\hw\bsp\rp2040\board.h

@@ -13,6 +13,9 @@
 #include "lwip/pbuf.h"
 #include "lwip/tcp.h"
 
+#include "bsp/board.h"
+#include "tusb.h"
+
 #define TEST_TCP_SERVER_IP "192.168.0.11"
 #if !defined(TEST_TCP_SERVER_IP)
 #error TEST_TCP_SERVER_IP not defined
@@ -24,6 +27,23 @@
 
 #define TEST_ITERATIONS 10
 #define POLL_TIME_S 5
+
+/* Blink pattern
+ * - 250 ms  : device not mounted
+ * - 1000 ms : device mounted
+ * - 2500 ms : device is suspended
+ */
+enum  {
+  BLINK_NOT_MOUNTED = 250,
+  BLINK_MOUNTED = 1000,
+  BLINK_SUSPENDED = 2500,
+};
+
+static uint32_t blink_interval_ms = BLINK_NOT_MOUNTED;
+
+void led_blinking_task(void);
+void cdc_task(void);
+
 
 #if 0
 static void dump_bytes(const uint8_t *bptr, uint32_t len) {
@@ -92,22 +112,6 @@ static err_t tcp_result(void *arg, int status) {
 static err_t tcp_client_sent(void *arg, struct tcp_pcb *tpcb, u16_t len) {
     TCP_CLIENT_T *state = (TCP_CLIENT_T*)arg;
     DEBUG_printf("tcp_client_sent %u\n", len);
-    /*
-    state->sent_len += len;
-
-    if (state->sent_len >= BUF_SIZE) {
-
-        state->run_count++;
-        if (state->run_count >= TEST_ITERATIONS) {
-            tcp_result(arg, 0);
-            return ERR_OK;
-        }
-
-        // We should receive a new buffer from the server
-        state->buffer_len = 0;
-        state->sent_len = 0;
-        DEBUG_printf("Waiting for buffer from server\n");
-    }*/
 
     return ERR_OK;
 }
@@ -146,38 +150,6 @@ static void tcp_client_err(void *arg, err_t err) {
 
 err_t tcp_client_recv(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err) {
     return ERR_OK; //we don't care lol
-    /*
-    TCP_CLIENT_T *state = (TCP_CLIENT_T*)arg;
-    if (!p) {
-        return tcp_result(arg, -1);
-    }
-    // this method is callback from lwIP, so cyw43_arch_lwip_begin is not required, however you
-    // can use this method to cause an assertion in debug mode, if this method is called when
-    // cyw43_arch_lwip_begin IS needed
-    cyw43_arch_lwip_check();
-    if (p->tot_len > 0) {
-        DEBUG_printf("recv %d err %d\n", p->tot_len, err);
-        for (struct pbuf *q = p; q != NULL; q = q->next) {
-            DUMP_BYTES(q->payload, q->len);
-        }
-        // Receive the buffer
-        const uint16_t buffer_left = BUF_SIZE - state->buffer_len;
-        state->buffer_len += pbuf_copy_partial(p, state->buffer + state->buffer_len,
-                                               p->tot_len > buffer_left ? buffer_left : p->tot_len, 0);
-        tcp_recved(tpcb, p->tot_len);
-    }
-    pbuf_free(p);
-
-    // If we have received the whole buffer, send it back to the server
-    if (state->buffer_len == BUF_SIZE) {
-        DEBUG_printf("Writing %d bytes to server\n", state->buffer_len);
-        err_t err = tcp_write(tpcb, state->buffer, state->buffer_len, TCP_WRITE_FLAG_COPY);
-        if (err != ERR_OK) {
-            DEBUG_printf("Failed to write data %d\n", err);
-            return tcp_result(arg, -1);
-        }
-    }
-    return ERR_OK;*/
 }
 
 static bool tcp_client_open(void *arg) {
@@ -235,7 +207,11 @@ void run_tcp_client_test(void) {
         // if you are using pico_cyw43_arch_poll, then you must poll periodically from your
         // main loop (not from a timer) to check for WiFi driver or lwIP work that needs to be done.
         cyw43_arch_poll();
-        sleep_ms(1);
+
+        tud_task(); // tinyusb device task
+        led_blinking_task();
+
+        cdc_task();
 #else
         // if you are not using pico_cyw43_arch_poll, then WiFI driver and lwIP work
         // is done via interrupt in the background. This sleep is just an example of some (blocking)
@@ -247,7 +223,18 @@ void run_tcp_client_test(void) {
 }
 
 int main() {
-    stdio_init_all();
+    //stdio_init_all();
+    board_init();
+    tusb_init();
+    cyw43_arch_init();
+  while (1)
+  {
+    //printf("WHY DOESN'T THIS WORK\n");
+    tud_task(); // tinyusb device task
+    led_blinking_task();
+
+    cdc_task();
+  }
 
     if (cyw43_arch_init()) {
         DEBUG_printf("failed to initialise\n");
@@ -265,4 +252,105 @@ int main() {
     run_tcp_client_test();
     cyw43_arch_deinit();
     return 0;
+}
+
+
+
+
+
+//--------------------------------------------------------------------+
+// Device callbacks
+//--------------------------------------------------------------------+
+
+// Invoked when device is mounted
+void tud_mount_cb(void)
+{
+  blink_interval_ms = BLINK_MOUNTED;
+}
+
+// Invoked when device is unmounted
+void tud_umount_cb(void)
+{
+  blink_interval_ms = BLINK_NOT_MOUNTED;
+}
+
+// Invoked when usb bus is suspended
+// remote_wakeup_en : if host allow us  to perform remote wakeup
+// Within 7ms, device must draw an average of current less than 2.5 mA from bus
+void tud_suspend_cb(bool remote_wakeup_en)
+{
+  (void) remote_wakeup_en;
+  blink_interval_ms = BLINK_SUSPENDED;
+}
+
+// Invoked when usb bus is resumed
+void tud_resume_cb(void)
+{
+  blink_interval_ms = BLINK_MOUNTED;
+}
+
+
+//--------------------------------------------------------------------+
+// USB CDC
+//--------------------------------------------------------------------+
+void cdc_task(void)
+{
+  // connected() check for DTR bit
+  // Most but not all terminal client set this when making connection
+  // if ( tud_cdc_connected() )
+  {
+    // connected and there are data available
+    if ( tud_cdc_available() )
+    {
+      // read datas
+      char buf[64];
+      uint32_t count = tud_cdc_read(buf, sizeof(buf));
+      (void) count;
+
+      // Echo back
+      // Note: Skip echo by commenting out write() and write_flush()
+      // for throughput test e.g
+      //    $ dd if=/dev/zero of=/dev/ttyACM0 count=10000
+      tud_cdc_write(buf, count);
+      tud_cdc_write_flush();
+    }
+  }
+}
+
+// Invoked when cdc when line state changed e.g connected/disconnected
+void tud_cdc_line_state_cb(uint8_t itf, bool dtr, bool rts)
+{
+  (void) itf;
+  (void) rts;
+
+  // TODO set some indicator
+  if ( dtr )
+  {
+    // Terminal connected
+  }else
+  {
+    // Terminal disconnected
+  }
+}
+
+// Invoked when CDC interface received data from host
+void tud_cdc_rx_cb(uint8_t itf)
+{
+  (void) itf;
+}
+
+//--------------------------------------------------------------------+
+// BLINKING TASK
+//--------------------------------------------------------------------+
+void led_blinking_task(void)
+{
+  static uint32_t start_ms = 0;
+  static bool led_state = false;
+
+  // Blink every interval ms
+  if ( board_millis() - start_ms < blink_interval_ms) return; // not enough time
+  start_ms += blink_interval_ms;
+
+  cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, led_state);
+  led_state = 1 - led_state; // toggle
 }
