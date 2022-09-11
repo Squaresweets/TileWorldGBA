@@ -200,18 +200,19 @@ void run_tcp_client_test(void) {
         tcp_result(state, -1);
         return;
     }
+    board_init();
+    tusb_init();
     while(!state->complete) {
         // the following #ifdef is only here so this same example can be used in multiple modes;
         // you do not need it in your code
 #if PICO_CYW43_ARCH_POLL
         // if you are using pico_cyw43_arch_poll, then you must poll periodically from your
         // main loop (not from a timer) to check for WiFi driver or lwIP work that needs to be done.
-        cyw43_arch_poll();
-
         tud_task(); // tinyusb device task
         led_blinking_task();
 
         cdc_task();
+        cyw43_arch_poll();
 #else
         // if you are not using pico_cyw43_arch_poll, then WiFI driver and lwIP work
         // is done via interrupt in the background. This sleep is just an example of some (blocking)
@@ -223,18 +224,18 @@ void run_tcp_client_test(void) {
 }
 
 int main() {
-    //stdio_init_all();
-    board_init();
-    tusb_init();
-    cyw43_arch_init();
-  while (1)
-  {
-    //printf("WHY DOESN'T THIS WORK\n");
-    tud_task(); // tinyusb device task
-    led_blinking_task();
+    stdio_init_all();
 
-    cdc_task();
-  }
+    //cyw43_arch_init();
+    //board_init();
+    //tusb_init();
+    /*while (1)
+    {
+        tud_task(); // tinyusb device task
+        led_blinking_task();
+
+        cdc_task();
+    }*/
 
     if (cyw43_arch_init()) {
         DEBUG_printf("failed to initialise\n");
@@ -253,9 +254,6 @@ int main() {
     cyw43_arch_deinit();
     return 0;
 }
-
-
-
 
 
 //--------------------------------------------------------------------+

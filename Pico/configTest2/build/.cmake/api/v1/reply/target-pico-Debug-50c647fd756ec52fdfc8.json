@@ -94,6 +94,12 @@
 				"file" : 5
 			},
 			{
+				"command" : 2,
+				"file" : 5,
+				"line" : 68,
+				"parent" : 11
+			},
+			{
 				"command" : 7,
 				"file" : 5,
 				"line" : 67,
@@ -103,13 +109,7 @@
 				"command" : 2,
 				"file" : 2,
 				"line" : 37,
-				"parent" : 12
-			},
-			{
-				"command" : 2,
-				"file" : 5,
-				"line" : 68,
-				"parent" : 11
+				"parent" : 13
 			},
 			{
 				"command" : 8,
@@ -1636,12 +1636,12 @@
 			"id" : "bs2_default_padded_checksummed_asm::@bc554eaed616d198a22d"
 		},
 		{
-			"backtrace" : 13,
-			"id" : "cyw43_driver_picow_cyw43_bus_pio_spi_pio_h::@29db30da11e86cddb3e0"
+			"backtrace" : 12,
+			"id" : "cyw43_firmware_package::@29db30da11e86cddb3e0"
 		},
 		{
 			"backtrace" : 14,
-			"id" : "cyw43_firmware_package::@29db30da11e86cddb3e0"
+			"id" : "cyw43_driver_picow_cyw43_bus_pio_spi_pio_h::@29db30da11e86cddb3e0"
 		}
 	],
 	"id" : "pico::@6890427a1f51a3e7e1df",
