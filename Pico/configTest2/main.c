@@ -16,6 +16,8 @@
 #include "bsp/board.h"
 #include "tusb.h"
 
+#include "main.h"
+
 #define TEST_TCP_SERVER_IP "192.168.0.11"
 #if !defined(TEST_TCP_SERVER_IP)
 #error TEST_TCP_SERVER_IP not defined
@@ -118,6 +120,7 @@ static err_t tcp_client_sent(void *arg, struct tcp_pcb *tpcb, u16_t len) {
 
 void debugprint(char* str)
 {
+    cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
     tcp_write(tcppcb, str, strlen(str), TCP_WRITE_FLAG_COPY);
 }
 
@@ -129,10 +132,6 @@ static err_t tcp_client_connected(void *arg, struct tcp_pcb *tpcb, err_t err) {
         return tcp_result(arg, err);
     }
     state->connected = true;
-    debugprint("Hello World!");
-    debugprint("Hello World again!");
-    debugprint("goodbye cruel World!");
-    debugprint("Hello World!");
     return ERR_OK;
 }
 
@@ -213,6 +212,8 @@ void run_tcp_client_test(void) {
 
         cdc_task();
         cyw43_arch_poll();
+        char str[50] = "Hello world";
+        tcp_write(tcppcb, str, strlen(str), TCP_WRITE_FLAG_COPY);
 #else
         // if you are not using pico_cyw43_arch_poll, then WiFI driver and lwIP work
         // is done via interrupt in the background. This sleep is just an example of some (blocking)

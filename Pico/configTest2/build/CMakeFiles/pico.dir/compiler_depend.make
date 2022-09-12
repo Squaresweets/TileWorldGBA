@@ -9027,6 +9027,7 @@ CMakeFiles\pico.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyus
 CMakeFiles\pico.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc.h
 CMakeFiles\pico.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.h
 CMakeFiles\pico.dir\main.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc.h
+CMakeFiles\pico.dir\main.c.obj: ..\main.h
 
 
 CMakeFiles\pico.dir\msc_disk.c.obj: ..\msc_disk.c
@@ -9114,6 +9115,7 @@ CMakeFiles\pico.dir\msc_disk.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\ti
 CMakeFiles\pico.dir\msc_disk.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\cdc\cdc.h
 CMakeFiles\pico.dir\msc_disk.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc_device.h
 CMakeFiles\pico.dir\msc_disk.c.obj: C:\Users\Daniel\Desktop\pico\pico-sdk\lib\tinyusb\src\class\msc\msc.h
+CMakeFiles\pico.dir\msc_disk.c.obj: ..\main.h
 
 
 CMakeFiles\pico.dir\usb_descriptors.c.obj: ..\usb_descriptors.c
@@ -9445,6 +9447,8 @@ C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\include\lwip\opt.h:
 "D:\Program Files\GBU Arm Embedded Toolchain\lib\gcc\arm-none-eabi\10.3.1\include-fixed\syslimits.h":
 
 ..\lwipopts_examples_common.h:
+
+..\main.h:
 
 C:\Users\Daniel\Desktop\pico\pico-sdk\lib\lwip\src\include\lwip\debug.h:
 
