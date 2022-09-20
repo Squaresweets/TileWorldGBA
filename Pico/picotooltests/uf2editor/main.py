@@ -24,9 +24,11 @@ newbytes[21] = (blocksnum >> 8) & 0xFF
 newbytes[22] = (blocksnum >> 16) & 0xFF
 newbytes[23] = (blocksnum >> 24) & 0xFF
 
+
 # Set where the data should go
 address = 0x10000000 + (256 * 1024)
-#address = 0x10000000
+# Subtract 1 from the address for some reason to make everything line up
+address -= 1
 newbytes[12] = address & 0xFF
 newbytes[13] = (address >> 8) & 0xFF
 newbytes[14] = (address >> 16) & 0xFF
@@ -36,6 +38,12 @@ newbytes[15] = (address >> 24) & 0xFF
 for i in range(476):
     newbytes[i+0x20] = 0
 newbytes[0x20] = 0x65
+
+# Add our string
+#str = "Hello World!".encode()
+#for i in range(len(str)):
+#    newbytes[0x20+i] = str[i]
+
 
 content += newbytes
 # Save final file
