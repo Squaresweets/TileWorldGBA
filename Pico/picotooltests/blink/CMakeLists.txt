@@ -25,5 +25,8 @@ add_executable(pico
 # pull in common dependencies
 target_link_libraries(pico pico_stdlib hardware_flash)
 
+pico_enable_stdio_usb(pico 1)
+pico_enable_stdio_uart(pico 0)
+
 # create map/bin/hex file etc.
 pico_add_extra_outputs(pico)

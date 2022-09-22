@@ -4,9 +4,9 @@
     <list default="true" id="e5d524d7-133e-476e-a635-ae02da4668d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../blink/blink.c" beforeDir="false" afterPath="$PROJECT_DIR$/../blink/blink.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../blink/build/pico.uf2" beforeDir="false" afterPath="$PROJECT_DIR$/../blink/build/pico.uf2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pico.uf2" beforeDir="false" afterPath="$PROJECT_DIR$/pico.uf2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pico2.uf2" beforeDir="false" afterPath="$PROJECT_DIR$/pico2.uf2" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="39" column="21" lean-forward="true" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
+            <state relative-caret-position="238">
+              <caret line="27" column="64" lean-forward="true" selection-start-line="27" selection-start-column="64" selection-end-line="27" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -159,8 +159,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="39" column="21" lean-forward="true" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
+        <state relative-caret-position="238">
+          <caret line="27" column="64" lean-forward="true" selection-start-line="27" selection-start-column="64" selection-end-line="27" selection-end-column="64" />
         </state>
       </provider>
     </entry>

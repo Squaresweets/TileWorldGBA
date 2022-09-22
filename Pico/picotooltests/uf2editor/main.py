@@ -25,10 +25,8 @@ newbytes[22] = (blocksnum >> 16) & 0xFF
 newbytes[23] = (blocksnum >> 24) & 0xFF
 
 
-# Set where the data should go
-address = 0x10000000 + (256 * 1024)
-# Subtract 1 from the address for some reason to make everything line up
-address -= 1
+# Set where the data should go (one after the end of the program
+address = 0x10000000 + (blocksnum << 8)
 newbytes[12] = address & 0xFF
 newbytes[13] = (address >> 8) & 0xFF
 newbytes[14] = (address >> 16) & 0xFF
