@@ -5,8 +5,8 @@
       <change beforePath="$PROJECT_DIR$/../blink/blink.c" beforeDir="false" afterPath="$PROJECT_DIR$/../blink/blink.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../blink/build/pico.uf2" beforeDir="false" afterPath="$PROJECT_DIR$/../blink/build/pico.uf2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pico.uf2" beforeDir="false" afterPath="$PROJECT_DIR$/pico.uf2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pico2.uf2" beforeDir="false" afterPath="$PROJECT_DIR$/pico2.uf2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pico.uf2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pico2.uf2" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="27" column="64" lean-forward="true" selection-start-line="27" selection-start-column="64" selection-end-line="27" selection-end-column="64" />
+            <state relative-caret-position="459">
+              <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -159,8 +159,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="27" column="64" lean-forward="true" selection-start-line="27" selection-start-column="64" selection-end-line="27" selection-end-column="64" />
+        <state relative-caret-position="459">
+          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
         </state>
       </provider>
     </entry>

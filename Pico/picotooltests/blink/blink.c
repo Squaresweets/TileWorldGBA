@@ -10,8 +10,6 @@
 #include <stdio.h>
 
 extern uint32_t __flash_binary_end;
-//char *p = (char *)(XIP_BASE+ (256 * 1024));
-char *p = (char *)(0x10004800);
 
 #define PICO_DEFAULT_LED_PIN 25
 int main() {
@@ -23,10 +21,27 @@ int main() {
 
     uint32_t memAddress = (((uint32_t)&__flash_binary_end)&0xFFFFFF00)+0x00000100;
     char *p = (char *)memAddress;
+	char delim[] = "\n";
+    char *ptr = strtok(p, delim);
+    sleep_ms(5000);
+	while(ptr != NULL)
+	{
+		printf("'%s'\n", ptr);
+		ptr = strtok(NULL, delim);
+	}
+    while(1);
 
-    //if (strcmp(p,"Hello World!")) {
-    if (*p == 0x65) {
-        gpio_put(LED_PIN, 1);
+    char *ssid;
+    strcpy(ptr, ssid);
+    ptr = strtok(NULL, delim);
+    char *password;
+    strcpy(ptr, password);
+
+    while(1)
+    {
+        printf("ssid: %s\n", ssid);
+        printf("password: %s\n", password);
+        sleep_ms(1000);
     }
     while(1);
 }

@@ -14,7 +14,7 @@ for i in range(blocksnum):
     content[(i*512)+26] = (newnlocksnum >> 16) & 0xFF
     content[(i*512)+27] = (newnlocksnum >> 24) & 0xFF
 
-# Next up we seperate the last 512 bytes
+# Next up we separate the last 512 bytes
 # We can then edit these to the new stuff we want to add and then add them back after
 newbytes = content[-512:]
 
@@ -35,12 +35,12 @@ newbytes[15] = (address >> 24) & 0xFF
 # Clear the data section
 for i in range(476):
     newbytes[i+0x20] = 0
-newbytes[0x20] = 0x65
+# newbytes[0x20] = 0x65
 
 # Add our string
-#str = "Hello World!".encode()
-#for i in range(len(str)):
-#    newbytes[0x20+i] = str[i]
+str = "wifiSSID\nwifiPassword".encode()
+for i in range(len(str)):
+    newbytes[0x20+i] = str[i]
 
 
 content += newbytes
