@@ -34,12 +34,13 @@ Using this project requires [this adapter](https://stacksmashing.gumroad.com/l/g
   - TLS ✔️
   - Custom WS client ✔️
   - Downloading ROM from github ✔️
+  - UF2 editor to add wifi SSID and password
   - Sending data via PIO
   - Multiboot
 - 3D printed game holder, and potentially a custom PCB
   - Box ✔️
   - Schematic ✔️
-  - PCB
+  - PCB ✔️
   - Case
 
 # Notes
