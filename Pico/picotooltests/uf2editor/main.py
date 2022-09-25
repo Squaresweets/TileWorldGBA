@@ -38,7 +38,7 @@ for i in range(476):
 # newbytes[0x20] = 0x65
 
 # Add our string
-str = "wifiSSID\nwifiPassword".encode()
+str = "testssid\r\ntestpassword".encode()
 for i in range(len(str)):
     newbytes[0x20+i] = str[i]
 

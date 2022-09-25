@@ -15,33 +15,17 @@ extern uint32_t __flash_binary_end;
 int main() {
     stdio_init_all();
 
-    const uint LED_PIN = PICO_DEFAULT_LED_PIN;
-    gpio_init(LED_PIN);
-    gpio_set_dir(LED_PIN, GPIO_OUT);
-
-    uint32_t memAddress = (((uint32_t)&__flash_binary_end)&0xFFFFFF00)+0x00000100;
-    char *p = (char *)memAddress;
-	char delim[] = "\n";
-    char *ptr = strtok(p, delim);
-    sleep_ms(5000);
-	while(ptr != NULL)
-	{
-		printf("'%s'\n", ptr);
-		ptr = strtok(NULL, delim);
-	}
-    while(1);
-
-    char *ssid;
-    strcpy(ptr, ssid);
-    ptr = strtok(NULL, delim);
-    char *password;
-    strcpy(ptr, password);
-
+    //Get the address where the binary ends, and then get the next section
+    char *p = (char *)((((uint32_t)&__flash_binary_end)&0xFFFFFF00)+0x00000100);
+    //Convert this to a char[] (since a char* doesn't seem to work with strtok)
+    char str[strlen(p)]; strcpy(str, p);
+    //Get ssid and password
+    char *ssid = strtok(str, "\r\n");
+    char *password = strtok(NULL, "\r\n");
     while(1)
     {
-        printf("ssid: %s\n", ssid);
-        printf("password: %s\n", password);
+        printf("ssid:%s, password:%s\n", ssid, password);
         sleep_ms(1000);
     }
-    while(1);
+    return 0;
 }
