@@ -14,6 +14,7 @@
 #include "ws.h"
 #include "multiboot.h"
 #include "sio.h"
+#include "configurer.h"
 
 #define TW_HOSTNAME         "tileworld.org"
 #define TW_PORT             7364
@@ -412,8 +413,9 @@ int main() {
     }
     cyw43_arch_enable_sta_mode();
 
-    //if (cyw43_arch_wifi_connect_timeout_ms(WIFI_SSID, WIFI_PASSWORD, CYW43_AUTH_WPA2_AES_PSK, 30000)) {
-    while (cyw43_arch_wifi_connect_timeout_ms("NETGEAR29", "pinkflute287", CYW43_AUTH_WPA2_AES_PSK, 30000)) {
+    read_config(); //See configurer.c
+    printf("SSID: %s, PASSWORD: %s\n", Wifissid, Wifipassword);
+    if (cyw43_arch_wifi_connect_timeout_ms(Wifissid, Wifipassword, CYW43_AUTH_WPA2_AES_PSK, 30000)) {
         printf("failed to connect to wifi, trying again!\n");
     }
     printf("Connected to wifi!\n");

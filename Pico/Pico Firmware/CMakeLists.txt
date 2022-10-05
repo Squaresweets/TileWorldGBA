@@ -26,6 +26,7 @@ add_executable(${NAME}
     ws.c
     sio.c
     multiboot.c
+    configurer.c
 
     # PIO components
     pio/pio_spi.c
