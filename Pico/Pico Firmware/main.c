@@ -414,7 +414,6 @@ int main() {
     cyw43_arch_enable_sta_mode();
 
     read_config(); //See configurer.c
-    printf("SSID: %s, PASSWORD: %s\n", Wifissid, Wifipassword);
     if (cyw43_arch_wifi_connect_timeout_ms(Wifissid, Wifipassword, CYW43_AUTH_WPA2_AES_PSK, 30000)) {
         printf("failed to connect to wifi, trying again!\n");
     }

@@ -2,7 +2,7 @@
 #define CONFIGURER_H
 
 void read_config();
-extern char *Wifissid;
-extern char *Wifipassword;
+extern char Wifissid[32];
+extern char Wifipassword[32];
 
 #endif

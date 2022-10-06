@@ -9,8 +9,8 @@ extern uint32_t __flash_binary_end;
 const uint32_t PICO_CFG_MAGIC0 = 0xadd6ec3d; //Both randomly generated
 const uint32_t PICO_CFG_MAGIC1 = 0x60277988;
 
-char *Wifissid;
-char *Wifipassword;
+char Wifissid[32];
+char Wifipassword[32];
 
 #define PICO_DEFAULT_LED_PIN 25
 void read_config() {
@@ -25,7 +25,6 @@ void read_config() {
     //Convert this to a char[] (since a char* doesn't seem to work with strtok)
     char str[strlen(p)]; strcpy(str, p);
     //Get ssid and password
-    Wifissid = strtok(str, "\r\n");
-    Wifipassword = strtok(NULL, "\r\n");
-    printf("SSID: %s, PASSWORD: %s\n", Wifissid, Wifipassword);
+    strcpy(Wifissid, strtok(str, "\r\n"));
+    strcpy(Wifipassword, strtok(NULL, "\r\n"));
 }
