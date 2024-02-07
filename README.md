@@ -7,6 +7,8 @@
   <img src="https://github.com/Squaresweets/TileWorldGBA/blob/main/Art/Box.gif" alt="gamebox"/>
 </p>
 
+# Tileworld has now been shutdown, so this whole project is sorta dead lol. I'm still very proud of it.
+
 # What and why
 Basically, I wanted to port something to the Gameboy Advance, and I thought it would be kinda funny to make a cross platform multiplayer game since it hadn't been done before. The perfect candidete for this was [TileWorld](https://tileworld.org) since I had worked on the mobile port and it is a pretty simple game. This whole thing has taken a long time, partially due to exams and partially due to lots of problem solving.
 
